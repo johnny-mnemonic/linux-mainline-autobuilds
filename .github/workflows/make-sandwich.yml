@@ -91,7 +91,10 @@ jobs:
           PATH=${MODPATH}
           cd ${BUILD_DIR}
           BASE_COMMIT_ID=$( git rev-parse HEAD )
-          for patch in ${TOOLS_DIR}/patches/*patch; do
+          for patch in ${TOOLS_DIR}/patches/standard/*patch; do
+            patch -p1 < ${patch}
+          done
+          for patch in ${TOOLS_DIR}/patches/extra/*patch; do
             patch -p1 < ${patch}
           done
           # build ##############################################################
