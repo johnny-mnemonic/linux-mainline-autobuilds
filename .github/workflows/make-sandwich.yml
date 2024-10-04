@@ -1,0 +1,140 @@
+name: 'make-sandwich'
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # Run everyday at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: tools
+
+      - uses: actions/checkout@v4
+        with:
+          repository: torvalds/linux
+          ref: master
+          path: linux
+
+      - uses: actions/checkout@v4
+        with:
+          repository: johnny-mnemonic/ski
+          ref: hp-sim-for-linux
+          path: hp-sim-for-linux
+
+      - uses: actions/checkout@v4
+        with:
+          repository: johnny-mnemonic/ski
+          ref: master
+          path: ski
+
+      - name: prepare_step
+        run: |
+          BASE_DIR=$( pwd )
+          BUILD_DIR="$( pwd )/linux"
+          TOOLS_DIR="$( pwd )/tools"
+          HP_SIM_DIR="$( pwd )/hp-sim-for-linux"
+          SKI_DIR="$( pwd )/ski"
+          BRANCH="master"
+          SUMMARY_FILE="${BASE_DIR}/summary.md"
+          touch ${SUMMARY_FILE}
+          # get system info ####################################################
+          echo "****"
+          uname -a
+          echo "****"
+          lscpu
+          echo "****"
+          cat /proc/cpuinfo
+          echo "****"
+          free -m
+          echo "****"
+          lspci
+          echo "****"
+          # prepare tools ######################################################
+          cd ${TOOLS_DIR}
+          CROSS_COMPILER_URL=$( cat ./config/compiler-url )
+          wget "${CROSS_COMPILER_URL}" -O - | unxz | tar -xf -
+          CROSS_COMPILER_PATH=$( echo gcc-*/*-linux )
+          PATH=$PATH:$PWD/${CROSS_COMPILER_PATH}/bin
+          CROSS_COMPILER=$( basename ${CROSS_COMPILER_PATH}/bin/*-linux-gcc )
+          CROSS_COMPILER_AND_VERSION=$( ${CROSS_COMPILER} --version | head -n1 )
+          # exports ############################################################
+          echo "BASE_DIR=${BASE_DIR}" >> $GITHUB_ENV
+          echo "BUILD_DIR=${BUILD_DIR}" >> $GITHUB_ENV
+          echo "TOOLS_DIR=${TOOLS_DIR}" >> $GITHUB_ENV
+          echo "HP_SIM_DIR=${HP_SIM_DIR}" >> $GITHUB_ENV
+          echo "SKI_DIR=${SKI_DIR}" >> $GITHUB_ENV
+          echo "BRANCH=${BRANCH}" >> $GITHUB_ENV
+          echo "MODPATH=${PATH}" >> $GITHUB_ENV
+          echo "CROSS_COMPILER_AND_VERSION=${CROSS_COMPILER_AND_VERSION}" >> $GITHUB_ENV
+          echo "SUMMARY_FILE=${SUMMARY_FILE}" >> $GITHUB_ENV
+          echo "EXIT_EARLY=0" >> $GITHUB_ENV
+
+#      - name: download_artifact
+#        continue-on-error: true
+#        uses: actions/download-artifact@v4
+#        with:
+#          name: ${{ matrix.branch }}-last-kernel-version
+#          github-token: ${{ secrets.PAT }}
+
+      - name: regular_build_step
+        run: |
+          USED_PATCHES="see [patches/](https://github.com/johnny-mnemonic/linux-mainline-autobuilds/tree/main/patches/)"
+          # apply patches ######################################################
+          PATH=${MODPATH}
+          cd ${BUILD_DIR}
+          BASE_COMMIT_ID=$( git rev-parse HEAD )
+          for patch in ${TOOLS_DIR}/patches/*patch; do
+            patch -p1 < ${patch}
+          done
+          # build ##############################################################
+          cd "${TOOLS_DIR}"
+          echo "| STATUS | BASE COMMIT | TYPE | USED PATCHES | COMPILER | DOWNLOAD |" >> ${SUMMARY_FILE}
+          echo "| ------ | ----------- | ---- | ------------ | -------- | -------- |" >> ${SUMMARY_FILE}
+          BUILD_COMMAND="time ./tools/make-kernel.bash ./config/linux-for-hp-integrities-v3 ia64 ${BUILD_DIR} gha tar-pkg"
+          if ${BUILD_COMMAND}; then
+            mkdir build-artifacts && mv $( cat ${BUILD_DIR}/LINUX_BUILD_LOG ) $( cat ${BUILD_DIR}/LINUX_TARBALL ) build-artifacts/
+            pushd build-artifacts/
+            sha256sum * > SHA256
+            popd
+            # exports ##########################################################
+            echo "BUILD_ARTIFACTS=${PWD}/build-artifacts" >> $GITHUB_ENV
+            echo "BASE_COMMIT_ID=${BASE_COMMIT_ID}" >> $GITHUB_ENV
+            ####################################################################
+            echo "| :white_check_mark: | ${BRANCH} | ${KERNEL_VERSION} | regular | ${USED_PATCHES} | ${CROSS_COMPILER_AND_VERSION} |" >> ${SUMMARY_FILE}
+            echo "${KERNEL_VERSION}" > ${GITHUB_WORKSPACE}/${BRANCH}-last-kernel-version
+            true
+          else
+            echo "| :x: | ${BASE_COMMIT_ID} | regular | ${USED_PATCHES} | ${CROSS_COMPILER_AND_VERSION} |" >> ${SUMMARY_FILE}
+            false
+          fi
+
+      - uses: actions/upload-artifact@v4
+        id: artifact-upload-step
+        with:
+          name: ${{ env.BASE_COMMIT_ID }}
+          path: ${{ env.BUILD_ARTIFACTS }}/
+          compression-level: 0
+          retention-days: 2
+
+      - name: Output artifact ID
+        run: |
+          echo '||||||| [build artifacts](${{ steps.artifact-upload-step.outputs.artifact-url }}) |' >> ${SUMMARY_FILE}
+
+#      - uses: actions/upload-artifact@v4
+#        with:
+#          name: ${{ matrix.branch }}-last-kernel-version
+#          path: ${{ github.workspace }}/${{ matrix.branch }}-last-kernel-version
+#          overwrite: true
+#          retention-days: 10
+
+      - name: steps_summary
+        run: |
+          cat ${SUMMARY_FILE} >> $GITHUB_STEP_SUMMARY
