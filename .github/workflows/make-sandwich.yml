@@ -90,7 +90,7 @@ jobs:
           # apply patches ######################################################
           PATH=${MODPATH}
           cd ${BUILD_DIR}
-          BASE_COMMIT_ID=$( git rev-parse HEAD )
+          BASE_COMMIT_ID_SHORT=$( git rev-parse --short HEAD )
           for patch in ${TOOLS_DIR}/patches/standard/*patch; do
             patch -p1 < ${patch}
           done
@@ -109,10 +109,9 @@ jobs:
             popd
             # exports ##########################################################
             echo "BUILD_ARTIFACTS=${PWD}/build-artifacts" >> $GITHUB_ENV
-            echo "BASE_COMMIT_ID=${BASE_COMMIT_ID}" >> $GITHUB_ENV
+            echo "BASE_COMMIT_ID_SHORT=${BASE_COMMIT_ID_SHORT}" >> $GITHUB_ENV
             ####################################################################
-            echo "| :white_check_mark: | ${BRANCH} | ${KERNEL_VERSION} | regular | ${USED_PATCHES} | ${CROSS_COMPILER_AND_VERSION} |" >> ${SUMMARY_FILE}
-            echo "${KERNEL_VERSION}" > ${GITHUB_WORKSPACE}/${BRANCH}-last-kernel-version
+            echo "| :white_check_mark: | [${BASE_COMMIT_ID_SHORT}](/torvalds/linux/commit/${BASE_COMMIT_ID_SHORT}) | regular | ${USED_PATCHES} | ${CROSS_COMPILER_AND_VERSION} |" >> ${SUMMARY_FILE}
             true
           else
             echo "| :x: | ${BASE_COMMIT_ID} | regular | ${USED_PATCHES} | ${CROSS_COMPILER_AND_VERSION} |" >> ${SUMMARY_FILE}
@@ -122,7 +121,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         id: artifact-upload-step
         with:
-          name: ${{ env.BASE_COMMIT_ID }}
+          name: "linux-at-${{ env.BASE_COMMIT_ID_SHORT }}-w-ia64.zip"
           path: ${{ env.BUILD_ARTIFACTS }}/
           compression-level: 0
           retention-days: 2

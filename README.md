@@ -1,4 +1,6 @@
-# Linux mainline autobuilds for ia64#
+# Linux mainline autobuilds for ia64 #
+
+[![make-sandwich](https://github.com/johnny-mnemonic/linux-mainline-autobuilds/actions/workflows/make-sandwich.yml/badge.svg)](https://github.com/johnny-mnemonic/linux-mainline-autobuilds/actions/workflows/make-sandwich.yml)
 
 Builds happen each day in the morning and use the latest ia64 patch set for Linux mainline.
 
