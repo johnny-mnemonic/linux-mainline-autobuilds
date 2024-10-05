@@ -77,13 +77,6 @@ jobs:
           echo "SUMMARY_FILE=${SUMMARY_FILE}" >> $GITHUB_ENV
           echo "EXIT_EARLY=0" >> $GITHUB_ENV
 
-#      - name: download_artifact
-#        continue-on-error: true
-#        uses: actions/download-artifact@v4
-#        with:
-#          name: ${{ matrix.branch }}-last-kernel-version
-#          github-token: ${{ secrets.PAT }}
-
       - name: regular_build_step
         run: |
           USED_PATCHES="see [patches/](https://github.com/johnny-mnemonic/linux-mainline-autobuilds/tree/main/patches/)"
@@ -111,10 +104,10 @@ jobs:
             echo "BUILD_ARTIFACTS=${PWD}/build-artifacts" >> $GITHUB_ENV
             echo "BASE_COMMIT_ID_SHORT=${BASE_COMMIT_ID_SHORT}" >> $GITHUB_ENV
             ####################################################################
-            echo "| :white_check_mark: | [${BASE_COMMIT_ID_SHORT}](/torvalds/linux/commit/${BASE_COMMIT_ID_SHORT}) | regular | ${USED_PATCHES} | ${CROSS_COMPILER_AND_VERSION} |" >> ${SUMMARY_FILE}
+            echo "| :white_check_mark: | [${BASE_COMMIT_ID_SHORT}](/torvalds/linux/commit/${BASE_COMMIT_ID_SHORT}) | regular | ${USED_PATCHES} | ${CROSS_COMPILER_AND_VERSION} | @@DOWNLOAD@@ |" >> ${SUMMARY_FILE}
             true
           else
-            echo "| :x: | ${BASE_COMMIT_ID} | regular | ${USED_PATCHES} | ${CROSS_COMPILER_AND_VERSION} |" >> ${SUMMARY_FILE}
+            echo "| :x: | ${BASE_COMMIT_ID} | regular | ${USED_PATCHES} | ${CROSS_COMPILER_AND_VERSION} | N/A |" >> ${SUMMARY_FILE}
             false
           fi
 
@@ -128,14 +121,7 @@ jobs:
 
       - name: Output artifact ID
         run: |
-          echo '||||||| [build artifacts](${{ steps.artifact-upload-step.outputs.artifact-url }}) |' >> ${SUMMARY_FILE}
-
-#      - uses: actions/upload-artifact@v4
-#        with:
-#          name: ${{ matrix.branch }}-last-kernel-version
-#          path: ${{ github.workspace }}/${{ matrix.branch }}-last-kernel-version
-#          overwrite: true
-#          retention-days: 10
+          sed -e "s/@@DOWNLOAD@@/[linux-at-${{ env.BASE_COMMIT_ID_SHORT }}-w-ia64.zip](${{ steps.artifact-upload-step.outputs.artifact-url }})/" -i ${SUMMARY_FILE}
 
       - name: steps_summary
         run: |
