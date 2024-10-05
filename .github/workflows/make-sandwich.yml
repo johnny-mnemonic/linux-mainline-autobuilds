@@ -121,7 +121,7 @@ jobs:
 
       - name: Output artifact ID
         run: |
-          sed -e "s/@@DOWNLOAD@@/[linux-at-${{ env.BASE_COMMIT_ID_SHORT }}-w-ia64.zip](${{ steps.artifact-upload-step.outputs.artifact-url }})/" -i ${SUMMARY_FILE}
+          sed -e "s|@@DOWNLOAD@@|[linux-at-${{ env.BASE_COMMIT_ID_SHORT }}-w-ia64.zip](${{ steps.artifact-upload-step.outputs.artifact-url }})|" -i ${SUMMARY_FILE}
 
       - name: steps_summary
         run: |
