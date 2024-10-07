@@ -1,7 +1,7 @@
-From 1809c69fe888f4596ac163c308c4ec5dd206bc20 Mon Sep 17 00:00:00 2001
+From f7754b1c472c72c09ae20b4b6a8dd4ed5b25678e Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 9 Nov 2023 17:18:24 +0100
-Subject: [PATCH 09/34] ia64: Reserve map_shadow_stack() syscall number
+Subject: [PATCH 09/36] ia64: Reserve map_shadow_stack() syscall number
 
 map_shadow_stack was introducted after ia64 was removed from
 the kernel hence it was not added to ia64 syscall table.

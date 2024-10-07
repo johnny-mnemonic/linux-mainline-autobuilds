@@ -1,7 +1,7 @@
-From 292d977195d3f1343166ebd69334ba4ea7c01af6 Mon Sep 17 00:00:00 2001
+From cd2e7372df0119c09dd7b041069138d031d9f41b Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 16:45:16 +0100
-Subject: [PATCH 19/34] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
+Subject: [PATCH 19/36] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
 
 This reverts commit 3888750e21ccb909051c810cc79fcc0650a740f8.
 ---
@@ -10,7 +10,7 @@ This reverts commit 3888750e21ccb909051c810cc79fcc0650a740f8.
  2 files changed, 15 insertions(+)
 
 diff --git a/arch/Kconfig b/arch/Kconfig
-index ac3fdff763bd..a9c99a73d8fa 100644
+index 30b7976853e9..d44335355fc9 100644
 --- a/arch/Kconfig
 +++ b/arch/Kconfig
 @@ -323,8 +323,17 @@ config ARCH_HAS_CPU_PASID
@@ -32,7 +32,7 @@ index ac3fdff763bd..a9c99a73d8fa 100644
  	  An architecture should select this to provide hardened usercopy
  	  knowledge about what region of the thread_struct should be
 diff --git a/kernel/fork.c b/kernel/fork.c
-index fbaab2ca3740..cdc7c334375a 100644
+index 4f50d396b8b4..63320467e40a 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
 @@ -173,6 +173,7 @@ void __weak arch_release_task_struct(struct task_struct *tsk)

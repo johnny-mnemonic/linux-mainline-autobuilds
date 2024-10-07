@@ -1,7 +1,7 @@
-From 68a1b7e4189e32d6805343a3ab362f509910b6c3 Mon Sep 17 00:00:00 2001
+From 7ca267d96849ff3b08d27295944d624ee2dea056 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
-Subject: [PATCH 05/34] Revert "arch: Remove Itanium (IA-64) architecture"
+Subject: [PATCH 05/36] Revert "arch: Remove Itanium (IA-64) architecture"
 
 This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
 ---
@@ -3010,10 +3010,10 @@ index a21dbf261be7..157b2139a4a1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index c27f3190737f..1c5e901f1994 100644
+index a097afd76ded..99334f11eb83 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -10811,6 +10811,12 @@ F:	drivers/i3c/
+@@ -10814,6 +10814,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3026,7 +3026,7 @@ index c27f3190737f..1c5e901f1994 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -17620,6 +17626,11 @@ S:	Maintained
+@@ -17624,6 +17630,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -68057,10 +68057,10 @@ index d293d52a3e00..53cea7e55288 100644
  	}
  
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 60c0b4868fd4..ef9f6ac2f91f 100644
+index 89ceb4a68af2..a0d4ecca688c 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -3020,7 +3020,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
+@@ -3017,7 +3017,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
  		if (!access_ok((void __user *)kargs->stack, kargs->stack_size))
  			return false;
  
