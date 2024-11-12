@@ -1,7 +1,7 @@
-From 7ca267d96849ff3b08d27295944d624ee2dea056 Mon Sep 17 00:00:00 2001
+From 1d2a136324f85db22c54a4ec5b57efd597cada82 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
-Subject: [PATCH 05/36] Revert "arch: Remove Itanium (IA-64) architecture"
+Subject: [PATCH 05/37] Revert "arch: Remove Itanium (IA-64) architecture"
 
 This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
 ---
@@ -3010,10 +3010,10 @@ index a21dbf261be7..157b2139a4a1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index a097afd76ded..99334f11eb83 100644
+index 21fdaa19229a..a7cf480a2052 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -10814,6 +10814,12 @@ F:	drivers/i3c/
+@@ -10787,6 +10787,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3026,7 +3026,7 @@ index a097afd76ded..99334f11eb83 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -17624,6 +17630,11 @@ S:	Maintained
+@@ -17575,6 +17581,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -67508,7 +67508,7 @@ index 695316a83b01..1d75d5e540bc 100644
  /* Extract the status field from a kernel handle */
  #define GET_MSEG_HANDLE_STATUS(h)	(((*(unsigned long *)(h)) >> 16) & 3)
 diff --git a/drivers/misc/sgi-gru/grumain.c b/drivers/misc/sgi-gru/grumain.c
-index 0f5b09e290c8..4eb4b9455139 100644
+index 3036c15f3689..d2b2e39783d0 100644
 --- a/drivers/misc/sgi-gru/grumain.c
 +++ b/drivers/misc/sgi-gru/grumain.c
 @@ -41,12 +41,16 @@ struct device *grudev = &gru_device;
@@ -67878,7 +67878,7 @@ index 804355da46f5..c6a8a2dc49c7 100644
      defined(CONFIG_PARISC) || defined(CONFIG_SUPERH) ||\
      (defined(CONFIG_ARM) && defined(CONFIG_KEYBOARD_ATKBD) && !defined(CONFIG_ARCH_RPC))
 diff --git a/drivers/video/fbdev/Kconfig b/drivers/video/fbdev/Kconfig
-index ea36c6956bf3..ed3b16f3ffad 100644
+index de035071fedb..013865fdcecc 100644
 --- a/drivers/video/fbdev/Kconfig
 +++ b/drivers/video/fbdev/Kconfig
 @@ -435,7 +435,7 @@ config FB_VESA
@@ -67904,7 +67904,7 @@ index 684b9fe84fff..85716e58487b 100644
  	depends on I2C || I2C=n
  	depends on MFD_INTEL_PMC_BXT || !MFD_INTEL_PMC_BXT
 diff --git a/fs/Kconfig b/fs/Kconfig
-index 949895cff872..de83fbc2d48d 100644
+index aae170fc2795..542c2de4fa0f 100644
 --- a/fs/Kconfig
 +++ b/fs/Kconfig
 @@ -257,7 +257,7 @@ config ARCH_SUPPORTS_HUGETLBFS
@@ -68004,7 +68004,7 @@ index e28d88066033..c0295bef3771 100644
   * We play games with efi_enabled so that the compiler will, if
   * possible, remove EFI-related code altogether.
 diff --git a/include/linux/mm.h b/include/linux/mm.h
-index ecf63d2b0582..508a168683c7 100644
+index 61fff5d34ed5..b38792ad77ba 100644
 --- a/include/linux/mm.h
 +++ b/include/linux/mm.h
 @@ -375,6 +375,8 @@ extern unsigned int kobjsize(const void *objp);
@@ -68057,10 +68057,10 @@ index d293d52a3e00..53cea7e55288 100644
  	}
  
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 89ceb4a68af2..a0d4ecca688c 100644
+index 22f43721d031..3c1e782e9abd 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -3017,7 +3017,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
+@@ -3019,7 +3019,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
  		if (!access_ok((void __user *)kargs->stack, kargs->stack_size))
  			return false;
  
@@ -68070,10 +68070,10 @@ index 89ceb4a68af2..a0d4ecca688c 100644
  #endif
  	}
 diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index 43e453ab7e20..d001af5e33fd 100644
+index 719e0ed1e976..61d0afb8c363 100644
 --- a/kernel/sched/core.c
 +++ b/kernel/sched/core.c
-@@ -8733,9 +8733,9 @@ void normalize_rt_tasks(void)
+@@ -8755,9 +8755,9 @@ void normalize_rt_tasks(void)
  
  #endif /* CONFIG_MAGIC_SYSRQ */
  
@@ -68085,7 +68085,7 @@ index 43e453ab7e20..d001af5e33fd 100644
   *
   * They can only be called when the whole system has been
   * stopped - every CPU needs to be quiescent, and no scheduling
-@@ -8757,7 +8757,30 @@ struct task_struct *curr_task(int cpu)
+@@ -8779,7 +8779,30 @@ struct task_struct *curr_task(int cpu)
  	return cpu_curr(cpu);
  }
  
@@ -68138,7 +68138,7 @@ index 79e6cb1d5c48..c6afa709254f 100644
  	{
  		.procname	= "max_lock_depth",
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index 7315f643817a..86cce2fb358b 100644
+index 7312ae7c3cc5..0e7c4b0664d6 100644
 --- a/lib/Kconfig.debug
 +++ b/lib/Kconfig.debug
 @@ -781,7 +781,7 @@ config SHRINKER_DEBUG
@@ -68181,10 +68181,10 @@ index 20aa459bfb3e..8968e2b8a12e 100644
  	bool "ARM BCJ filter decoder" if EXPERT
  	default y
 diff --git a/mm/mmap.c b/mm/mmap.c
-index dd4b35a25aeb..3ea457da9aa1 100644
+index 79d541f1502b..88bf7d8b5c54 100644
 --- a/mm/mmap.c
 +++ b/mm/mmap.c
-@@ -1034,9 +1034,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
+@@ -1035,9 +1035,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
  	return 0;
  }
  
@@ -68196,7 +68196,7 @@ index dd4b35a25aeb..3ea457da9aa1 100644
   * vma is the last one with address > vma->vm_end.  Have to extend vma.
   */
  static int expand_upwards(struct vm_area_struct *vma, unsigned long address)
-@@ -1132,7 +1132,7 @@ static int expand_upwards(struct vm_area_struct *vma, unsigned long address)
+@@ -1133,7 +1133,7 @@ static int expand_upwards(struct vm_area_struct *vma, unsigned long address)
  	validate_mm(mm);
  	return error;
  }

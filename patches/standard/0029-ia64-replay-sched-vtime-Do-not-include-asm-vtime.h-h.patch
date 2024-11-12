@@ -1,7 +1,7 @@
-From 334bbfe5fcf3d874fc1beb3ffa664eed3d7b3059 Mon Sep 17 00:00:00 2001
+From 8a1a621cf6d0c62987cdebcd6902f093e0bdde47 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Thu, 18 Jul 2024 20:48:20 +0200
-Subject: [PATCH 29/36] ia64: replay "sched/vtime: Do not include <asm/vtime.h>
+Subject: [PATCH 29/37] ia64: replay "sched/vtime: Do not include <asm/vtime.h>
  header"
 
 See 08a36a48544d73bf153960245aec6c5fa23960de.

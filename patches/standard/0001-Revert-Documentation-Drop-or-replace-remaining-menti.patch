@@ -1,7 +1,7 @@
-From 21b5af7318b01d9d28a15170661a1ec4ab3a4d19 Mon Sep 17 00:00:00 2001
+From c7205c6a7ce8c78e12a36067aee5451c6e9c7981 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
-Subject: [PATCH 01/36] Revert "Documentation: Drop or replace remaining
+Subject: [PATCH 01/37] Revert "Documentation: Drop or replace remaining
  mentions of IA64"
 
 This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
@@ -181,7 +181,7 @@ index 0f714fc945ac..63a4c5deb156 100644
  =====
  
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 1518343bbe22..a5d363aa958e 100644
+index 1666576acc0e..1281bfbdea69 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
 @@ -1496,7 +1496,7 @@
@@ -425,7 +425,7 @@ index b2ac3c743a3a..ce3f39d9b3cb 100644
  sparc - 在这一点上，IRQ是开着的（？），把local_irq_save改为_disable。
        - 待办事项: 需要第二个CPU来禁用抢占 (参考 #1)
 diff --git a/Makefile b/Makefile
-index c5493c0c0ca1..e71d19745161 100644
+index 79192a3024bf..ddac27d1da41 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -366,7 +366,7 @@ include $(srctree)/scripts/subarch.include

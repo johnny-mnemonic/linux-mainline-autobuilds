@@ -1,7 +1,7 @@
-From 8c8e6738f666b79c9da5be59946145579231afb2 Mon Sep 17 00:00:00 2001
+From d1f0a812cfcda745c07dd78f11e7236fd178a60f Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 14:21:54 +0100
-Subject: [PATCH 17/36] Revert "mm: remove unnecessary ia64 code and comment"
+Subject: [PATCH 17/37] Revert "mm: remove unnecessary ia64 code and comment"
 
 This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
 ---
@@ -12,7 +12,7 @@ This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
  4 files changed, 42 insertions(+), 22 deletions(-)
 
 diff --git a/mm/Kconfig b/mm/Kconfig
-index 4c9f5ea13271..fe1c4ebbcb77 100644
+index 33fa51d608dc..13862edde680 100644
 --- a/mm/Kconfig
 +++ b/mm/Kconfig
 @@ -749,7 +749,7 @@ config DEFAULT_MMAP_MIN_ADDR
@@ -25,7 +25,7 @@ index 4c9f5ea13271..fe1c4ebbcb77 100644
  	  On arm and other archs it should not be higher than 32768.
  	  Programs which use vm86 functionality or have some need to map
 diff --git a/mm/memory.c b/mm/memory.c
-index 2366578015ad..619285fe1e20 100644
+index bdf77a3ec47b..86cf4e6cd963 100644
 --- a/mm/memory.c
 +++ b/mm/memory.c
 @@ -125,7 +125,9 @@ static __always_inline bool vmf_orig_pte_uffd_wp(struct vm_fault *vmf)
