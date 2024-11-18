@@ -1,4 +1,4 @@
-From 1d2a136324f85db22c54a4ec5b57efd597cada82 Mon Sep 17 00:00:00 2001
+From ce1cbc0323f4dfb7531f01fb753a73b9a3b577b8 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
 Subject: [PATCH 05/37] Revert "arch: Remove Itanium (IA-64) architecture"
@@ -3010,7 +3010,7 @@ index a21dbf261be7..157b2139a4a1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 21fdaa19229a..a7cf480a2052 100644
+index b878ddc99f94..5f9b398c58a8 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
 @@ -10787,6 +10787,12 @@ F:	drivers/i3c/
@@ -68070,10 +68070,10 @@ index 22f43721d031..3c1e782e9abd 100644
  #endif
  	}
 diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index 719e0ed1e976..61d0afb8c363 100644
+index a1c353a62c56..466696333a03 100644
 --- a/kernel/sched/core.c
 +++ b/kernel/sched/core.c
-@@ -8755,9 +8755,9 @@ void normalize_rt_tasks(void)
+@@ -8758,9 +8758,9 @@ void normalize_rt_tasks(void)
  
  #endif /* CONFIG_MAGIC_SYSRQ */
  
@@ -68085,7 +68085,7 @@ index 719e0ed1e976..61d0afb8c363 100644
   *
   * They can only be called when the whole system has been
   * stopped - every CPU needs to be quiescent, and no scheduling
-@@ -8779,7 +8779,30 @@ struct task_struct *curr_task(int cpu)
+@@ -8782,7 +8782,30 @@ struct task_struct *curr_task(int cpu)
  	return cpu_curr(cpu);
  }
  

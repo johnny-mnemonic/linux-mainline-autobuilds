@@ -1,4 +1,4 @@
-From c7205c6a7ce8c78e12a36067aee5451c6e9c7981 Mon Sep 17 00:00:00 2001
+From d0ec29de90eabac28d71255c725f3e2900837611 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
 Subject: [PATCH 01/37] Revert "Documentation: Drop or replace remaining
@@ -181,7 +181,7 @@ index 0f714fc945ac..63a4c5deb156 100644
  =====
  
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 1666576acc0e..1281bfbdea69 100644
+index d401577b5a6a..de242302bf8a 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
 @@ -1496,7 +1496,7 @@
@@ -425,7 +425,7 @@ index b2ac3c743a3a..ce3f39d9b3cb 100644
  sparc - 在这一点上，IRQ是开着的（？），把local_irq_save改为_disable。
        - 待办事项: 需要第二个CPU来禁用抢占 (参考 #1)
 diff --git a/Makefile b/Makefile
-index 79192a3024bf..ddac27d1da41 100644
+index 68a8faff2543..e028bf75e596 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -366,7 +366,7 @@ include $(srctree)/scripts/subarch.include
