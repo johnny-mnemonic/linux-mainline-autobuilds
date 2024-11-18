@@ -84,11 +84,8 @@ jobs:
           PATH=${MODPATH}
           cd ${BUILD_DIR}
           BASE_COMMIT_ID_SHORT=$( git rev-parse --short HEAD )
-          for patch in ${TOOLS_DIR}/patches/standard/*patch; do
-            patch -p1 < ${patch}
-          done
-          for patch in ${TOOLS_DIR}/patches/extra/*patch; do
-            patch -p1 < ${patch}
+          for patch in ${TOOLS_DIR}/patches/standard/*patch ${TOOLS_DIR}/patches/extra/*patch; do
+            [[ -e ${patch} ]] && patch -p1 < ${patch}
           done
           # build ##############################################################
           cd "${TOOLS_DIR}"
