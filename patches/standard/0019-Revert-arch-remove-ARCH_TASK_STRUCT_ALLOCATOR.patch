@@ -1,7 +1,7 @@
-From 2516337e1d456555964db8f2ea96b87d7e62fbbb Mon Sep 17 00:00:00 2001
+From 450488bb7ac03b2f4b7341748fa709d77a0db5f6 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 16:45:16 +0100
-Subject: [PATCH 19/37] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
+Subject: [PATCH 19/38] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
 
 This reverts commit 3888750e21ccb909051c810cc79fcc0650a740f8.
 ---
@@ -10,10 +10,10 @@ This reverts commit 3888750e21ccb909051c810cc79fcc0650a740f8.
  2 files changed, 15 insertions(+)
 
 diff --git a/arch/Kconfig b/arch/Kconfig
-index 1cb62a4c2f8e..6cbb01077e21 100644
+index 95cfdb2d8c7e..1e7b2966cbad 100644
 --- a/arch/Kconfig
 +++ b/arch/Kconfig
-@@ -323,8 +323,17 @@ config ARCH_HAS_CPU_PASID
+@@ -324,8 +324,17 @@ config ARCH_HAS_CPU_PASID
  	bool
  	select IOMMU_MM_DATA
  
@@ -32,7 +32,7 @@ index 1cb62a4c2f8e..6cbb01077e21 100644
  	  An architecture should select this to provide hardened usercopy
  	  knowledge about what region of the thread_struct should be
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 1f12cd540d69..c132ffee8a74 100644
+index cc51333995d6..b3708cd3419f 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
 @@ -174,6 +174,7 @@ void __weak arch_release_task_struct(struct task_struct *tsk)

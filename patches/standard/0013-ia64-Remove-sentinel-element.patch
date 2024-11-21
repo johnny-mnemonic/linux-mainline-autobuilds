@@ -1,7 +1,7 @@
-From ebbacaa6e074c14e5692b78683f8dffc83aa061e Mon Sep 17 00:00:00 2001
+From 9d979f712a2cc4c3fbcbc84d0fb39723f0ae1ffd Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 13 Nov 2023 22:54:43 +0100
-Subject: [PATCH 13/37] ia64: Remove sentinel element
+Subject: [PATCH 13/38] ia64: Remove sentinel element
 
 See 426ee5196d1821d70192923e70c0f8347faade47.
 ---

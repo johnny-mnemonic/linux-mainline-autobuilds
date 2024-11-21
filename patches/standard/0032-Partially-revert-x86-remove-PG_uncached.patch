@@ -1,7 +1,7 @@
-From dae19098164a8deb9c67c186a24ef35819af48d3 Mon Sep 17 00:00:00 2001
+From e00cf8662aad76e53f23b1d8fb57038dca34616c Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 27 Sep 2024 14:29:04 +0200
-Subject: [PATCH 32/37] Partially revert "x86: remove PG_uncached"
+Subject: [PATCH 32/38] Partially revert "x86: remove PG_uncached"
 
 This partially reverts commit 7a87225ae2c6c317c7b80cf599e5cf0eee.
 ---
@@ -79,7 +79,7 @@ index 196778a087c4..7c587a711be1 100644
  #define KPF_ARCH_2		41
  #define KPF_ARCH_3		42
 diff --git a/include/linux/page-flags.h b/include/linux/page-flags.h
-index cc839e4365c1..d78a26a119f6 100644
+index 908ee0aad554..9a24ebe84649 100644
 --- a/include/linux/page-flags.h
 +++ b/include/linux/page-flags.h
 @@ -113,6 +113,9 @@ enum pageflags {

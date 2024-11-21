@@ -1,7 +1,7 @@
-From ce1cbc0323f4dfb7531f01fb753a73b9a3b577b8 Mon Sep 17 00:00:00 2001
+From 19976e68a6a22a497e4940747a56b5879134e22b Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
-Subject: [PATCH 05/37] Revert "arch: Remove Itanium (IA-64) architecture"
+Subject: [PATCH 05/38] Revert "arch: Remove Itanium (IA-64) architecture"
 
 This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
 ---
@@ -2993,7 +2993,7 @@ index 000000000000..1de70c305a79
 +    boot sequence to use this menu, and you will have to reset the
 +    box after changing console configuration.
 diff --git a/Documentation/core-api/cpu_hotplug.rst b/Documentation/core-api/cpu_hotplug.rst
-index a21dbf261be7..157b2139a4a1 100644
+index e1b0eeabbb5e..59fd6ed5e3f1 100644
 --- a/Documentation/core-api/cpu_hotplug.rst
 +++ b/Documentation/core-api/cpu_hotplug.rst
 @@ -40,6 +40,12 @@ Command Line Switches
@@ -3010,10 +3010,10 @@ index a21dbf261be7..157b2139a4a1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index b878ddc99f94..5f9b398c58a8 100644
+index 67d2159406c2..d5a6cc686e41 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -10787,6 +10787,12 @@ F:	drivers/i3c/
+@@ -10808,6 +10808,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3026,7 +3026,7 @@ index b878ddc99f94..5f9b398c58a8 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -17575,6 +17581,11 @@ S:	Maintained
+@@ -17607,6 +17613,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -64740,10 +64740,10 @@ index 000000000000..bb025486d791
 +}
 +
 diff --git a/drivers/acpi/Kconfig b/drivers/acpi/Kconfig
-index d67f63d93b2a..b8924077163b 100644
+index d65cd08ba8e1..60c8dbc4bcee 100644
 --- a/drivers/acpi/Kconfig
 +++ b/drivers/acpi/Kconfig
-@@ -262,7 +262,7 @@ config ACPI_CPU_FREQ_PSS
+@@ -271,7 +271,7 @@ config ACPI_CPU_FREQ_PSS
  config ACPI_PROCESSOR_CSTATE
  	def_bool y
  	depends on ACPI_PROCESSOR
@@ -64752,7 +64752,7 @@ index d67f63d93b2a..b8924077163b 100644
  
  config ACPI_PROCESSOR_IDLE
  	bool
-@@ -286,9 +286,9 @@ config ACPI_CPPC_LIB
+@@ -295,9 +295,9 @@ config ACPI_CPPC_LIB
  
  config ACPI_PROCESSOR
  	tristate "Processor"
@@ -64765,7 +64765,7 @@ index d67f63d93b2a..b8924077163b 100644
  	default y
  	help
 diff --git a/drivers/acpi/osl.c b/drivers/acpi/osl.c
-index 70af3fbbebe5..78a81969d90e 100644
+index fed446aace42..8ab1802c164b 100644
 --- a/drivers/acpi/osl.c
 +++ b/drivers/acpi/osl.c
 @@ -276,7 +276,7 @@ acpi_map_lookup_virt(void __iomem *virt, acpi_size size)
@@ -64778,10 +64778,10 @@ index 70af3fbbebe5..78a81969d90e 100644
  #define should_use_kmap(pfn)   0
  #else
 diff --git a/drivers/char/Kconfig b/drivers/char/Kconfig
-index 7c8dd0abcfdf..625af75833fc 100644
+index 8fb33c90482f..1866d173de9b 100644
 --- a/drivers/char/Kconfig
 +++ b/drivers/char/Kconfig
-@@ -348,7 +348,7 @@ config DEVPORT
+@@ -349,7 +349,7 @@ config DEVPORT
  	  device is similar to /dev/mem, but for I/O ports.
  
  config HPET
@@ -64790,7 +64790,7 @@ index 7c8dd0abcfdf..625af75833fc 100644
  	default n
  	depends on ACPI
  	help
-@@ -377,7 +377,7 @@ config HPET_MMAP_DEFAULT
+@@ -378,7 +378,7 @@ config HPET_MMAP_DEFAULT
  
  config HANGCHECK_TIMER
  	tristate "Hangcheck timer"
@@ -66081,7 +66081,7 @@ index 000000000000..15b240ea4848
 +MODULE_AUTHOR("Chris Ahna <Christopher.J.Ahna@intel.com>");
 +MODULE_LICENSE("GPL and additional rights");
 diff --git a/drivers/char/hpet.c b/drivers/char/hpet.c
-index e904e476e49a..2e0aa2df5677 100644
+index 48fe96ab4649..d86fdf67bc02 100644
 --- a/drivers/char/hpet.c
 +++ b/drivers/char/hpet.c
 @@ -64,6 +64,25 @@
@@ -66110,7 +66110,7 @@ index e904e476e49a..2e0aa2df5677 100644
  /* A lock for concurrent access by app and isr hpet activity. */
  static DEFINE_SPINLOCK(hpet_lock);
  
-@@ -909,6 +928,17 @@ int hpet_alloc(struct hpet_data *hdp)
+@@ -910,6 +929,17 @@ int hpet_alloc(struct hpet_data *hdp)
  
  	hpetp->hp_delta = hpet_calibrate(hpetp);
  
@@ -66129,7 +66129,7 @@ index e904e476e49a..2e0aa2df5677 100644
  }
  
 diff --git a/drivers/char/hw_random/Kconfig b/drivers/char/hw_random/Kconfig
-index b51d9e243f35..36e80d622265 100644
+index 17854f052386..0310216a6226 100644
 --- a/drivers/char/hw_random/Kconfig
 +++ b/drivers/char/hw_random/Kconfig
 @@ -37,7 +37,7 @@ config HW_RANDOM_TIMERIOMEM
@@ -66920,7 +66920,7 @@ index 7a8d486e718f..e7d1272a5f0f 100644
  obj-$(CONFIG_INTEL_STRATIX10_SERVICE) += stratix10-svc.o
  obj-$(CONFIG_INTEL_STRATIX10_RSU)     += stratix10-rsu.o
 diff --git a/drivers/firmware/efi/Kconfig b/drivers/firmware/efi/Kconfig
-index 72f2537d90ca..4a77a28f9ca6 100644
+index e312d731f4a3..b889d4cf14b2 100644
 --- a/drivers/firmware/efi/Kconfig
 +++ b/drivers/firmware/efi/Kconfig
 @@ -4,7 +4,7 @@ menu "EFI (Extensible Firmware Interface) Support"
@@ -66932,7 +66932,7 @@ index 72f2537d90ca..4a77a28f9ca6 100644
  	default y
  
  config EFI_VARS_PSTORE
-@@ -123,7 +123,7 @@ config EFI_BOOTLOADER_CONTROL
+@@ -121,7 +121,7 @@ config EFI_BOOTLOADER_CONTROL
  
  config EFI_CAPSULE_LOADER
  	tristate "EFI capsule loader"
@@ -66941,7 +66941,7 @@ index 72f2537d90ca..4a77a28f9ca6 100644
  	help
  	  This option exposes a loader interface "/dev/efi_capsule_loader" for
  	  users to load EFI capsules. This driver requires working runtime
-@@ -224,7 +224,7 @@ config EFI_DISABLE_PCI_DMA
+@@ -222,7 +222,7 @@ config EFI_DISABLE_PCI_DMA
  
  config EFI_EARLYCON
  	def_bool y
@@ -66951,7 +66951,7 @@ index 72f2537d90ca..4a77a28f9ca6 100644
  	select ARCH_USE_MEMREMAP_PROT
  
 diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
-index 70490bf2697b..4a145235c7a1 100644
+index 60c64b81d2c3..d4f1680ffe59 100644
 --- a/drivers/firmware/efi/efi.c
 +++ b/drivers/firmware/efi/efi.c
 @@ -148,7 +148,7 @@ static ssize_t systab_show(struct kobject *kobj,
@@ -66963,7 +66963,7 @@ index 70490bf2697b..4a145235c7a1 100644
  		str = efi_systab_show_arch(str);
  
  	return str - buf;
-@@ -828,6 +828,7 @@ int __init efi_systab_check_header(const efi_table_hdr_t *systab_hdr)
+@@ -843,6 +843,7 @@ int __init efi_systab_check_header(const efi_table_hdr_t *systab_hdr)
  	return 0;
  }
  
@@ -66971,7 +66971,7 @@ index 70490bf2697b..4a145235c7a1 100644
  static const efi_char16_t *__init map_fw_vendor(unsigned long fw_vendor,
  						size_t size)
  {
-@@ -843,6 +844,10 @@ static void __init unmap_fw_vendor(const void *fw_vendor, size_t size)
+@@ -858,6 +859,10 @@ static void __init unmap_fw_vendor(const void *fw_vendor, size_t size)
  {
  	early_memunmap((void *)fw_vendor, size);
  }
@@ -66982,7 +66982,7 @@ index 70490bf2697b..4a145235c7a1 100644
  
  void __init efi_systab_report_header(const efi_table_hdr_t *systab_hdr,
  				     unsigned long fw_vendor)
-@@ -945,6 +950,11 @@ char * __init efi_md_typeattr_format(char *buf, size_t size,
+@@ -960,6 +965,11 @@ char * __init efi_md_typeattr_format(char *buf, size_t size,
  	return buf;
  }
  
@@ -66994,7 +66994,7 @@ index 70490bf2697b..4a145235c7a1 100644
  /*
   * efi_mem_attributes - lookup memmap attributes for physical address
   * @phys_addr: the physical address to lookup
-@@ -992,6 +1002,7 @@ int efi_mem_type(unsigned long phys_addr)
+@@ -1007,6 +1017,7 @@ int efi_mem_type(unsigned long phys_addr)
  	}
  	return -EINVAL;
  }
@@ -67324,20 +67324,20 @@ index 88fd32a9323c..fbba0a9e364a 100644
  	select IOMMU_IOVA
  	select IOMMUFD_DRIVER if IOMMUFD
 diff --git a/drivers/media/cec/platform/Kconfig b/drivers/media/cec/platform/Kconfig
-index ede81fe331b0..b672d3142eb7 100644
+index e40413609f53..1a6acd27438d 100644
 --- a/drivers/media/cec/platform/Kconfig
 +++ b/drivers/media/cec/platform/Kconfig
 @@ -99,7 +99,7 @@ config CEC_TEGRA
  
  config CEC_SECO
  	tristate "SECO Boards HDMI CEC driver"
--	depends on X86 || COMPILE_TEST
-+	depends on (X86 || IA64) || COMPILE_TEST
+-	depends on X86 || (COMPILE_TEST && HAS_IOPORT)
++	depends on (X86 || IA64) || (COMPILE_TEST && HAS_IOPORT)
  	depends on PCI && DMI
  	select CEC_CORE
  	select CEC_NOTIFIER
 diff --git a/drivers/misc/Kconfig b/drivers/misc/Kconfig
-index 3fe7e2a9bd29..15a9ac659c88 100644
+index 902c306bc972..9e94808af225 100644
 --- a/drivers/misc/Kconfig
 +++ b/drivers/misc/Kconfig
 @@ -176,7 +176,7 @@ config ENCLOSURE_SERVICES
@@ -67852,7 +67852,7 @@ index 78748e8d2dba..feca96fc4255 100644
  	u64 size = screen_info.lfb_size;
  	struct resource *r;
 diff --git a/drivers/tty/serial/8250/Kconfig b/drivers/tty/serial/8250/Kconfig
-index 47ff50763c04..8b9a65edac00 100644
+index 1eb20350fcf4..281c74c696b6 100644
 --- a/drivers/tty/serial/8250/Kconfig
 +++ b/drivers/tty/serial/8250/Kconfig
 @@ -223,7 +223,7 @@ config SERIAL_8250_EXTENDED
@@ -67891,10 +67891,10 @@ index de035071fedb..013865fdcecc 100644
  	select DRM_PANEL_ORIENTATION_QUIRKS
  	select FB_IOMEM_HELPERS
 diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-index 684b9fe84fff..85716e58487b 100644
+index 2333476a42c0..a3da6915ba1a 100644
 --- a/drivers/watchdog/Kconfig
 +++ b/drivers/watchdog/Kconfig
-@@ -1333,7 +1333,7 @@ config INTEL_MID_WATCHDOG
+@@ -1343,7 +1343,7 @@ config INTEL_MID_WATCHDOG
  
  config ITCO_WDT
  	tristate "Intel TCO Timer/Watchdog"
@@ -67943,7 +67943,7 @@ index 052d0e888c27..c14852362fce 100644
  #define __compat_packed __attribute__((packed))
  #else
 diff --git a/include/linux/acpi.h b/include/linux/acpi.h
-index 4d5ee84c468b..399d34da5c6a 100644
+index 7dd24acd9ffe..79e00a91ab34 100644
 --- a/include/linux/acpi.h
 +++ b/include/linux/acpi.h
 @@ -238,7 +238,10 @@ acpi_table_parse_cedt(enum acpi_cedt_type id,
@@ -67975,7 +67975,7 @@ index 4d5ee84c468b..399d34da5c6a 100644
  #endif
  
 diff --git a/include/linux/efi.h b/include/linux/efi.h
-index e28d88066033..c0295bef3771 100644
+index e5815867aba9..69171c10e1fe 100644
 --- a/include/linux/efi.h
 +++ b/include/linux/efi.h
 @@ -359,10 +359,13 @@ void efi_native_runtime_setup(void);
@@ -67992,7 +67992,7 @@ index e28d88066033..c0295bef3771 100644
  #define UGA_IO_PROTOCOL_GUID			EFI_GUID(0x61a4d49e, 0x6f68, 0x4f1b,  0xb9, 0x22, 0xa8, 0x6e, 0xed, 0x0b, 0x07, 0xa2)
  #define EFI_GLOBAL_VARIABLE_GUID		EFI_GUID(0x8be4df61, 0x93ca, 0x11d2,  0xaa, 0x0d, 0x00, 0xe0, 0x98, 0x03, 0x2b, 0x8c)
  #define UV_SYSTEM_TABLE_GUID			EFI_GUID(0x3b13a7d4, 0x633e, 0x11dd,  0x93, 0xec, 0xda, 0x25, 0x56, 0xd8, 0x95, 0x93)
-@@ -859,6 +862,10 @@ static inline int efi_range_is_wc(unsigned long start, unsigned long len)
+@@ -849,6 +852,10 @@ static inline int efi_range_is_wc(unsigned long start, unsigned long len)
  	return 1;
  }
  
@@ -68004,10 +68004,10 @@ index e28d88066033..c0295bef3771 100644
   * We play games with efi_enabled so that the compiler will, if
   * possible, remove EFI-related code altogether.
 diff --git a/include/linux/mm.h b/include/linux/mm.h
-index 61fff5d34ed5..b38792ad77ba 100644
+index feb5c8021bef..264daadd53c4 100644
 --- a/include/linux/mm.h
 +++ b/include/linux/mm.h
-@@ -375,6 +375,8 @@ extern unsigned int kobjsize(const void *objp);
+@@ -387,6 +387,8 @@ extern unsigned int kobjsize(const void *objp);
  # define VM_SAO		VM_ARCH_1	/* Strong Access Ordering (powerpc) */
  #elif defined(CONFIG_PARISC)
  # define VM_GROWSUP	VM_ARCH_1
@@ -68043,7 +68043,7 @@ index bb8a59c6caa2..6f9c3dceff32 100644
  #elif !defined(CONFIG_MMU)
  #define __VM_ARCH_SPECIFIC_1 {VM_MAPPED_COPY,"mappedcopy"	}
 diff --git a/kernel/cpu.c b/kernel/cpu.c
-index d293d52a3e00..53cea7e55288 100644
+index 6e34b52cb5ce..b50b418bea0d 100644
 --- a/kernel/cpu.c
 +++ b/kernel/cpu.c
 @@ -1701,6 +1701,9 @@ static int cpu_up(unsigned int cpu, enum cpuhp_state target)
@@ -68057,10 +68057,10 @@ index d293d52a3e00..53cea7e55288 100644
  	}
  
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 22f43721d031..3c1e782e9abd 100644
+index e58d27c05788..ab7871a791ff 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -3019,7 +3019,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
+@@ -3020,7 +3020,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
  		if (!access_ok((void __user *)kargs->stack, kargs->stack_size))
  			return false;
  
@@ -68070,10 +68070,10 @@ index 22f43721d031..3c1e782e9abd 100644
  #endif
  	}
 diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index a1c353a62c56..466696333a03 100644
+index 95e40895a519..4bbe7a9efbbb 100644
 --- a/kernel/sched/core.c
 +++ b/kernel/sched/core.c
-@@ -8758,9 +8758,9 @@ void normalize_rt_tasks(void)
+@@ -8860,9 +8860,9 @@ void normalize_rt_tasks(void)
  
  #endif /* CONFIG_MAGIC_SYSRQ */
  
@@ -68085,7 +68085,7 @@ index a1c353a62c56..466696333a03 100644
   *
   * They can only be called when the whole system has been
   * stopped - every CPU needs to be quiescent, and no scheduling
-@@ -8782,7 +8782,30 @@ struct task_struct *curr_task(int cpu)
+@@ -8884,7 +8884,30 @@ struct task_struct *curr_task(int cpu)
  	return cpu_curr(cpu);
  }
  
@@ -68138,7 +68138,7 @@ index 79e6cb1d5c48..c6afa709254f 100644
  	{
  		.procname	= "max_lock_depth",
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index 7312ae7c3cc5..0e7c4b0664d6 100644
+index 652ec5f5fdfb..c354f0dc2903 100644
 --- a/lib/Kconfig.debug
 +++ b/lib/Kconfig.debug
 @@ -781,7 +781,7 @@ config SHRINKER_DEBUG

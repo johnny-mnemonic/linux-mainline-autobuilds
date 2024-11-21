@@ -1,8 +1,8 @@
-From 7d0d98f58faf3a843780a50414ba495eecb26ce9 Mon Sep 17 00:00:00 2001
+From 1548ef9eb1902bdd96503887425162462cd1f00f Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 20 Nov 2024 11:15:14 +0100
-Subject: [PATCH] Revert "sched: remove unused __HAVE_THREAD_FUNCTIONS hook
- support"
+Subject: [PATCH 38/38] Revert "sched: remove unused __HAVE_THREAD_FUNCTIONS
+ hook support"
 
 This reverts commit 5e9f0c4819deb9459f32f12c4fd2b47993b8c395.
 ---
@@ -11,10 +11,10 @@ This reverts commit 5e9f0c4819deb9459f32f12c4fd2b47993b8c395.
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/include/linux/sched.h b/include/linux/sched.h
-index ae39af43290c..85edf067a961 100644
+index d6e047f8a58b..cde08c33cb4e 100644
 --- a/include/linux/sched.h
 +++ b/include/linux/sched.h
-@@ -1900,7 +1900,7 @@ extern unsigned long init_stack[THREAD_SIZE / sizeof(unsigned long)];
+@@ -1901,7 +1901,7 @@ extern unsigned long init_stack[THREAD_SIZE / sizeof(unsigned long)];
  
  #ifdef CONFIG_THREAD_INFO_IN_TASK
  # define task_thread_info(task)	(&(task)->thread_info)

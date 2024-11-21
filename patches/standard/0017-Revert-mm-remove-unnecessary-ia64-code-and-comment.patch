@@ -1,7 +1,7 @@
-From b7da0fb2d3294c7229293ea4b31bb7a0c2b7d15c Mon Sep 17 00:00:00 2001
+From 5943107674cd48ee9eaae5466892a8b474ddedec Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 14:21:54 +0100
-Subject: [PATCH 17/37] Revert "mm: remove unnecessary ia64 code and comment"
+Subject: [PATCH 17/38] Revert "mm: remove unnecessary ia64 code and comment"
 
 This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
 ---
@@ -12,7 +12,7 @@ This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
  4 files changed, 42 insertions(+), 22 deletions(-)
 
 diff --git a/mm/Kconfig b/mm/Kconfig
-index 33fa51d608dc..13862edde680 100644
+index 84000b016808..e67060d4795c 100644
 --- a/mm/Kconfig
 +++ b/mm/Kconfig
 @@ -749,7 +749,7 @@ config DEFAULT_MMAP_MIN_ADDR
