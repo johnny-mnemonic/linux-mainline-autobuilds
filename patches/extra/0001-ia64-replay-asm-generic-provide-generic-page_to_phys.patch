@@ -1,0 +1,26 @@
+From a9f67bb7e13a4d3f0027c8d6022ec90dfa7003e5 Mon Sep 17 00:00:00 2001
+From: Johnny Mnemonic <jm@machine-hall.org>
+Date: Fri, 22 Nov 2024 10:52:39 +0100
+Subject: [PATCH] ia64: replay "asm-generic: provide generic page_to_phys
+ [...]"
+
+See c5c3238d9b8cee58cd4b08bbbe9347a94a566390.
+---
+ arch/ia64/include/asm/page.h | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/arch/ia64/include/asm/page.h b/arch/ia64/include/asm/page.h
+index 310b09c3342d..dc6f0f2268be 100644
+--- a/arch/ia64/include/asm/page.h
++++ b/arch/ia64/include/asm/page.h
+@@ -95,7 +95,6 @@ do {						\
+ 
+ #include <asm-generic/memory_model.h>
+ 
+-#define page_to_phys(page)	(page_to_pfn(page) << PAGE_SHIFT)
+ #define virt_to_page(kaddr)	pfn_to_page(__pa(kaddr) >> PAGE_SHIFT)
+ #define pfn_to_kaddr(pfn)	__va((pfn) << PAGE_SHIFT)
+ 
+-- 
+2.25.1
+
