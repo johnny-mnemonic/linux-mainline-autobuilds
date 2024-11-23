@@ -1,7 +1,7 @@
-From 19976e68a6a22a497e4940747a56b5879134e22b Mon Sep 17 00:00:00 2001
+From cda45548f96cd1d690764f09f2c3cd00ecfbc179 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
-Subject: [PATCH 05/38] Revert "arch: Remove Itanium (IA-64) architecture"
+Subject: [PATCH 05/40] Revert "arch: Remove Itanium (IA-64) architecture"
 
 This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
 ---
@@ -3010,10 +3010,10 @@ index e1b0eeabbb5e..59fd6ed5e3f1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 67d2159406c2..d5a6cc686e41 100644
+index bebd3436b590..0af64ca0df06 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -10808,6 +10808,12 @@ F:	drivers/i3c/
+@@ -10839,6 +10839,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3026,7 +3026,7 @@ index 67d2159406c2..d5a6cc686e41 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -17607,6 +17613,11 @@ S:	Maintained
+@@ -17660,6 +17666,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -67289,7 +67289,7 @@ index 5f61672d55b7..adb5173372d3 100644
  #else
  #include "i8042-io.h"
 diff --git a/drivers/iommu/Kconfig b/drivers/iommu/Kconfig
-index b3aa1f5d5321..7baba9d60f0c 100644
+index 0c9bceb1653d..fadc940f38e6 100644
 --- a/drivers/iommu/Kconfig
 +++ b/drivers/iommu/Kconfig
 @@ -95,7 +95,7 @@ config IOMMU_DEBUGFS
@@ -67800,10 +67800,10 @@ index 2f03a7080d96..fff522d347e3 100644
  }
  
 diff --git a/drivers/net/ethernet/broadcom/tg3.c b/drivers/net/ethernet/broadcom/tg3.c
-index 378815917741..f217bcdd6a24 100644
+index 01dfec115942..8a7bca674c86 100644
 --- a/drivers/net/ethernet/broadcom/tg3.c
 +++ b/drivers/net/ethernet/broadcom/tg3.c
-@@ -17114,7 +17114,7 @@ static u32 tg3_calc_dma_bndry(struct tg3 *tp, u32 val)
+@@ -17152,7 +17152,7 @@ static u32 tg3_calc_dma_bndry(struct tg3 *tp, u32 val)
  	    !tg3_flag(tp, PCI_EXPRESS))
  		goto out;
  
@@ -67813,7 +67813,7 @@ index 378815917741..f217bcdd6a24 100644
  #else
  #if defined(CONFIG_SPARC64) || defined(CONFIG_ALPHA)
 diff --git a/drivers/net/ethernet/brocade/bna/bnad.h b/drivers/net/ethernet/brocade/bna/bnad.h
-index 10b1e534030e..627a93ce38ab 100644
+index 4396997c59d0..cde76a4b5ffe 100644
 --- a/drivers/net/ethernet/brocade/bna/bnad.h
 +++ b/drivers/net/ethernet/brocade/bna/bnad.h
 @@ -19,6 +19,7 @@
@@ -67904,10 +67904,10 @@ index 2333476a42c0..a3da6915ba1a 100644
  	depends on I2C || I2C=n
  	depends on MFD_INTEL_PMC_BXT || !MFD_INTEL_PMC_BXT
 diff --git a/fs/Kconfig b/fs/Kconfig
-index aae170fc2795..542c2de4fa0f 100644
+index 64d420e3c475..c97c5eb6921f 100644
 --- a/fs/Kconfig
 +++ b/fs/Kconfig
-@@ -257,7 +257,7 @@ config ARCH_SUPPORTS_HUGETLBFS
+@@ -256,7 +256,7 @@ config ARCH_SUPPORTS_HUGETLBFS
  
  menuconfig HUGETLBFS
  	bool "HugeTLB file system support"
@@ -68004,7 +68004,7 @@ index e5815867aba9..69171c10e1fe 100644
   * We play games with efi_enabled so that the compiler will, if
   * possible, remove EFI-related code altogether.
 diff --git a/include/linux/mm.h b/include/linux/mm.h
-index feb5c8021bef..264daadd53c4 100644
+index 673771f34674..4aed5abe94d8 100644
 --- a/include/linux/mm.h
 +++ b/include/linux/mm.h
 @@ -387,6 +387,8 @@ extern unsigned int kobjsize(const void *objp);
@@ -68138,7 +68138,7 @@ index 79e6cb1d5c48..c6afa709254f 100644
  	{
  		.procname	= "max_lock_depth",
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index 652ec5f5fdfb..c354f0dc2903 100644
+index a2fe6d5cfbd2..9d43553c154e 100644
 --- a/lib/Kconfig.debug
 +++ b/lib/Kconfig.debug
 @@ -781,7 +781,7 @@ config SHRINKER_DEBUG

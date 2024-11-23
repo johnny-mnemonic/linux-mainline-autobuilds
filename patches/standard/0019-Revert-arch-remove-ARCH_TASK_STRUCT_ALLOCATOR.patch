@@ -1,7 +1,7 @@
-From 450488bb7ac03b2f4b7341748fa709d77a0db5f6 Mon Sep 17 00:00:00 2001
+From 7eee92547b505a523b87f0e6d15360c895de8f75 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 16:45:16 +0100
-Subject: [PATCH 19/38] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
+Subject: [PATCH 19/40] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
 
 This reverts commit 3888750e21ccb909051c810cc79fcc0650a740f8.
 ---

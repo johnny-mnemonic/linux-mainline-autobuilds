@@ -1,7 +1,7 @@
-From 4dc1e037b29662958c28236402177917b65b06aa Mon Sep 17 00:00:00 2001
+From aff5f36d2d21d47422812303ac8767b97b318ebf Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
-Subject: [PATCH 01/38] Revert "Documentation: Drop or replace remaining
+Subject: [PATCH 01/40] Revert "Documentation: Drop or replace remaining
  mentions of IA64"
 
 This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
@@ -181,7 +181,7 @@ index 0f714fc945ac..63a4c5deb156 100644
  =====
  
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 2e66fef83468..fac4db0968c5 100644
+index 9cd9cd06538b..2c667182d52d 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
 @@ -1503,7 +1503,7 @@
@@ -193,7 +193,7 @@ index 2e66fef83468..fac4db0968c5 100644
  			Specifies physical address of start of kernel core
  			image elf header and optionally the size. Generally
  			kexec loader will pass this option to capture kernel.
-@@ -1566,6 +1566,12 @@
+@@ -1567,6 +1567,12 @@
  	floppy=		[HW]
  			See Documentation/admin-guide/blockdev/floppy.rst.
  

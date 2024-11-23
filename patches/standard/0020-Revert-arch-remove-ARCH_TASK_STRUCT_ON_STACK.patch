@@ -1,7 +1,7 @@
-From 961fa285a2f827040c2f4a878faad571cff95334 Mon Sep 17 00:00:00 2001
+From 17f816b97234ab6ae6e6b2ad76525fa4b43ea073 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 12 Jan 2024 19:11:18 +0100
-Subject: [PATCH 20/38] Revert "arch: remove ARCH_TASK_STRUCT_ON_STACK"
+Subject: [PATCH 20/40] Revert "arch: remove ARCH_TASK_STRUCT_ON_STACK"
 
 This reverts commit 0eb5085c38749f2a91e5bd8cbebb1ebf3398343c.
 ---
