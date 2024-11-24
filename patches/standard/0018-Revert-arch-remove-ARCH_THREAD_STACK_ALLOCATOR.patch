@@ -1,7 +1,7 @@
-From aa15ae2e501709196ad1afa0542091ae1a63ecde Mon Sep 17 00:00:00 2001
+From 20b71599addf292b3eac16b384f61981094c5374 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 12 Jan 2024 18:54:34 +0100
-Subject: [PATCH 18/40] Revert "arch: remove ARCH_THREAD_STACK_ALLOCATOR"
+Subject: [PATCH 18/41] Revert "arch: remove ARCH_THREAD_STACK_ALLOCATOR"
 
 This reverts commit f72709ab69430d986dfc5a08c9a86f625e3fed33.
 ---
@@ -10,7 +10,7 @@ This reverts commit f72709ab69430d986dfc5a08c9a86f625e3fed33.
  2 files changed, 24 insertions(+)
 
 diff --git a/arch/Kconfig b/arch/Kconfig
-index de5200eb55d1..95cfdb2d8c7e 100644
+index 832f68af7c77..21c06d6ecf55 100644
 --- a/arch/Kconfig
 +++ b/arch/Kconfig
 @@ -334,6 +334,10 @@ config HAVE_ARCH_THREAD_STRUCT_WHITELIST
@@ -25,10 +25,10 @@ index de5200eb55d1..95cfdb2d8c7e 100644
  config ARCH_WANTS_DYNAMIC_TASK_STRUCT
  	bool
 diff --git a/kernel/fork.c b/kernel/fork.c
-index ab7871a791ff..cc51333995d6 100644
+index f6cbb8242d54..5cf295bf4146 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -186,6 +186,8 @@ static inline void free_task_struct(struct task_struct *tsk)
+@@ -185,6 +185,8 @@ static inline void free_task_struct(struct task_struct *tsk)
  	kmem_cache_free(task_struct_cachep, tsk);
  }
  
@@ -37,7 +37,7 @@ index ab7871a791ff..cc51333995d6 100644
  /*
   * Allocate pages if THREAD_SIZE is >= PAGE_SIZE, otherwise use a
   * kmemcache based allocator.
-@@ -418,6 +420,24 @@ void thread_stack_cache_init(void)
+@@ -417,6 +419,24 @@ void thread_stack_cache_init(void)
  }
  
  # endif /* THREAD_SIZE >= PAGE_SIZE || defined(CONFIG_VMAP_STACK) */
