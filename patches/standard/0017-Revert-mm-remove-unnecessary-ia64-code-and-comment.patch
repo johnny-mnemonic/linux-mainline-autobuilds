@@ -1,7 +1,7 @@
 From 08ca9bf8aa70cfc969a191d8192828766637ba4d Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 14:21:54 +0100
-Subject: [PATCH 17/41] Revert "mm: remove unnecessary ia64 code and comment"
+Subject: [PATCH 17/42] Revert "mm: remove unnecessary ia64 code and comment"
 
 This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
 ---
