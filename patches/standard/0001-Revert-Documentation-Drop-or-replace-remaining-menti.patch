@@ -1,7 +1,7 @@
 From 2486e8435cf74b76cdca6ce8fe1dc7e77b517b5d Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
-Subject: [PATCH 01/42] Revert "Documentation: Drop or replace remaining
+Subject: [PATCH 01/43] Revert "Documentation: Drop or replace remaining
  mentions of IA64"
 
 This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
