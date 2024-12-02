@@ -1,7 +1,7 @@
-From 66f8d1ba63dcfce4568f68d2a0ad7a7c79d83489 Mon Sep 17 00:00:00 2001
+From ce1f29b200d7ee8139d47b64a56c844d1f8e0619 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sun, 24 Nov 2024 09:55:19 +0100
-Subject: [PATCH 42/43] ia64: replay "asm-generic: introduce text-patching.h"
+Subject: [PATCH 42/44] ia64: replay "asm-generic: introduce text-patching.h"
 
 See 0c3beacf681ec897e0b36685a9b49d01f5cb2dfb.
 ---

@@ -1,7 +1,7 @@
-From 2486e8435cf74b76cdca6ce8fe1dc7e77b517b5d Mon Sep 17 00:00:00 2001
+From d651b97d2b8d6fa90389edc22fd15964bccaaefc Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
-Subject: [PATCH 01/43] Revert "Documentation: Drop or replace remaining
+Subject: [PATCH 01/44] Revert "Documentation: Drop or replace remaining
  mentions of IA64"
 
 This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
@@ -181,7 +181,7 @@ index 0f714fc945ac..63a4c5deb156 100644
  =====
  
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index a4736ee87b1a..0e388784ce72 100644
+index dc663c0ca670..c614f9b7e72a 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
 @@ -1503,7 +1503,7 @@
@@ -220,10 +220,10 @@ index cb2c080f400c..4ffdc928a720 100644
  Memory Hot(Un)Plug Granularity
  ------------------------------
 diff --git a/Documentation/admin-guide/sysctl/kernel.rst b/Documentation/admin-guide/sysctl/kernel.rst
-index f8bc1630eba0..a710c59b75df 100644
+index b2b36d0c3094..d1ccc6d21c08 100644
 --- a/Documentation/admin-guide/sysctl/kernel.rst
 +++ b/Documentation/admin-guide/sysctl/kernel.rst
-@@ -454,8 +454,8 @@ ignore-unaligned-usertrap
+@@ -463,8 +463,8 @@ ignore-unaligned-usertrap
  
  On architectures where unaligned accesses cause traps, and where this
  feature is supported (``CONFIG_SYSCTL_ARCH_UNALIGN_NO_WARN``;
@@ -234,7 +234,7 @@ index f8bc1630eba0..a710c59b75df 100644
  
  = =============================================================
  0 Log all unaligned accesses.
-@@ -463,7 +463,10 @@ unaligned traps are logged.
+@@ -472,7 +472,10 @@ unaligned traps are logged.
    setting.
  = =============================================================
  
@@ -246,7 +246,7 @@ index f8bc1630eba0..a710c59b75df 100644
  
  io_uring_disabled
  =================
-@@ -1563,6 +1566,22 @@ See Documentation/admin-guide/kernel-parameters.rst and
+@@ -1572,6 +1575,22 @@ See Documentation/admin-guide/kernel-parameters.rst and
  Documentation/trace/boottime-trace.rst.
  
  
@@ -313,7 +313,7 @@ index cb3d3228dfc8..981ad4f89fd3 100644
  At least LSI FW643e and FW643e2 controllers are known to support access to
  physical addresses above 4 GB, but this feature is currently not enabled by
 diff --git a/Documentation/kbuild/makefiles.rst b/Documentation/kbuild/makefiles.rst
-index 7964e0c245ae..8e950c8d1b0e 100644
+index d36519f194dc..a348d4becaae 100644
 --- a/Documentation/kbuild/makefiles.rst
 +++ b/Documentation/kbuild/makefiles.rst
 @@ -53,7 +53,7 @@ knowledge about the kernel Makefiles, plus detailed knowledge about the
@@ -425,10 +425,10 @@ index b2ac3c743a3a..ce3f39d9b3cb 100644
  sparc - 在这一点上，IRQ是开着的（？），把local_irq_save改为_disable。
        - 待办事项: 需要第二个CPU来禁用抢占 (参考 #1)
 diff --git a/Makefile b/Makefile
-index 68a8faff2543..e028bf75e596 100644
+index 93ab62cef244..5a6a4d92e6db 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -366,7 +366,7 @@ include $(srctree)/scripts/subarch.include
+@@ -391,7 +391,7 @@ include $(srctree)/scripts/subarch.include
  # When performing cross compilation for other architectures ARCH shall be set
  # to the target architecture. (See arch/* for the possibilities).
  # ARCH can be set during invocation of make:
@@ -437,7 +437,7 @@ index 68a8faff2543..e028bf75e596 100644
  # Another way is to have ARCH set in the environment.
  # The default ARCH is the host where make is executed.
  
-@@ -374,7 +374,7 @@ include $(srctree)/scripts/subarch.include
+@@ -399,7 +399,7 @@ include $(srctree)/scripts/subarch.include
  # during compilation. Only gcc and related bin-utils executables
  # are prefixed with $(CROSS_COMPILE).
  # CROSS_COMPILE can be set on the command line

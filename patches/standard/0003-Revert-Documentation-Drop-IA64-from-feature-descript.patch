@@ -1,7 +1,7 @@
-From 9cd0cbd8297525422c0589e08df75a6ab20a9fda Mon Sep 17 00:00:00 2001
+From 6fe39711a10e040fd4771336e0896cfe04c96a80 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:48 +0200
-Subject: [PATCH 03/43] Revert "Documentation: Drop IA64 from feature
+Subject: [PATCH 03/44] Revert "Documentation: Drop IA64 from feature
  descriptions"
 
 This reverts commit af1f459233d4edeef634f559539e7f4b64cb1d25.
@@ -326,7 +326,7 @@ index b286a5fff283..5deb845477e4 100644
      |        m68k: | TODO |
      |  microblaze: | TODO |
 diff --git a/Documentation/features/locking/queued-spinlocks/arch-support.txt b/Documentation/features/locking/queued-spinlocks/arch-support.txt
-index 22f2990392ff..2d3961bfef5d 100644
+index cf26042480e2..963ee9c75752 100644
 --- a/Documentation/features/locking/queued-spinlocks/arch-support.txt
 +++ b/Documentation/features/locking/queued-spinlocks/arch-support.txt
 @@ -12,6 +12,7 @@
