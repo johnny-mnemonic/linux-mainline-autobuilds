@@ -1,7 +1,7 @@
-From db311960bb2067c3b1ef373e21485efd933d47d5 Mon Sep 17 00:00:00 2001
+From 80133ef11ce94aee7df9dd73cf6d1971d490f047 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
-Subject: [PATCH 05/44] Revert "arch: Remove Itanium (IA-64) architecture"
+Subject: [PATCH 05/53] Revert "arch: Remove Itanium (IA-64) architecture"
 
 This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
 ---
@@ -3010,10 +3010,10 @@ index e1b0eeabbb5e..59fd6ed5e3f1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 1e930c7a58b1..a0fee9e1a145 100644
+index a87ddad78e26..bdfc400cde22 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -10904,6 +10904,12 @@ F:	drivers/i3c/
+@@ -10902,6 +10902,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -64740,7 +64740,7 @@ index 000000000000..bb025486d791
 +}
 +
 diff --git a/drivers/acpi/Kconfig b/drivers/acpi/Kconfig
-index d65cd08ba8e1..60c8dbc4bcee 100644
+index d81b55f5068c..25a5e72b9313 100644
 --- a/drivers/acpi/Kconfig
 +++ b/drivers/acpi/Kconfig
 @@ -271,7 +271,7 @@ config ACPI_CPU_FREQ_PSS
@@ -66920,7 +66920,7 @@ index 7a8d486e718f..e7d1272a5f0f 100644
  obj-$(CONFIG_INTEL_STRATIX10_SERVICE) += stratix10-svc.o
  obj-$(CONFIG_INTEL_STRATIX10_RSU)     += stratix10-rsu.o
 diff --git a/drivers/firmware/efi/Kconfig b/drivers/firmware/efi/Kconfig
-index e312d731f4a3..b889d4cf14b2 100644
+index 5fe61b9ab5f9..4d292e1ab4cb 100644
 --- a/drivers/firmware/efi/Kconfig
 +++ b/drivers/firmware/efi/Kconfig
 @@ -4,7 +4,7 @@ menu "EFI (Extensible Firmware Interface) Support"
@@ -66932,7 +66932,7 @@ index e312d731f4a3..b889d4cf14b2 100644
  	default y
  
  config EFI_VARS_PSTORE
-@@ -121,7 +121,7 @@ config EFI_BOOTLOADER_CONTROL
+@@ -117,7 +117,7 @@ config EFI_BOOTLOADER_CONTROL
  
  config EFI_CAPSULE_LOADER
  	tristate "EFI capsule loader"
@@ -66941,7 +66941,7 @@ index e312d731f4a3..b889d4cf14b2 100644
  	help
  	  This option exposes a loader interface "/dev/efi_capsule_loader" for
  	  users to load EFI capsules. This driver requires working runtime
-@@ -222,7 +222,7 @@ config EFI_DISABLE_PCI_DMA
+@@ -218,7 +218,7 @@ config EFI_DISABLE_PCI_DMA
  
  config EFI_EARLYCON
  	def_bool y
@@ -67878,7 +67878,7 @@ index 804355da46f5..c6a8a2dc49c7 100644
      defined(CONFIG_PARISC) || defined(CONFIG_SUPERH) ||\
      (defined(CONFIG_ARM) && defined(CONFIG_KEYBOARD_ATKBD) && !defined(CONFIG_ARCH_RPC))
 diff --git a/drivers/video/fbdev/Kconfig b/drivers/video/fbdev/Kconfig
-index de035071fedb..013865fdcecc 100644
+index 55c6686f091e..aa681266c68f 100644
 --- a/drivers/video/fbdev/Kconfig
 +++ b/drivers/video/fbdev/Kconfig
 @@ -435,7 +435,7 @@ config FB_VESA
@@ -67891,10 +67891,10 @@ index de035071fedb..013865fdcecc 100644
  	select DRM_PANEL_ORIENTATION_QUIRKS
  	select FB_IOMEM_HELPERS
 diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-index 2333476a42c0..a3da6915ba1a 100644
+index f81705f8539a..a6a5e0683d78 100644
 --- a/drivers/watchdog/Kconfig
 +++ b/drivers/watchdog/Kconfig
-@@ -1343,7 +1343,7 @@ config INTEL_MID_WATCHDOG
+@@ -1352,7 +1352,7 @@ config INTEL_MID_WATCHDOG
  
  config ITCO_WDT
  	tristate "Intel TCO Timer/Watchdog"
@@ -67943,7 +67943,7 @@ index 052d0e888c27..c14852362fce 100644
  #define __compat_packed __attribute__((packed))
  #else
 diff --git a/include/linux/acpi.h b/include/linux/acpi.h
-index 05f39fbfa485..a78b14855105 100644
+index 6adcd1b92b20..ac3d4af04de3 100644
 --- a/include/linux/acpi.h
 +++ b/include/linux/acpi.h
 @@ -238,7 +238,10 @@ acpi_table_parse_cedt(enum acpi_cedt_type id,
@@ -68004,10 +68004,10 @@ index e5815867aba9..69171c10e1fe 100644
   * We play games with efi_enabled so that the compiler will, if
   * possible, remove EFI-related code altogether.
 diff --git a/include/linux/mm.h b/include/linux/mm.h
-index c39c4945946c..5721a9e0d109 100644
+index b1c3db9cf355..0431f14a74cd 100644
 --- a/include/linux/mm.h
 +++ b/include/linux/mm.h
-@@ -387,6 +387,8 @@ extern unsigned int kobjsize(const void *objp);
+@@ -388,6 +388,8 @@ extern unsigned int kobjsize(const void *objp);
  # define VM_SAO		VM_ARCH_1	/* Strong Access Ordering (powerpc) */
  #elif defined(CONFIG_PARISC)
  # define VM_GROWSUP	VM_ARCH_1
@@ -68057,10 +68057,10 @@ index b605334f8ee6..5099581f054d 100644
  	}
  
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 1450b461d196..a607df190172 100644
+index 9b301180fd41..2e08fcea70f6 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -3040,7 +3040,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
+@@ -3039,7 +3039,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
  		if (!access_ok((void __user *)kargs->stack, kargs->stack_size))
  			return false;
  
@@ -68070,7 +68070,7 @@ index 1450b461d196..a607df190172 100644
  #endif
  	}
 diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index 95e40895a519..4bbe7a9efbbb 100644
+index 3e5a6bf587f9..68e1ad3569f9 100644
 --- a/kernel/sched/core.c
 +++ b/kernel/sched/core.c
 @@ -8860,9 +8860,9 @@ void normalize_rt_tasks(void)
@@ -68181,10 +68181,10 @@ index 20aa459bfb3e..8968e2b8a12e 100644
  	bool "ARM BCJ filter decoder" if EXPERT
  	default y
 diff --git a/mm/mmap.c b/mm/mmap.c
-index 386429f7db5a..33dbb679796e 100644
+index aec208f90337..880ae9edd306 100644
 --- a/mm/mmap.c
 +++ b/mm/mmap.c
-@@ -1023,9 +1023,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
+@@ -1028,9 +1028,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
  	return 0;
  }
  
@@ -68196,7 +68196,7 @@ index 386429f7db5a..33dbb679796e 100644
   * vma is the last one with address > vma->vm_end.  Have to extend vma.
   */
  static int expand_upwards(struct vm_area_struct *vma, unsigned long address)
-@@ -1108,7 +1108,7 @@ static int expand_upwards(struct vm_area_struct *vma, unsigned long address)
+@@ -1113,7 +1113,7 @@ static int expand_upwards(struct vm_area_struct *vma, unsigned long address)
  	validate_mm(mm);
  	return error;
  }
@@ -68299,7 +68299,7 @@ index 000000000000..2a19bb1db4ab
 +#define MAP_32BIT	0
 +#endif
 diff --git a/usr/include/Makefile b/usr/include/Makefile
-index 771e32872b2a..ad3833e799ad 100644
+index 6c6de1b1622b..58a9cbe4eba4 100644
 --- a/usr/include/Makefile
 +++ b/usr/include/Makefile
 @@ -59,6 +59,12 @@ ifeq ($(SRCARCH),arc)

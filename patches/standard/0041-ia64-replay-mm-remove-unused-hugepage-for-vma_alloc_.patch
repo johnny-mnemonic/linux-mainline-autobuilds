@@ -1,7 +1,7 @@
-From 17d893869507b1ff6c5bc864e056a40b69eeaa5d Mon Sep 17 00:00:00 2001
+From 4ac20ec2ec38b0ef77c4ab2b4671b88542030d02 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sun, 24 Nov 2024 09:20:03 +0100
-Subject: [PATCH 41/44] ia64: replay "mm: remove unused hugepage for
+Subject: [PATCH 41/53] ia64: replay "mm: remove unused hugepage for
  vma_alloc_folio()"
 
 See 6359c39c9de66dede8ff5ff257c9e117483dbc7c.

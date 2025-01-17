@@ -1,7 +1,7 @@
-From 604cf345ec502d431c08a4d9bce0b52c19acd7f1 Mon Sep 17 00:00:00 2001
+From 757061a0c2e33c34f6106e723598f1404c88f1e4 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 14:21:54 +0100
-Subject: [PATCH 17/44] Revert "mm: remove unnecessary ia64 code and comment"
+Subject: [PATCH 17/53] Revert "mm: remove unnecessary ia64 code and comment"
 
 This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
 ---
@@ -25,7 +25,7 @@ index 84000b016808..e67060d4795c 100644
  	  On arm and other archs it should not be higher than 32768.
  	  Programs which use vm86 functionality or have some need to map
 diff --git a/mm/memory.c b/mm/memory.c
-index 75c2dfd04f72..ab4054a572f1 100644
+index 398c031be9ba..d0865bfc9ae3 100644
 --- a/mm/memory.c
 +++ b/mm/memory.c
 @@ -123,7 +123,9 @@ static __always_inline bool vmf_orig_pte_uffd_wp(struct vm_fault *vmf)

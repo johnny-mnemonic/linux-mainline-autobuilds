@@ -1,7 +1,7 @@
-From 07474786659b7cbb3d4d36200158b3ac2fd73506 Mon Sep 17 00:00:00 2001
+From 71e6522fe1e8ba9a7683620672ac8ada330b4694 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 16:45:16 +0100
-Subject: [PATCH 19/44] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
+Subject: [PATCH 19/53] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
 
 This reverts commit 3888750e21ccb909051c810cc79fcc0650a740f8.
 ---
@@ -32,7 +32,7 @@ index 28e910573030..f5a6cf54f2e2 100644
  	  An architecture should select this to provide hardened usercopy
  	  knowledge about what region of the thread_struct should be
 diff --git a/kernel/fork.c b/kernel/fork.c
-index f19d3bdca212..2b62ef11d10d 100644
+index e3a2d8934861..d01cd72b2ff1 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
 @@ -173,6 +173,7 @@ void __weak arch_release_task_struct(struct task_struct *tsk)
@@ -51,7 +51,7 @@ index f19d3bdca212..2b62ef11d10d 100644
  
  #ifndef CONFIG_ARCH_THREAD_STACK_ALLOCATOR
  
-@@ -1048,6 +1050,7 @@ static void __init set_max_threads(unsigned int max_threads_suggested)
+@@ -1043,6 +1045,7 @@ static void __init set_max_threads(unsigned int max_threads_suggested)
  int arch_task_struct_size __read_mostly;
  #endif
  
@@ -59,7 +59,7 @@ index f19d3bdca212..2b62ef11d10d 100644
  static void __init task_struct_whitelist(unsigned long *offset, unsigned long *size)
  {
  	/* Fetch thread_struct whitelist for the architecture. */
-@@ -1062,10 +1065,12 @@ static void __init task_struct_whitelist(unsigned long *offset, unsigned long *s
+@@ -1057,10 +1060,12 @@ static void __init task_struct_whitelist(unsigned long *offset, unsigned long *s
  	else
  		*offset += offsetof(struct task_struct, thread);
  }
@@ -72,7 +72,7 @@ index f19d3bdca212..2b62ef11d10d 100644
  #ifndef ARCH_MIN_TASKALIGN
  #define ARCH_MIN_TASKALIGN	0
  #endif
-@@ -1078,6 +1083,7 @@ void __init fork_init(void)
+@@ -1073,6 +1078,7 @@ void __init fork_init(void)
  			arch_task_struct_size, align,
  			SLAB_PANIC|SLAB_ACCOUNT,
  			useroffset, usersize, NULL);
