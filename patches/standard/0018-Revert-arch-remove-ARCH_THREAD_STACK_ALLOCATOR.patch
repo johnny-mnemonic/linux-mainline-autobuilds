@@ -1,4 +1,4 @@
-From e32b6cdfaa84db58add66e9fa116fe3a1891ec6c Mon Sep 17 00:00:00 2001
+From 4a96f2088c2c19f2b6ff39c0da6abb777901d1d5 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 12 Jan 2024 18:54:34 +0100
 Subject: [PATCH 18/53] Revert "arch: remove ARCH_THREAD_STACK_ALLOCATOR"
@@ -10,7 +10,7 @@ This reverts commit f72709ab69430d986dfc5a08c9a86f625e3fed33.
  2 files changed, 24 insertions(+)
 
 diff --git a/arch/Kconfig b/arch/Kconfig
-index 6682b2a53e34..28e910573030 100644
+index b8a4ff365582..b7782364c0eb 100644
 --- a/arch/Kconfig
 +++ b/arch/Kconfig
 @@ -334,6 +334,10 @@ config HAVE_ARCH_THREAD_STRUCT_WHITELIST
@@ -25,7 +25,7 @@ index 6682b2a53e34..28e910573030 100644
  config ARCH_WANTS_DYNAMIC_TASK_STRUCT
  	bool
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 2e08fcea70f6..e3a2d8934861 100644
+index 9f668e2516c5..79b3cb253509 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
 @@ -185,6 +185,8 @@ static inline void free_task_struct(struct task_struct *tsk)

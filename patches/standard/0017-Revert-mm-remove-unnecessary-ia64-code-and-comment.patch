@@ -1,4 +1,4 @@
-From 757061a0c2e33c34f6106e723598f1404c88f1e4 Mon Sep 17 00:00:00 2001
+From d47a40b721035a13688277d948dedaeeab251264 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 14:21:54 +0100
 Subject: [PATCH 17/53] Revert "mm: remove unnecessary ia64 code and comment"
@@ -25,10 +25,10 @@ index 84000b016808..e67060d4795c 100644
  	  On arm and other archs it should not be higher than 32768.
  	  Programs which use vm86 functionality or have some need to map
 diff --git a/mm/memory.c b/mm/memory.c
-index 398c031be9ba..d0865bfc9ae3 100644
+index f8bebec145f5..bb003b8d1424 100644
 --- a/mm/memory.c
 +++ b/mm/memory.c
-@@ -123,7 +123,9 @@ static __always_inline bool vmf_orig_pte_uffd_wp(struct vm_fault *vmf)
+@@ -124,7 +124,9 @@ static __always_inline bool vmf_orig_pte_uffd_wp(struct vm_fault *vmf)
  /*
   * A number of key systems in x86 including ioremap() rely on the assumption
   * that high_memory defines the upper bound on direct map memory, then end

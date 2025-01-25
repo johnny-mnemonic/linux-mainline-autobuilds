@@ -1,4 +1,4 @@
-From df008b6fee3129d0be9619378b084fdcafab5662 Mon Sep 17 00:00:00 2001
+From a0246ae01490b85fe359b1f1d6e3071b7bafee23 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 21 Oct 2024 11:51:37 +0200
 Subject: [PATCH 37/53] ia64: Workaround -Wmissing-prototypes warnings

@@ -1,4 +1,4 @@
-From 8110f2a38468d7879e4979df2c4c089e115bd40b Mon Sep 17 00:00:00 2001
+From 11d0f0953ff1b99e5008f89c48558b2003eb3aca Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 27 Sep 2024 14:29:04 +0200
 Subject: [PATCH 32/53] Partially revert "x86: remove PG_uncached"
@@ -106,10 +106,10 @@ index 691506bdf2c5..3edc718b9d9c 100644
  PAGEFLAG(HWPoison, hwpoison, PF_ANY)
  TESTSCFLAG(HWPoison, hwpoison, PF_ANY)
 diff --git a/include/trace/events/mmflags.h b/include/trace/events/mmflags.h
-index 6f9c3dceff32..a5282c71932b 100644
+index fed9d6b9946c..405da57c1ef6 100644
 --- a/include/trace/events/mmflags.h
 +++ b/include/trace/events/mmflags.h
-@@ -71,6 +71,12 @@
+@@ -134,6 +134,12 @@ TRACE_DEFINE_ENUM(___GFP_LAST_BIT);
  #define IF_HAVE_PG_MLOCK(_name)
  #endif
  
@@ -122,7 +122,7 @@ index 6f9c3dceff32..a5282c71932b 100644
  #ifdef CONFIG_MEMORY_FAILURE
  #define IF_HAVE_PG_HWPOISON(_name) ,{1UL << PG_##_name, __stringify(_name)}
  #else
-@@ -118,6 +124,7 @@
+@@ -181,6 +187,7 @@ TRACE_DEFINE_ENUM(___GFP_LAST_BIT);
  	DEF_PAGEFLAG_NAME(swapbacked),					\
  	DEF_PAGEFLAG_NAME(unevictable)					\
  IF_HAVE_PG_MLOCK(mlocked)						\
