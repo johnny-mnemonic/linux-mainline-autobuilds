@@ -1,7 +1,7 @@
-From 11d0f0953ff1b99e5008f89c48558b2003eb3aca Mon Sep 17 00:00:00 2001
+From 4235a49c7d5ecc8d6f0fdd135f95c7c00382fa66 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 27 Sep 2024 14:29:04 +0200
-Subject: [PATCH 32/53] Partially revert "x86: remove PG_uncached"
+Subject: [PATCH 32/56] Partially revert "x86: remove PG_uncached"
 
 This partially reverts commit 7a87225ae2c6c317c7b80cf599e5cf0eee.
 ---
@@ -79,10 +79,10 @@ index 196778a087c4..7c587a711be1 100644
  #define KPF_ARCH_2		41
  #define KPF_ARCH_3		42
 diff --git a/include/linux/page-flags.h b/include/linux/page-flags.h
-index 691506bdf2c5..3edc718b9d9c 100644
+index 36d283552f80..32a1f6b3e3ea 100644
 --- a/include/linux/page-flags.h
 +++ b/include/linux/page-flags.h
-@@ -113,6 +113,9 @@ enum pageflags {
+@@ -114,6 +114,9 @@ enum pageflags {
  #ifdef CONFIG_MMU
  	PG_mlocked,		/* Page is vma mlocked */
  #endif
@@ -92,7 +92,7 @@ index 691506bdf2c5..3edc718b9d9c 100644
  #ifdef CONFIG_MEMORY_FAILURE
  	PG_hwpoison,		/* hardware poisoned page. Don't touch */
  #endif
-@@ -602,6 +605,12 @@ FOLIO_FLAG_FALSE(mlocked)
+@@ -607,6 +610,12 @@ FOLIO_FLAG_FALSE(mlocked)
  	FOLIO_TEST_SET_FLAG_FALSE(mlocked)
  #endif
  
@@ -106,7 +106,7 @@ index 691506bdf2c5..3edc718b9d9c 100644
  PAGEFLAG(HWPoison, hwpoison, PF_ANY)
  TESTSCFLAG(HWPoison, hwpoison, PF_ANY)
 diff --git a/include/trace/events/mmflags.h b/include/trace/events/mmflags.h
-index fed9d6b9946c..405da57c1ef6 100644
+index e93cafecbf58..1806dd125b6f 100644
 --- a/include/trace/events/mmflags.h
 +++ b/include/trace/events/mmflags.h
 @@ -134,6 +134,12 @@ TRACE_DEFINE_ENUM(___GFP_LAST_BIT);
@@ -122,9 +122,9 @@ index fed9d6b9946c..405da57c1ef6 100644
  #ifdef CONFIG_MEMORY_FAILURE
  #define IF_HAVE_PG_HWPOISON(_name) ,{1UL << PG_##_name, __stringify(_name)}
  #else
-@@ -181,6 +187,7 @@ TRACE_DEFINE_ENUM(___GFP_LAST_BIT);
- 	DEF_PAGEFLAG_NAME(swapbacked),					\
- 	DEF_PAGEFLAG_NAME(unevictable)					\
+@@ -182,6 +188,7 @@ TRACE_DEFINE_ENUM(___GFP_LAST_BIT);
+ 	DEF_PAGEFLAG_NAME(unevictable),					\
+ 	DEF_PAGEFLAG_NAME(dropbehind)					\
  IF_HAVE_PG_MLOCK(mlocked)						\
 +IF_HAVE_PG_UNCACHED(uncached)						\
  IF_HAVE_PG_HWPOISON(hwpoison)						\

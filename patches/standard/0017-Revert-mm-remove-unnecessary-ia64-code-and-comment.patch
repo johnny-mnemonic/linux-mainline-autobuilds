@@ -1,7 +1,7 @@
-From d47a40b721035a13688277d948dedaeeab251264 Mon Sep 17 00:00:00 2001
+From 9e1f9834f7a9036216dcbecf791a3879ec9616b2 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 14:21:54 +0100
-Subject: [PATCH 17/53] Revert "mm: remove unnecessary ia64 code and comment"
+Subject: [PATCH 17/56] Revert "mm: remove unnecessary ia64 code and comment"
 
 This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
 ---
@@ -12,10 +12,10 @@ This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
  4 files changed, 42 insertions(+), 22 deletions(-)
 
 diff --git a/mm/Kconfig b/mm/Kconfig
-index 84000b016808..e67060d4795c 100644
+index 1b501db06417..9273c11bb744 100644
 --- a/mm/Kconfig
 +++ b/mm/Kconfig
-@@ -749,7 +749,7 @@ config DEFAULT_MMAP_MIN_ADDR
+@@ -792,7 +792,7 @@ config DEFAULT_MMAP_MIN_ADDR
  	  from userspace allocation.  Keeping a user from writing to low pages
  	  can help reduce the impact of kernel NULL pointer bugs.
  
@@ -25,7 +25,7 @@ index 84000b016808..e67060d4795c 100644
  	  On arm and other archs it should not be higher than 32768.
  	  Programs which use vm86 functionality or have some need to map
 diff --git a/mm/memory.c b/mm/memory.c
-index f8bebec145f5..bb003b8d1424 100644
+index 539c0f7c6d54..0b747ae8bdec 100644
 --- a/mm/memory.c
 +++ b/mm/memory.c
 @@ -124,7 +124,9 @@ static __always_inline bool vmf_orig_pte_uffd_wp(struct vm_fault *vmf)
@@ -40,7 +40,7 @@ index f8bebec145f5..bb003b8d1424 100644
  void *high_memory;
  EXPORT_SYMBOL(high_memory);
 diff --git a/mm/mm_init.c b/mm/mm_init.c
-index 24b68b425afb..0079253122a5 100644
+index 2630cc30147e..0edf97e10d8c 100644
 --- a/mm/mm_init.c
 +++ b/mm/mm_init.c
 @@ -1485,7 +1485,8 @@ void __init set_pageblock_order(void)
@@ -53,7 +53,7 @@ index 24b68b425afb..0079253122a5 100644
  	 */
  	pageblock_order = order;
  }
-@@ -1603,8 +1604,8 @@ void __init *memmap_alloc(phys_addr_t size, phys_addr_t align,
+@@ -1607,8 +1608,8 @@ void __init *memmap_alloc(phys_addr_t size, phys_addr_t align,
  #ifdef CONFIG_FLATMEM
  static void __init alloc_node_mem_map(struct pglist_data *pgdat)
  {
@@ -64,7 +64,7 @@ index 24b68b425afb..0079253122a5 100644
  
  	/* Skip empty nodes */
  	if (!pgdat->node_spanned_pages)
-@@ -1612,25 +1613,34 @@ static void __init alloc_node_mem_map(struct pglist_data *pgdat)
+@@ -1616,25 +1617,34 @@ static void __init alloc_node_mem_map(struct pglist_data *pgdat)
  
  	start = pgdat->node_start_pfn & ~(MAX_ORDER_NR_PAGES - 1);
  	offset = pgdat->node_start_pfn - start;

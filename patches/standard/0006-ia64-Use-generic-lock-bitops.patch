@@ -1,7 +1,7 @@
-From 0b895227e1e0065dd705ec15a497aff4f34a0361 Mon Sep 17 00:00:00 2001
+From 20581c831116db6b852e237f971f2972e2417dac Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Tue, 31 Oct 2023 19:49:13 +0100
-Subject: [PATCH 06/53] ia64: Use generic lock bitops
+Subject: [PATCH 06/56] ia64: Use generic lock bitops
 
 ia64 is missing the function xor_unlock_is_negative_byte. Resolve this
 by including asm-generic/bitops/lock.h and removing clear_bit_unlock

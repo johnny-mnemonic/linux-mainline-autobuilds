@@ -1,7 +1,7 @@
-From 04e20a6e3e929bcca37417b24edbd3b1658f4e7f Mon Sep 17 00:00:00 2001
+From 6da85e719be222605bae6a7db1e1942008e92574 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Sun, 24 Mar 2024 19:43:52 +0100
-Subject: [PATCH 22/53] Revert "mmap: remove the IA64-specific vma expansion
+Subject: [PATCH 22/56] Revert "mmap: remove the IA64-specific vma expansion
  implementation"
 
 This reverts commit 69e583eaca579d50ffc699b1f4358258e75fa008.
@@ -10,10 +10,10 @@ This reverts commit 69e583eaca579d50ffc699b1f4358258e75fa008.
  1 file changed, 36 insertions(+), 1 deletion(-)
 
 diff --git a/mm/mmap.c b/mm/mmap.c
-index 880ae9edd306..a5dc4e837813 100644
+index cda01071c7b1..883c35d6e8a8 100644
 --- a/mm/mmap.c
 +++ b/mm/mmap.c
-@@ -1258,7 +1258,42 @@ struct vm_area_struct *find_extend_vma_locked(struct mm_struct *mm, unsigned lon
+@@ -1005,7 +1005,42 @@ struct vm_area_struct *find_extend_vma_locked(struct mm_struct *mm, unsigned lon
  }
  #endif
  

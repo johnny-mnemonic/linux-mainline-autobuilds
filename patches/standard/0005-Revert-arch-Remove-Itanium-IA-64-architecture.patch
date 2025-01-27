@@ -1,7 +1,7 @@
-From 3bdccfc046dcdc8dd2f814c1c039294c5ccc2a2f Mon Sep 17 00:00:00 2001
+From faaab207089c5778130692b62000164f884bb8aa Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
-Subject: [PATCH 05/53] Revert "arch: Remove Itanium (IA-64) architecture"
+Subject: [PATCH 05/56] Revert "arch: Remove Itanium (IA-64) architecture"
 
 This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
 ---
@@ -354,12 +354,12 @@ This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
  lib/Kconfig.debug                             |    2 +-
  lib/decompress_unxz.c                         |    3 +
  lib/xz/Kconfig                                |    5 +
- mm/mmap.c                                     |    6 +-
+ mm/vma.c                                      |    4 +-
  tools/arch/ia64/include/asm/barrier.h         |   59 +
  .../arch/ia64/include/uapi/asm/bitsperlong.h  |    9 +
  tools/arch/ia64/include/uapi/asm/mman.h       |    7 +
  usr/include/Makefile                          |    6 +
- 354 files changed, 64954 insertions(+), 41 deletions(-)
+ 354 files changed, 64953 insertions(+), 40 deletions(-)
  create mode 100644 Documentation/arch/ia64/aliasing.rst
  create mode 100644 Documentation/arch/ia64/efirtc.rst
  create mode 100644 Documentation/arch/ia64/err_inject.rst
@@ -3010,10 +3010,10 @@ index e1b0eeabbb5e..59fd6ed5e3f1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 4cb247c28437..046821cc516d 100644
+index feed152470f6..6d7cae4565a0 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -10972,6 +10972,12 @@ F:	drivers/i3c/
+@@ -10976,6 +10976,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3026,7 +3026,7 @@ index 4cb247c28437..046821cc516d 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -17881,6 +17887,11 @@ S:	Maintained
+@@ -17900,6 +17906,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -67995,7 +67995,7 @@ index 053c57e61869..9ca550056150 100644
   * We play games with efi_enabled so that the compiler will, if
   * possible, remove EFI-related code altogether.
 diff --git a/include/linux/mm.h b/include/linux/mm.h
-index 21428d897d76..e3b55451452d 100644
+index 7b1068ddcbb7..044ed74c9ded 100644
 --- a/include/linux/mm.h
 +++ b/include/linux/mm.h
 @@ -388,6 +388,8 @@ extern unsigned int kobjsize(const void *objp);
@@ -68021,10 +68021,10 @@ index bfb85fd13e1f..e4597d7edbcf 100644
  #else
  #define __moduleparam_const const
 diff --git a/include/trace/events/mmflags.h b/include/trace/events/mmflags.h
-index d36c857dd249..fed9d6b9946c 100644
+index 72fbfe3caeaf..e93cafecbf58 100644
 --- a/include/trace/events/mmflags.h
 +++ b/include/trace/events/mmflags.h
-@@ -196,7 +196,7 @@ IF_HAVE_PG_ARCH_3(arch_3)
+@@ -197,7 +197,7 @@ IF_HAVE_PG_ARCH_3(arch_3)
  #define __VM_ARCH_SPECIFIC_1 {VM_PAT,     "pat"           }
  #elif defined(CONFIG_PPC64)
  #define __VM_ARCH_SPECIFIC_1 {VM_SAO,     "sao"           }
@@ -68034,10 +68034,10 @@ index d36c857dd249..fed9d6b9946c 100644
  #elif !defined(CONFIG_MMU)
  #define __VM_ARCH_SPECIFIC_1 {VM_MAPPED_COPY,"mappedcopy"	}
 diff --git a/kernel/cpu.c b/kernel/cpu.c
-index 0509a9733745..18af2c7578b6 100644
+index 07455d25329c..f8347db51671 100644
 --- a/kernel/cpu.c
 +++ b/kernel/cpu.c
-@@ -1701,6 +1701,9 @@ static int cpu_up(unsigned int cpu, enum cpuhp_state target)
+@@ -1702,6 +1702,9 @@ static int cpu_up(unsigned int cpu, enum cpuhp_state target)
  	if (!cpu_possible(cpu)) {
  		pr_err("can't online cpu %d because it is not configured as may-hotadd at boot time\n",
  		       cpu);
@@ -68048,10 +68048,10 @@ index 0509a9733745..18af2c7578b6 100644
  	}
  
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 2fa2a3582925..9f668e2516c5 100644
+index cba5ede2c639..471748258635 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -3036,7 +3036,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
+@@ -3037,7 +3037,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
  		if (!access_ok((void __user *)kargs->stack, kargs->stack_size))
  			return false;
  
@@ -68061,10 +68061,10 @@ index 2fa2a3582925..9f668e2516c5 100644
  #endif
  	}
 diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index 901170708e2a..2ff5acba784c 100644
+index 9142a0394d46..6524829ffe2b 100644
 --- a/kernel/sched/core.c
 +++ b/kernel/sched/core.c
-@@ -8860,9 +8860,9 @@ void normalize_rt_tasks(void)
+@@ -8868,9 +8868,9 @@ void normalize_rt_tasks(void)
  
  #endif /* CONFIG_MAGIC_SYSRQ */
  
@@ -68076,7 +68076,7 @@ index 901170708e2a..2ff5acba784c 100644
   *
   * They can only be called when the whole system has been
   * stopped - every CPU needs to be quiescent, and no scheduling
-@@ -8884,7 +8884,30 @@ struct task_struct *curr_task(int cpu)
+@@ -8892,7 +8892,30 @@ struct task_struct *curr_task(int cpu)
  	return cpu_curr(cpu);
  }
  
@@ -68129,7 +68129,7 @@ index 7ae7a4136855..aa28a912e9ad 100644
  	{
  		.procname	= "max_lock_depth",
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index 5f1874622175..ecdc0021d67d 100644
+index 101d6482ed5a..29af62ddb76e 100644
 --- a/lib/Kconfig.debug
 +++ b/lib/Kconfig.debug
 @@ -781,7 +781,7 @@ config SHRINKER_DEBUG
@@ -68171,11 +68171,11 @@ index 20aa459bfb3e..8968e2b8a12e 100644
  config XZ_DEC_ARM
  	bool "ARM BCJ filter decoder" if EXPERT
  	default y
-diff --git a/mm/mmap.c b/mm/mmap.c
-index aec208f90337..880ae9edd306 100644
---- a/mm/mmap.c
-+++ b/mm/mmap.c
-@@ -1028,9 +1028,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
+diff --git a/mm/vma.c b/mm/vma.c
+index af1d549b179c..d3343ae68509 100644
+--- a/mm/vma.c
++++ b/mm/vma.c
+@@ -2772,9 +2772,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
  	return 0;
  }
  
@@ -68186,16 +68186,7 @@ index aec208f90337..880ae9edd306 100644
 + * PA-RISC uses this for its stack; IA64 for its Register Backing Store.
   * vma is the last one with address > vma->vm_end.  Have to extend vma.
   */
- static int expand_upwards(struct vm_area_struct *vma, unsigned long address)
-@@ -1113,7 +1113,7 @@ static int expand_upwards(struct vm_area_struct *vma, unsigned long address)
- 	validate_mm(mm);
- 	return error;
- }
--#endif /* CONFIG_STACK_GROWSUP */
-+#endif /* CONFIG_STACK_GROWSUP || CONFIG_IA64 */
- 
- /*
-  * vma is the first one with address < vma->vm_start.  Have to extend vma.
+ int expand_upwards(struct vm_area_struct *vma, unsigned long address)
 diff --git a/tools/arch/ia64/include/asm/barrier.h b/tools/arch/ia64/include/asm/barrier.h
 new file mode 100644
 index 000000000000..6fffe5682713

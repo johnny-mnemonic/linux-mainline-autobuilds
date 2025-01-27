@@ -1,7 +1,7 @@
-From bfa39b82a867a64f11064fb712df174702360f9b Mon Sep 17 00:00:00 2001
+From ef3492f252c0444e18bb84a702cfe441c735a554 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 22 Nov 2024 10:52:39 +0100
-Subject: [PATCH 39/53] ia64: replay "asm-generic: provide generic page_to_phys
+Subject: [PATCH 39/56] ia64: replay "asm-generic: provide generic page_to_phys
  [...]"
 
 See c5c3238d9b8cee58cd4b08bbbe9347a94a566390.

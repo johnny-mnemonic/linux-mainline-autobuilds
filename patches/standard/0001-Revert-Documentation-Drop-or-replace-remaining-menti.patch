@@ -1,7 +1,7 @@
-From f08f0e8614d0d43e69cc6a1a713ca5b2d50fafcb Mon Sep 17 00:00:00 2001
+From c1edf7a82c84a2c6f9466bd1c2ca275528fe725c Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
-Subject: [PATCH 01/53] Revert "Documentation: Drop or replace remaining
+Subject: [PATCH 01/56] Revert "Documentation: Drop or replace remaining
  mentions of IA64"
 
 This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
@@ -181,7 +181,7 @@ index 0f714fc945ac..63a4c5deb156 100644
  =====
  
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 8fbb481db515..3413757a7ab3 100644
+index d0f6c055dfcc..a3c049795010 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
 @@ -1513,7 +1513,7 @@
@@ -207,7 +207,7 @@ index 8fbb481db515..3413757a7ab3 100644
  			Forcefully enable Physical Address Extension (PAE).
  			Many Pentium M systems disable PAE but may have a
 diff --git a/Documentation/admin-guide/mm/memory-hotplug.rst b/Documentation/admin-guide/mm/memory-hotplug.rst
-index cb2c080f400c..4ffdc928a720 100644
+index 33c886f3d198..5f13935e2a29 100644
 --- a/Documentation/admin-guide/mm/memory-hotplug.rst
 +++ b/Documentation/admin-guide/mm/memory-hotplug.rst
 @@ -33,7 +33,7 @@ used to expose persistent memory, other performance-differentiated memory and
