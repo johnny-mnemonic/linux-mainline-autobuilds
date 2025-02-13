@@ -1,7 +1,7 @@
-From faaab207089c5778130692b62000164f884bb8aa Mon Sep 17 00:00:00 2001
+From cd15fd88a6a4c754a92a40a112da70184966f455 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
-Subject: [PATCH 05/56] Revert "arch: Remove Itanium (IA-64) architecture"
+Subject: [PATCH 05/63] Revert "arch: Remove Itanium (IA-64) architecture"
 
 This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
 ---
@@ -3010,10 +3010,10 @@ index e1b0eeabbb5e..59fd6ed5e3f1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index feed152470f6..6d7cae4565a0 100644
+index 25c86f47353d..dd378795c843 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -10976,6 +10976,12 @@ F:	drivers/i3c/
+@@ -11009,6 +11009,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3026,7 +3026,7 @@ index feed152470f6..6d7cae4565a0 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -17900,6 +17906,11 @@ S:	Maintained
+@@ -17989,6 +17995,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -66081,7 +66081,7 @@ index 000000000000..15b240ea4848
 +MODULE_AUTHOR("Chris Ahna <Christopher.J.Ahna@intel.com>");
 +MODULE_LICENSE("GPL and additional rights");
 diff --git a/drivers/char/hpet.c b/drivers/char/hpet.c
-index 48fe96ab4649..d86fdf67bc02 100644
+index e110857824fc..c069a89a9c69 100644
 --- a/drivers/char/hpet.c
 +++ b/drivers/char/hpet.c
 @@ -64,6 +64,25 @@
@@ -66873,7 +66873,7 @@ index 000000000000..c6bdc455517f
 +late_initcall(acpi_cpufreq_init);
 +module_exit(acpi_cpufreq_exit);
 diff --git a/drivers/firmware/Kconfig b/drivers/firmware/Kconfig
-index 71d8b26c4103..717d57be31fd 100644
+index 9f35f69e0f9e..112fe76aead2 100644
 --- a/drivers/firmware/Kconfig
 +++ b/drivers/firmware/Kconfig
 @@ -68,6 +68,30 @@ config FIRMWARE_MEMMAP
@@ -67328,7 +67328,7 @@ index e40413609f53..1a6acd27438d 100644
  	select CEC_CORE
  	select CEC_NOTIFIER
 diff --git a/drivers/misc/Kconfig b/drivers/misc/Kconfig
-index 09cbe3f0ab1e..efba2b6c019a 100644
+index 56bc72c7ce4a..4d71a76ac82e 100644
 --- a/drivers/misc/Kconfig
 +++ b/drivers/misc/Kconfig
 @@ -176,7 +176,7 @@ config ENCLOSURE_SERVICES
@@ -67582,7 +67582,7 @@ index 3faa7eadf679..19fc7076af27 100644
  	#error not a supported configuration
  #endif
 diff --git a/drivers/misc/sgi-xp/xpc_main.c b/drivers/misc/sgi-xp/xpc_main.c
-index 61b66e318488..3186421e82c3 100644
+index 7a3c34306de9..442f6b152a5d 100644
 --- a/drivers/misc/sgi-xp/xpc_main.c
 +++ b/drivers/misc/sgi-xp/xpc_main.c
 @@ -1153,6 +1153,36 @@ xpc_die_deactivate(void)
@@ -67791,10 +67791,10 @@ index 2f03a7080d96..fff522d347e3 100644
  }
  
 diff --git a/drivers/net/ethernet/broadcom/tg3.c b/drivers/net/ethernet/broadcom/tg3.c
-index 9cc8db10a8d6..edd8620b7f9a 100644
+index d9d675f1ebfe..6d8a8dc93c48 100644
 --- a/drivers/net/ethernet/broadcom/tg3.c
 +++ b/drivers/net/ethernet/broadcom/tg3.c
-@@ -17152,7 +17152,7 @@ static u32 tg3_calc_dma_bndry(struct tg3 *tp, u32 val)
+@@ -17171,7 +17171,7 @@ static u32 tg3_calc_dma_bndry(struct tg3 *tp, u32 val)
  	    !tg3_flag(tp, PCI_EXPRESS))
  		goto out;
  
@@ -68048,10 +68048,10 @@ index 07455d25329c..f8347db51671 100644
  	}
  
 diff --git a/kernel/fork.c b/kernel/fork.c
-index cba5ede2c639..471748258635 100644
+index 735405a9c5f3..f899732ca43e 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -3037,7 +3037,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
+@@ -3048,7 +3048,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
  		if (!access_ok((void __user *)kargs->stack, kargs->stack_size))
  			return false;
  
@@ -68061,7 +68061,7 @@ index cba5ede2c639..471748258635 100644
  #endif
  	}
 diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index 9142a0394d46..6524829ffe2b 100644
+index 165c90ba64ea..cb2adadd3f23 100644
 --- a/kernel/sched/core.c
 +++ b/kernel/sched/core.c
 @@ -8868,9 +8868,9 @@ void normalize_rt_tasks(void)
@@ -68109,10 +68109,10 @@ index 9142a0394d46..6524829ffe2b 100644
  #ifdef CONFIG_CGROUP_SCHED
  /* task_group_lock serializes the addition/removal of task groups */
 diff --git a/kernel/sysctl.c b/kernel/sysctl.c
-index 7ae7a4136855..aa28a912e9ad 100644
+index cb57da499ebb..2ac2388fa61b 100644
 --- a/kernel/sysctl.c
 +++ b/kernel/sysctl.c
-@@ -1924,6 +1924,15 @@ static struct ctl_table kern_table[] = {
+@@ -1924,6 +1924,15 @@ static const struct ctl_table kern_table[] = {
  		.proc_handler	= proc_dointvec,
  	},
  #endif
@@ -68129,7 +68129,7 @@ index 7ae7a4136855..aa28a912e9ad 100644
  	{
  		.procname	= "max_lock_depth",
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index 101d6482ed5a..29af62ddb76e 100644
+index 1af972a92d06..a0443d57c23c 100644
 --- a/lib/Kconfig.debug
 +++ b/lib/Kconfig.debug
 @@ -781,7 +781,7 @@ config SHRINKER_DEBUG

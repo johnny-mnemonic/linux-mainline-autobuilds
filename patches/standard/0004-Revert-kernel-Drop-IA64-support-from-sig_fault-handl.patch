@@ -1,7 +1,7 @@
-From 495609a12e577b4cd779dc6bed26eb2736c22374 Mon Sep 17 00:00:00 2001
+From ce8757cf7133e30fb38c065cd45e425800acdbad Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:55 +0200
-Subject: [PATCH 04/56] Revert "kernel: Drop IA64 support from sig_fault
+Subject: [PATCH 04/63] Revert "kernel: Drop IA64 support from sig_fault
  handlers"
 
 This reverts commit f5e836884d8e55b416dfad55c29481ec1b65c1f0.
@@ -57,7 +57,7 @@ index 5a1ca43b5fc6..013f2c5ccae6 100644
  #define __ADDR_BND_PKEY_PAD  (__alignof__(void *) < sizeof(short) ? \
  			      sizeof(short) : __alignof__(void *))
 diff --git a/kernel/signal.c b/kernel/signal.c
-index a2afd54303f0..013e51bd44a2 100644
+index 875e97f6205a..eff8e32c44ed 100644
 --- a/kernel/signal.c
 +++ b/kernel/signal.c
 @@ -1685,8 +1685,9 @@ void force_sigsegv(int sig)
