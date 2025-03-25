@@ -1,4 +1,4 @@
-From 6585f8fe291d481e2250d6ef5573ddf4aaff570b Mon Sep 17 00:00:00 2001
+From 44ad48f2138ed21ec53d850cb4a69ca172b76450 Mon Sep 17 00:00:00 2001
 From: Rene Rebe <rene@exactcode.de>
 Date: Sun, 1 Dec 2024 19:13:37 +0100
 Subject: [PATCH 63/63] ia64: Use KERN_CONT when printing ITC drift

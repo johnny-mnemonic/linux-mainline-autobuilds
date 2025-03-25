@@ -1,4 +1,4 @@
-From 26658ef4a51909be6f761b73c8a8d5b41ae87a26 Mon Sep 17 00:00:00 2001
+From d624076f62f0edeb5397b99c1b5d88be0b3c86c9 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 27 Jan 2025 15:43:18 +0100
 Subject: [PATCH 54/63] Partially revert "x86/efistub: Drop long obsolete UGA
@@ -15,7 +15,7 @@ This partially reverts commit 144d52dd8fc83a082a275e1b663e7454d2b616a4.
  2 files changed, 5 insertions(+)
 
 diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
-index 5f2db3a241e5..1feca40c755f 100644
+index c7c32ba6dd75..2cb06c4d55eb 100644
 --- a/drivers/firmware/efi/efi.c
 +++ b/drivers/firmware/efi/efi.c
 @@ -148,6 +148,9 @@ static ssize_t systab_show(struct kobject *kobj,
@@ -29,10 +29,10 @@ index 5f2db3a241e5..1feca40c755f 100644
  }
  
 diff --git a/include/linux/efi.h b/include/linux/efi.h
-index d6ef244bafe8..51f8ccb76f86 100644
+index 9e111e5efc8e..7bfcb965acef 100644
 --- a/include/linux/efi.h
 +++ b/include/linux/efi.h
-@@ -1293,6 +1293,8 @@ struct linux_efi_memreserve {
+@@ -1294,6 +1294,8 @@ struct linux_efi_memreserve {
  
  void __init efi_arch_mem_reserve(phys_addr_t addr, u64 size);
  

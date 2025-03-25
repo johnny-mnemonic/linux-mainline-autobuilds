@@ -1,4 +1,4 @@
-From f88b37aa1df9fa6415c56306fecb9db8fdfaabd1 Mon Sep 17 00:00:00 2001
+From b22e57bfecbdaab15d2490121954d3b6f4810be4 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sun, 2 Jun 2024 10:05:31 +0200
 Subject: [PATCH 27/63] Revert "ACPI/NUMA: Squash

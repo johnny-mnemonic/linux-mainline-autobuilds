@@ -1,4 +1,4 @@
-From cd15fd88a6a4c754a92a40a112da70184966f455 Mon Sep 17 00:00:00 2001
+From 5fefec5d5ba535c8245a252f5eb89e7f5ab56e9d Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
 Subject: [PATCH 05/63] Revert "arch: Remove Itanium (IA-64) architecture"
@@ -3010,10 +3010,10 @@ index e1b0eeabbb5e..59fd6ed5e3f1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 25c86f47353d..dd378795c843 100644
+index 00e94bec401e..41185bf9de53 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -11009,6 +11009,12 @@ F:	drivers/i3c/
+@@ -11011,6 +11011,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3026,7 +3026,7 @@ index 25c86f47353d..dd378795c843 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -17989,6 +17995,11 @@ S:	Maintained
+@@ -18026,6 +18032,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -66951,7 +66951,7 @@ index 5fe61b9ab5f9..4d292e1ab4cb 100644
  	select ARCH_USE_MEMREMAP_PROT
  
 diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
-index 8296bf985d1d..5f2db3a241e5 100644
+index 7309394b8fc9..c7c32ba6dd75 100644
 --- a/drivers/firmware/efi/efi.c
 +++ b/drivers/firmware/efi/efi.c
 @@ -840,6 +840,7 @@ int __init efi_systab_check_header(const efi_table_hdr_t *systab_hdr)
@@ -66973,7 +66973,7 @@ index 8296bf985d1d..5f2db3a241e5 100644
  
  void __init efi_systab_report_header(const efi_table_hdr_t *systab_hdr,
  				     unsigned long fw_vendor)
-@@ -957,6 +962,11 @@ char * __init efi_md_typeattr_format(char *buf, size_t size,
+@@ -959,6 +964,11 @@ char * __init efi_md_typeattr_format(char *buf, size_t size,
  	return buf;
  }
  
@@ -66985,7 +66985,7 @@ index 8296bf985d1d..5f2db3a241e5 100644
  /*
   * efi_mem_attributes - lookup memmap attributes for physical address
   * @phys_addr: the physical address to lookup
-@@ -1004,6 +1014,7 @@ int efi_mem_type(unsigned long phys_addr)
+@@ -1006,6 +1016,7 @@ int efi_mem_type(unsigned long phys_addr)
  	}
  	return -EINVAL;
  }
@@ -67966,10 +67966,10 @@ index 4e495b29c640..c38ce9ec6563 100644
  #endif
  
 diff --git a/include/linux/efi.h b/include/linux/efi.h
-index 053c57e61869..9ca550056150 100644
+index 7d63d1d75f22..bf2dd720d015 100644
 --- a/include/linux/efi.h
 +++ b/include/linux/efi.h
-@@ -359,10 +359,13 @@ void efi_native_runtime_setup(void);
+@@ -360,10 +360,13 @@ void efi_native_runtime_setup(void);
   * where the UEFI SPEC breaks the line.
   */
  #define NULL_GUID				EFI_GUID(0x00000000, 0x0000, 0x0000,  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00)
@@ -67983,7 +67983,7 @@ index 053c57e61869..9ca550056150 100644
  #define EFI_GLOBAL_VARIABLE_GUID		EFI_GUID(0x8be4df61, 0x93ca, 0x11d2,  0xaa, 0x0d, 0x00, 0xe0, 0x98, 0x03, 0x2b, 0x8c)
  #define UV_SYSTEM_TABLE_GUID			EFI_GUID(0x3b13a7d4, 0x633e, 0x11dd,  0x93, 0xec, 0xda, 0x25, 0x56, 0xd8, 0x95, 0x93)
  #define LINUX_EFI_CRASH_GUID			EFI_GUID(0xcfc8fc79, 0xbe2e, 0x4ddc,  0x97, 0xf0, 0x9f, 0x98, 0xbf, 0xe2, 0x98, 0xa0)
-@@ -847,6 +850,10 @@ static inline int efi_range_is_wc(unsigned long start, unsigned long len)
+@@ -848,6 +851,10 @@ static inline int efi_range_is_wc(unsigned long start, unsigned long len)
  	return 1;
  }
  
@@ -67995,7 +67995,7 @@ index 053c57e61869..9ca550056150 100644
   * We play games with efi_enabled so that the compiler will, if
   * possible, remove EFI-related code altogether.
 diff --git a/include/linux/mm.h b/include/linux/mm.h
-index 7b1068ddcbb7..044ed74c9ded 100644
+index 1f80baddacc5..7d15e9863806 100644
 --- a/include/linux/mm.h
 +++ b/include/linux/mm.h
 @@ -388,6 +388,8 @@ extern unsigned int kobjsize(const void *objp);
@@ -68061,10 +68061,10 @@ index 735405a9c5f3..f899732ca43e 100644
  #endif
  	}
 diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index 165c90ba64ea..cb2adadd3f23 100644
+index 042351c7afce..350e488df5ca 100644
 --- a/kernel/sched/core.c
 +++ b/kernel/sched/core.c
-@@ -8868,9 +8868,9 @@ void normalize_rt_tasks(void)
+@@ -8869,9 +8869,9 @@ void normalize_rt_tasks(void)
  
  #endif /* CONFIG_MAGIC_SYSRQ */
  
@@ -68076,7 +68076,7 @@ index 165c90ba64ea..cb2adadd3f23 100644
   *
   * They can only be called when the whole system has been
   * stopped - every CPU needs to be quiescent, and no scheduling
-@@ -8892,7 +8892,30 @@ struct task_struct *curr_task(int cpu)
+@@ -8893,7 +8893,30 @@ struct task_struct *curr_task(int cpu)
  	return cpu_curr(cpu);
  }
  
@@ -68129,7 +68129,7 @@ index cb57da499ebb..2ac2388fa61b 100644
  	{
  		.procname	= "max_lock_depth",
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index 1af972a92d06..a0443d57c23c 100644
+index 35796c290ca3..82c4ab2c8f2e 100644
 --- a/lib/Kconfig.debug
 +++ b/lib/Kconfig.debug
 @@ -781,7 +781,7 @@ config SHRINKER_DEBUG
@@ -68172,10 +68172,10 @@ index 20aa459bfb3e..8968e2b8a12e 100644
  	bool "ARM BCJ filter decoder" if EXPERT
  	default y
 diff --git a/mm/vma.c b/mm/vma.c
-index af1d549b179c..d3343ae68509 100644
+index 71ca012c616c..d144c25d90d2 100644
 --- a/mm/vma.c
 +++ b/mm/vma.c
-@@ -2772,9 +2772,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
+@@ -2777,9 +2777,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
  	return 0;
  }
  
@@ -68281,7 +68281,7 @@ index 000000000000..2a19bb1db4ab
 +#define MAP_32BIT	0
 +#endif
 diff --git a/usr/include/Makefile b/usr/include/Makefile
-index 6c6de1b1622b..58a9cbe4eba4 100644
+index e3d6b03527fe..b9a2640b4bb7 100644
 --- a/usr/include/Makefile
 +++ b/usr/include/Makefile
 @@ -59,6 +59,12 @@ ifeq ($(SRCARCH),arc)

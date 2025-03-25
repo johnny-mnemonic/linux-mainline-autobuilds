@@ -1,4 +1,4 @@
-From 1220aa48f9d3b0c5952fd3bc7b553b5aa2f793f0 Mon Sep 17 00:00:00 2001
+From af6109b7c9f327573aebdcf11fdb5078df5a7ccc Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 16:45:16 +0100
 Subject: [PATCH 19/63] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"

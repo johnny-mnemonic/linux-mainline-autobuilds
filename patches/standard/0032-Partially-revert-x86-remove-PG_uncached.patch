@@ -1,4 +1,4 @@
-From bc18bdbe2f8c6987a5292b1365ee8829537d7241 Mon Sep 17 00:00:00 2001
+From 7535959946f1c8f4ceca00396d3f208ab92414ab Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 27 Sep 2024 14:29:04 +0200
 Subject: [PATCH 32/63] Partially revert "x86: remove PG_uncached"
@@ -131,7 +131,7 @@ index e93cafecbf58..1806dd125b6f 100644
  IF_HAVE_PG_IDLE(idle)							\
  IF_HAVE_PG_IDLE(young)							\
 diff --git a/tools/mm/page-types.c b/tools/mm/page-types.c
-index bcac7ebfb51f..f01b4d998d8b 100644
+index d7e5e8902af8..dc8b4987a4bb 100644
 --- a/tools/mm/page-types.c
 +++ b/tools/mm/page-types.c
 @@ -77,7 +77,7 @@

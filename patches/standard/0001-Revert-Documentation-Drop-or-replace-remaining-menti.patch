@@ -1,4 +1,4 @@
-From 290dc78a2150d91035f162751f467dfca212b656 Mon Sep 17 00:00:00 2001
+From d2377d8ef28d0602e6a6b89cfc6868d2ac2f6daa Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
 Subject: [PATCH 01/63] Revert "Documentation: Drop or replace remaining
@@ -220,10 +220,10 @@ index 33c886f3d198..5f13935e2a29 100644
  Memory Hot(Un)Plug Granularity
  ------------------------------
 diff --git a/Documentation/admin-guide/sysctl/kernel.rst b/Documentation/admin-guide/sysctl/kernel.rst
-index a43b78b4b646..735f3824cf16 100644
+index dd49a89a62d3..f9ab5be45d59 100644
 --- a/Documentation/admin-guide/sysctl/kernel.rst
 +++ b/Documentation/admin-guide/sysctl/kernel.rst
-@@ -463,8 +463,8 @@ ignore-unaligned-usertrap
+@@ -474,8 +474,8 @@ ignore-unaligned-usertrap
  
  On architectures where unaligned accesses cause traps, and where this
  feature is supported (``CONFIG_SYSCTL_ARCH_UNALIGN_NO_WARN``;
@@ -234,7 +234,7 @@ index a43b78b4b646..735f3824cf16 100644
  
  = =============================================================
  0 Log all unaligned accesses.
-@@ -472,7 +472,10 @@ unaligned traps are logged.
+@@ -483,7 +483,10 @@ unaligned traps are logged.
    setting.
  = =============================================================
  
@@ -246,7 +246,7 @@ index a43b78b4b646..735f3824cf16 100644
  
  io_uring_disabled
  =================
-@@ -1579,6 +1582,22 @@ See Documentation/admin-guide/kernel-parameters.rst and
+@@ -1590,6 +1593,22 @@ See Documentation/admin-guide/kernel-parameters.rst and
  Documentation/trace/boottime-trace.rst.
  
  
@@ -425,7 +425,7 @@ index b2ac3c743a3a..ce3f39d9b3cb 100644
  sparc - 在这一点上，IRQ是开着的（？），把local_irq_save改为_disable。
        - 待办事项: 需要第二个CPU来禁用抢占 (参考 #1)
 diff --git a/Makefile b/Makefile
-index 89628e354ca7..24194bf14c71 100644
+index 8b6764d44a61..ff9b60581b71 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -391,7 +391,7 @@ include $(srctree)/scripts/subarch.include

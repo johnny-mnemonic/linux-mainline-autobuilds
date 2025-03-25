@@ -1,4 +1,4 @@
-From 8caba0b6549a4ed649e69a4cf3c3cd32885b7959 Mon Sep 17 00:00:00 2001
+From 26000cfe5fa30e78dffefe50851853f884b11b4f Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 16:12:32 +0100
 Subject: [PATCH 62/63] Revert "scripts: clean up IA-64 code"
