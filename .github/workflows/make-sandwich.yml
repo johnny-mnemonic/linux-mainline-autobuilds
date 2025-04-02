@@ -85,6 +85,7 @@ jobs:
           cd ${BUILD_DIR}
           BASE_COMMIT_ID_SHORT=$( git rev-parse --short HEAD )
           for patch in ${TOOLS_DIR}/patches/standard/*patch ${TOOLS_DIR}/patches/extra/*patch; do
+            [[ -e ${patch} ]] && echo "### ${patch} v ###"
             [[ -e ${patch} ]] && patch -p1 < ${patch}
           done
           # build ##############################################################
