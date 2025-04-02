@@ -1,0 +1,26 @@
+From 873bc8b4619db4475e3b2ca182f439009298ca86 Mon Sep 17 00:00:00 2001
+From: Johnny Mnemonic <jm@machine-hall.org>
+Date: Wed, 2 Apr 2025 16:37:51 +0200
+Subject: [PATCH 2/2] ia64: replay "arch, mm: make releasing of memory to page
+ allocator [...]"
+
+See 8afa901c147a41f92e83943cddf154bbb7995ee6.
+---
+ arch/ia64/mm/init.c | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/arch/ia64/mm/init.c b/arch/ia64/mm/init.c
+index b13bfbff9c7f..6fc9a27b9ae6 100644
+--- a/arch/ia64/mm/init.c
++++ b/arch/ia64/mm/init.c
+@@ -465,7 +465,6 @@ mem_init (void)
+ #endif
+ 
+ 	high_memory = __va(max_low_pfn * PAGE_SIZE);
+-	memblock_free_all();
+ 
+ 	/*
+ 	 * For fsyscall entrypoints with no light-weight handler, use the ordinary
+-- 
+2.25.1
+
