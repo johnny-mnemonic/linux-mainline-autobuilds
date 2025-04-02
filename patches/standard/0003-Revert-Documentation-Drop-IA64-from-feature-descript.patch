@@ -1,7 +1,7 @@
-From 7734bbdb0f8fd77e645f202c879e9fa7227ae8ef Mon Sep 17 00:00:00 2001
+From 40a9ee508a3e445238d06a1acbc930b43b19250d Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:48 +0200
-Subject: [PATCH 03/63] Revert "Documentation: Drop IA64 from feature
+Subject: [PATCH 03/67] Revert "Documentation: Drop IA64 from feature
  descriptions"
 
 This reverts commit af1f459233d4edeef634f559539e7f4b64cb1d25.
@@ -194,7 +194,7 @@ index f45149cfa313..4e205ef70363 100644
      |        m68k: | TODO |
      |  microblaze: |  ok  |
 diff --git a/Documentation/features/debug/kprobes-on-ftrace/arch-support.txt b/Documentation/features/debug/kprobes-on-ftrace/arch-support.txt
-index 02febc883588..38a0a54b79f5 100644
+index d937b7a03575..cab1bef45c19 100644
 --- a/Documentation/features/debug/kprobes-on-ftrace/arch-support.txt
 +++ b/Documentation/features/debug/kprobes-on-ftrace/arch-support.txt
 @@ -12,6 +12,7 @@

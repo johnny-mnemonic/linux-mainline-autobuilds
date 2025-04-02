@@ -1,7 +1,7 @@
-From 6859ab3ca9153abbf83985870c6ae86daeef8407 Mon Sep 17 00:00:00 2001
+From c39d5b1b8816910e4a31f7ffdbeb4023d42b1cad Mon Sep 17 00:00:00 2001
 From: Benjamin Gray <bgray@linux.ibm.com>
 Date: Tue, 12 Sep 2023 16:07:55 +1000
-Subject: [PATCH 30/63] ia64: fix Python string escapes
+Subject: [PATCH 30/67] ia64: fix Python string escapes
 
 Python 3.6 introduced a DeprecationWarning for invalid escape sequences.
 This is upgraded to a SyntaxWarning in Python 3.12, and will eventually

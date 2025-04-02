@@ -1,7 +1,7 @@
-From fbabb85273a67487a93a644fa0896087851bba4e Mon Sep 17 00:00:00 2001
+From 7fdcba3c69b8293022a2cac86633fe0b9c22d235 Mon Sep 17 00:00:00 2001
 From: Ivan Mironov <mironov.ivan@gmail.com>
 Date: Wed, 5 Dec 2018 15:24:57 +0500
-Subject: [PATCH 49/63] scsi: hpsa: Support HBA mode on HP Smart Array P410i
+Subject: [PATCH 49/67] scsi: hpsa: Support HBA mode on HP Smart Array P410i
  controllers
 
 This patch is based on code from 316b221a37802b6abe26067f2c6f2d7bb79069e5,
@@ -35,7 +35,7 @@ Signed-off-by: Ivan Mironov <mironov.ivan@gmail.com>
  2 files changed, 97 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/scsi/hpsa.c b/drivers/scsi/hpsa.c
-index be128e2bbc75..328927b9f656 100644
+index 1b1fe5f7ce35..207748d8838e 100644
 --- a/drivers/scsi/hpsa.c
 +++ b/drivers/scsi/hpsa.c
 @@ -89,6 +89,11 @@ module_param(hpsa_simple_mode, int, S_IRUGO|S_IWUSR);
@@ -50,7 +50,7 @@ index be128e2bbc75..328927b9f656 100644
  /* define the PCI info for the cards we can control */
  static const struct pci_device_id hpsa_pci_device_id[] = {
  	{PCI_VENDOR_ID_HP,     PCI_DEVICE_ID_HP_CISSE,     0x103C, 0x3241},
-@@ -3084,6 +3089,37 @@ static int hpsa_scsi_do_inquiry(struct ctlr_info *h, unsigned char *scsi3addr,
+@@ -3076,6 +3081,37 @@ static int hpsa_scsi_do_inquiry(struct ctlr_info *h, unsigned char *scsi3addr,
  	return rc;
  }
  
@@ -88,7 +88,7 @@ index be128e2bbc75..328927b9f656 100644
  static int hpsa_send_reset(struct ctlr_info *h, struct hpsa_scsi_dev_t *dev,
  	u8 reset_type, int reply_queue)
  {
-@@ -4332,6 +4368,50 @@ static bool hpsa_skip_device(struct ctlr_info *h, u8 *lunaddrbytes,
+@@ -4324,6 +4360,50 @@ static bool hpsa_skip_device(struct ctlr_info *h, u8 *lunaddrbytes,
  	return false;
  }
  
@@ -139,7 +139,7 @@ index be128e2bbc75..328927b9f656 100644
  static void hpsa_update_scsi_devices(struct ctlr_info *h)
  {
  	/* the idea here is we could get notified
-@@ -4386,6 +4466,11 @@ static void hpsa_update_scsi_devices(struct ctlr_info *h)
+@@ -4378,6 +4458,11 @@ static void hpsa_update_scsi_devices(struct ctlr_info *h)
  			__func__);
  	}
  
@@ -151,7 +151,7 @@ index be128e2bbc75..328927b9f656 100644
  	/* We might see up to the maximum number of logical and physical disks
  	 * plus external target devices, and a device for the local RAID
  	 * controller.
-@@ -4471,11 +4556,16 @@ static void hpsa_update_scsi_devices(struct ctlr_info *h)
+@@ -4463,11 +4548,16 @@ static void hpsa_update_scsi_devices(struct ctlr_info *h)
  		 * Expose all devices except for physical devices that
  		 * are masked.
  		 */
