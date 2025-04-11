@@ -1,7 +1,7 @@
-From 566a36aaa9a94da2165dcf1889383058f0de440e Mon Sep 17 00:00:00 2001
+From 6f30b008f670360a90ee90578bc73161865c97b8 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 15:17:38 +0100
-Subject: [PATCH 59/67] Partially revert "Documentation: Remove IA-64 from
+Subject: [PATCH 59/70] Partially revert "Documentation: Remove IA-64 from
  kernel-parameters"
 
 Keep the following removals of:
@@ -30,7 +30,7 @@ index 39d0e7ff0965..6ede8c85eb8f 100644
  	IP_PNP	IP DHCP, BOOTP, or RARP is enabled.
  	IPV6	IPv6 support is enabled.
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 4265f3da5a9a..2cd92780a74e 100644
+index 3827f6134e55..f5e83b385ae9 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
 @@ -2670,7 +2670,7 @@
@@ -160,7 +160,7 @@ index 4265f3da5a9a..2cd92780a74e 100644
  			Format: { <int> [,<int>] | force | noforce }
  			<int> -- Number of I/O TLB slabs
  			<int> -- Second integer after comma. Number of swiotlb
-@@ -7754,6 +7784,9 @@
+@@ -7772,6 +7802,9 @@
  			Try vdso32=0 if you encounter an error that says:
  			dl_main: Assertion `(void *) ph->p_vaddr == _rtld_local._dl_sysinfo_dso' failed!
  

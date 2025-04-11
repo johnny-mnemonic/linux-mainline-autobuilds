@@ -1,7 +1,7 @@
-From 6a72e9fcbd4429d51ab5fd82ab8b1d2899352c47 Mon Sep 17 00:00:00 2001
+From 27aab7cce1b627ea3cb2375d1cdcdd2cf94f1bc7 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 19 Jan 2024 20:18:07 +0100
-Subject: [PATCH 21/67] Revert "tty: deprecate tty_write_message()"
+Subject: [PATCH 21/70] Revert "tty: deprecate tty_write_message()"
 
 This reverts commit 4c74253b831e5a8eb87d4d8d4a0eae40c331e682.
 
@@ -12,7 +12,7 @@ Revert its conditional removal until a proper replacement is found.
  1 file changed, 4 deletions(-)
 
 diff --git a/drivers/tty/tty_io.c b/drivers/tty/tty_io.c
-index 449dbd216460..01096d80c6f0 100644
+index ca9b7d7bad2b..d359d61fc7bd 100644
 --- a/drivers/tty/tty_io.c
 +++ b/drivers/tty/tty_io.c
 @@ -1041,7 +1041,6 @@ static ssize_t iterate_tty_write(struct tty_ldisc *ld, struct tty_struct *tty,

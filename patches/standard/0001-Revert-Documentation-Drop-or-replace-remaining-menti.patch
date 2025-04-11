@@ -1,7 +1,7 @@
-From 8f24e067d430e6f711d0e28e571dbfbbecf1dd0b Mon Sep 17 00:00:00 2001
+From 0da488c1f71870526dde11909b6a8efa3e07b612 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
-Subject: [PATCH 01/67] Revert "Documentation: Drop or replace remaining
+Subject: [PATCH 01/70] Revert "Documentation: Drop or replace remaining
  mentions of IA64"
 
 This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
@@ -181,7 +181,7 @@ index 0f714fc945ac..63a4c5deb156 100644
  =====
  
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 3f35d5b8c296..4265f3da5a9a 100644
+index 76e538c77e31..3827f6134e55 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
 @@ -1516,7 +1516,7 @@
@@ -313,7 +313,7 @@ index cb3d3228dfc8..981ad4f89fd3 100644
  At least LSI FW643e and FW643e2 controllers are known to support access to
  physical addresses above 4 GB, but this feature is currently not enabled by
 diff --git a/Documentation/kbuild/makefiles.rst b/Documentation/kbuild/makefiles.rst
-index d36519f194dc..a348d4becaae 100644
+index 3b9a8bc671e2..d8995d1d4dda 100644
 --- a/Documentation/kbuild/makefiles.rst
 +++ b/Documentation/kbuild/makefiles.rst
 @@ -53,7 +53,7 @@ knowledge about the kernel Makefiles, plus detailed knowledge about the
@@ -425,10 +425,10 @@ index b2ac3c743a3a..ce3f39d9b3cb 100644
  sparc - 在这一点上，IRQ是开着的（？），把local_irq_save改为_disable。
        - 待办事项: 需要第二个CPU来禁用抢占 (参考 #1)
 diff --git a/Makefile b/Makefile
-index d138b17b8840..83bd2dbb5402 100644
+index 38689a0c3605..ac0b71967f92 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -391,7 +391,7 @@ include $(srctree)/scripts/subarch.include
+@@ -388,7 +388,7 @@ include $(srctree)/scripts/subarch.include
  # When performing cross compilation for other architectures ARCH shall be set
  # to the target architecture. (See arch/* for the possibilities).
  # ARCH can be set during invocation of make:
@@ -437,7 +437,7 @@ index d138b17b8840..83bd2dbb5402 100644
  # Another way is to have ARCH set in the environment.
  # The default ARCH is the host where make is executed.
  
-@@ -399,7 +399,7 @@ include $(srctree)/scripts/subarch.include
+@@ -396,7 +396,7 @@ include $(srctree)/scripts/subarch.include
  # during compilation. Only gcc and related bin-utils executables
  # are prefixed with $(CROSS_COMPILE).
  # CROSS_COMPILE can be set on the command line

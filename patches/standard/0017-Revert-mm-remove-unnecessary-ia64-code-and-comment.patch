@@ -1,7 +1,7 @@
-From ae52f576b951e5db1fa57a7602e2ee054df7ab41 Mon Sep 17 00:00:00 2001
+From e3b3cc9c439ac36a030168603c0138bce1f94aa3 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 14:21:54 +0100
-Subject: [PATCH 17/67] Revert "mm: remove unnecessary ia64 code and comment"
+Subject: [PATCH 17/70] Revert "mm: remove unnecessary ia64 code and comment"
 
 This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
 ---
@@ -11,7 +11,7 @@ This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
  3 files changed, 34 insertions(+), 18 deletions(-)
 
 diff --git a/mm/Kconfig b/mm/Kconfig
-index d3fb3762887b..41b6d4706968 100644
+index e113f713b493..1034e5396cd5 100644
 --- a/mm/Kconfig
 +++ b/mm/Kconfig
 @@ -755,7 +755,7 @@ config DEFAULT_MMAP_MIN_ADDR
@@ -24,7 +24,7 @@ index d3fb3762887b..41b6d4706968 100644
  	  On arm and other archs it should not be higher than 32768.
  	  Programs which use vm86 functionality or have some need to map
 diff --git a/mm/mm_init.c b/mm/mm_init.c
-index a38a1909b407..d822d1b27be0 100644
+index 84f14fa12d0d..ed43473b7302 100644
 --- a/mm/mm_init.c
 +++ b/mm/mm_init.c
 @@ -1522,7 +1522,8 @@ void __init set_pageblock_order(void)
@@ -37,7 +37,7 @@ index a38a1909b407..d822d1b27be0 100644
  	 */
  	pageblock_order = order;
  }
-@@ -1644,8 +1645,8 @@ void __init *memmap_alloc(phys_addr_t size, phys_addr_t align,
+@@ -1644,8 +1645,9 @@ void __init *memmap_alloc(phys_addr_t size, phys_addr_t align,
  #ifdef CONFIG_FLATMEM
  static void __init alloc_node_mem_map(struct pglist_data *pgdat)
  {
@@ -45,10 +45,11 @@ index a38a1909b407..d822d1b27be0 100644
 -	struct page *map;
 +	unsigned long __maybe_unused start = 0;
 +	unsigned long __maybe_unused offset = 0;
++	unsigned long end;
  
  	/* Skip empty nodes */
  	if (!pgdat->node_spanned_pages)
-@@ -1653,20 +1654,27 @@ static void __init alloc_node_mem_map(struct pglist_data *pgdat)
+@@ -1653,20 +1655,26 @@ static void __init alloc_node_mem_map(struct pglist_data *pgdat)
  
  	start = pgdat->node_start_pfn & ~(MAX_ORDER_NR_PAGES - 1);
  	offset = pgdat->node_start_pfn - start;
@@ -68,11 +69,11 @@ index a38a1909b407..d822d1b27be0 100644
 -	memmap_boot_pages_add(DIV_ROUND_UP(size, PAGE_SIZE));
 +	/* ia64 gets its own node_mem_map, before this, without bootmem */
 +	if (!pgdat->node_mem_map) {
-+		unsigned long size, end;
++		unsigned long size;
 +		struct page *map;
 +
 +		/*
-+		 * The zone's endpoints aren't required to be MAX_ORDER
++		 * The zone's endpoints aren't required to be MAX_PAGE_ORDER
 +		 * aligned but the node_mem_map endpoints must be in order
 +		 * for the buddy allocator to function correctly.
 +		 */
@@ -86,7 +87,6 @@ index a38a1909b407..d822d1b27be0 100644
 +		pgdat->node_mem_map = map + offset;
 +		memmap_boot_pages_add(DIV_ROUND_UP(size, PAGE_SIZE));
 +	}
-+
  	pr_debug("%s: node %d, pgdat %08lx, node_mem_map %08lx\n",
  		 __func__, pgdat->node_id, (unsigned long)pgdat,
  		 (unsigned long)pgdat->node_mem_map);

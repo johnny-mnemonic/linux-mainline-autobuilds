@@ -1,7 +1,7 @@
-From fa0f5972ccd4ad17c527546c408b1715e5ac1693 Mon Sep 17 00:00:00 2001
+From 69b680e1b1cc61b9d1922c45fd3248e880141a92 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Mon, 20 Nov 2023 17:08:57 +0100
-Subject: [PATCH 14/67] Revert "linux/export: clean up the IA-64 KSYM_FUNC
+Subject: [PATCH 14/70] Revert "linux/export: clean up the IA-64 KSYM_FUNC
  macro"
 
 This reverts commit 9e0be3f50c0e8517d0238b62409c20bcb8cd8785.

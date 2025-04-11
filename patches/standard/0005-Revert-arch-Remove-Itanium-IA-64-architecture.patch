@@ -1,7 +1,7 @@
-From 707e961b11012983782cd100f670b433df54d6b5 Mon Sep 17 00:00:00 2001
+From 73e4d0fae7c58e7e58fa4a23db366d0288bb9bbc Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
-Subject: [PATCH 05/67] Revert "arch: Remove Itanium (IA-64) architecture"
+Subject: [PATCH 05/70] Revert "arch: Remove Itanium (IA-64) architecture"
 
 This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
 ---
@@ -3010,10 +3010,10 @@ index e1b0eeabbb5e..59fd6ed5e3f1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index e0045ac4327b..d19246077156 100644
+index 96b827049501..693b259f5fdc 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -11277,6 +11277,12 @@ F:	drivers/i3c/
+@@ -11268,6 +11268,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3026,7 +3026,7 @@ index e0045ac4327b..d19246077156 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -18336,6 +18342,11 @@ S:	Maintained
+@@ -18374,6 +18380,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -67328,7 +67328,7 @@ index e40413609f53..1a6acd27438d 100644
  	select CEC_CORE
  	select CEC_NOTIFIER
 diff --git a/drivers/misc/Kconfig b/drivers/misc/Kconfig
-index 56bc72c7ce4a..4d71a76ac82e 100644
+index 6b37d61150ee..3a077bccf64d 100644
 --- a/drivers/misc/Kconfig
 +++ b/drivers/misc/Kconfig
 @@ -176,7 +176,7 @@ config ENCLOSURE_SERVICES
@@ -67582,7 +67582,7 @@ index 3faa7eadf679..19fc7076af27 100644
  	#error not a supported configuration
  #endif
 diff --git a/drivers/misc/sgi-xp/xpc_main.c b/drivers/misc/sgi-xp/xpc_main.c
-index 7a3c34306de9..442f6b152a5d 100644
+index 697a008c14d3..f1e4bd6c2536 100644
 --- a/drivers/misc/sgi-xp/xpc_main.c
 +++ b/drivers/misc/sgi-xp/xpc_main.c
 @@ -1153,6 +1153,36 @@ xpc_die_deactivate(void)
@@ -67791,7 +67791,7 @@ index 2f03a7080d96..fff522d347e3 100644
  }
  
 diff --git a/drivers/net/ethernet/broadcom/tg3.c b/drivers/net/ethernet/broadcom/tg3.c
-index d9d675f1ebfe..6d8a8dc93c48 100644
+index d1f541af4e3b..a0ac190626a9 100644
 --- a/drivers/net/ethernet/broadcom/tg3.c
 +++ b/drivers/net/ethernet/broadcom/tg3.c
 @@ -17171,7 +17171,7 @@ static u32 tg3_calc_dma_bndry(struct tg3 *tp, u32 val)
@@ -67843,7 +67843,7 @@ index 78748e8d2dba..feca96fc4255 100644
  	u64 size = screen_info.lfb_size;
  	struct resource *r;
 diff --git a/drivers/tty/serial/8250/Kconfig b/drivers/tty/serial/8250/Kconfig
-index 55d26d16df9b..5b1cc009b977 100644
+index bd3d636ff962..0c3ea1663455 100644
 --- a/drivers/tty/serial/8250/Kconfig
 +++ b/drivers/tty/serial/8250/Kconfig
 @@ -224,7 +224,7 @@ config SERIAL_8250_EXTENDED
@@ -67856,7 +67856,7 @@ index 55d26d16df9b..5b1cc009b977 100644
  	  Say Y here if you have dumb serial boards other than the four
  	  standard COM 1/2/3/4 ports. This may happen if you have an AST
 diff --git a/drivers/tty/vt/keyboard.c b/drivers/tty/vt/keyboard.c
-index 804355da46f5..c6a8a2dc49c7 100644
+index ae92e6a50a65..c6e7baecee7e 100644
 --- a/drivers/tty/vt/keyboard.c
 +++ b/drivers/tty/vt/keyboard.c
 @@ -1271,7 +1271,7 @@ static void kbd_bh(struct tasklet_struct *unused)
@@ -67934,7 +67934,7 @@ index 052d0e888c27..c14852362fce 100644
  #define __compat_packed __attribute__((packed))
  #else
 diff --git a/include/linux/acpi.h b/include/linux/acpi.h
-index a70e62d69dc7..cb184817b5fd 100644
+index 3f2e93ed9730..5909ae6f05fe 100644
 --- a/include/linux/acpi.h
 +++ b/include/linux/acpi.h
 @@ -238,7 +238,10 @@ acpi_table_parse_cedt(enum acpi_cedt_type id,
@@ -67949,7 +67949,7 @@ index a70e62d69dc7..cb184817b5fd 100644
  void acpi_numa_processor_affinity_init (struct acpi_srat_cpu_affinity *pa);
  #else
  static inline void
-@@ -1130,8 +1133,15 @@ static inline int acpi_get_lps0_constraint(struct device *dev)
+@@ -1141,8 +1144,15 @@ static inline int acpi_get_lps0_constraint(struct device *dev)
  	return ACPI_STATE_UNKNOWN;
  }
  #endif /* CONFIG_SUSPEND && CONFIG_X86 */
@@ -67995,7 +67995,7 @@ index 7d63d1d75f22..bf2dd720d015 100644
   * We play games with efi_enabled so that the compiler will, if
   * possible, remove EFI-related code altogether.
 diff --git a/include/linux/mm.h b/include/linux/mm.h
-index d66bc0e97632..3c0dd14fad91 100644
+index b7f13f087954..1f4cd71126e8 100644
 --- a/include/linux/mm.h
 +++ b/include/linux/mm.h
 @@ -362,6 +362,8 @@ extern unsigned int kobjsize(const void *objp);
@@ -68061,7 +68061,7 @@ index c4b26cd8998b..97a834dd3a38 100644
  #endif
  	}
 diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index cfaca3040b2f..51d954d5fdf3 100644
+index c81cf642dba0..22e5b5e49cc0 100644
 --- a/kernel/sched/core.c
 +++ b/kernel/sched/core.c
 @@ -8920,9 +8920,9 @@ void normalize_rt_tasks(void)
@@ -68129,10 +68129,10 @@ index 3b7a7308e35b..7a7a69a131ba 100644
  	{
  		.procname	= "max_lock_depth",
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index df9587aa5c5e..917ce9629107 100644
+index 9fe4d8dfe578..1bcd92f81cd9 100644
 --- a/lib/Kconfig.debug
 +++ b/lib/Kconfig.debug
-@@ -792,7 +792,7 @@ config SHRINKER_DEBUG
+@@ -791,7 +791,7 @@ config SHRINKER_DEBUG
  
  config DEBUG_STACK_USAGE
  	bool "Stack utilization instrumentation"

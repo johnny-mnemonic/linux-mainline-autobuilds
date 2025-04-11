@@ -1,7 +1,7 @@
-From a0f7603116b1f0d537aa3e7826c290aa86dc724d Mon Sep 17 00:00:00 2001
+From 0d63bf1a18bdcacda8a7bbed2809e0448bd740a0 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 16:12:32 +0100
-Subject: [PATCH 62/67] Revert "scripts: clean up IA-64 code"
+Subject: [PATCH 62/70] Revert "scripts: clean up IA-64 code"
 
 This reverts commit 0df8e97085946dd79c06720678a845778b6d6bf8.
 ---
@@ -84,10 +84,10 @@ index c0b2dabf6c89..3401e5094d30 100644
  "  -> Bus options (PCI, PCMCIA, EISA, ISA)\n"
  "    -> PCI support (PCI [ = y])\n"
 diff --git a/scripts/package/kernel.spec b/scripts/package/kernel.spec
-index ac3e5ac01d8a..61846aac46d2 100644
+index 726f34e11960..afa543e8c93b 100644
 --- a/scripts/package/kernel.spec
 +++ b/scripts/package/kernel.spec
-@@ -56,6 +56,10 @@ patch -p1 < %{SOURCE2}
+@@ -84,6 +84,10 @@ patch -p1 < %{SOURCE2}
  
  %install
  mkdir -p %{buildroot}/lib/modules/%{KERNELRELEASE}
@@ -98,7 +98,7 @@ index ac3e5ac01d8a..61846aac46d2 100644
  cp $(%{make} %{makeflags} -s image_name) %{buildroot}/lib/modules/%{KERNELRELEASE}/vmlinuz
  # DEPMOD=true makes depmod no-op. We do not package depmod-generated files.
  %{make} %{makeflags} INSTALL_MOD_PATH=%{buildroot} DEPMOD=true modules_install
-@@ -96,9 +100,14 @@ rm -rf %{buildroot}
+@@ -138,9 +142,14 @@ rm -f debugfiles.list debuglinks.list debugsourcefiles.list debugsources.list \
  if [ -x /usr/bin/kernel-install ]; then
  	/usr/bin/kernel-install add %{KERNELRELEASE} /lib/modules/%{KERNELRELEASE}/vmlinuz
  fi
@@ -116,7 +116,7 @@ index ac3e5ac01d8a..61846aac46d2 100644
  done
  if [ -d "/lib/modules/%{KERNELRELEASE}/dtb" ] && \
 diff --git a/scripts/package/mkdebian b/scripts/package/mkdebian
-index b6dd98ca860b..e0c2c30dcef6 100755
+index 744ddba01d93..971b89bc8431 100755
 --- a/scripts/package/mkdebian
 +++ b/scripts/package/mkdebian
 @@ -26,7 +26,7 @@ set_debarch() {
