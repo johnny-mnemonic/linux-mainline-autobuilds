@@ -1,4 +1,4 @@
-From c4a4998940ebf7d93d866d0247af23e233e4e9fa Mon Sep 17 00:00:00 2001
+From 67e1f67e4826365d3df2296d54824cb741c72388 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Tue, 25 Mar 2025 10:21:52 +0100
 Subject: [PATCH 65/70] Revert "vmlinux.lds.h: Remove entry to place init_task
@@ -16,7 +16,7 @@ This reverts commit 2ec01bd7152f80795eab7b48706aa5db8d4a286a.
  1 file changed, 1 insertion(+)
 
 diff --git a/include/asm-generic/vmlinux.lds.h b/include/asm-generic/vmlinux.lds.h
-index 58a635a6d5bd..4925441bc471 100644
+index fa5f19b8d53a..eec55f99d97b 100644
 --- a/include/asm-generic/vmlinux.lds.h
 +++ b/include/asm-generic/vmlinux.lds.h
 @@ -409,6 +409,7 @@ defined(CONFIG_AUTOFDO_CLANG) || defined(CONFIG_PROPELLER_CLANG)

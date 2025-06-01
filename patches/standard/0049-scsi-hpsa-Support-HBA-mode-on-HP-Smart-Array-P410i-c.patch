@@ -1,4 +1,4 @@
-From dbf66d363bc7c2c76f7cbe099431ce0e3e1a167d Mon Sep 17 00:00:00 2001
+From 08f665faba485dbcae0f2922f3908f65d6664c72 Mon Sep 17 00:00:00 2001
 From: Ivan Mironov <mironov.ivan@gmail.com>
 Date: Wed, 5 Dec 2018 15:24:57 +0500
 Subject: [PATCH 49/70] scsi: hpsa: Support HBA mode on HP Smart Array P410i

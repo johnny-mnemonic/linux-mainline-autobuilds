@@ -1,4 +1,4 @@
-From 41059ff2754b2236315055dfb8711e26b2850ba1 Mon Sep 17 00:00:00 2001
+From 59fa2522ad06d537074d7915ed6f1214227d8490 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 23 Dec 2024 13:53:53 +0100
 Subject: [PATCH 46/70] Revert "ACPI: processor_perflib: extend X86 dependency"
@@ -9,10 +9,10 @@ This reverts commit bf41bb57b2c1d305d594c15bab8d387b1f5b75dc.
  1 file changed, 8 insertions(+), 5 deletions(-)
 
 diff --git a/drivers/acpi/processor_perflib.c b/drivers/acpi/processor_perflib.c
-index 53996f1a2d80..4265814c74f8 100644
+index 64b8d1e19594..1959b01f1d2c 100644
 --- a/drivers/acpi/processor_perflib.c
 +++ b/drivers/acpi/processor_perflib.c
-@@ -24,6 +24,8 @@
+@@ -25,6 +25,8 @@
  
  #define ACPI_PROCESSOR_FILE_PERFORMANCE	"performance"
  
@@ -21,7 +21,7 @@ index 53996f1a2d80..4265814c74f8 100644
  /*
   * _PPC support is implemented as a CPUfreq policy notifier:
   * This means each time a CPUfreq driver registered also with
-@@ -207,10 +209,6 @@ void acpi_processor_ppc_exit(struct cpufreq_policy *policy)
+@@ -208,10 +210,6 @@ void acpi_processor_ppc_exit(struct cpufreq_policy *policy)
  	}
  }
  
@@ -32,7 +32,7 @@ index 53996f1a2d80..4265814c74f8 100644
  static int acpi_processor_get_performance_control(struct acpi_processor *pr)
  {
  	int result = 0;
-@@ -269,6 +267,7 @@ static int acpi_processor_get_performance_control(struct acpi_processor *pr)
+@@ -270,6 +268,7 @@ static int acpi_processor_get_performance_control(struct acpi_processor *pr)
  	return result;
  }
  
@@ -40,7 +40,7 @@ index 53996f1a2d80..4265814c74f8 100644
  /*
   * Some AMDs have 50MHz frequency multiples, but only provide 100MHz rounding
   * in their ACPI data. Calculate the real values and fix up the _PSS data.
-@@ -299,6 +298,9 @@ static void amd_fixup_frequency(struct acpi_processor_px *px, int i)
+@@ -300,6 +299,9 @@ static void amd_fixup_frequency(struct acpi_processor_px *px, int i)
  			px->core_frequency = (100 * (fid + 8)) >> did;
  	}
  }
@@ -50,7 +50,7 @@ index 53996f1a2d80..4265814c74f8 100644
  
  static int acpi_processor_get_performance_states(struct acpi_processor *pr)
  {
-@@ -438,11 +440,13 @@ int acpi_processor_get_performance_info(struct acpi_processor *pr)
+@@ -439,11 +441,13 @@ int acpi_processor_get_performance_info(struct acpi_processor *pr)
  	 * the BIOS is older than the CPU and does not know its frequencies
  	 */
   update_bios:
@@ -64,7 +64,7 @@ index 53996f1a2d80..4265814c74f8 100644
  	return result;
  }
  EXPORT_SYMBOL_GPL(acpi_processor_get_performance_info);
-@@ -784,4 +788,3 @@ void acpi_processor_unregister_performance(unsigned int cpu)
+@@ -785,4 +789,3 @@ void acpi_processor_unregister_performance(unsigned int cpu)
  	mutex_unlock(&performance_mutex);
  }
  EXPORT_SYMBOL(acpi_processor_unregister_performance);

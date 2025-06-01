@@ -1,4 +1,4 @@
-From b11198193aef8ee5757c833afc22f61ce7f2d60a Mon Sep 17 00:00:00 2001
+From a0f3553e835e9a1347598d758d2c600031100250 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sun, 2 Jun 2024 10:05:31 +0200
 Subject: [PATCH 27/70] Revert "ACPI/NUMA: Squash
@@ -10,10 +10,10 @@ This reverts commit 57ba79e865e5b50a6ad15a98ea4b2cf808f19c0c.
  1 file changed, 50 insertions(+), 27 deletions(-)
 
 diff --git a/drivers/acpi/numa/srat.c b/drivers/acpi/numa/srat.c
-index 0a725e46d017..dd35aba799a8 100644
+index 53816dfab645..487229bf874f 100644
 --- a/drivers/acpi/numa/srat.c
 +++ b/drivers/acpi/numa/srat.c
-@@ -317,21 +317,16 @@ __weak int __init numa_fill_memblks(u64 start, u64 end)
+@@ -318,21 +318,16 @@ __weak int __init numa_fill_memblks(u64 start, u64 end)
  	return NUMA_NO_MEMBLK;
  }
  
@@ -37,7 +37,7 @@ index 0a725e46d017..dd35aba799a8 100644
  	for (i = 0; i < slit->locality_count; i++) {
  		const int from_node = pxm_to_node(i);
  
-@@ -348,34 +343,28 @@ static int __init acpi_parse_slit(struct acpi_table_header *table)
+@@ -349,34 +344,28 @@ static int __init acpi_parse_slit(struct acpi_table_header *table)
  				slit->entry[slit->locality_count * i + j]);
  		}
  	}
@@ -80,7 +80,7 @@ index 0a725e46d017..dd35aba799a8 100644
  	hotpluggable = IS_ENABLED(CONFIG_MEMORY_HOTPLUG) &&
  		(ma->flags & ACPI_SRAT_MEM_HOT_PLUGGABLE);
  
-@@ -413,15 +402,11 @@ acpi_parse_memory_affinity(union acpi_subtable_headers *header,
+@@ -414,15 +403,11 @@ acpi_parse_memory_affinity(union acpi_subtable_headers *header,
  
  	max_possible_pfn = max(max_possible_pfn, PFN_UP(end - 1));
  
@@ -98,7 +98,7 @@ index 0a725e46d017..dd35aba799a8 100644
  }
  
  static int __init acpi_parse_cfmws(union acpi_subtable_headers *header,
-@@ -464,6 +449,26 @@ static int __init acpi_parse_cfmws(union acpi_subtable_headers *header,
+@@ -475,6 +460,26 @@ static int __init acpi_parse_cfmws(union acpi_subtable_headers *header,
  	(*fake_pxm)++;
  	return 0;
  }
@@ -125,7 +125,7 @@ index 0a725e46d017..dd35aba799a8 100644
  
  void __init __weak
  acpi_numa_x2apic_affinity_init(struct acpi_srat_x2apic_cpu_affinity *pa)
-@@ -554,6 +559,8 @@ acpi_parse_gi_affinity(union acpi_subtable_headers *header,
+@@ -565,6 +570,8 @@ acpi_parse_gi_affinity(union acpi_subtable_headers *header,
  }
  #endif /* defined(CONFIG_X86) || defined (CONFIG_ARM64) */
  
@@ -134,7 +134,7 @@ index 0a725e46d017..dd35aba799a8 100644
  static int __init
  acpi_parse_rintc_affinity(union acpi_subtable_headers *header,
  			  const unsigned long end)
-@@ -569,6 +576,22 @@ acpi_parse_rintc_affinity(union acpi_subtable_headers *header,
+@@ -580,6 +587,22 @@ acpi_parse_rintc_affinity(union acpi_subtable_headers *header,
  	return 0;
  }
  

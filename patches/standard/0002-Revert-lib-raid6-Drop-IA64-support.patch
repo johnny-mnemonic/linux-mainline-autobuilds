@@ -1,4 +1,4 @@
-From 7adee02b0da274cce352083123bcbb424e2d4dfa Mon Sep 17 00:00:00 2001
+From 14f57733d07689fd05923f8de674aebc4511bf15 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:38 +0200
 Subject: [PATCH 02/70] Revert "lib/raid6: Drop IA64 support"
@@ -47,10 +47,10 @@ index 29127dd05d63..5a61ec421a06 100644
  	$(call if_changed,unroll)
  
 diff --git a/lib/raid6/algos.c b/lib/raid6/algos.c
-index cd2e88ee1f14..0ec534faf019 100644
+index dfd3f800ac9b..bd24542bb7b8 100644
 --- a/lib/raid6/algos.c
 +++ b/lib/raid6/algos.c
-@@ -80,6 +80,10 @@ const struct raid6_calls * const raid6_algos[] = {
+@@ -76,6 +76,10 @@ const struct raid6_calls * const raid6_algos[] = {
  #ifdef CONFIG_CPU_HAS_LSX
  	&raid6_lsx,
  #endif

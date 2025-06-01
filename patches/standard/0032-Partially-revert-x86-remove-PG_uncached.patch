@@ -1,4 +1,4 @@
-From 9a2c6ba319568850d0f68c1666b26fa42b6a9b64 Mon Sep 17 00:00:00 2001
+From b3273699ad66fce955c43787fd62df1f269cdd70 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 27 Sep 2024 14:29:04 +0200
 Subject: [PATCH 32/70] Partially revert "x86: remove PG_uncached"
@@ -52,10 +52,10 @@ index 000000000000..e66c91f95d83
 +    -----------------------
 \ No newline at end of file
 diff --git a/fs/proc/page.c b/fs/proc/page.c
-index 23fc771100ae..07efe37b4824 100644
+index 999af26c7298..f5f42e4fda0d 100644
 --- a/fs/proc/page.c
 +++ b/fs/proc/page.c
-@@ -211,6 +211,10 @@ u64 stable_page_flags(const struct page *page)
+@@ -231,6 +231,10 @@ u64 stable_page_flags(const struct page *page)
  		u |= kpf_copy_bit(page->flags, KPF_HWPOISON,	PG_hwpoison);
  #endif
  
@@ -79,7 +79,7 @@ index 196778a087c4..7c587a711be1 100644
  #define KPF_ARCH_2		41
  #define KPF_ARCH_3		42
 diff --git a/include/linux/page-flags.h b/include/linux/page-flags.h
-index e6a21b62dcce..2a0b3fd44a58 100644
+index 4fe5ee67535b..7d0e338a8d52 100644
 --- a/include/linux/page-flags.h
 +++ b/include/linux/page-flags.h
 @@ -114,6 +114,9 @@ enum pageflags {
@@ -92,7 +92,7 @@ index e6a21b62dcce..2a0b3fd44a58 100644
  #ifdef CONFIG_MEMORY_FAILURE
  	PG_hwpoison,		/* hardware poisoned page. Don't touch */
  #endif
-@@ -644,6 +647,12 @@ FOLIO_FLAG_FALSE(mlocked)
+@@ -651,6 +654,12 @@ FOLIO_FLAG_FALSE(mlocked)
  	FOLIO_TEST_SET_FLAG_FALSE(mlocked)
  #endif
  
@@ -106,7 +106,7 @@ index e6a21b62dcce..2a0b3fd44a58 100644
  PAGEFLAG(HWPoison, hwpoison, PF_ANY)
  TESTSCFLAG(HWPoison, hwpoison, PF_ANY)
 diff --git a/include/trace/events/mmflags.h b/include/trace/events/mmflags.h
-index 8de9c8a822a4..55984f348bd5 100644
+index 9040a7017db7..d57c2ba2474e 100644
 --- a/include/trace/events/mmflags.h
 +++ b/include/trace/events/mmflags.h
 @@ -113,6 +113,12 @@ TRACE_DEFINE_ENUM(___GFP_LAST_BIT);

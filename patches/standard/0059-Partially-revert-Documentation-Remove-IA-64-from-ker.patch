@@ -1,4 +1,4 @@
-From 6f30b008f670360a90ee90578bc73161865c97b8 Mon Sep 17 00:00:00 2001
+From f5c3f4470252957d4676c0fc4cfe88a17eb3412a Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 15:17:38 +0100
 Subject: [PATCH 59/70] Partially revert "Documentation: Remove IA-64 from
@@ -30,10 +30,10 @@ index 39d0e7ff0965..6ede8c85eb8f 100644
  	IP_PNP	IP DHCP, BOOTP, or RARP is enabled.
  	IPV6	IPv6 support is enabled.
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 3827f6134e55..f5e83b385ae9 100644
+index 12b0f5dba533..dd11fd8a8c25 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
-@@ -2670,7 +2670,7 @@
+@@ -2691,7 +2691,7 @@
  
  	keepinitrd	[HW,ARM] See retain_initrd.
  
@@ -42,7 +42,7 @@ index 3827f6134e55..f5e83b385ae9 100644
  			Format: nn[KMGTPE] | nn% | "mirror"
  			This parameter specifies the amount of memory usable by
  			the kernel for non-movable allocations.  The requested
-@@ -3361,6 +3361,9 @@
+@@ -3407,6 +3407,9 @@
  			different yeeloong laptops.
  			Example: machtype=lemote-yeeloong-2f-7inch
  
@@ -52,7 +52,7 @@ index 3827f6134e55..f5e83b385ae9 100644
  	maxcpus=	[SMP,EARLY] Maximum number of processors that an SMP kernel
  			will bring up during bootup.  maxcpus=n : n >= 0 limits
  			the kernel to bring up 'n' processors. Surely after
-@@ -3666,6 +3669,9 @@
+@@ -3712,6 +3715,9 @@
  			Enable or disable the microcode minimal revision
  			enforcement for the runtime microcode loader.
  
@@ -62,7 +62,7 @@ index 3827f6134e55..f5e83b385ae9 100644
  	mini2440=	[ARM,HW,KNL]
  			Format:[0..2][b][c][t]
  			Default: "0tb"
-@@ -3830,7 +3836,7 @@
+@@ -3877,7 +3883,7 @@
  	mousedev.yres=	[MOUSE] Vertical screen resolution, used for devices
  			reporting absolute coordinates, such as tablets
  
@@ -71,7 +71,7 @@ index 3827f6134e55..f5e83b385ae9 100644
  			Format: nn[KMGTPE] | nn%
  			This parameter is the complement to kernelcore=, it
  			specifies the amount of memory used for migratable
-@@ -4103,6 +4109,8 @@
+@@ -4150,6 +4156,8 @@
  
  	no_entry_flush  [PPC,EARLY] Don't flush the L1-D cache when entering the kernel.
  
@@ -80,7 +80,7 @@ index 3827f6134e55..f5e83b385ae9 100644
  	noexec32	[X86-64]
  			This affects only 32-bit executables.
  			noexec32=on: enable non-executable mappings (default)
-@@ -4124,6 +4132,13 @@
+@@ -4171,6 +4179,13 @@
  
  	nogbpages	[X86] Do not use GB pages for kernel direct mappings.
  
@@ -94,7 +94,7 @@ index 3827f6134e55..f5e83b385ae9 100644
  	no_hash_pointers
  			[KNL,EARLY]
  			Force pointers printed to the console or buffers to be
-@@ -4180,6 +4195,8 @@
+@@ -4227,6 +4242,8 @@
  			remapping.
  			[Deprecated - use intremap=off]
  
@@ -103,7 +103,7 @@ index 3827f6134e55..f5e83b385ae9 100644
  	noinvpcid	[X86,EARLY] Disable the INVPCID cpu feature.
  
  	noiotrap	[SH] Disables trapped I/O port accesses.
-@@ -4189,6 +4206,8 @@
+@@ -4236,6 +4253,8 @@
  
  	noisapnp	[ISAPNP] Disables ISA PnP code.
  
@@ -112,7 +112,7 @@ index 3827f6134e55..f5e83b385ae9 100644
  	nokaslr		[KNL,EARLY]
  			When CONFIG_RANDOMIZE_BASE is set, this disables
  			kernel and module base offset ASLR (Address Space
-@@ -4203,6 +4222,8 @@
+@@ -4250,6 +4269,8 @@
  
  	nolapic_timer	[X86-32,APIC,EARLY] Do not use the local APIC timer.
  
@@ -121,7 +121,7 @@ index 3827f6134e55..f5e83b385ae9 100644
  	nomce		[X86-32] Disable Machine Check Exception
  
  	nomfgpt		[X86-32] Disable Multi-Function General Purpose
-@@ -4254,6 +4275,8 @@
+@@ -4301,6 +4322,8 @@
  	noresume	[SWSUSP] Disables resume and restores original swap
  			space.
  
@@ -130,7 +130,7 @@ index 3827f6134e55..f5e83b385ae9 100644
  	no-scroll	[VGA] Disables scrollback.
  			This is required for the Braillex ib80-piezo Braille
  			reader made by F.H. Papenmeier (Germany).
-@@ -4356,6 +4379,10 @@
+@@ -4403,6 +4426,10 @@
  			parameter, xsave area per process might occupy more
  			memory on xsaves enabled systems.
  
@@ -141,7 +141,7 @@ index 3827f6134e55..f5e83b385ae9 100644
  	nr_cpus=	[SMP,EARLY] Maximum number of processors that an SMP kernel
  			could support.  nr_cpus=n : n >= 1 limits the kernel to
  			support 'n' processors. It could be larger than the
-@@ -6478,6 +6505,9 @@
+@@ -6555,6 +6582,9 @@
  			apic=verbose is specified.
  			Example: apic=debug show_lapic=all
  
@@ -151,7 +151,7 @@ index 3827f6134e55..f5e83b385ae9 100644
  	slab_debug[=options[,slabs][;[options[,slabs]]...]	[MM]
  			Enabling slab_debug allows one to determine the
  			culprit if slab objects become corrupted. Enabling
-@@ -7012,7 +7042,7 @@
+@@ -7089,7 +7119,7 @@
  			This parameter controls use of the Protected
  			Execution Facility on pSeries.
  
@@ -160,7 +160,7 @@ index 3827f6134e55..f5e83b385ae9 100644
  			Format: { <int> [,<int>] | force | noforce }
  			<int> -- Number of I/O TLB slabs
  			<int> -- Second integer after comma. Number of swiotlb
-@@ -7772,6 +7802,9 @@
+@@ -7849,6 +7879,9 @@
  			Try vdso32=0 if you encounter an error that says:
  			dl_main: Assertion `(void *) ph->p_vaddr == _rtld_local._dl_sysinfo_dso' failed!
  

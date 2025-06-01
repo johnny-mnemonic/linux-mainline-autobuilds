@@ -1,4 +1,4 @@
-From 5253aadf90756778610e29148a7b705cf7658205 Mon Sep 17 00:00:00 2001
+From e68804c59aa02b577c7892c2ff893278f3ba8177 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 2 Apr 2025 16:37:51 +0200
 Subject: [PATCH 69/70] Partially revert "arch, mm: make releasing of memory to
@@ -39,19 +39,19 @@ index b13bfbff9c7f..3df9306f5917 100644
  
  	/*
 diff --git a/include/linux/memblock.h b/include/linux/memblock.h
-index ef5a1ecc6e59..e79eb6ac516f 100644
+index bb19a2534224..497e2c1364a6 100644
 --- a/include/linux/memblock.h
 +++ b/include/linux/memblock.h
-@@ -133,6 +133,7 @@ int memblock_mark_nomap(phys_addr_t base, phys_addr_t size);
- int memblock_clear_nomap(phys_addr_t base, phys_addr_t size);
- int memblock_reserved_mark_noinit(phys_addr_t base, phys_addr_t size);
+@@ -157,6 +157,7 @@ int memblock_reserved_mark_noinit(phys_addr_t base, phys_addr_t size);
+ int memblock_mark_kho_scratch(phys_addr_t base, phys_addr_t size);
+ int memblock_clear_kho_scratch(phys_addr_t base, phys_addr_t size);
  
 +void memblock_free_all(void);
  void memblock_free(void *ptr, size_t size);
  void reset_all_zones_managed_pages(void);
  
 diff --git a/mm/internal.h b/mm/internal.h
-index 50c2f590b2d0..baf555fdbbf2 100644
+index 6b8ed2017743..9c83fee7b334 100644
 --- a/mm/internal.h
 +++ b/mm/internal.h
 @@ -1488,7 +1488,6 @@ static inline bool gup_must_unshare(struct vm_area_struct *vma,
@@ -63,13 +63,13 @@ index 50c2f590b2d0..baf555fdbbf2 100644
  static __always_inline void vma_set_range(struct vm_area_struct *vma,
  					  unsigned long start, unsigned long end,
 diff --git a/mm/mm_init.c b/mm/mm_init.c
-index ed43473b7302..9231711559a9 100644
+index bfbc778d5ace..74a278e4b607 100644
 --- a/mm/mm_init.c
 +++ b/mm/mm_init.c
 @@ -2773,7 +2773,9 @@ void __init mm_core_init(void)
- 	report_meminit();
- 	kmsan_init_shadow();
- 	stack_depot_early_init();
+ 	 */
+ 	kho_memory_init();
+ 
 +#ifndef CONFIG_IA64
  	memblock_free_all();
 +#endif

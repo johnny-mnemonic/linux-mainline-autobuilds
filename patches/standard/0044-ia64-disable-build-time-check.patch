@@ -1,4 +1,4 @@
-From a78071be8732671421ddd0a1abbcab0ec846c471 Mon Sep 17 00:00:00 2001
+From a3cfc300f6907cd9a82e1dc481cfdad30d5312ad Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Tue, 26 Nov 2024 10:53:17 +0100
 Subject: [PATCH 44/70] ia64: disable build time check

@@ -1,4 +1,4 @@
-From 34b14468df015c9ac79752fc0fd9a0d44c76a5c5 Mon Sep 17 00:00:00 2001
+From 03dd8b5fdaa64f8ff74210d76cb629b8427b64cf Mon Sep 17 00:00:00 2001
 From: Ivan Mironov <mironov.ivan@gmail.com>
 Date: Wed, 5 Dec 2018 20:32:44 +0500
 Subject: [PATCH 50/70] scsi: hpsa: Add/mask existing devices on rescan if

@@ -1,4 +1,4 @@
-From 976127c509c424d86e41ea06151eae6320652f31 Mon Sep 17 00:00:00 2001
+From a96667bd079685f10a499af06f53976db6e213e6 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 9 Nov 2023 17:18:24 +0100
 Subject: [PATCH 09/70] ia64: Reserve map_shadow_stack() syscall number

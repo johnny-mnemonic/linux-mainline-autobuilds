@@ -1,4 +1,4 @@
-From 0da488c1f71870526dde11909b6a8efa3e07b612 Mon Sep 17 00:00:00 2001
+From f04ecd7de28f7b57e55b1a09070a27b3adb93ca1 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
 Subject: [PATCH 01/70] Revert "Documentation: Drop or replace remaining
@@ -27,10 +27,10 @@ This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
  18 files changed, 125 insertions(+), 19 deletions(-)
 
 diff --git a/Documentation/ABI/testing/sysfs-devices-system-cpu b/Documentation/ABI/testing/sysfs-devices-system-cpu
-index 206079d3bd5b..9a87a43bad11 100644
+index bf85f4de6862..1bb21b8afe0f 100644
 --- a/Documentation/ABI/testing/sysfs-devices-system-cpu
 +++ b/Documentation/ABI/testing/sysfs-devices-system-cpu
-@@ -354,6 +354,9 @@ Description:	Parameters for the CPU cache attributes
+@@ -413,6 +413,9 @@ Description:	Parameters for the CPU cache attributes
  			- ReadWriteAllocate:
  					both writeallocate and readallocate
  
@@ -181,10 +181,10 @@ index 0f714fc945ac..63a4c5deb156 100644
  =====
  
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 76e538c77e31..3827f6134e55 100644
+index a3ea40b22fb9..12b0f5dba533 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
-@@ -1516,7 +1516,7 @@
+@@ -1513,7 +1513,7 @@
  			See comment before function elanfreq_setup() in
  			arch/x86/kernel/cpu/cpufreq/elanfreq.c.
  
@@ -193,7 +193,7 @@ index 76e538c77e31..3827f6134e55 100644
  			Specifies physical address of start of kernel core
  			image elf header and optionally the size. Generally
  			kexec loader will pass this option to capture kernel.
-@@ -1580,6 +1580,12 @@
+@@ -1577,6 +1577,12 @@
  	floppy=		[HW]
  			See Documentation/admin-guide/blockdev/floppy.rst.
  
@@ -313,7 +313,7 @@ index cb3d3228dfc8..981ad4f89fd3 100644
  At least LSI FW643e and FW643e2 controllers are known to support access to
  physical addresses above 4 GB, but this feature is currently not enabled by
 diff --git a/Documentation/kbuild/makefiles.rst b/Documentation/kbuild/makefiles.rst
-index 3b9a8bc671e2..d8995d1d4dda 100644
+index 38cc656fac20..b0584bdc27c3 100644
 --- a/Documentation/kbuild/makefiles.rst
 +++ b/Documentation/kbuild/makefiles.rst
 @@ -53,7 +53,7 @@ knowledge about the kernel Makefiles, plus detailed knowledge about the
@@ -425,7 +425,7 @@ index b2ac3c743a3a..ce3f39d9b3cb 100644
  sparc - 在这一点上，IRQ是开着的（？），把local_irq_save改为_disable。
        - 待办事项: 需要第二个CPU来禁用抢占 (参考 #1)
 diff --git a/Makefile b/Makefile
-index 38689a0c3605..ac0b71967f92 100644
+index 3244c2a519e2..4d08b2053efa 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -388,7 +388,7 @@ include $(srctree)/scripts/subarch.include
