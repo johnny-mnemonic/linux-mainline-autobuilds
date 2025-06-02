@@ -1,0 +1,40 @@
+diff --git a/arch/ia64/include/asm/syscall.h b/arch/ia64/include/asm/syscall.h
+index 2b02a3fb862a..e2f21a10edb4 100644
+--- a/arch/ia64/include/asm/syscall.h
++++ b/arch/ia64/include/asm/syscall.h
+@@ -23,6 +23,14 @@ static inline long syscall_get_nr(struct task_struct *task,
+ 	return regs->r15;
+ }
+ 
++static inline void syscall_set_nr(struct task_struct *task,
++				  struct pt_regs *regs,
++				  int nr)
++{
++	regs->r15 = nr;
++}
++
++
+ static inline void syscall_rollback(struct task_struct *task,
+ 				    struct pt_regs *regs)
+ {
+@@ -58,6 +66,9 @@ static inline void syscall_set_return_value(struct task_struct *task,
+ extern void syscall_get_arguments(struct task_struct *task,
+ 	struct pt_regs *regs, unsigned long *args);
+ 
++extern void syscall_set_arguments(struct task_struct *task,
++	struct pt_regs *regs, unsigned long *args);
++
+ static inline int syscall_get_arch(struct task_struct *task)
+ {
+ 	return AUDIT_ARCH_IA64;
+diff --git a/arch/ia64/kernel/ptrace.c b/arch/ia64/kernel/ptrace.c
+index fd06d47edb73..afda83fd46c9 100644
+--- a/arch/ia64/kernel/ptrace.c
++++ b/arch/ia64/kernel/ptrace.c
+@@ -2019,3 +2019,6 @@ void syscall_get_arguments(struct task_struct *task,
+ 		syscall_get_args_cb(&ufi, &data);
+ 	}
+ }
++
++void syscall_set_arguments(struct task_struct *task,
++	struct pt_regs *regs, unsigned long *args){}
