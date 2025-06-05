@@ -1,7 +1,7 @@
-From f04ecd7de28f7b57e55b1a09070a27b3adb93ca1 Mon Sep 17 00:00:00 2001
+From 0b6117a675f7db118f7c4d7a38c05c65e3abb227 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
-Subject: [PATCH 01/70] Revert "Documentation: Drop or replace remaining
+Subject: [PATCH 01/73] Revert "Documentation: Drop or replace remaining
  mentions of IA64"
 
 This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
@@ -54,7 +54,7 @@ index b6c23807b804..fe0289c87768 100644
  		information is often valuable to userland, especially in
  		cases where there are OEM extensions used.
 diff --git a/Documentation/admin-guide/kdump/kdump.rst b/Documentation/admin-guide/kdump/kdump.rst
-index 1f7f14c6e184..464ba6cfe885 100644
+index 20fabdf6567e..2d8c59fc1782 100644
 --- a/Documentation/admin-guide/kdump/kdump.rst
 +++ b/Documentation/admin-guide/kdump/kdump.rst
 @@ -17,7 +17,7 @@ You can use common commands, such as cp, scp or makedumpfile to copy
@@ -140,7 +140,7 @@ index 1f7f14c6e184..464ba6cfe885 100644
  	"1 irqpoll nr_cpus=1 reset_devices"
  
 diff --git a/Documentation/admin-guide/kdump/vmcoreinfo.rst b/Documentation/admin-guide/kdump/vmcoreinfo.rst
-index 0f714fc945ac..63a4c5deb156 100644
+index 8cf4614385b7..df68bc9f1baa 100644
 --- a/Documentation/admin-guide/kdump/vmcoreinfo.rst
 +++ b/Documentation/admin-guide/kdump/vmcoreinfo.rst
 @@ -413,6 +413,36 @@ of a higher page table lookup overhead, and also consumes more page

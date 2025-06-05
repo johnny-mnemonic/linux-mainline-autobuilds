@@ -1,7 +1,7 @@
-From 0fee49be5980cc25c295b934135501c290c4d3b0 Mon Sep 17 00:00:00 2001
+From 30221c2e5bf56e2d74fdcc96276f6b2d3fe16e33 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 27 Jan 2025 15:44:13 +0100
-Subject: [PATCH 55/70] Revert "cpu: Remove unused init_cpu_online"
+Subject: [PATCH 55/73] Revert "cpu: Remove unused init_cpu_online"
 
 This reverts commit 7f15d4abf925f33015fb62973ce2ddb45ce04bb9.
 ---
@@ -10,10 +10,10 @@ This reverts commit 7f15d4abf925f33015fb62973ce2ddb45ce04bb9.
  2 files changed, 6 insertions(+)
 
 diff --git a/include/linux/cpumask.h b/include/linux/cpumask.h
-index 6a569c7534db..2934e48c8b1d 100644
+index 7ae80a7ca81e..9487d09c7bf3 100644
 --- a/include/linux/cpumask.h
 +++ b/include/linux/cpumask.h
-@@ -1137,6 +1137,7 @@ extern const DECLARE_BITMAP(cpu_all_bits, NR_CPUS);
+@@ -1121,6 +1121,7 @@ extern const DECLARE_BITMAP(cpu_all_bits, NR_CPUS);
  /* Wrappers for arch boot code to manipulate normally-constant masks */
  void init_cpu_present(const struct cpumask *src);
  void init_cpu_possible(const struct cpumask *src);

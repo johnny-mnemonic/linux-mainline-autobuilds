@@ -1,7 +1,7 @@
-From e68804c59aa02b577c7892c2ff893278f3ba8177 Mon Sep 17 00:00:00 2001
+From a23e2d92e2184dcd94a5f0d59c820782f1cef1e5 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 2 Apr 2025 16:37:51 +0200
-Subject: [PATCH 69/70] Partially revert "arch, mm: make releasing of memory to
+Subject: [PATCH 69/73] Partially revert "arch, mm: make releasing of memory to
  page [...]"
 
 zx1 and possibly zx2 systems require the call to memblock_free_all() in
@@ -63,7 +63,7 @@ index 6b8ed2017743..9c83fee7b334 100644
  static __always_inline void vma_set_range(struct vm_area_struct *vma,
  					  unsigned long start, unsigned long end,
 diff --git a/mm/mm_init.c b/mm/mm_init.c
-index bfbc778d5ace..74a278e4b607 100644
+index c062c31e3548..e04dcab688d1 100644
 --- a/mm/mm_init.c
 +++ b/mm/mm_init.c
 @@ -2773,7 +2773,9 @@ void __init mm_core_init(void)

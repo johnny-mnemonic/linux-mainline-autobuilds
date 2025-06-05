@@ -1,7 +1,7 @@
-From c977b28013072aecf385b531b32a4a7e53fb9603 Mon Sep 17 00:00:00 2001
+From 256c04509e014c3baaf4e7c663617dcac434ed91 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Tue, 25 Mar 2025 09:44:29 +0100
-Subject: [PATCH 64/70] ia64/crash: Use note name macros
+Subject: [PATCH 64/73] ia64/crash: Use note name macros
 
 Use note name macros to match with the userspace's expectation.
 

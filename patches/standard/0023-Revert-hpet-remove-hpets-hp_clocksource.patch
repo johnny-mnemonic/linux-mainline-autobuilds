@@ -1,7 +1,7 @@
-From da416a1b3c8d1adf44e2f231c2d61ef3f3dfb0c1 Mon Sep 17 00:00:00 2001
+From a39d9f682d524981a12e699f6a0bd417f8e69543 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Sun, 24 Mar 2024 20:20:36 +0100
-Subject: [PATCH 23/70] Revert "hpet: remove hpets::hp_clocksource"
+Subject: [PATCH 23/73] Revert "hpet: remove hpets::hp_clocksource"
 
 This reverts commit b44abdd29423a77074a9edb462de37f1a09daaab.
 ---
