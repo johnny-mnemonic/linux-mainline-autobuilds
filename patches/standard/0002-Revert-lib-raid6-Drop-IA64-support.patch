@@ -1,4 +1,4 @@
-From a6b245a7cafd0140198416c444799c686b8935d0 Mon Sep 17 00:00:00 2001
+From be055dcc7d6a8ff96bfec445f57cc494f4e3ccb4 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:38 +0200
 Subject: [PATCH 02/73] Revert "lib/raid6: Drop IA64 support"
@@ -12,7 +12,7 @@ This reverts commit b089ea3cc30de85ea7e20aa66500feb4082dfbf7.
  4 files changed, 17 insertions(+), 2 deletions(-)
 
 diff --git a/include/linux/raid/pq.h b/include/linux/raid/pq.h
-index 98030accf641..006e18decfad 100644
+index 72ff44cca864..7f76d266b348 100644
 --- a/include/linux/raid/pq.h
 +++ b/include/linux/raid/pq.h
 @@ -84,6 +84,8 @@ extern const struct raid6_calls raid6_intx1;
@@ -25,7 +25,7 @@ index 98030accf641..006e18decfad 100644
  extern const struct raid6_calls raid6_mmxx2;
  extern const struct raid6_calls raid6_sse1x1;
 diff --git a/lib/raid6/Makefile b/lib/raid6/Makefile
-index 29127dd05d63..5a61ec421a06 100644
+index 5be0a4e60ab1..8c35ce37f7f2 100644
 --- a/lib/raid6/Makefile
 +++ b/lib/raid6/Makefile
 @@ -2,7 +2,7 @@
@@ -37,7 +37,7 @@ index 29127dd05d63..5a61ec421a06 100644
  
  raid6_pq-$(CONFIG_X86) += recov_ssse3.o recov_avx2.o mmx.o sse1.o sse2.o avx2.o avx512.o recov_avx512.o
  raid6_pq-$(CONFIG_ALTIVEC) += altivec1.o altivec2.o altivec4.o altivec8.o \
-@@ -36,7 +36,7 @@ endif
+@@ -37,7 +37,7 @@ endif
  quiet_cmd_unroll = UNROLL  $@
        cmd_unroll = $(AWK) -v N=$* -f $(src)/unroll.awk < $< > $@
  
@@ -47,13 +47,13 @@ index 29127dd05d63..5a61ec421a06 100644
  	$(call if_changed,unroll)
  
 diff --git a/lib/raid6/algos.c b/lib/raid6/algos.c
-index dfd3f800ac9b..bd24542bb7b8 100644
+index 75ce3e134b7c..68038f863514 100644
 --- a/lib/raid6/algos.c
 +++ b/lib/raid6/algos.c
-@@ -76,6 +76,10 @@ const struct raid6_calls * const raid6_algos[] = {
- #ifdef CONFIG_CPU_HAS_LSX
- 	&raid6_lsx,
- #endif
+@@ -82,6 +82,10 @@ const struct raid6_calls * const raid6_algos[] = {
+ 	&raid6_rvvx2,
+ 	&raid6_rvvx4,
+ 	&raid6_rvvx8,
 +#endif
 +#if defined(__ia64__)
 +	&raid6_intx32,

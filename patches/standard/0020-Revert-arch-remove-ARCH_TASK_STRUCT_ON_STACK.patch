@@ -1,4 +1,4 @@
-From 1ed5493928f12f1bd2a183300ec96a890067e986 Mon Sep 17 00:00:00 2001
+From cdeda883183b1bb2f0fbc31addf5a045fb6d5d75 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 12 Jan 2024 19:11:18 +0100
 Subject: [PATCH 20/73] Revert "arch: remove ARCH_TASK_STRUCT_ON_STACK"

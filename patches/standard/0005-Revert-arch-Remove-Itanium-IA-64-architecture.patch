@@ -1,4 +1,4 @@
-From d88a6d7995377ef6db76d7a619f84caf07ad6a2d Mon Sep 17 00:00:00 2001
+From e2116128c8330849ca575f0f3ffe213b6d20e42d Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
 Subject: [PATCH 05/73] Revert "arch: Remove Itanium (IA-64) architecture"
@@ -3010,10 +3010,10 @@ index e1b0eeabbb5e..59fd6ed5e3f1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index eecc41c39a9c..292f7852177d 100644
+index a92290fffa16..c9bac679b011 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -11424,6 +11424,12 @@ F:	drivers/i3c/
+@@ -11477,6 +11477,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3026,7 +3026,7 @@ index eecc41c39a9c..292f7852177d 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -18803,6 +18809,11 @@ S:	Maintained
+@@ -18892,6 +18898,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -64778,7 +64778,7 @@ index 5ff343096ece..9fbfbdc4fc31 100644
  #define should_use_kmap(pfn)   0
  #else
 diff --git a/drivers/char/Kconfig b/drivers/char/Kconfig
-index 8fb33c90482f..1866d173de9b 100644
+index ae6196760556..f8ba40002d53 100644
 --- a/drivers/char/Kconfig
 +++ b/drivers/char/Kconfig
 @@ -349,7 +349,7 @@ config DEVPORT
@@ -66081,7 +66081,7 @@ index 000000000000..15b240ea4848
 +MODULE_AUTHOR("Chris Ahna <Christopher.J.Ahna@intel.com>");
 +MODULE_LICENSE("GPL and additional rights");
 diff --git a/drivers/char/hpet.c b/drivers/char/hpet.c
-index e110857824fc..c069a89a9c69 100644
+index 0713ea2b2a51..35db08218e56 100644
 --- a/drivers/char/hpet.c
 +++ b/drivers/char/hpet.c
 @@ -64,6 +64,25 @@
@@ -67328,7 +67328,7 @@ index e40413609f53..1a6acd27438d 100644
  	select CEC_CORE
  	select CEC_NOTIFIER
 diff --git a/drivers/misc/Kconfig b/drivers/misc/Kconfig
-index c161546d728f..69f9eaa25591 100644
+index b9ca56930003..404df508a776 100644
 --- a/drivers/misc/Kconfig
 +++ b/drivers/misc/Kconfig
 @@ -188,7 +188,7 @@ config ENCLOSURE_SERVICES
@@ -67582,10 +67582,10 @@ index 3faa7eadf679..19fc7076af27 100644
  	#error not a supported configuration
  #endif
 diff --git a/drivers/misc/sgi-xp/xpc_main.c b/drivers/misc/sgi-xp/xpc_main.c
-index 697a008c14d3..f1e4bd6c2536 100644
+index 9fe816bf3957..cf753b54eb3d 100644
 --- a/drivers/misc/sgi-xp/xpc_main.c
 +++ b/drivers/misc/sgi-xp/xpc_main.c
-@@ -1153,6 +1153,36 @@ xpc_die_deactivate(void)
+@@ -1154,6 +1154,36 @@ xpc_die_deactivate(void)
  static int
  xpc_system_die(struct notifier_block *nb, unsigned long event, void *_die_args)
  {
@@ -67622,7 +67622,7 @@ index 697a008c14d3..f1e4bd6c2536 100644
  	struct die_args *die_args = _die_args;
  
  	switch (event) {
-@@ -1174,6 +1204,7 @@ xpc_system_die(struct notifier_block *nb, unsigned long event, void *_die_args)
+@@ -1175,6 +1205,7 @@ xpc_system_die(struct notifier_block *nb, unsigned long event, void *_die_args)
  	default:
  		xpc_die_deactivate();
  	}
@@ -67791,7 +67791,7 @@ index 2f03a7080d96..fff522d347e3 100644
  }
  
 diff --git a/drivers/net/ethernet/broadcom/tg3.c b/drivers/net/ethernet/broadcom/tg3.c
-index ff47e96b9124..6ae981256fcf 100644
+index 91104cc2c238..c9c92adde473 100644
 --- a/drivers/net/ethernet/broadcom/tg3.c
 +++ b/drivers/net/ethernet/broadcom/tg3.c
 @@ -17152,7 +17152,7 @@ static u32 tg3_calc_dma_bndry(struct tg3 *tp, u32 val)
@@ -67843,7 +67843,7 @@ index 78748e8d2dba..feca96fc4255 100644
  	u64 size = screen_info.lfb_size;
  	struct resource *r;
 diff --git a/drivers/tty/serial/8250/Kconfig b/drivers/tty/serial/8250/Kconfig
-index bd3d636ff962..0c3ea1663455 100644
+index f64ef0819cd4..3715985b1dc9 100644
 --- a/drivers/tty/serial/8250/Kconfig
 +++ b/drivers/tty/serial/8250/Kconfig
 @@ -224,7 +224,7 @@ config SERIAL_8250_EXTENDED
@@ -67856,10 +67856,10 @@ index bd3d636ff962..0c3ea1663455 100644
  	  Say Y here if you have dumb serial boards other than the four
  	  standard COM 1/2/3/4 ports. This may happen if you have an AST
 diff --git a/drivers/tty/vt/keyboard.c b/drivers/tty/vt/keyboard.c
-index ae92e6a50a65..c6e7baecee7e 100644
+index dc585079c2fb..76927a50bab6 100644
 --- a/drivers/tty/vt/keyboard.c
 +++ b/drivers/tty/vt/keyboard.c
-@@ -1271,7 +1271,7 @@ static void kbd_bh(struct tasklet_struct *unused)
+@@ -1264,7 +1264,7 @@ static void kbd_bh(struct tasklet_struct *unused)
  	}
  }
  
@@ -68172,10 +68172,10 @@ index 20aa459bfb3e..8968e2b8a12e 100644
  	bool "ARM BCJ filter decoder" if EXPERT
  	default y
 diff --git a/mm/vma.c b/mm/vma.c
-index 1c6595f282e5..090aeed32b27 100644
+index 726b2a31ce59..e161f2daa2e3 100644
 --- a/mm/vma.c
 +++ b/mm/vma.c
-@@ -2922,9 +2922,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
+@@ -2943,9 +2943,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
  	return 0;
  }
  

@@ -1,4 +1,4 @@
-From 583450bc41443f87cce22c7ddb12c14bf2beab71 Mon Sep 17 00:00:00 2001
+From e2b7b69c0ae12d7f43ae7fadec838a74a7af3cc4 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 27 Jan 2025 15:43:18 +0100
 Subject: [PATCH 54/73] Partially revert "x86/efistub: Drop long obsolete UGA

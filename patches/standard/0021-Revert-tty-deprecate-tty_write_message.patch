@@ -1,4 +1,4 @@
-From 758e5e99419330795bde0a939fccd3f615cd51bb Mon Sep 17 00:00:00 2001
+From a5e9821f9dc8b3eb67188a6759b5f3ef51b7cd58 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 19 Jan 2024 20:18:07 +0100
 Subject: [PATCH 21/73] Revert "tty: deprecate tty_write_message()"
@@ -12,10 +12,10 @@ Revert its conditional removal until a proper replacement is found.
  1 file changed, 4 deletions(-)
 
 diff --git a/drivers/tty/tty_io.c b/drivers/tty/tty_io.c
-index ca9b7d7bad2b..d359d61fc7bd 100644
+index e2d92cf70eb7..1cc0c4c8cc39 100644
 --- a/drivers/tty/tty_io.c
 +++ b/drivers/tty/tty_io.c
-@@ -1041,7 +1041,6 @@ static ssize_t iterate_tty_write(struct tty_ldisc *ld, struct tty_struct *tty,
+@@ -1032,7 +1032,6 @@ static ssize_t iterate_tty_write(struct tty_ldisc *ld, struct tty_struct *tty,
  	return ret;
  }
  
@@ -23,7 +23,7 @@ index ca9b7d7bad2b..d359d61fc7bd 100644
  /**
   * tty_write_message - write a message to a certain tty, not just the console.
   * @tty: the destination tty_struct
-@@ -1052,8 +1051,6 @@ static ssize_t iterate_tty_write(struct tty_ldisc *ld, struct tty_struct *tty,
+@@ -1043,8 +1042,6 @@ static ssize_t iterate_tty_write(struct tty_ldisc *ld, struct tty_struct *tty,
   * needed.
   *
   * We must still hold the BTM and test the CLOSING flag for the moment.
@@ -32,7 +32,7 @@ index ca9b7d7bad2b..d359d61fc7bd 100644
   */
  void tty_write_message(struct tty_struct *tty, char *msg)
  {
-@@ -1066,7 +1063,6 @@ void tty_write_message(struct tty_struct *tty, char *msg)
+@@ -1057,7 +1054,6 @@ void tty_write_message(struct tty_struct *tty, char *msg)
  		tty_write_unlock(tty);
  	}
  }

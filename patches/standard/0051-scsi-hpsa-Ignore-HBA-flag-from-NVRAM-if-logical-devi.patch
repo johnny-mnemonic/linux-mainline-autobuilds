@@ -1,4 +1,4 @@
-From 04316a34f632718383c71f5b0c2428e070b52163 Mon Sep 17 00:00:00 2001
+From df2d4e9fa8149e129b9c8c970e3400eef50f8e58 Mon Sep 17 00:00:00 2001
 From: Ivan Mironov <mironov.ivan@gmail.com>
 Date: Mon, 10 Dec 2018 17:44:37 +0500
 Subject: [PATCH 51/73] scsi: hpsa: Ignore HBA flag from NVRAM if logical

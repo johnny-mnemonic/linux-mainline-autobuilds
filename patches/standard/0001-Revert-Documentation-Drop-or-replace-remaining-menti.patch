@@ -1,4 +1,4 @@
-From 0b6117a675f7db118f7c4d7a38c05c65e3abb227 Mon Sep 17 00:00:00 2001
+From c48a2af92f024549d0ecf43a9aeb7d18dc1a7739 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
 Subject: [PATCH 01/73] Revert "Documentation: Drop or replace remaining
@@ -181,10 +181,10 @@ index 8cf4614385b7..df68bc9f1baa 100644
  =====
  
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index a3ea40b22fb9..12b0f5dba533 100644
+index f1f2c0874da9..71316a57911b 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
-@@ -1513,7 +1513,7 @@
+@@ -1516,7 +1516,7 @@
  			See comment before function elanfreq_setup() in
  			arch/x86/kernel/cpu/cpufreq/elanfreq.c.
  
@@ -193,7 +193,7 @@ index a3ea40b22fb9..12b0f5dba533 100644
  			Specifies physical address of start of kernel core
  			image elf header and optionally the size. Generally
  			kexec loader will pass this option to capture kernel.
-@@ -1577,6 +1577,12 @@
+@@ -1580,6 +1580,12 @@
  	floppy=		[HW]
  			See Documentation/admin-guide/blockdev/floppy.rst.
  
@@ -313,7 +313,7 @@ index cb3d3228dfc8..981ad4f89fd3 100644
  At least LSI FW643e and FW643e2 controllers are known to support access to
  physical addresses above 4 GB, but this feature is currently not enabled by
 diff --git a/Documentation/kbuild/makefiles.rst b/Documentation/kbuild/makefiles.rst
-index 38cc656fac20..b0584bdc27c3 100644
+index 8aef3650c1f3..eb9405113dcc 100644
 --- a/Documentation/kbuild/makefiles.rst
 +++ b/Documentation/kbuild/makefiles.rst
 @@ -53,7 +53,7 @@ knowledge about the kernel Makefiles, plus detailed knowledge about the
@@ -425,7 +425,7 @@ index b2ac3c743a3a..ce3f39d9b3cb 100644
  sparc - 在这一点上，IRQ是开着的（？），把local_irq_save改为_disable。
        - 待办事项: 需要第二个CPU来禁用抢占 (参考 #1)
 diff --git a/Makefile b/Makefile
-index 3244c2a519e2..4d08b2053efa 100644
+index 35e6e5240c61..5298d23d0f27 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -388,7 +388,7 @@ include $(srctree)/scripts/subarch.include
