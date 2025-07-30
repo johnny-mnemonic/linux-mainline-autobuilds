@@ -1,7 +1,7 @@
-From 872a0943f81cc200f2a7559658d8c5e8b4e442a4 Mon Sep 17 00:00:00 2001
+From 15beb3601596cfa821d0d5f36b007d98d9ab5593 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 2 Apr 2025 16:37:51 +0200
-Subject: [PATCH 69/73] Partially revert "arch, mm: make releasing of memory to
+Subject: [PATCH 69/74] Partially revert "arch, mm: make releasing of memory to
  page [...]"
 
 zx1 and possibly zx2 systems require the call to memblock_free_all() in

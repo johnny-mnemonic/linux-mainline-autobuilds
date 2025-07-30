@@ -1,7 +1,7 @@
-From 37998ba348dfb41ce1aa0709a40b2443b66b35da Mon Sep 17 00:00:00 2001
+From ed906fe7405341d3e0a9973c41e9d0b15fce1b20 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Tue, 26 Nov 2024 10:53:17 +0100
-Subject: [PATCH 44/73] ia64: disable build time check
+Subject: [PATCH 44/74] ia64: disable build time check
 
 ...to avoid that build breakage (see below) for now until we have a better
 understanding of the reasons. Apparently get_order() behaves differently

@@ -1,7 +1,7 @@
-From 5685b79088705372a90b09792a6f02030426018e Mon Sep 17 00:00:00 2001
+From a5675c8054a9f1408b384c4984d8aaa4fb1ebc66 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
-Subject: [PATCH 01/73] Revert "Documentation: Drop or replace remaining
+Subject: [PATCH 01/74] Revert "Documentation: Drop or replace remaining
  mentions of IA64"
 
 This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
@@ -220,7 +220,7 @@ index 33c886f3d198..5f13935e2a29 100644
  Memory Hot(Un)Plug Granularity
  ------------------------------
 diff --git a/Documentation/admin-guide/sysctl/kernel.rst b/Documentation/admin-guide/sysctl/kernel.rst
-index 19224eeac1c2..139052bd469c 100644
+index c04e6b8eb2b1..ac79a9a0a716 100644
 --- a/Documentation/admin-guide/sysctl/kernel.rst
 +++ b/Documentation/admin-guide/sysctl/kernel.rst
 @@ -474,8 +474,8 @@ ignore-unaligned-usertrap
@@ -246,7 +246,7 @@ index 19224eeac1c2..139052bd469c 100644
  
  io_uring_disabled
  =================
-@@ -1590,6 +1593,22 @@ See Documentation/admin-guide/kernel-parameters.rst and
+@@ -1586,6 +1589,22 @@ See Documentation/admin-guide/kernel-parameters.rst and
  Documentation/trace/boottime-trace.rst.
  
  

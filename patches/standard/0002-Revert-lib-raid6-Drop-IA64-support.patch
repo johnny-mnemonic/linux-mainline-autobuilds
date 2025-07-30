@@ -1,7 +1,7 @@
-From 0a13793a05dc3eb7084e1d232c00b6a15d2e550a Mon Sep 17 00:00:00 2001
+From ab0bd37fc862a452e976641ebb05a290838040ce Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:38 +0200
-Subject: [PATCH 02/73] Revert "lib/raid6: Drop IA64 support"
+Subject: [PATCH 02/74] Revert "lib/raid6: Drop IA64 support"
 
 This reverts commit b089ea3cc30de85ea7e20aa66500feb4082dfbf7.
 ---

@@ -1,7 +1,7 @@
-From 224795657f20c89a9e87358885a00730ceb81bea Mon Sep 17 00:00:00 2001
+From 35da83377297b22ace55777945b4242adda5aea0 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 27 Jan 2025 15:43:18 +0100
-Subject: [PATCH 54/73] Partially revert "x86/efistub: Drop long obsolete UGA
+Subject: [PATCH 54/74] Partially revert "x86/efistub: Drop long obsolete UGA
  support"
 
 ia64 still has an implementation for efi_systab_show_arch(), so although

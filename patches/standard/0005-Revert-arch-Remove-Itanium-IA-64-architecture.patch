@@ -1,7 +1,7 @@
-From 0c7c6b3f1852984877935ecd3941f2c39dba4f10 Mon Sep 17 00:00:00 2001
+From 3d5f2ed03ce1f4b579c6080a5bfe16d559552545 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
-Subject: [PATCH 05/73] Revert "arch: Remove Itanium (IA-64) architecture"
+Subject: [PATCH 05/74] Revert "arch: Remove Itanium (IA-64) architecture"
 
 This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
 ---
@@ -3010,10 +3010,10 @@ index e1b0eeabbb5e..59fd6ed5e3f1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 8d1dce185692..fe850d498654 100644
+index 230c72b3c2b4..8fd7da8027c1 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -11556,6 +11556,12 @@ F:	drivers/i3c/
+@@ -11565,6 +11565,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3026,7 +3026,7 @@ index 8d1dce185692..fe850d498654 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -19033,6 +19039,11 @@ S:	Maintained
+@@ -19042,6 +19048,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -66920,7 +66920,7 @@ index 4ddec2820c96..575eb4b60c68 100644
  obj-$(CONFIG_INTEL_STRATIX10_SERVICE) += stratix10-svc.o
  obj-$(CONFIG_INTEL_STRATIX10_RSU)     += stratix10-rsu.o
 diff --git a/drivers/firmware/efi/Kconfig b/drivers/firmware/efi/Kconfig
-index db8c5c03d3a2..fa17a9315f31 100644
+index 16baa038d412..0854dfc79de0 100644
 --- a/drivers/firmware/efi/Kconfig
 +++ b/drivers/firmware/efi/Kconfig
 @@ -4,7 +4,7 @@ menu "EFI (Extensible Firmware Interface) Support"
@@ -67934,7 +67934,7 @@ index 052d0e888c27..c14852362fce 100644
  #define __compat_packed __attribute__((packed))
  #else
 diff --git a/include/linux/acpi.h b/include/linux/acpi.h
-index fc7f5e039074..876b4fd52186 100644
+index 1c5bb1e887cd..3ccb4b3b7b8c 100644
 --- a/include/linux/acpi.h
 +++ b/include/linux/acpi.h
 @@ -238,7 +238,10 @@ acpi_table_parse_cedt(enum acpi_cedt_type id,
@@ -68048,7 +68048,7 @@ index faf0f23fc5d8..4f617ccdc65b 100644
  	}
  
 diff --git a/kernel/fork.c b/kernel/fork.c
-index f82b77eef7fe..e77c7669dfd2 100644
+index aef41211c72c..4563448ffd20 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
 @@ -2835,7 +2835,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
@@ -68109,10 +68109,10 @@ index 3ec00d08d46a..5f00395944f1 100644
  #ifdef CONFIG_CGROUP_SCHED
  /* task_group_lock serializes the addition/removal of task groups */
 diff --git a/kernel/sysctl.c b/kernel/sysctl.c
-index 9b4f0cff76ea..7c75a99aba67 100644
+index cb6196e3fa99..9a7116c22902 100644
 --- a/kernel/sysctl.c
 +++ b/kernel/sysctl.c
-@@ -1729,6 +1729,15 @@ static const struct ctl_table kern_table[] = {
+@@ -1498,6 +1498,15 @@ static const struct ctl_table sysctl_subsys_table[] = {
  		.proc_handler	= proc_dointvec,
  	},
  #endif
@@ -68125,9 +68125,9 @@ index 9b4f0cff76ea..7c75a99aba67 100644
 +		.proc_handler	= proc_dointvec,
 +	},
 +#endif
- #ifdef CONFIG_RT_MUTEXES
- 	{
- 		.procname	= "max_lock_depth",
+ };
+ 
+ int __init sysctl_init_bases(void)
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
 index 53332a1d8af4..d2d1eb18358c 100644
 --- a/lib/Kconfig.debug
