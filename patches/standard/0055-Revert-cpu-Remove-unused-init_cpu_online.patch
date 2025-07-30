@@ -1,4 +1,4 @@
-From 0fcbe846e7d03a218fc9f311dac3e6a8179f3ab5 Mon Sep 17 00:00:00 2001
+From 76fb63587c966657a96aedfa0c8eb950ef4e7e99 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 27 Jan 2025 15:44:13 +0100
 Subject: [PATCH 55/73] Revert "cpu: Remove unused init_cpu_online"
@@ -22,10 +22,10 @@ index 7ae80a7ca81e..9487d09c7bf3 100644
  #define assign_cpu(cpu, mask, val)	\
  	assign_bit(cpumask_check(cpu), cpumask_bits(mask), (val))
 diff --git a/kernel/cpu.c b/kernel/cpu.c
-index c93a61c5c489..5efa2aaea768 100644
+index 4f617ccdc65b..0e3303d40b61 100644
 --- a/kernel/cpu.c
 +++ b/kernel/cpu.c
-@@ -3123,6 +3123,11 @@ void init_cpu_possible(const struct cpumask *src)
+@@ -3124,6 +3124,11 @@ void init_cpu_possible(const struct cpumask *src)
  	cpumask_copy(&__cpu_possible_mask, src);
  }
  

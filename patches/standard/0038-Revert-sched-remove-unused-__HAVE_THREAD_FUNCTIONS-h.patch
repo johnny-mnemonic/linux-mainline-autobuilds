@@ -1,4 +1,4 @@
-From 28b64ebeb9a2e0408c65570a3a69d2cf6f399d73 Mon Sep 17 00:00:00 2001
+From ae93cced0e549cb04e5808cd7eb810af55823014 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 20 Nov 2024 11:15:14 +0100
 Subject: [PATCH 38/73] Revert "sched: remove unused __HAVE_THREAD_FUNCTIONS
@@ -11,10 +11,10 @@ This reverts commit 5e9f0c4819deb9459f32f12c4fd2b47993b8c395.
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/include/linux/sched.h b/include/linux/sched.h
-index 7a93ddb447fa..5f01dd27e132 100644
+index cd7a0beae9ce..5844c744d914 100644
 --- a/include/linux/sched.h
 +++ b/include/linux/sched.h
-@@ -1956,7 +1956,7 @@ extern unsigned long init_stack[THREAD_SIZE / sizeof(unsigned long)];
+@@ -1929,7 +1929,7 @@ extern unsigned long init_stack[THREAD_SIZE / sizeof(unsigned long)];
  
  #ifdef CONFIG_THREAD_INFO_IN_TASK
  # define task_thread_info(task)	(&(task)->thread_info)
@@ -24,7 +24,7 @@ index 7a93ddb447fa..5f01dd27e132 100644
  #endif
  
 diff --git a/include/linux/sched/task_stack.h b/include/linux/sched/task_stack.h
-index 85c5a6392e02..2aaee7ee17c9 100644
+index 1fab7e9043a3..786e327e4785 100644
 --- a/include/linux/sched/task_stack.h
 +++ b/include/linux/sched/task_stack.h
 @@ -34,7 +34,7 @@ static __always_inline unsigned long *end_of_stack(const struct task_struct *tas

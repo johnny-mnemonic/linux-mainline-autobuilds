@@ -1,4 +1,4 @@
-From ad4fbeb275abdf82cceb03ab39723b8aeda336fe Mon Sep 17 00:00:00 2001
+From 872a0943f81cc200f2a7559658d8c5e8b4e442a4 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 2 Apr 2025 16:37:51 +0200
 Subject: [PATCH 69/73] Partially revert "arch, mm: make releasing of memory to
@@ -39,7 +39,7 @@ index b13bfbff9c7f..3df9306f5917 100644
  
  	/*
 diff --git a/include/linux/memblock.h b/include/linux/memblock.h
-index bb19a2534224..497e2c1364a6 100644
+index b96746376e17..682732d2f22c 100644
 --- a/include/linux/memblock.h
 +++ b/include/linux/memblock.h
 @@ -157,6 +157,7 @@ int memblock_reserved_mark_noinit(phys_addr_t base, phys_addr_t size);
@@ -51,7 +51,7 @@ index bb19a2534224..497e2c1364a6 100644
  void reset_all_zones_managed_pages(void);
  
 diff --git a/mm/internal.h b/mm/internal.h
-index 6b8ed2017743..9c83fee7b334 100644
+index 0f73ff13c212..43ddeeb79450 100644
 --- a/mm/internal.h
 +++ b/mm/internal.h
 @@ -1488,7 +1488,6 @@ static inline bool gup_must_unshare(struct vm_area_struct *vma,

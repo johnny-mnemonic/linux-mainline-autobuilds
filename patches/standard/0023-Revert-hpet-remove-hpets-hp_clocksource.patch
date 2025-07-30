@@ -1,4 +1,4 @@
-From 6a9ca241cbbc7cab30d0bb2301b18ead884d5f5a Mon Sep 17 00:00:00 2001
+From 654cb9c4d280f51ac44aaf7404ab3af2fbdf7564 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Sun, 24 Mar 2024 20:20:36 +0100
 Subject: [PATCH 23/73] Revert "hpet: remove hpets::hp_clocksource"

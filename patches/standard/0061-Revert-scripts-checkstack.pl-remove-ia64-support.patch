@@ -1,4 +1,4 @@
-From 9a4cca3ab1f6fc0108f2d22785c69902c4f153cd Mon Sep 17 00:00:00 2001
+From bc4fffb49f2c886d9574009337865697035aa4b4 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 15:26:09 +0100
 Subject: [PATCH 61/73] Revert "scripts/checkstack.pl: remove ia64 support"

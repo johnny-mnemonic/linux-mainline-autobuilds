@@ -1,4 +1,4 @@
-From d01bf11e0acb34dbee0ced1ba1f55dca2e365082 Mon Sep 17 00:00:00 2001
+From 0974f0d79960d86a7400c69df75d02837efc7585 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sat, 4 Jan 2025 11:33:17 +0100
 Subject: [PATCH 47/73] ia64: Extend processor feature flags according to SDM

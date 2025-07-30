@@ -1,4 +1,4 @@
-From e2b7b69c0ae12d7f43ae7fadec838a74a7af3cc4 Mon Sep 17 00:00:00 2001
+From 224795657f20c89a9e87358885a00730ceb81bea Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 27 Jan 2025 15:43:18 +0100
 Subject: [PATCH 54/73] Partially revert "x86/efistub: Drop long obsolete UGA
@@ -29,7 +29,7 @@ index ab9e0e9fa341..ee11d4ae44d2 100644
  }
  
 diff --git a/include/linux/efi.h b/include/linux/efi.h
-index 9e111e5efc8e..7bfcb965acef 100644
+index 0bac535deafb..89048c8c9ddc 100644
 --- a/include/linux/efi.h
 +++ b/include/linux/efi.h
 @@ -1294,6 +1294,8 @@ struct linux_efi_memreserve {

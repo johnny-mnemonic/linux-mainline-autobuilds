@@ -1,4 +1,4 @@
-From c48a2af92f024549d0ecf43a9aeb7d18dc1a7739 Mon Sep 17 00:00:00 2001
+From 5685b79088705372a90b09792a6f02030426018e Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
 Subject: [PATCH 01/73] Revert "Documentation: Drop or replace remaining
@@ -27,7 +27,7 @@ This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
  18 files changed, 125 insertions(+), 19 deletions(-)
 
 diff --git a/Documentation/ABI/testing/sysfs-devices-system-cpu b/Documentation/ABI/testing/sysfs-devices-system-cpu
-index bf85f4de6862..1bb21b8afe0f 100644
+index ab8cd337f43a..12ba41bb064f 100644
 --- a/Documentation/ABI/testing/sysfs-devices-system-cpu
 +++ b/Documentation/ABI/testing/sysfs-devices-system-cpu
 @@ -413,6 +413,9 @@ Description:	Parameters for the CPU cache attributes
@@ -181,7 +181,7 @@ index 8cf4614385b7..df68bc9f1baa 100644
  =====
  
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index f1f2c0874da9..71316a57911b 100644
+index 0d2ea9a60145..3c25bd9f6a1a 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
 @@ -1516,7 +1516,7 @@
@@ -220,7 +220,7 @@ index 33c886f3d198..5f13935e2a29 100644
  Memory Hot(Un)Plug Granularity
  ------------------------------
 diff --git a/Documentation/admin-guide/sysctl/kernel.rst b/Documentation/admin-guide/sysctl/kernel.rst
-index dd49a89a62d3..f9ab5be45d59 100644
+index 19224eeac1c2..139052bd469c 100644
 --- a/Documentation/admin-guide/sysctl/kernel.rst
 +++ b/Documentation/admin-guide/sysctl/kernel.rst
 @@ -474,8 +474,8 @@ ignore-unaligned-usertrap
@@ -425,7 +425,7 @@ index b2ac3c743a3a..ce3f39d9b3cb 100644
  sparc - 在这一点上，IRQ是开着的（？），把local_irq_save改为_disable。
        - 待办事项: 需要第二个CPU来禁用抢占 (参考 #1)
 diff --git a/Makefile b/Makefile
-index 35e6e5240c61..5298d23d0f27 100644
+index 076de54b3311..864dd1b4ded2 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -388,7 +388,7 @@ include $(srctree)/scripts/subarch.include
