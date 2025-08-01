@@ -60,7 +60,7 @@ jobs:
           # prepare tools ######################################################
           cd ${TOOLS_DIR}
           CROSS_COMPILER_URL=$( cat ./config/compiler-url )
-          wget "${CROSS_COMPILER_URL}" -O - | unxz | tar -xf -
+          wget -nv "${CROSS_COMPILER_URL}" -O - | unxz | tar -xf -
           CROSS_COMPILER_PATH=$( echo gcc-*/*-linux )
           PATH=$PATH:$PWD/${CROSS_COMPILER_PATH}/bin
           CROSS_COMPILER=$( basename ${CROSS_COMPILER_PATH}/bin/*-linux-gcc )
@@ -84,6 +84,7 @@ jobs:
           PATH=${MODPATH}
           cd ${BUILD_DIR}
           BASE_COMMIT_ID_SHORT=$( git rev-parse --short HEAD )
+          echo "| @@STATUS@@ | [${BASE_COMMIT_ID_SHORT}](/torvalds/linux/commit/${BASE_COMMIT_ID_SHORT}) | @@TYPE@@ | ${USED_PATCHES} | ${CROSS_COMPILER_AND_VERSION} | @@DOWNLOAD@@ |" >> ${SUMMARY_FILE}
           for patch in ${TOOLS_DIR}/patches/standard/*patch ${TOOLS_DIR}/patches/extra/*patch; do
             [[ -e ${patch} ]] && echo "### ${patch} v ###"
             [[ -e ${patch} ]] && patch -p1 < ${patch}
@@ -102,10 +103,10 @@ jobs:
             echo "BUILD_ARTIFACTS=${PWD}/build-artifacts" >> $GITHUB_ENV
             echo "BASE_COMMIT_ID_SHORT=${BASE_COMMIT_ID_SHORT}" >> $GITHUB_ENV
             ####################################################################
-            echo "| :white_check_mark: | [${BASE_COMMIT_ID_SHORT}](/torvalds/linux/commit/${BASE_COMMIT_ID_SHORT}) | regular | ${USED_PATCHES} | ${CROSS_COMPILER_AND_VERSION} | @@DOWNLOAD@@ |" >> ${SUMMARY_FILE}
+            sed -e 's/@@STATUS@@/:white_check_mark:/' -e 's/@@TYPE@@/regular/' -i ${SUMMARY_FILE}
             true
           else
-            echo "| :x: | ${BASE_COMMIT_ID} | regular | ${USED_PATCHES} | ${CROSS_COMPILER_AND_VERSION} | N/A |" >> ${SUMMARY_FILE}
+            sed -e 's/@@STATUS@@/:x:/' -e 's/@@TYPE@@/regular/' -e 's/@@DOWNLOAD@@/no download/' -i ${SUMMARY_FILE}
             false
           fi
 
