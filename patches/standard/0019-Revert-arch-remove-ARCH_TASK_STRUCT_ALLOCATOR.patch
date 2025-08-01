@@ -1,7 +1,7 @@
-From d103ea42753e88a10234b247c0924eb49c8ab533 Mon Sep 17 00:00:00 2001
+From 750419249ac64d028fad4e59bab4e22e1aa2cc9c Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 16:45:16 +0100
-Subject: [PATCH 19/74] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
+Subject: [PATCH 19/76] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
 
 This reverts commit 3888750e21ccb909051c810cc79fcc0650a740f8.
 ---
@@ -32,7 +32,7 @@ index f4089687e90d..b33447d23409 100644
  	  An architecture should select this to provide hardened usercopy
  	  knowledge about what region of the thread_struct should be
 diff --git a/kernel/fork.c b/kernel/fork.c
-index f96f4f22402c..70c03dd8f1f2 100644
+index a568dc9ce305..b330fa8e4a5b 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
 @@ -176,6 +176,7 @@ void __weak arch_release_task_struct(struct task_struct *tsk)

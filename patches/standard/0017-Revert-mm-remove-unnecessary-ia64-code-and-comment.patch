@@ -1,7 +1,7 @@
-From 738932d076f1ada1aa16b4184653e3b6d47214c4 Mon Sep 17 00:00:00 2001
+From af41fbe2fe94c1c1dee5a68794f21dee077b8a7f Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 14:21:54 +0100
-Subject: [PATCH 17/74] Revert "mm: remove unnecessary ia64 code and comment"
+Subject: [PATCH 17/76] Revert "mm: remove unnecessary ia64 code and comment"
 
 This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
 ---
@@ -11,7 +11,7 @@ This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
  3 files changed, 34 insertions(+), 18 deletions(-)
 
 diff --git a/mm/Kconfig b/mm/Kconfig
-index 781be3240e21..4988a02759c3 100644
+index d5d4eca947a6..518f7c40d1c5 100644
 --- a/mm/Kconfig
 +++ b/mm/Kconfig
 @@ -759,7 +759,7 @@ config DEFAULT_MMAP_MIN_ADDR
@@ -24,10 +24,10 @@ index 781be3240e21..4988a02759c3 100644
  	  On arm and other archs it should not be higher than 32768.
  	  Programs which use vm86 functionality or have some need to map
 diff --git a/mm/mm_init.c b/mm/mm_init.c
-index f2944748f526..c062c31e3548 100644
+index 5c21b3af216b..839808513e36 100644
 --- a/mm/mm_init.c
 +++ b/mm/mm_init.c
-@@ -1521,7 +1521,8 @@ void __init set_pageblock_order(void)
+@@ -1525,7 +1525,8 @@ void __init set_pageblock_order(void)
  
  	/*
  	 * Assume the largest contiguous order of interest is a huge page.
@@ -37,7 +37,7 @@ index f2944748f526..c062c31e3548 100644
  	 */
  	pageblock_order = order;
  }
-@@ -1643,8 +1644,9 @@ void __init *memmap_alloc(phys_addr_t size, phys_addr_t align,
+@@ -1647,8 +1648,9 @@ void __init *memmap_alloc(phys_addr_t size, phys_addr_t align,
  #ifdef CONFIG_FLATMEM
  static void __init alloc_node_mem_map(struct pglist_data *pgdat)
  {
@@ -49,7 +49,7 @@ index f2944748f526..c062c31e3548 100644
  
  	/* Skip empty nodes */
  	if (!pgdat->node_spanned_pages)
-@@ -1652,20 +1654,26 @@ static void __init alloc_node_mem_map(struct pglist_data *pgdat)
+@@ -1656,20 +1658,26 @@ static void __init alloc_node_mem_map(struct pglist_data *pgdat)
  
  	start = pgdat->node_start_pfn & ~(MAX_ORDER_NR_PAGES - 1);
  	offset = pgdat->node_start_pfn - start;
@@ -91,7 +91,7 @@ index f2944748f526..c062c31e3548 100644
  		 __func__, pgdat->node_id, (unsigned long)pgdat,
  		 (unsigned long)pgdat->node_mem_map);
 diff --git a/mm/page_owner.c b/mm/page_owner.c
-index 9928c9ac8c31..e044af6fbc83 100644
+index c3ca21132c2c..93f7adafbcc3 100644
 --- a/mm/page_owner.c
 +++ b/mm/page_owner.c
 @@ -149,6 +149,14 @@ static noinline depot_stack_handle_t save_stack(gfp_t flags)

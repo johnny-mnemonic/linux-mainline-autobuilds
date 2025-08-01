@@ -1,7 +1,7 @@
-From f60a9892f6d5df91983cda2dcb02392b83249473 Mon Sep 17 00:00:00 2001
+From 76a29e2667bb4476e984aed71e972ac75c6ffd2e Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 26 Mar 2025 12:46:45 +0100
-Subject: [PATCH 67/74] ia64: handle "cpufreq: Remove cpufreq_generic_attrs"
+Subject: [PATCH 67/76] ia64: handle "cpufreq: Remove cpufreq_generic_attrs"
 
 See 486729c6012042c486db2a5e4d5dd034fb1d3f3c.
 

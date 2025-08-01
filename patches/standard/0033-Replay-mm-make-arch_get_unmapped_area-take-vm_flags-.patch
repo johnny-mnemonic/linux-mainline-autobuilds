@@ -1,7 +1,7 @@
-From ac94a6b645a0abd21a17110870498bebc66fd686 Mon Sep 17 00:00:00 2001
+From 51ac3fc66b07643bec9a4ece3f18dc96697836bf Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 27 Sep 2024 14:33:54 +0200
-Subject: [PATCH 33/74] Replay "mm: make arch_get_unmapped_area() take vm_flags
+Subject: [PATCH 33/76] Replay "mm: make arch_get_unmapped_area() take vm_flags
  by default"
 
 See 25d4054cc97484f2555709ac233f955f674e026a.

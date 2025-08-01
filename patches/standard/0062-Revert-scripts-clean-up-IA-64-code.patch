@@ -1,7 +1,7 @@
-From 32161c545c5bd35879430313c97a961c1b73c05a Mon Sep 17 00:00:00 2001
+From fb44ce7019bb3b84e03f40d065a0f2d123546224 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 16:12:32 +0100
-Subject: [PATCH 62/74] Revert "scripts: clean up IA-64 code"
+Subject: [PATCH 62/76] Revert "scripts: clean up IA-64 code"
 
 This reverts commit 0df8e97085946dd79c06720678a845778b6d6bf8.
 ---
@@ -141,7 +141,7 @@ index 3e4f54799cc0..40ae6b2c7a6d 100644
  	case EM_LOONGARCH:	/* reltype: e_class    */ break;
  	case EM_PPC:	reltype = R_PPC_ADDR32; break;
 diff --git a/scripts/recordmcount.pl b/scripts/recordmcount.pl
-index 0871b2e92584..5794b3a43137 100755
+index 861b56dda64e..369729924294 100755
 --- a/scripts/recordmcount.pl
 +++ b/scripts/recordmcount.pl
 @@ -275,6 +275,13 @@ if ($arch eq "x86_64") {

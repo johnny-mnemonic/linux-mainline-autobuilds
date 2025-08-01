@@ -1,7 +1,7 @@
-From f1c9c461b07ace0a10ace2e7dccc4a720eb4fee0 Mon Sep 17 00:00:00 2001
+From 4a30657921a22c46fd35b6c5d40fe0372cc24b3d Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 12 Jan 2024 19:11:18 +0100
-Subject: [PATCH 20/74] Revert "arch: remove ARCH_TASK_STRUCT_ON_STACK"
+Subject: [PATCH 20/76] Revert "arch: remove ARCH_TASK_STRUCT_ON_STACK"
 
 This reverts commit 0eb5085c38749f2a91e5bd8cbebb1ebf3398343c.
 ---
@@ -44,7 +44,7 @@ index bccb3f1f6262..40fc5813cf93 100644
  #define __init_thread_info __section(".data..init_thread_info")
  
 diff --git a/include/linux/sched.h b/include/linux/sched.h
-index 40d2fa90df42..cd7a0beae9ce 100644
+index a9693f179c58..6a62e42648a5 100644
 --- a/include/linux/sched.h
 +++ b/include/linux/sched.h
 @@ -1912,7 +1912,9 @@ extern void ia64_set_curr_task(int cpu, struct task_struct *p);

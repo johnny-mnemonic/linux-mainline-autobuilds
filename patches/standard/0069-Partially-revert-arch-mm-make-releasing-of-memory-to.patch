@@ -1,7 +1,7 @@
-From 15beb3601596cfa821d0d5f36b007d98d9ab5593 Mon Sep 17 00:00:00 2001
+From b3e77c1de1433b1d3f6f09c367117af65f613927 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 2 Apr 2025 16:37:51 +0200
-Subject: [PATCH 69/74] Partially revert "arch, mm: make releasing of memory to
+Subject: [PATCH 69/76] Partially revert "arch, mm: make releasing of memory to
  page [...]"
 
 zx1 and possibly zx2 systems require the call to memblock_free_all() in
@@ -51,10 +51,10 @@ index b96746376e17..682732d2f22c 100644
  void reset_all_zones_managed_pages(void);
  
 diff --git a/mm/internal.h b/mm/internal.h
-index 0f73ff13c212..43ddeeb79450 100644
+index 1da16d550a45..bf25ae2c3835 100644
 --- a/mm/internal.h
 +++ b/mm/internal.h
-@@ -1488,7 +1488,6 @@ static inline bool gup_must_unshare(struct vm_area_struct *vma,
+@@ -1519,7 +1519,6 @@ static inline bool gup_must_unshare(struct vm_area_struct *vma,
  
  extern bool mirrored_kernelcore;
  bool memblock_has_mirror(void);
@@ -63,10 +63,10 @@ index 0f73ff13c212..43ddeeb79450 100644
  static __always_inline void vma_set_range(struct vm_area_struct *vma,
  					  unsigned long start, unsigned long end,
 diff --git a/mm/mm_init.c b/mm/mm_init.c
-index c062c31e3548..e04dcab688d1 100644
+index 839808513e36..22d3b03d7819 100644
 --- a/mm/mm_init.c
 +++ b/mm/mm_init.c
-@@ -2773,7 +2773,9 @@ void __init mm_core_init(void)
+@@ -2779,7 +2779,9 @@ void __init mm_core_init(void)
  	 */
  	kho_memory_init();
  

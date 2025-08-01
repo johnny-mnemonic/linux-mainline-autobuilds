@@ -1,7 +1,7 @@
-From a5675c8054a9f1408b384c4984d8aaa4fb1ebc66 Mon Sep 17 00:00:00 2001
+From 73a8923db5e8f6b5b92bd88a7a53bf607f28587e Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
-Subject: [PATCH 01/74] Revert "Documentation: Drop or replace remaining
+Subject: [PATCH 01/76] Revert "Documentation: Drop or replace remaining
  mentions of IA64"
 
 This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
@@ -140,7 +140,7 @@ index 20fabdf6567e..2d8c59fc1782 100644
  	"1 irqpoll nr_cpus=1 reset_devices"
  
 diff --git a/Documentation/admin-guide/kdump/vmcoreinfo.rst b/Documentation/admin-guide/kdump/vmcoreinfo.rst
-index 8cf4614385b7..df68bc9f1baa 100644
+index 404a15f6782c..455e674dab11 100644
 --- a/Documentation/admin-guide/kdump/vmcoreinfo.rst
 +++ b/Documentation/admin-guide/kdump/vmcoreinfo.rst
 @@ -413,6 +413,36 @@ of a higher page table lookup overhead, and also consumes more page
@@ -181,10 +181,10 @@ index 8cf4614385b7..df68bc9f1baa 100644
  =====
  
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 0d2ea9a60145..3c25bd9f6a1a 100644
+index 8981ae1c9355..cb6cbacbeb35 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
-@@ -1516,7 +1516,7 @@
+@@ -1524,7 +1524,7 @@
  			See comment before function elanfreq_setup() in
  			arch/x86/kernel/cpu/cpufreq/elanfreq.c.
  
@@ -193,7 +193,7 @@ index 0d2ea9a60145..3c25bd9f6a1a 100644
  			Specifies physical address of start of kernel core
  			image elf header and optionally the size. Generally
  			kexec loader will pass this option to capture kernel.
-@@ -1580,6 +1580,12 @@
+@@ -1588,6 +1588,12 @@
  	floppy=		[HW]
  			See Documentation/admin-guide/blockdev/floppy.rst.
  
@@ -220,10 +220,10 @@ index 33c886f3d198..5f13935e2a29 100644
  Memory Hot(Un)Plug Granularity
  ------------------------------
 diff --git a/Documentation/admin-guide/sysctl/kernel.rst b/Documentation/admin-guide/sysctl/kernel.rst
-index c04e6b8eb2b1..ac79a9a0a716 100644
+index 3c8faad03d01..c457e0d6d7db 100644
 --- a/Documentation/admin-guide/sysctl/kernel.rst
 +++ b/Documentation/admin-guide/sysctl/kernel.rst
-@@ -474,8 +474,8 @@ ignore-unaligned-usertrap
+@@ -475,8 +475,8 @@ ignore-unaligned-usertrap
  
  On architectures where unaligned accesses cause traps, and where this
  feature is supported (``CONFIG_SYSCTL_ARCH_UNALIGN_NO_WARN``;
@@ -234,7 +234,7 @@ index c04e6b8eb2b1..ac79a9a0a716 100644
  
  = =============================================================
  0 Log all unaligned accesses.
-@@ -483,7 +483,10 @@ unaligned traps are logged.
+@@ -484,7 +484,10 @@ unaligned traps are logged.
    setting.
  = =============================================================
  
@@ -246,7 +246,7 @@ index c04e6b8eb2b1..ac79a9a0a716 100644
  
  io_uring_disabled
  =================
-@@ -1586,6 +1589,22 @@ See Documentation/admin-guide/kernel-parameters.rst and
+@@ -1588,6 +1591,22 @@ See Documentation/admin-guide/kernel-parameters.rst and
  Documentation/trace/boottime-trace.rst.
  
  
