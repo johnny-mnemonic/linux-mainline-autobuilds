@@ -79,6 +79,8 @@ jobs:
 
       - name: regular_build_step
         run: |
+          echo "| STATUS | BASE COMMIT | TYPE | USED PATCHES | COMPILER | DOWNLOAD |" >> ${SUMMARY_FILE}
+          echo "| ------ | ----------- | ---- | ------------ | -------- | -------- |" >> ${SUMMARY_FILE}
           USED_PATCHES="see [patches/](https://github.com/johnny-mnemonic/linux-mainline-autobuilds/tree/main/patches/)"
           # apply patches ######################################################
           PATH=${MODPATH}
@@ -91,8 +93,6 @@ jobs:
           done
           # build ##############################################################
           cd "${TOOLS_DIR}"
-          echo "| STATUS | BASE COMMIT | TYPE | USED PATCHES | COMPILER | DOWNLOAD |" >> ${SUMMARY_FILE}
-          echo "| ------ | ----------- | ---- | ------------ | -------- | -------- |" >> ${SUMMARY_FILE}
           BUILD_COMMAND="time ./tools/make-kernel.bash ./config/kernel-config-default ia64 ${BUILD_DIR} gha tar-pkg"
           if ${BUILD_COMMAND}; then
             mkdir build-artifacts && mv $( cat ${BUILD_DIR}/LINUX_BUILD_LOG ) $( cat ${BUILD_DIR}/LINUX_TARBALL ) build-artifacts/
