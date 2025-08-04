@@ -1,16 +1,16 @@
-From 750419249ac64d028fad4e59bab4e22e1aa2cc9c Mon Sep 17 00:00:00 2001
+From 75f0a35a4d006f1df6b74f0e10274285d354d9ac Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 16:45:16 +0100
-Subject: [PATCH 19/76] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
+Subject: [PATCH 19/77] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
 
 This reverts commit 3888750e21ccb909051c810cc79fcc0650a740f8.
 ---
  arch/Kconfig  | 9 +++++++++
- kernel/fork.c | 6 ++++++
- 2 files changed, 15 insertions(+)
+ kernel/fork.c | 4 ++++
+ 2 files changed, 13 insertions(+)
 
 diff --git a/arch/Kconfig b/arch/Kconfig
-index f4089687e90d..b33447d23409 100644
+index d692f46b69f8..0eaabcca8f0b 100644
 --- a/arch/Kconfig
 +++ b/arch/Kconfig
 @@ -333,8 +333,17 @@ config ARCH_HAS_CPU_PASID
@@ -32,26 +32,10 @@ index f4089687e90d..b33447d23409 100644
  	  An architecture should select this to provide hardened usercopy
  	  knowledge about what region of the thread_struct should be
 diff --git a/kernel/fork.c b/kernel/fork.c
-index a568dc9ce305..b330fa8e4a5b 100644
+index 10bdf390b1ab..87fe80b46705 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -176,6 +176,7 @@ void __weak arch_release_task_struct(struct task_struct *tsk)
- {
- }
- 
-+#ifndef CONFIG_ARCH_TASK_STRUCT_ALLOCATOR
- static struct kmem_cache *task_struct_cachep;
- 
- static inline struct task_struct *alloc_task_struct_node(int node)
-@@ -187,6 +188,7 @@ static inline void free_task_struct(struct task_struct *tsk)
- {
- 	kmem_cache_free(task_struct_cachep, tsk);
- }
-+#endif
- 
- #ifndef CONFIG_ARCH_THREAD_STACK_ALLOCATOR
- 
-@@ -804,6 +806,7 @@ static void __init set_max_threads(unsigned int max_threads_suggested)
+@@ -806,6 +806,7 @@ static void __init set_max_threads(unsigned int max_threads_suggested)
  int arch_task_struct_size __read_mostly;
  #endif
  
@@ -59,7 +43,7 @@ index a568dc9ce305..b330fa8e4a5b 100644
  static void __init task_struct_whitelist(unsigned long *offset, unsigned long *size)
  {
  	/* Fetch thread_struct whitelist for the architecture. */
-@@ -818,10 +821,12 @@ static void __init task_struct_whitelist(unsigned long *offset, unsigned long *s
+@@ -820,10 +821,12 @@ static void __init task_struct_whitelist(unsigned long *offset, unsigned long *s
  	else
  		*offset += offsetof(struct task_struct, thread);
  }
@@ -72,7 +56,7 @@ index a568dc9ce305..b330fa8e4a5b 100644
  #ifndef ARCH_MIN_TASKALIGN
  #define ARCH_MIN_TASKALIGN	0
  #endif
-@@ -834,6 +839,7 @@ void __init fork_init(void)
+@@ -836,6 +839,7 @@ void __init fork_init(void)
  			arch_task_struct_size, align,
  			SLAB_PANIC|SLAB_ACCOUNT,
  			useroffset, usersize, NULL);

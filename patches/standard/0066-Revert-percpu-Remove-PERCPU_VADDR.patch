@@ -1,7 +1,7 @@
-From 1026b6a09352e808598435c100dc2d56eb1fd290 Mon Sep 17 00:00:00 2001
+From 392ae8d47c828b7e62a1fde511ded9f51769bc42 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Tue, 25 Mar 2025 17:15:11 +0100
-Subject: [PATCH 66/76] Revert "percpu: Remove PERCPU_VADDR()"
+Subject: [PATCH 66/77] Revert "percpu: Remove PERCPU_VADDR()"
 
 ia64 **is** the last user, so we keep that,
 

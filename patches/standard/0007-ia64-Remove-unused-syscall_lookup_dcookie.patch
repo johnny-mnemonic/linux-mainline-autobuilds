@@ -1,7 +1,7 @@
-From 2ebb00d2543c1293caa3a983921cd50050ec3657 Mon Sep 17 00:00:00 2001
+From 52226cc2e42ba86c9f712ab9b099d883e916f535 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Tue, 31 Oct 2023 19:51:09 +0100
-Subject: [PATCH 07/76] ia64: Remove unused syscall_lookup_dcookie
+Subject: [PATCH 07/77] ia64: Remove unused syscall_lookup_dcookie
 
 lookup_dcookie was removed on other architectures after ia64 was
 dropped.

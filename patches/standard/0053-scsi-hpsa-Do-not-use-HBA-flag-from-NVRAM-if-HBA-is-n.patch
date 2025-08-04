@@ -1,7 +1,7 @@
-From d8a70648a494dbdd647c21ce000ba2a2f64eba8e Mon Sep 17 00:00:00 2001
+From 120ce5ee6cb2844a5462dac5ab5c827983bb380b Mon Sep 17 00:00:00 2001
 From: Ivan Mironov <mironov.ivan@gmail.com>
 Date: Mon, 10 Dec 2018 18:51:35 +0500
-Subject: [PATCH 53/76] scsi: hpsa: Do not use HBA flag from NVRAM if HBA is
+Subject: [PATCH 53/77] scsi: hpsa: Do not use HBA flag from NVRAM if HBA is
  not supported
 
 Check bmic_identify_controller.yet_more_controller_flags for HBA support

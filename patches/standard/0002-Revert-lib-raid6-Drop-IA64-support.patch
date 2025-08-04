@@ -1,7 +1,7 @@
-From 9d74714a1dabce0445cdc8f8b6ce050936074c89 Mon Sep 17 00:00:00 2001
+From 494cdb283f3dee237360717ab0b2da5538ff060a Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:38 +0200
-Subject: [PATCH 02/76] Revert "lib/raid6: Drop IA64 support"
+Subject: [PATCH 02/77] Revert "lib/raid6: Drop IA64 support"
 
 This reverts commit b089ea3cc30de85ea7e20aa66500feb4082dfbf7.
 ---
@@ -12,10 +12,10 @@ This reverts commit b089ea3cc30de85ea7e20aa66500feb4082dfbf7.
  4 files changed, 17 insertions(+), 2 deletions(-)
 
 diff --git a/include/linux/raid/pq.h b/include/linux/raid/pq.h
-index 72ff44cca864..7f76d266b348 100644
+index 2467b3be15c9..1cd4345fd3cd 100644
 --- a/include/linux/raid/pq.h
 +++ b/include/linux/raid/pq.h
-@@ -84,6 +84,8 @@ extern const struct raid6_calls raid6_intx1;
+@@ -89,6 +89,8 @@ extern const struct raid6_calls raid6_intx1;
  extern const struct raid6_calls raid6_intx2;
  extern const struct raid6_calls raid6_intx4;
  extern const struct raid6_calls raid6_intx8;
@@ -47,10 +47,10 @@ index 5be0a4e60ab1..8c35ce37f7f2 100644
  	$(call if_changed,unroll)
  
 diff --git a/lib/raid6/algos.c b/lib/raid6/algos.c
-index 75ce3e134b7c..68038f863514 100644
+index 799e0e5eac26..8ed43b76f41b 100644
 --- a/lib/raid6/algos.c
 +++ b/lib/raid6/algos.c
-@@ -82,6 +82,10 @@ const struct raid6_calls * const raid6_algos[] = {
+@@ -79,6 +79,10 @@ const struct raid6_calls * const raid6_algos[] = {
  	&raid6_rvvx2,
  	&raid6_rvvx4,
  	&raid6_rvvx8,

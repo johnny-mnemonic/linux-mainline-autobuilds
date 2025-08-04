@@ -1,16 +1,16 @@
-From 6df82606608256b2f7bff1f8dbf4b46de6c406c7 Mon Sep 17 00:00:00 2001
+From 279f9461c023dbc7cec21b9d4982a9801e89f426 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 12 Jan 2024 18:54:34 +0100
-Subject: [PATCH 18/76] Revert "arch: remove ARCH_THREAD_STACK_ALLOCATOR"
+Subject: [PATCH 18/77] Revert "arch: remove ARCH_THREAD_STACK_ALLOCATOR"
 
 This reverts commit f72709ab69430d986dfc5a08c9a86f625e3fed33.
 ---
  arch/Kconfig  |  4 ++++
- kernel/fork.c | 20 ++++++++++++++++++++
- 2 files changed, 24 insertions(+)
+ kernel/fork.c | 21 +++++++++++++++++++++
+ 2 files changed, 25 insertions(+)
 
 diff --git a/arch/Kconfig b/arch/Kconfig
-index 3d81c5f1ba2d..f4089687e90d 100644
+index d1b4ffd6e085..d692f46b69f8 100644
 --- a/arch/Kconfig
 +++ b/arch/Kconfig
 @@ -343,6 +343,10 @@ config HAVE_ARCH_THREAD_STRUCT_WHITELIST
@@ -25,22 +25,31 @@ index 3d81c5f1ba2d..f4089687e90d 100644
  config ARCH_WANTS_DYNAMIC_TASK_STRUCT
  	bool
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 28f950c40ee2..a568dc9ce305 100644
+index a44cdab7c7ba..10bdf390b1ab 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -188,6 +188,8 @@ static inline void free_task_struct(struct task_struct *tsk)
+@@ -177,6 +177,7 @@ void __weak arch_release_task_struct(struct task_struct *tsk)
+ {
+ }
+ 
++#ifndef CONFIG_ARCH_TASK_STRUCT_ALLOCATOR
+ static struct kmem_cache *task_struct_cachep;
+ 
+ static inline struct task_struct *alloc_task_struct_node(int node)
+@@ -188,7 +189,9 @@ static inline void free_task_struct(struct task_struct *tsk)
+ {
  	kmem_cache_free(task_struct_cachep, tsk);
  }
++#endif
  
 +#ifndef CONFIG_ARCH_THREAD_STACK_ALLOCATOR
-+
+ #ifdef CONFIG_VMAP_STACK
  /*
-  * Allocate pages if THREAD_SIZE is >= PAGE_SIZE, otherwise use a
-  * kmemcache based allocator.
-@@ -418,6 +420,24 @@ void thread_stack_cache_init(void)
- }
+  * vmalloc() is a bit slow, and calling vfree() enough times will force a TLB
+@@ -418,6 +421,24 @@ void thread_stack_cache_init(void)
  
- # endif /* THREAD_SIZE >= PAGE_SIZE || defined(CONFIG_VMAP_STACK) */
+ #endif /* THREAD_SIZE >= PAGE_SIZE */
+ #endif /* CONFIG_VMAP_STACK */
 +#else /* CONFIG_ARCH_THREAD_STACK_ALLOCATOR */
 +
 +static int alloc_thread_stack_node(struct task_struct *tsk, int node)

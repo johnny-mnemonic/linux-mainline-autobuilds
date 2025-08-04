@@ -1,7 +1,7 @@
-From edfa24c3948e821508648d926e18feb1716d23f9 Mon Sep 17 00:00:00 2001
+From b706d612d979f6a0e40d06a0de35c9287efef326 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 10:37:07 +0100
-Subject: [PATCH 57/76] Revert "selftests/mm: remove unnecessary ia64 code and
+Subject: [PATCH 57/77] Revert "selftests/mm: remove unnecessary ia64 code and
  comment"
 
 This reverts commit 2f4db2861013fcfb4be11d0dc176271ae566241c.

@@ -1,7 +1,7 @@
-From 660c726de4a79ddf7e0fca57c164f984cedbeb9e Mon Sep 17 00:00:00 2001
+From bb31bbf4aeb9799c572f7e1e67bfd8a6f7813645 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sat, 5 Oct 2024 13:16:09 +0200
-Subject: [PATCH 36/76] ia64: For now silence warning due to redefinition of
+Subject: [PATCH 36/77] ia64: For now silence warning due to redefinition of
  NODE_DATA
 
 ---

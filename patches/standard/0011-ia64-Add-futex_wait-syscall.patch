@@ -1,7 +1,7 @@
-From 0bebadf314bd2033355c3f8a028d5ec4f39a5ab3 Mon Sep 17 00:00:00 2001
+From 80447499fdd057d4755cacd7560be838d0bf138a Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 9 Nov 2023 17:31:05 +0100
-Subject: [PATCH 11/76] ia64: Add futex_wait() syscall
+Subject: [PATCH 11/77] ia64: Add futex_wait() syscall
 
 futex_wait() was added after ia64 was removed from the kernel.
 
