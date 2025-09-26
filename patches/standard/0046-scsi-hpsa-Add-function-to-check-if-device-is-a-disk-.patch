@@ -1,7 +1,7 @@
-From ad983a7bf96a602573d7d207d32366f6f9217ec5 Mon Sep 17 00:00:00 2001
+From b53c8165d8ebd235693e3c5aef98e98beab932db Mon Sep 17 00:00:00 2001
 From: Ivan Mironov <mironov.ivan@gmail.com>
 Date: Wed, 5 Dec 2018 20:20:57 +0500
-Subject: [PATCH 47/77] scsi: hpsa: Add function to check if device is a disk
+Subject: [PATCH 46/89] scsi: hpsa: Add function to check if device is a disk
  or a zoned device
 
 This check is used multiple times within the driver. New function makes

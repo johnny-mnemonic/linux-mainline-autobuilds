@@ -1,7 +1,7 @@
-From c621563f45e6143c87941b66e7064496bff92676 Mon Sep 17 00:00:00 2001
+From de5b1676af73df793ef52040244112217a46c01e Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Tue, 21 Nov 2023 16:40:42 +0100
-Subject: [PATCH 15/77] ia64: set nid of all reserved memblocks to 0 at setup
+Subject: [PATCH 15/89] ia64: set nid of all reserved memblocks to 0 at setup
 
 Kernel panic was reported on HP Integrity rx6600 servers after commit
 61167ad5fecde ("mm: pass nid to reserve_bootmem_region()"):

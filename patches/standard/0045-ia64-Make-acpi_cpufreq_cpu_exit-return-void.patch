@@ -1,7 +1,7 @@
-From be53490e29ab754f338f4f7e5a474b7dceae752e Mon Sep 17 00:00:00 2001
+From 29266d65452a4a7ea4ede200b8b45b7b9c429e26 Mon Sep 17 00:00:00 2001
 From: Rene Rebe <rene@exactcode.de>
 Date: Sun, 1 Dec 2024 19:27:07 +0100
-Subject: [PATCH 45/77] ia64: Make acpi_cpufreq_cpu_exit return void
+Subject: [PATCH 45/89] ia64: Make acpi_cpufreq_cpu_exit return void
 
 Commit b4b1ddc9dfe9 ("cpufreq: Make cpufreq_driver->exit() return
 void") changed the type of the cpufreq_driver->exit() interface to

@@ -1,7 +1,7 @@
-From 4dfbb65f3b9b605ed18d2f0dce8bee4ec439af24 Mon Sep 17 00:00:00 2001
+From c63c7d3f9d031c818b8e4a9600bf174967796ae1 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
-Subject: [PATCH 01/77] Revert "Documentation: Drop or replace remaining
+Subject: [PATCH 01/89] Revert "Documentation: Drop or replace remaining
  mentions of IA64"
 
 This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
@@ -27,7 +27,7 @@ This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
  18 files changed, 125 insertions(+), 19 deletions(-)
 
 diff --git a/Documentation/ABI/testing/sysfs-devices-system-cpu b/Documentation/ABI/testing/sysfs-devices-system-cpu
-index ab8cd337f43a..12ba41bb064f 100644
+index 8aed6d94c4cd..642cbb4bd382 100644
 --- a/Documentation/ABI/testing/sysfs-devices-system-cpu
 +++ b/Documentation/ABI/testing/sysfs-devices-system-cpu
 @@ -413,6 +413,9 @@ Description:	Parameters for the CPU cache attributes
@@ -181,7 +181,7 @@ index 404a15f6782c..455e674dab11 100644
  =====
  
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index c1a5cd991f2e..0a54088449d4 100644
+index 5a7a83c411e9..93238e10e28c 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
 @@ -1546,7 +1546,7 @@
@@ -425,7 +425,7 @@ index b2ac3c743a3a..ce3f39d9b3cb 100644
  sparc - 在这一点上，IRQ是开着的（？），把local_irq_save改为_disable。
        - 待办事项: 需要第二个CPU来禁用抢占 (参考 #1)
 diff --git a/Makefile b/Makefile
-index 98ab3435fc8d..518897e79fe5 100644
+index 10355ecf32cb..ee423743b5f6 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -388,7 +388,7 @@ include $(srctree)/scripts/subarch.include

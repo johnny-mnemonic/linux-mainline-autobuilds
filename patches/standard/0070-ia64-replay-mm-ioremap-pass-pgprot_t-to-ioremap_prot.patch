@@ -1,7 +1,7 @@
-From 5045084c7bff2247813fd0873632694d7ac891fa Mon Sep 17 00:00:00 2001
+From d5cb5a3b6b8c0bd22bc079cb29350d509dc6843f Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Thu, 3 Apr 2025 00:12:58 +0200
-Subject: [PATCH 70/77] ia64: replay "mm/ioremap: pass pgprot_t to
+Subject: [PATCH 70/89] ia64: replay "mm/ioremap: pass pgprot_t to
  ioremap_prot() instead [...]"
 
 See 86758b504864913233f6a16076184ba784cd4466.

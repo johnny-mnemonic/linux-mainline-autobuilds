@@ -1,7 +1,7 @@
-From a48c8e204df5693a79feee9764a348a846042b42 Mon Sep 17 00:00:00 2001
+From f29a7f84dbcb45fc3d92aec6fcd4fb36cf3ba56b Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 27 Jan 2025 15:43:18 +0100
-Subject: [PATCH 54/77] Partially revert "x86/efistub: Drop long obsolete UGA
+Subject: [PATCH 54/89] Partially revert "x86/efistub: Drop long obsolete UGA
  support"
 
 ia64 still has an implementation for efi_systab_show_arch(), so although
@@ -15,10 +15,10 @@ This partially reverts commit 144d52dd8fc83a082a275e1b663e7454d2b616a4.
  2 files changed, 5 insertions(+)
 
 diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
-index ab9e0e9fa341..ee11d4ae44d2 100644
+index 389a0c9e1448..0a0f4dc3cd7c 100644
 --- a/drivers/firmware/efi/efi.c
 +++ b/drivers/firmware/efi/efi.c
-@@ -148,6 +148,9 @@ static ssize_t systab_show(struct kobject *kobj,
+@@ -149,6 +149,9 @@ static ssize_t systab_show(struct kobject *kobj,
  	if (efi.smbios != EFI_INVALID_TABLE_ADDR)
  		str += sprintf(str, "SMBIOS=0x%lx\n", efi.smbios);
  
@@ -29,10 +29,10 @@ index ab9e0e9fa341..ee11d4ae44d2 100644
  }
  
 diff --git a/include/linux/efi.h b/include/linux/efi.h
-index 0bac535deafb..89048c8c9ddc 100644
+index e08a6f50ac5d..25da2c6b5917 100644
 --- a/include/linux/efi.h
 +++ b/include/linux/efi.h
-@@ -1294,6 +1294,8 @@ struct linux_efi_memreserve {
+@@ -1296,6 +1296,8 @@ struct linux_efi_memreserve {
  
  void __init efi_arch_mem_reserve(phys_addr_t addr, u64 size);
  

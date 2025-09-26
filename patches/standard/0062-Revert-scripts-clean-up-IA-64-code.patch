@@ -1,7 +1,7 @@
-From 6225974534b2971cce5eed346b0aa495fd98807c Mon Sep 17 00:00:00 2001
+From 68246178fc4b58761a37c1daacde192728bd319b Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 16:12:32 +0100
-Subject: [PATCH 62/77] Revert "scripts: clean up IA-64 code"
+Subject: [PATCH 62/89] Revert "scripts: clean up IA-64 code"
 
 This reverts commit 0df8e97085946dd79c06720678a845778b6d6bf8.
 ---
@@ -71,7 +71,7 @@ index 84ea9215c0a7..25ee330546b2 100644
  	"  Selected by: BAR [=n]\n"
  	"-----------------------------------------------------------------\n"
 diff --git a/scripts/kconfig/nconf.c b/scripts/kconfig/nconf.c
-index c0b2dabf6c89..3401e5094d30 100644
+index ae1fe5f60327..c87a6cddc615 100644
 --- a/scripts/kconfig/nconf.c
 +++ b/scripts/kconfig/nconf.c
 @@ -219,7 +219,7 @@ search_help[] =

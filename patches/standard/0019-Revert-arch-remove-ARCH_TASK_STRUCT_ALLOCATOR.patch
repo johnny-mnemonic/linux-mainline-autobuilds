@@ -1,7 +1,7 @@
-From 75f0a35a4d006f1df6b74f0e10274285d354d9ac Mon Sep 17 00:00:00 2001
+From 4d2514c4df4614fa3c513f5324c9e04a48a2c190 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 16:45:16 +0100
-Subject: [PATCH 19/77] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
+Subject: [PATCH 19/89] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
 
 This reverts commit 3888750e21ccb909051c810cc79fcc0650a740f8.
 ---
@@ -32,10 +32,10 @@ index d692f46b69f8..0eaabcca8f0b 100644
  	  An architecture should select this to provide hardened usercopy
  	  knowledge about what region of the thread_struct should be
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 10bdf390b1ab..87fe80b46705 100644
+index ff6a73662b14..a72ee138f90d 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -806,6 +806,7 @@ static void __init set_max_threads(unsigned int max_threads_suggested)
+@@ -809,6 +809,7 @@ static void __init set_max_threads(unsigned int max_threads_suggested)
  int arch_task_struct_size __read_mostly;
  #endif
  
@@ -43,7 +43,7 @@ index 10bdf390b1ab..87fe80b46705 100644
  static void __init task_struct_whitelist(unsigned long *offset, unsigned long *size)
  {
  	/* Fetch thread_struct whitelist for the architecture. */
-@@ -820,10 +821,12 @@ static void __init task_struct_whitelist(unsigned long *offset, unsigned long *s
+@@ -823,10 +824,12 @@ static void __init task_struct_whitelist(unsigned long *offset, unsigned long *s
  	else
  		*offset += offsetof(struct task_struct, thread);
  }
@@ -56,7 +56,7 @@ index 10bdf390b1ab..87fe80b46705 100644
  #ifndef ARCH_MIN_TASKALIGN
  #define ARCH_MIN_TASKALIGN	0
  #endif
-@@ -836,6 +839,7 @@ void __init fork_init(void)
+@@ -839,6 +842,7 @@ void __init fork_init(void)
  			arch_task_struct_size, align,
  			SLAB_PANIC|SLAB_ACCOUNT,
  			useroffset, usersize, NULL);

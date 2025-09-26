@@ -1,7 +1,7 @@
-From 567e5e92c2e427b49d5d24eeb221c5cbccd49018 Mon Sep 17 00:00:00 2001
+From ac1d46f9230093682d64cf60d38e62673274deb7 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Sun, 24 Mar 2024 19:43:52 +0100
-Subject: [PATCH 22/77] Revert "mmap: remove the IA64-specific vma expansion
+Subject: [PATCH 22/89] Revert "mmap: remove the IA64-specific vma expansion
  implementation"
 
 This reverts commit 69e583eaca579d50ffc699b1f4358258e75fa008.
