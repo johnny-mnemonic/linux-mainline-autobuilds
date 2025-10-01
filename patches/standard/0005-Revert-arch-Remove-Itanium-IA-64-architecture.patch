@@ -1,7 +1,7 @@
-From 1017d3dcd8bc19fd7ee9a606ba4f1665d3815977 Mon Sep 17 00:00:00 2001
+From f1fe0a43554b6fcee6d1caf420c50b89e2fb2440 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
-Subject: [PATCH 05/89] Revert "arch: Remove Itanium (IA-64) architecture"
+Subject: [PATCH 05/92] Revert "arch: Remove Itanium (IA-64) architecture"
 
 This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
 ---
@@ -3009,10 +3009,10 @@ index e1b0eeabbb5e..59fd6ed5e3f1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 520fb4e379a3..80caefa5c635 100644
+index 5c5ccf9ffce8..4accbf4be243 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -11660,6 +11660,12 @@ F:	drivers/i3c/
+@@ -11707,6 +11707,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3025,7 +3025,7 @@ index 520fb4e379a3..80caefa5c635 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -19240,6 +19246,11 @@ S:	Maintained
+@@ -19352,6 +19358,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -67881,10 +67881,10 @@ index c21484d15f0c..57e112f391a2 100644
  	select DRM_PANEL_ORIENTATION_QUIRKS
  	select FB_IOMEM_HELPERS
 diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-index 0c25b2ed44eb..1c032f33a1c0 100644
+index 05008d937e40..6b48833ed964 100644
 --- a/drivers/watchdog/Kconfig
 +++ b/drivers/watchdog/Kconfig
-@@ -1385,7 +1385,7 @@ config INTEL_OC_WATCHDOG
+@@ -1396,7 +1396,7 @@ config INTEL_OC_WATCHDOG
  
  config ITCO_WDT
  	tristate "Intel TCO Timer/Watchdog"
@@ -67894,7 +67894,7 @@ index 0c25b2ed44eb..1c032f33a1c0 100644
  	depends on I2C || I2C=n
  	depends on MFD_INTEL_PMC_BXT || !MFD_INTEL_PMC_BXT
 diff --git a/fs/afs/main.c b/fs/afs/main.c
-index 02475d415d88..2d56a72b5ec3 100644
+index e6bb8237db98..23e5188fefa7 100644
 --- a/fs/afs/main.c
 +++ b/fs/afs/main.c
 @@ -41,6 +41,8 @@ const char afs_init_sysname[] = "arm_linux26";
@@ -68034,10 +68034,10 @@ index db9f6c539b28..6cc7a543f576 100644
  	}
  
 diff --git a/kernel/fork.c b/kernel/fork.c
-index c4ada32598bd..9843f631ff57 100644
+index cffa6157a55a..80d2c50abe72 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -2838,7 +2838,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
+@@ -2843,7 +2843,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
  		if (!access_ok((void __user *)kargs->stack, kargs->stack_size))
  			return false;
  
@@ -68047,10 +68047,10 @@ index c4ada32598bd..9843f631ff57 100644
  #endif
  	}
 diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index ccba6fc3c3fe..391d0ab47b7c 100644
+index 198d2dd45f59..bfd5918efa51 100644
 --- a/kernel/sched/core.c
 +++ b/kernel/sched/core.c
-@@ -9059,9 +9059,9 @@ void normalize_rt_tasks(void)
+@@ -9027,9 +9027,9 @@ void normalize_rt_tasks(void)
  
  #endif /* CONFIG_MAGIC_SYSRQ */
  
@@ -68062,7 +68062,7 @@ index ccba6fc3c3fe..391d0ab47b7c 100644
   *
   * They can only be called when the whole system has been
   * stopped - every CPU needs to be quiescent, and no scheduling
-@@ -9083,7 +9083,30 @@ struct task_struct *curr_task(int cpu)
+@@ -9051,7 +9051,30 @@ struct task_struct *curr_task(int cpu)
  	return cpu_curr(cpu);
  }
  
@@ -68115,7 +68115,7 @@ index cb6196e3fa99..9a7116c22902 100644
  
  int __init sysctl_init_bases(void)
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index dc0e0c6ed075..e1c9746964ba 100644
+index 24939b8553e6..80abb6c20785 100644
 --- a/lib/Kconfig.debug
 +++ b/lib/Kconfig.debug
 @@ -791,7 +791,7 @@ config SHRINKER_DEBUG

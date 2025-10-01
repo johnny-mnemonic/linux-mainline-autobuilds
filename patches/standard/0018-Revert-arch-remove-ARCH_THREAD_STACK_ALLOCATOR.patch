@@ -1,7 +1,7 @@
-From 39599914d707a14e82e9c0122091aa9c48ecdae1 Mon Sep 17 00:00:00 2001
+From 4e50bd1bae0b5a5896accf4d81571b79b93e0647 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 12 Jan 2024 18:54:34 +0100
-Subject: [PATCH 18/89] Revert "arch: remove ARCH_THREAD_STACK_ALLOCATOR"
+Subject: [PATCH 18/92] Revert "arch: remove ARCH_THREAD_STACK_ALLOCATOR"
 
 This reverts commit f72709ab69430d986dfc5a08c9a86f625e3fed33.
 ---
@@ -10,10 +10,10 @@ This reverts commit f72709ab69430d986dfc5a08c9a86f625e3fed33.
  2 files changed, 25 insertions(+)
 
 diff --git a/arch/Kconfig b/arch/Kconfig
-index d1b4ffd6e085..d692f46b69f8 100644
+index 5440616f0774..56a9094f398d 100644
 --- a/arch/Kconfig
 +++ b/arch/Kconfig
-@@ -343,6 +343,10 @@ config HAVE_ARCH_THREAD_STRUCT_WHITELIST
+@@ -381,6 +381,10 @@ config HAVE_ARCH_THREAD_STRUCT_WHITELIST
  	  should be implemented. Without this, the entire thread_struct
  	  field in task_struct will be left whitelisted.
  
@@ -25,7 +25,7 @@ index d1b4ffd6e085..d692f46b69f8 100644
  config ARCH_WANTS_DYNAMIC_TASK_STRUCT
  	bool
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 9843f631ff57..ff6a73662b14 100644
+index 80d2c50abe72..bff7a3273f53 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
 @@ -177,6 +177,7 @@ void __weak arch_release_task_struct(struct task_struct *tsk)

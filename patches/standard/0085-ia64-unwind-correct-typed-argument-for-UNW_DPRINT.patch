@@ -1,7 +1,7 @@
-From 9a86bfd5bd10dde2cbfa379b1b556b4ab6fe362e Mon Sep 17 00:00:00 2001
+From 65cf8bb9851d45d81dd336c4b5d44ddedc8eb7c2 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Fri, 5 Sep 2025 23:57:30 +0800
-Subject: [PATCH 85/89] ia64: unwind: correct typed argument for UNW_DPRINT()
+Subject: [PATCH 85/92] ia64: unwind: correct typed argument for UNW_DPRINT()
 
 Fix the following error during build (with CONFIG_WERROR):
 

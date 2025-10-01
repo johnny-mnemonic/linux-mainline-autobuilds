@@ -1,7 +1,7 @@
-From a94f69cccf3a45415e2d13e53806c07d3cfbba6a Mon Sep 17 00:00:00 2001
+From d328e0a063f46cf4e251ea88f4db759b9edb322e Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sun, 24 Nov 2024 11:06:09 +0100
-Subject: [PATCH 43/89] ia64: replay "mm: drop hugetlb_get_unmapped_area{_*}
+Subject: [PATCH 43/92] ia64: replay "mm: drop hugetlb_get_unmapped_area{_*}
  functions"
 
 See cc92882ee218d62ef017fa545b3c8a2d1e060a5a.

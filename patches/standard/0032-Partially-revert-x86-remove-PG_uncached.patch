@@ -1,7 +1,7 @@
-From 77b912cdd1fd6572410bd47b8142cd616da5b9d6 Mon Sep 17 00:00:00 2001
+From 0c66fba1616ca5984eea4afd17c9d2f6bd2e832e Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 27 Sep 2024 14:29:04 +0200
-Subject: [PATCH 32/89] Partially revert "x86: remove PG_uncached"
+Subject: [PATCH 32/92] Partially revert "x86: remove PG_uncached"
 
 This partially reverts commit 7a87225ae2c6c317c7b80cf599e5cf0eee.
 ---

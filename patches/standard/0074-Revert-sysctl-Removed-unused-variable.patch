@@ -1,7 +1,7 @@
-From d1a1b85a00b3faf693014db8973a30314ae7bb2e Mon Sep 17 00:00:00 2001
+From 784d95375b5d360c5a8ee02a822a614d1abf75c0 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 30 Jul 2025 16:30:26 +0200
-Subject: [PATCH 74/89] Revert "sysctl: Removed unused variable"
+Subject: [PATCH 74/92] Revert "sysctl: Removed unused variable"
 
 ia64 still uses this, so we keep that.
 

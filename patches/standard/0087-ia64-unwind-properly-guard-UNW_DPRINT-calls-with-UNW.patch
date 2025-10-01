@@ -1,7 +1,7 @@
-From 7e70fd28b5a17bef8fbb1aad5f15fa6da9250837 Mon Sep 17 00:00:00 2001
+From 9459c3d048a906ca9d93704f908d3dcdd587b3d4 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Sat, 6 Sep 2025 01:59:50 +0800
-Subject: [PATCH 87/89] ia64: unwind: properly guard UNW_DPRINT calls with
+Subject: [PATCH 87/92] ia64: unwind: properly guard UNW_DPRINT calls with
  UNW_DEBUG
 
 The original implementation relies on UNW_DPRINT being defined to null to

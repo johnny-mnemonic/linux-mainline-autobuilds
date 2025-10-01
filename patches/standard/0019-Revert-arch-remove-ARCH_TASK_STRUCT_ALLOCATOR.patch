@@ -1,7 +1,7 @@
-From 4d2514c4df4614fa3c513f5324c9e04a48a2c190 Mon Sep 17 00:00:00 2001
+From 9390a896df3ab4a540ea62e7028cf1129220ffe1 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 16:45:16 +0100
-Subject: [PATCH 19/89] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
+Subject: [PATCH 19/92] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
 
 This reverts commit 3888750e21ccb909051c810cc79fcc0650a740f8.
 ---
@@ -10,10 +10,10 @@ This reverts commit 3888750e21ccb909051c810cc79fcc0650a740f8.
  2 files changed, 13 insertions(+)
 
 diff --git a/arch/Kconfig b/arch/Kconfig
-index d692f46b69f8..0eaabcca8f0b 100644
+index 56a9094f398d..40ab9896afd3 100644
 --- a/arch/Kconfig
 +++ b/arch/Kconfig
-@@ -333,8 +333,17 @@ config ARCH_HAS_CPU_PASID
+@@ -371,8 +371,17 @@ config ARCH_HAS_CPU_PASID
  	bool
  	select IOMMU_MM_DATA
  
@@ -32,7 +32,7 @@ index d692f46b69f8..0eaabcca8f0b 100644
  	  An architecture should select this to provide hardened usercopy
  	  knowledge about what region of the thread_struct should be
 diff --git a/kernel/fork.c b/kernel/fork.c
-index ff6a73662b14..a72ee138f90d 100644
+index bff7a3273f53..7dee1c796d84 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
 @@ -809,6 +809,7 @@ static void __init set_max_threads(unsigned int max_threads_suggested)

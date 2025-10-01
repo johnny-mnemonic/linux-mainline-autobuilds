@@ -1,7 +1,7 @@
-From b260c71335c31c5b32ce7fec4034fc00b7078486 Mon Sep 17 00:00:00 2001
+From 21deec97e50533f328ba1b8b339ccc348611c76d Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:55 +0200
-Subject: [PATCH 04/89] Revert "kernel: Drop IA64 support from sig_fault
+Subject: [PATCH 04/92] Revert "kernel: Drop IA64 support from sig_fault
  handlers"
 
 This reverts commit f5e836884d8e55b416dfad55c29481ec1b65c1f0.
@@ -12,10 +12,10 @@ This reverts commit f5e836884d8e55b416dfad55c29481ec1b65c1f0.
  3 files changed, 38 insertions(+), 9 deletions(-)
 
 diff --git a/include/linux/sched/signal.h b/include/linux/sched/signal.h
-index 1ef1edbaaf79..b734b1533335 100644
+index 7d6449982822..c472fd0d3b91 100644
 --- a/include/linux/sched/signal.h
 +++ b/include/linux/sched/signal.h
-@@ -305,11 +305,20 @@ static inline void kernel_signal_stop(void)
+@@ -309,11 +309,20 @@ static inline void kernel_signal_stop(void)
  
  	schedule();
  }

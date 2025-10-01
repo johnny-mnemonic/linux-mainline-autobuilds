@@ -1,7 +1,7 @@
-From f33a1e60e195d5baced2ecffdcc5b7d1476d33f5 Mon Sep 17 00:00:00 2001
+From 3049428e51be5aa575dd6c7510ba10c7a02e9b80 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 4 Oct 2024 20:50:34 +0200
-Subject: [PATCH 35/89] ia64: replay "move asm/unaligned.h to
+Subject: [PATCH 35/92] ia64: replay "move asm/unaligned.h to
  linux/unaligned.h"
 
 See 5f60d5f6bbc12e782fac78110b0ee62698f3b576.

@@ -1,7 +1,7 @@
-From ee2efd36bad6980c78c8385d6e3305ca8666a032 Mon Sep 17 00:00:00 2001
+From e35d3de4e8a6a9f3d097786f72b27176e5f61d83 Mon Sep 17 00:00:00 2001
 From: Xinhui Yang <cyan@cyano.uk>
 Date: Sun, 7 Sep 2025 21:08:46 +0800
-Subject: [PATCH 88/89] acpica: swap the header comprasion order in tbprint
+Subject: [PATCH 88/92] acpica: swap the header comprasion order in tbprint
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
