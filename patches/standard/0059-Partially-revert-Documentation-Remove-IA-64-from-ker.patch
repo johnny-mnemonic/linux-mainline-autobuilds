@@ -1,4 +1,4 @@
-From 35bf219cb789cd9de8458ab8b0a0cb6b13b5b3e9 Mon Sep 17 00:00:00 2001
+From feac220a7ccbc96f4233633dde6d655f21672fa0 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 15:17:38 +0100
 Subject: [PATCH 59/92] Partially revert "Documentation: Remove IA-64 from

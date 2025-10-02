@@ -1,4 +1,4 @@
-From 8ec9ce48be8c2a52f61c72661246ec44711cd5d0 Mon Sep 17 00:00:00 2001
+From b5dafc0f39405f2fb90c94480891bc43ba9758be Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Thu, 4 Sep 2025 15:50:51 +0800
 Subject: [PATCH 80/92] ia64: declare non-prototyped functions as static

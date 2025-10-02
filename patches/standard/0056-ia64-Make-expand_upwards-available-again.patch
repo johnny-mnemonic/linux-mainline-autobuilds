@@ -1,4 +1,4 @@
-From ff27594f5fd2097ae6e6d63ee7df63822f804b5e Mon Sep 17 00:00:00 2001
+From e467f1f2d267cc42b6f3ab91c13960901c3432ec Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 27 Jan 2025 18:30:30 +0100
 Subject: [PATCH 56/92] ia64: Make expand_upwards() available again

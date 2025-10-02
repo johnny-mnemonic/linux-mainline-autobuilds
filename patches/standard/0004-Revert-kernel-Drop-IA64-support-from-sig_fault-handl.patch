@@ -1,4 +1,4 @@
-From 21deec97e50533f328ba1b8b339ccc348611c76d Mon Sep 17 00:00:00 2001
+From 3753f854f5cc2b731367fa57c4c736a0e68dc783 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:55 +0200
 Subject: [PATCH 04/92] Revert "kernel: Drop IA64 support from sig_fault

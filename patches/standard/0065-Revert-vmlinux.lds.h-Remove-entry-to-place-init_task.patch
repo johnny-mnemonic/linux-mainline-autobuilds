@@ -1,4 +1,4 @@
-From eb9c01622cbc549182a0b9f0d4168d584025480d Mon Sep 17 00:00:00 2001
+From 612384dae23733a091ad98fa175a671ae70aa6d3 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Tue, 25 Mar 2025 10:21:52 +0100
 Subject: [PATCH 65/92] Revert "vmlinux.lds.h: Remove entry to place init_task
@@ -16,10 +16,10 @@ This reverts commit 2ec01bd7152f80795eab7b48706aa5db8d4a286a.
  1 file changed, 1 insertion(+)
 
 diff --git a/include/asm-generic/vmlinux.lds.h b/include/asm-generic/vmlinux.lds.h
-index a65a87366c48..457b44a27792 100644
+index 8a9a2e732a65..78de634955a2 100644
 --- a/include/asm-generic/vmlinux.lds.h
 +++ b/include/asm-generic/vmlinux.lds.h
-@@ -409,6 +409,7 @@ defined(CONFIG_AUTOFDO_CLANG) || defined(CONFIG_PROPELLER_CLANG)
+@@ -410,6 +410,7 @@ defined(CONFIG_AUTOFDO_CLANG) || defined(CONFIG_PROPELLER_CLANG)
  	__start_init_stack = .;						\
  	init_thread_union = .;						\
  	init_stack = .;							\

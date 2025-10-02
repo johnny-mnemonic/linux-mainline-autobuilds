@@ -1,4 +1,4 @@
-From e91f7c2a3dcea223fb1351b6f6245f97029983c2 Mon Sep 17 00:00:00 2001
+From 1b46c6dfcd71211f979d7134fee76c143a3374be Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Thu, 4 Sep 2025 15:37:32 +0800
 Subject: [PATCH 83/92] ACPI: processor_idle: Fix build with CONFIG_WERROR
@@ -18,7 +18,7 @@ Signed-off-by: Mingcong Bai <jeffbai@aosc.io>
  1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/acpi/processor_idle.c b/drivers/acpi/processor_idle.c
-index 2c2dc559e0f8..75c942fd9f50 100644
+index 22b051b94a86..6e8ce83f1ec6 100644
 --- a/drivers/acpi/processor_idle.c
 +++ b/drivers/acpi/processor_idle.c
 @@ -695,8 +695,9 @@ static int __cpuidle acpi_idle_enter(struct cpuidle_device *dev,

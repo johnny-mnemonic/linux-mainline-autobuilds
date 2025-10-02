@@ -1,4 +1,4 @@
-From 65cf8bb9851d45d81dd336c4b5d44ddedc8eb7c2 Mon Sep 17 00:00:00 2001
+From 767e34fd94dcdcb0f847f27283413dad59f65b95 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Fri, 5 Sep 2025 23:57:30 +0800
 Subject: [PATCH 85/92] ia64: unwind: correct typed argument for UNW_DPRINT()

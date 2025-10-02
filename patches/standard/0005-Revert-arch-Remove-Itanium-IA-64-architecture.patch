@@ -1,4 +1,4 @@
-From f1fe0a43554b6fcee6d1caf420c50b89e2fb2440 Mon Sep 17 00:00:00 2001
+From e172cb1a362ba9b34d9d1e6381efa279f32921c0 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
 Subject: [PATCH 05/92] Revert "arch: Remove Itanium (IA-64) architecture"
@@ -3009,10 +3009,10 @@ index e1b0eeabbb5e..59fd6ed5e3f1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 5c5ccf9ffce8..4accbf4be243 100644
+index 49aace3381cd..831c634bdd3f 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -11707,6 +11707,12 @@ F:	drivers/i3c/
+@@ -11740,6 +11740,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3025,7 +3025,7 @@ index 5c5ccf9ffce8..4accbf4be243 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -19352,6 +19358,11 @@ S:	Maintained
+@@ -19385,6 +19391,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -66128,7 +66128,7 @@ index 0713ea2b2a51..35db08218e56 100644
  }
  
 diff --git a/drivers/char/hw_random/Kconfig b/drivers/char/hw_random/Kconfig
-index c85827843447..3227dcaa9111 100644
+index e316cbc5baa9..b4eca8011f23 100644
 --- a/drivers/char/hw_random/Kconfig
 +++ b/drivers/char/hw_random/Kconfig
 @@ -37,7 +37,7 @@ config HW_RANDOM_TIMERIOMEM
@@ -68115,7 +68115,7 @@ index cb6196e3fa99..9a7116c22902 100644
  
  int __init sysctl_init_bases(void)
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index 24939b8553e6..80abb6c20785 100644
+index fd14468e1b03..3afb91d1c4c5 100644
 --- a/lib/Kconfig.debug
 +++ b/lib/Kconfig.debug
 @@ -791,7 +791,7 @@ config SHRINKER_DEBUG
@@ -68267,7 +68267,7 @@ index 000000000000..2a19bb1db4ab
 +#define MAP_32BIT	0
 +#endif
 diff --git a/usr/include/Makefile b/usr/include/Makefile
-index f02f41941b60..d30b2d0f2666 100644
+index 61a7dd4fc05f..83268af4efd8 100644
 --- a/usr/include/Makefile
 +++ b/usr/include/Makefile
 @@ -63,6 +63,12 @@ ifeq ($(SRCARCH),openrisc)

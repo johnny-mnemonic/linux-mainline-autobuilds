@@ -1,4 +1,4 @@
-From dc13afecf0d0b84007e447239b05d91e4d355983 Mon Sep 17 00:00:00 2001
+From 5a7c3c9d1c27b0ee014b9e5f218a5bd82973ea3d Mon Sep 17 00:00:00 2001
 From: Rene Rebe <rene@exactcode.de>
 Date: Sun, 1 Dec 2024 19:27:07 +0100
 Subject: [PATCH 45/92] ia64: Make acpi_cpufreq_cpu_exit return void
