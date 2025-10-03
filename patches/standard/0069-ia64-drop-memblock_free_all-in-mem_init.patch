@@ -1,4 +1,4 @@
-From baaeb17d8fc173af8becfa4032119a84c233e26d Mon Sep 17 00:00:00 2001
+From ddc8114ee43efce1e68189ae25efcf4c2b146922 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Sat, 6 Sep 2025 18:23:32 +0200
 Subject: [PATCH 69/92] ia64: drop memblock_free_all() in mem_init()

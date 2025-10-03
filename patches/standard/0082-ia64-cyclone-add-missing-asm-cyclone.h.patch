@@ -1,4 +1,4 @@
-From 8af02e63e7146121c68bdd1dd56e7ec0f7a19d7b Mon Sep 17 00:00:00 2001
+From a455d7f4e3c6481b905b539387db9b2ed0f02871 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Thu, 4 Sep 2025 16:15:58 +0800
 Subject: [PATCH 82/92] ia64: cyclone: add missing asm/cyclone.h

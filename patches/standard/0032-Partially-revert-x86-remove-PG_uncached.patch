@@ -1,4 +1,4 @@
-From 3eded44a2cc8506a6ca7eab5d93cf3f65da63204 Mon Sep 17 00:00:00 2001
+From 132295de8f24d655f08fd1d563277211eae2d7bc Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 27 Sep 2024 14:29:04 +0200
 Subject: [PATCH 32/92] Partially revert "x86: remove PG_uncached"
@@ -52,11 +52,11 @@ index 000000000000..e66c91f95d83
 +    -----------------------
 \ No newline at end of file
 diff --git a/fs/proc/page.c b/fs/proc/page.c
-index ba3568e97fd1..b003c1fca7ae 100644
+index fc64f23e05e5..f53425b36d47 100644
 --- a/fs/proc/page.c
 +++ b/fs/proc/page.c
 @@ -241,6 +241,10 @@ u64 stable_page_flags(const struct page *page)
- 		u |= kpf_copy_bit(ps.page_snapshot.flags, KPF_HWPOISON, PG_hwpoison);
+ 		u |= kpf_copy_bit(ps.page_snapshot.flags.f, KPF_HWPOISON, PG_hwpoison);
  #endif
  
 +#ifdef CONFIG_ARCH_USES_PG_UNCACHED
@@ -79,7 +79,7 @@ index 196778a087c4..7c587a711be1 100644
  #define KPF_ARCH_2		41
  #define KPF_ARCH_3		42
 diff --git a/include/linux/page-flags.h b/include/linux/page-flags.h
-index 8d3fa3a91ce4..eb9a16b1a584 100644
+index 48e27768e7ba..6cb453a16965 100644
 --- a/include/linux/page-flags.h
 +++ b/include/linux/page-flags.h
 @@ -114,6 +114,9 @@ enum pageflags {

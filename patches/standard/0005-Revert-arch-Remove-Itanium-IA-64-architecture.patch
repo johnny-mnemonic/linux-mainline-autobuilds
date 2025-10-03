@@ -1,4 +1,4 @@
-From e172cb1a362ba9b34d9d1e6381efa279f32921c0 Mon Sep 17 00:00:00 2001
+From d700254e970b4cdccc5b08669786b4a0930b997c Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
 Subject: [PATCH 05/92] Revert "arch: Remove Itanium (IA-64) architecture"
@@ -334,7 +334,6 @@ This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
  drivers/net/ethernet/broadcom/tg3.c           |    2 +-
  drivers/net/ethernet/brocade/bna/bnad.h       |    1 +
  .../ethernet/qlogic/netxen/netxen_nic_main.c  |    2 +
- drivers/pci/vgaarb.c                          |    2 +-
  drivers/tty/serial/8250/Kconfig               |    2 +-
  drivers/tty/vt/keyboard.c                     |    2 +-
  drivers/video/fbdev/Kconfig                   |    2 +-
@@ -358,7 +357,7 @@ This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
  .../arch/ia64/include/uapi/asm/bitsperlong.h  |    9 +
  tools/arch/ia64/include/uapi/asm/mman.h       |    7 +
  usr/include/Makefile                          |    6 +
- 353 files changed, 64952 insertions(+), 39 deletions(-)
+ 352 files changed, 64951 insertions(+), 38 deletions(-)
  create mode 100644 Documentation/arch/ia64/aliasing.rst
  create mode 100644 Documentation/arch/ia64/efirtc.rst
  create mode 100644 Documentation/arch/ia64/err_inject.rst
@@ -3009,10 +3008,10 @@ index e1b0eeabbb5e..59fd6ed5e3f1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 49aace3381cd..831c634bdd3f 100644
+index 4abe33914884..8b4256e4de9b 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -11740,6 +11740,12 @@ F:	drivers/i3c/
+@@ -11820,6 +11820,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3025,7 +3024,7 @@ index 49aace3381cd..831c634bdd3f 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -19385,6 +19391,11 @@ S:	Maintained
+@@ -19500,6 +19506,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -66141,7 +66140,7 @@ index e316cbc5baa9..b4eca8011f23 100644
  	help
  	  This driver provides kernel-side support for the Random Number
 diff --git a/drivers/char/mem.c b/drivers/char/mem.c
-index 48839958b0b1..ba7f4ffed654 100644
+index 34b815901b20..199b8ecfe782 100644
 --- a/drivers/char/mem.c
 +++ b/drivers/char/mem.c
 @@ -31,6 +31,10 @@
@@ -67790,10 +67789,10 @@ index 2f03a7080d96..fff522d347e3 100644
  }
  
 diff --git a/drivers/net/ethernet/broadcom/tg3.c b/drivers/net/ethernet/broadcom/tg3.c
-index b4dc93a48718..bd88c83d9c38 100644
+index 7f00ec7fd7b9..11ca4933a00c 100644
 --- a/drivers/net/ethernet/broadcom/tg3.c
 +++ b/drivers/net/ethernet/broadcom/tg3.c
-@@ -17152,7 +17152,7 @@ static u32 tg3_calc_dma_bndry(struct tg3 *tp, u32 val)
+@@ -17144,7 +17144,7 @@ static u32 tg3_calc_dma_bndry(struct tg3 *tp, u32 val)
  	    !tg3_flag(tp, PCI_EXPRESS))
  		goto out;
  
@@ -67828,19 +67827,6 @@ index e8ff661fa4a5..5333479f1551 100644
  	} else {
  		mask = DMA_BIT_MASK(39);
  		cmask = mask;
-diff --git a/drivers/pci/vgaarb.c b/drivers/pci/vgaarb.c
-index 78748e8d2dba..feca96fc4255 100644
---- a/drivers/pci/vgaarb.c
-+++ b/drivers/pci/vgaarb.c
-@@ -556,7 +556,7 @@ EXPORT_SYMBOL(vga_put);
- 
- static bool vga_is_firmware_default(struct pci_dev *pdev)
- {
--#if defined(CONFIG_X86)
-+#if defined(CONFIG_X86) || defined(CONFIG_IA64)
- 	u64 base = screen_info.lfb_base;
- 	u64 size = screen_info.lfb_size;
- 	struct resource *r;
 diff --git a/drivers/tty/serial/8250/Kconfig b/drivers/tty/serial/8250/Kconfig
 index f64ef0819cd4..3715985b1dc9 100644
 --- a/drivers/tty/serial/8250/Kconfig
@@ -67981,10 +67967,10 @@ index a98cc39e7aaa..5f2f839ae596 100644
   * We play games with efi_enabled so that the compiler will, if
   * possible, remove EFI-related code altogether.
 diff --git a/include/linux/mm.h b/include/linux/mm.h
-index 1ae97a0b8ec7..683f360c67e6 100644
+index 06978b4dbeb8..55096114c74b 100644
 --- a/include/linux/mm.h
 +++ b/include/linux/mm.h
-@@ -361,6 +361,8 @@ extern unsigned int kobjsize(const void *objp);
+@@ -388,6 +388,8 @@ extern unsigned int kobjsize(const void *objp);
  # define VM_SAO		VM_ARCH_1	/* Strong Access Ordering (powerpc) */
  #elif defined(CONFIG_PARISC)
  # define VM_GROWSUP	VM_ARCH_1
@@ -67994,7 +67980,7 @@ index 1ae97a0b8ec7..683f360c67e6 100644
  # define VM_SPARC_ADI	VM_ARCH_1	/* Uses ADI tag for access control */
  # define VM_ARCH_CLEAR	VM_SPARC_ADI
 diff --git a/include/linux/moduleparam.h b/include/linux/moduleparam.h
-index 3a25122d83e2..17ce32abcdfa 100644
+index 6907aedc4f74..b46f84a6a3ed 100644
 --- a/include/linux/moduleparam.h
 +++ b/include/linux/moduleparam.h
 @@ -281,7 +281,7 @@ struct kparam_array
@@ -68034,10 +68020,10 @@ index db9f6c539b28..6cc7a543f576 100644
  	}
  
 diff --git a/kernel/fork.c b/kernel/fork.c
-index cffa6157a55a..80d2c50abe72 100644
+index 3da0f08615a9..e05c6cf87cf7 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -2843,7 +2843,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
+@@ -2840,7 +2840,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
  		if (!access_ok((void __user *)kargs->stack, kargs->stack_size))
  			return false;
  
@@ -68115,7 +68101,7 @@ index cb6196e3fa99..9a7116c22902 100644
  
  int __init sysctl_init_bases(void)
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index fd14468e1b03..3afb91d1c4c5 100644
+index 3034e294d50d..a34478f5781b 100644
 --- a/lib/Kconfig.debug
 +++ b/lib/Kconfig.debug
 @@ -791,7 +791,7 @@ config SHRINKER_DEBUG
@@ -68158,10 +68144,10 @@ index 20aa459bfb3e..8968e2b8a12e 100644
  	bool "ARM BCJ filter decoder" if EXPERT
  	default y
 diff --git a/mm/vma.c b/mm/vma.c
-index 3b12c7579831..2bff87744f97 100644
+index abe0da33c844..c946a0e8ac7b 100644
 --- a/mm/vma.c
 +++ b/mm/vma.c
-@@ -2976,9 +2976,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
+@@ -2977,9 +2977,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
  	return 0;
  }
  

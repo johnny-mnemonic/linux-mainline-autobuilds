@@ -1,4 +1,4 @@
-From 86fbcbd95d3a713feca66242c0c1535ca1ccffbf Mon Sep 17 00:00:00 2001
+From b6aa1d0ed0847c679aff9d70b68b0ade85a90885 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Mon, 20 Nov 2023 17:08:57 +0100
 Subject: [PATCH 14/92] Revert "linux/export: clean up the IA-64 KSYM_FUNC

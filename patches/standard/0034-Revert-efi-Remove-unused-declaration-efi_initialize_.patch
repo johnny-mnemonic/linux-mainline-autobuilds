@@ -1,4 +1,4 @@
-From 92d0def958f6e5a59839cc58cedd17509332e52b Mon Sep 17 00:00:00 2001
+From 476195e8491877714ac230911a20628f3fa5f4d1 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 27 Sep 2024 14:54:38 +0200
 Subject: [PATCH 34/92] Revert "efi: Remove unused declaration

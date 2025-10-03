@@ -1,4 +1,4 @@
-From 5c481f5409aa0870c513ae501b1bf2907e301f01 Mon Sep 17 00:00:00 2001
+From cca29433c42dae8b020a27c7edfed0905493fc5d Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Thu, 3 Apr 2025 00:12:58 +0200
 Subject: [PATCH 70/92] ia64: replay "mm/ioremap: pass pgprot_t to

@@ -1,4 +1,4 @@
-From 612384dae23733a091ad98fa175a671ae70aa6d3 Mon Sep 17 00:00:00 2001
+From 862797f5bed9f682f7c627c9aa422f83b24bf471 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Tue, 25 Mar 2025 10:21:52 +0100
 Subject: [PATCH 65/92] Revert "vmlinux.lds.h: Remove entry to place init_task

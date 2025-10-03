@@ -1,4 +1,4 @@
-From 3d9ccc3266befea1944cbc92c62a7a3379945906 Mon Sep 17 00:00:00 2001
+From 40fb3b29af1a730b121b1e9f03d638deca935e55 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Thu, 4 Sep 2025 15:57:56 +0800
 Subject: [PATCH 81/92] ia64: ptrace: add missing <asm/syscall.h> in ptrace.c

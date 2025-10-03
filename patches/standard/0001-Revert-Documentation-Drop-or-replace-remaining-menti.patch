@@ -1,4 +1,4 @@
-From 50f7103b11278e98b13befa7a651725c9f100391 Mon Sep 17 00:00:00 2001
+From cda330813ac2ad3fba9f3ee8a143c4598c363472 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
 Subject: [PATCH 01/92] Revert "Documentation: Drop or replace remaining
@@ -181,7 +181,7 @@ index 404a15f6782c..455e674dab11 100644
  =====
  
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index e019db1633fd..13c73b4750a7 100644
+index 74ca438d2d6d..b20a6a9a13b8 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
 @@ -1546,7 +1546,7 @@
@@ -220,7 +220,7 @@ index 33c886f3d198..5f13935e2a29 100644
  Memory Hot(Un)Plug Granularity
  ------------------------------
 diff --git a/Documentation/admin-guide/sysctl/kernel.rst b/Documentation/admin-guide/sysctl/kernel.rst
-index 8b49eab937d0..891a0c182d74 100644
+index f3ee807b5d8b..cc6defea4982 100644
 --- a/Documentation/admin-guide/sysctl/kernel.rst
 +++ b/Documentation/admin-guide/sysctl/kernel.rst
 @@ -475,8 +475,8 @@ ignore-unaligned-usertrap

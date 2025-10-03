@@ -1,4 +1,4 @@
-From fcc8c173e1ed173641cccd687e682cc2cc3574ec Mon Sep 17 00:00:00 2001
+From a52ec5fe42957b7a47937275c591c72778853674 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Tue, 25 Mar 2025 17:15:11 +0100
 Subject: [PATCH 66/92] Revert "percpu: Remove PERCPU_VADDR()"

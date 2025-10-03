@@ -1,4 +1,4 @@
-From 96f51ba0274635f8e07b41d1a41553a7a4c7c15b Mon Sep 17 00:00:00 2001
+From 25c65fbccec8be9964f7daf1d4b0bbbfbb46e976 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 10:37:07 +0100
 Subject: [PATCH 57/92] Revert "selftests/mm: remove unnecessary ia64 code and
@@ -15,10 +15,10 @@ This reverts commit 2f4db2861013fcfb4be11d0dc176271ae566241c.
  6 files changed, 67 insertions(+), 8 deletions(-)
 
 diff --git a/tools/testing/selftests/mm/Makefile b/tools/testing/selftests/mm/Makefile
-index d13b3cef2a2b..8990c3da675c 100644
+index eaf9312097f7..ca5ea16a30fa 100644
 --- a/tools/testing/selftests/mm/Makefile
 +++ b/tools/testing/selftests/mm/Makefile
-@@ -135,7 +135,7 @@ else ifeq ($(ARCH),powerpc)
+@@ -138,7 +138,7 @@ else ifeq ($(ARCH),powerpc)
  TEST_GEN_FILES += protection_keys
  endif
  
@@ -199,10 +199,10 @@ index b47399feab53..a1f005a90a4f 100644
  		ksft_exit_fail_msg("mmap: %s\n", strerror(errno));
  
 diff --git a/tools/testing/selftests/mm/run_vmtests.sh b/tools/testing/selftests/mm/run_vmtests.sh
-index 471e539d82b8..ffb434c2983e 100755
+index d9173f2312b7..b7a03d43386d 100755
 --- a/tools/testing/selftests/mm/run_vmtests.sh
 +++ b/tools/testing/selftests/mm/run_vmtests.sh
-@@ -200,7 +200,7 @@ else
+@@ -203,7 +203,7 @@ else
  fi
  
  # filter 64bit architectures

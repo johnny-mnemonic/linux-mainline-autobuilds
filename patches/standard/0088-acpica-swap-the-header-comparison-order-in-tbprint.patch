@@ -1,4 +1,4 @@
-From e8b5d7028249e8cf16382cd894770c4a94b0cc34 Mon Sep 17 00:00:00 2001
+From b2f92c434565b22bb279004b8bb2229c80b7361b Mon Sep 17 00:00:00 2001
 From: Xinhui Yang <cyan@cyano.uk>
 Date: Sun, 7 Sep 2025 21:08:46 +0800
 Subject: [PATCH 88/92] acpica: swap the header comparison order in tbprint

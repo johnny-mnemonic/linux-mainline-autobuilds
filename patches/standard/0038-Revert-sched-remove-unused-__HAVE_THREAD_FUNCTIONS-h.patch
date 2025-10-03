@@ -1,4 +1,4 @@
-From 6a1d1390b02f8f369a9df61b9d6c1c0fe904daf0 Mon Sep 17 00:00:00 2001
+From b5ccc70e175996f067564ac2420ec70cc804f4e9 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 20 Nov 2024 11:15:14 +0100
 Subject: [PATCH 38/92] Revert "sched: remove unused __HAVE_THREAD_FUNCTIONS
