@@ -1,7 +1,7 @@
-From 556203c4577577a62977d7a66ce34dc2c88a1f19 Mon Sep 17 00:00:00 2001
+From 30576bbbfa93c0fd6f53b40117205ed20f7c0899 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 3 Oct 2025 15:34:24 +0200
-Subject: [PATCH] ia64: replay "mm: introduce memdesc_flags_t"
+Subject: [PATCH 93/93] ia64: replay "mm: introduce memdesc_flags_t"
 
 ...otherwise we get these:
 ```

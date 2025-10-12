@@ -1,7 +1,7 @@
-From dadd089f456bc1846e91c8d0113d2d8bf3968ea0 Mon Sep 17 00:00:00 2001
+From d37a8067aca239be3fe6d96b168cabccb004ec7c Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Thu, 5 Jun 2025 15:54:08 +0200
-Subject: [PATCH 71/92] ia64: replay "mm: introduce a common definition of
+Subject: [PATCH 71/93] ia64: replay "mm: introduce a common definition of
  mk_pte()"
 
 See cb5b13cd6c9237fe5ac978b22453eb3fa098a8d6.

@@ -1,7 +1,7 @@
-From 73fcf329d171476a1f2326bccb5ab00ef573be75 Mon Sep 17 00:00:00 2001
+From 73d53983ef0aef2cea9b5072ab9af90fb69af541 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 9 Nov 2023 17:24:02 +0100
-Subject: [PATCH 10/92] ia64: Add futex_wake() syscall
+Subject: [PATCH 10/93] ia64: Add futex_wake() syscall
 
 futex_wake() was added after ia64 was removed from the kernel.
 

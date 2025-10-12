@@ -1,7 +1,7 @@
-From b71d831d1052889be3ce531ff0c4c8ae7da5252c Mon Sep 17 00:00:00 2001
+From ecbe1d2b32bd426da73bbd7f5e1ad7259fdfffa0 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 14:21:54 +0100
-Subject: [PATCH 17/92] Revert "mm: remove unnecessary ia64 code and comment"
+Subject: [PATCH 17/93] Revert "mm: remove unnecessary ia64 code and comment"
 
 This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
 ---
@@ -24,7 +24,7 @@ index 0e26f4fc8717..d7760a683084 100644
  	  On arm and other archs it should not be higher than 32768.
  	  Programs which use vm86 functionality or have some need to map
 diff --git a/mm/mm_init.c b/mm/mm_init.c
-index df614556741a..fc92970de59c 100644
+index 3db2dea7db4c..d604a2fa773d 100644
 --- a/mm/mm_init.c
 +++ b/mm/mm_init.c
 @@ -1524,7 +1524,8 @@ void __init set_pageblock_order(void)

@@ -1,7 +1,7 @@
-From 132295de8f24d655f08fd1d563277211eae2d7bc Mon Sep 17 00:00:00 2001
+From 7c78ff52e0cd421a6e6501bdb08d18b8d03e401b Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 27 Sep 2024 14:29:04 +0200
-Subject: [PATCH 32/92] Partially revert "x86: remove PG_uncached"
+Subject: [PATCH 32/93] Partially revert "x86: remove PG_uncached"
 
 This partially reverts commit 7a87225ae2c6c317c7b80cf599e5cf0eee.
 ---
@@ -79,7 +79,7 @@ index 196778a087c4..7c587a711be1 100644
  #define KPF_ARCH_2		41
  #define KPF_ARCH_3		42
 diff --git a/include/linux/page-flags.h b/include/linux/page-flags.h
-index 48e27768e7ba..6cb453a16965 100644
+index 0091ad1986bf..1ebe3ff885d0 100644
 --- a/include/linux/page-flags.h
 +++ b/include/linux/page-flags.h
 @@ -114,6 +114,9 @@ enum pageflags {
@@ -92,7 +92,7 @@ index 48e27768e7ba..6cb453a16965 100644
  #ifdef CONFIG_MEMORY_FAILURE
  	PG_hwpoison,		/* hardware poisoned page. Don't touch */
  #endif
-@@ -655,6 +658,12 @@ FOLIO_FLAG_FALSE(mlocked)
+@@ -656,6 +659,12 @@ FOLIO_FLAG_FALSE(mlocked)
  	FOLIO_TEST_SET_FLAG_FALSE(mlocked)
  #endif
  

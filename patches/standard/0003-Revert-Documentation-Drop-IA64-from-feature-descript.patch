@@ -1,7 +1,7 @@
-From 6ec3027f5d18f64d4cd3edf3fa0a233c0d142512 Mon Sep 17 00:00:00 2001
+From a1e5621115324a9a76896f79b67cc3f1550f7403 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:48 +0200
-Subject: [PATCH 03/92] Revert "Documentation: Drop IA64 from feature
+Subject: [PATCH 03/93] Revert "Documentation: Drop IA64 from feature
  descriptions"
 
 This reverts commit af1f459233d4edeef634f559539e7f4b64cb1d25.
@@ -62,7 +62,7 @@ index 937840080de7..0a1f5bb7eeb9 100644
      |        m68k: | TODO |
      |  microblaze: | TODO |
 diff --git a/Documentation/features/core/eBPF-JIT/arch-support.txt b/Documentation/features/core/eBPF-JIT/arch-support.txt
-index 7434b43c2ff8..6c0f3d759e6a 100644
+index 83f77f55fc87..33a8e9950bb2 100644
 --- a/Documentation/features/core/eBPF-JIT/arch-support.txt
 +++ b/Documentation/features/core/eBPF-JIT/arch-support.txt
 @@ -12,6 +12,7 @@
@@ -86,7 +86,7 @@ index 0735cb5367b4..0b94099cf6ac 100644
      |        m68k: | TODO |
      |  microblaze: | TODO |
 diff --git a/Documentation/features/core/jump-labels/arch-support.txt b/Documentation/features/core/jump-labels/arch-support.txt
-index ccada815569f..94d9dece580f 100644
+index 683de7c15058..8aa6139aff48 100644
 --- a/Documentation/features/core/jump-labels/arch-support.txt
 +++ b/Documentation/features/core/jump-labels/arch-support.txt
 @@ -12,6 +12,7 @@
@@ -98,7 +98,7 @@ index ccada815569f..94d9dece580f 100644
      |        m68k: | TODO |
      |  microblaze: | TODO |
 diff --git a/Documentation/features/core/thread-info-in-task/arch-support.txt b/Documentation/features/core/thread-info-in-task/arch-support.txt
-index 2afeb6bf6e64..97c65ed2ac23 100644
+index f3d744c76061..da75b1ef6366 100644
 --- a/Documentation/features/core/thread-info-in-task/arch-support.txt
 +++ b/Documentation/features/core/thread-info-in-task/arch-support.txt
 @@ -12,6 +12,7 @@
@@ -110,7 +110,7 @@ index 2afeb6bf6e64..97c65ed2ac23 100644
      |        m68k: | TODO |
      |  microblaze: | TODO |
 diff --git a/Documentation/features/core/tracehook/arch-support.txt b/Documentation/features/core/tracehook/arch-support.txt
-index a72330e25542..aed5679da651 100644
+index 4f36fcbfb6d5..ee47a4621278 100644
 --- a/Documentation/features/core/tracehook/arch-support.txt
 +++ b/Documentation/features/core/tracehook/arch-support.txt
 @@ -12,6 +12,7 @@
@@ -338,7 +338,7 @@ index cf26042480e2..963ee9c75752 100644
      |        m68k: | TODO |
      |  microblaze: | TODO |
 diff --git a/Documentation/features/perf/kprobes-event/arch-support.txt b/Documentation/features/perf/kprobes-event/arch-support.txt
-index 713a69fcd697..641a7d2ff2a3 100644
+index 75c05d348c01..1560c2af3023 100644
 --- a/Documentation/features/perf/kprobes-event/arch-support.txt
 +++ b/Documentation/features/perf/kprobes-event/arch-support.txt
 @@ -12,6 +12,7 @@
@@ -422,7 +422,7 @@ index ccba965e8d07..9bffac80019e 100644
      |        m68k: | TODO |
      |  microblaze: | TODO |
 diff --git a/Documentation/features/time/clockevents/arch-support.txt b/Documentation/features/time/clockevents/arch-support.txt
-index 4d4bfac52970..625160048f68 100644
+index d6100b226de5..59dfb402a1b4 100644
 --- a/Documentation/features/time/clockevents/arch-support.txt
 +++ b/Documentation/features/time/clockevents/arch-support.txt
 @@ -12,6 +12,7 @@

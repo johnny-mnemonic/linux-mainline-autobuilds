@@ -1,7 +1,7 @@
-From 41f4a37a157eb9587a025496a47212bba45837d3 Mon Sep 17 00:00:00 2001
+From f233a2c1617bc0558af7519d464af93d36545d8c Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 16:12:32 +0100
-Subject: [PATCH 62/92] Revert "scripts: clean up IA-64 code"
+Subject: [PATCH 62/93] Revert "scripts: clean up IA-64 code"
 
 This reverts commit 0df8e97085946dd79c06720678a845778b6d6bf8.
 ---

@@ -1,7 +1,7 @@
-From 07f3b44f3b37d934ad7786cbffa10ec74b578423 Mon Sep 17 00:00:00 2001
+From cba92ca87b5ec65037ab1e1eb7d6942ff08c8534 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 1 Oct 2025 21:53:46 +0200
-Subject: [PATCH 92/92] Revert "genirq: Remove GENERIC_IRQ_LEGACY"
+Subject: [PATCH 92/93] Revert "genirq: Remove GENERIC_IRQ_LEGACY"
 
 This reverts commit 3c716487936aa54083c130d46ad5747769695e09.
 ---

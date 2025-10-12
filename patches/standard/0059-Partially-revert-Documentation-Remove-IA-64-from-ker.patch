@@ -1,7 +1,7 @@
-From a4e5001fa8854a1c58890e06f53d85a7d281a45e Mon Sep 17 00:00:00 2001
+From 536c4f221c74dc5f09826bb103972e1865d7865a Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 15:17:38 +0100
-Subject: [PATCH 59/92] Partially revert "Documentation: Remove IA-64 from
+Subject: [PATCH 59/93] Partially revert "Documentation: Remove IA-64 from
  kernel-parameters"
 
 Keep the following removals of:
@@ -18,10 +18,10 @@ This partially reverts commit 661404644db468f0f56c1dd8c4085358c1c35ba0.
  2 files changed, 37 insertions(+), 3 deletions(-)
 
 diff --git a/Documentation/admin-guide/kernel-parameters.rst b/Documentation/admin-guide/kernel-parameters.rst
-index 39d0e7ff0965..6ede8c85eb8f 100644
+index 7bf8cc7df6b5..5578099ea72b 100644
 --- a/Documentation/admin-guide/kernel-parameters.rst
 +++ b/Documentation/admin-guide/kernel-parameters.rst
-@@ -133,6 +133,7 @@ is applicable::
+@@ -135,6 +135,7 @@ is applicable::
  	HIBERNATION HIBERNATION is enabled.
  	HW	Appropriate hardware is enabled.
  	HYPER_V HYPERV support is enabled.
@@ -30,10 +30,10 @@ index 39d0e7ff0965..6ede8c85eb8f 100644
  	IP_PNP	IP DHCP, BOOTP, or RARP is enabled.
  	IPV6	IPv6 support is enabled.
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index b20a6a9a13b8..53d2eae48eee 100644
+index 96b3fb8c8675..84a794ff6f5a 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
-@@ -2762,7 +2762,7 @@
+@@ -2780,7 +2780,7 @@
  
  	keepinitrd	[HW,ARM] See retain_initrd.
  
@@ -42,7 +42,7 @@ index b20a6a9a13b8..53d2eae48eee 100644
  			Format: nn[KMGTPE] | nn% | "mirror"
  			This parameter specifies the amount of memory usable by
  			the kernel for non-movable allocations.  The requested
-@@ -3478,6 +3478,9 @@
+@@ -3517,6 +3517,9 @@
  			different yeeloong laptops.
  			Example: machtype=lemote-yeeloong-2f-7inch
  
@@ -52,7 +52,7 @@ index b20a6a9a13b8..53d2eae48eee 100644
  	maxcpus=	[SMP,EARLY] Maximum number of processors that an SMP kernel
  			will bring up during bootup.  maxcpus=n : n >= 0 limits
  			the kernel to bring up 'n' processors. Surely after
-@@ -3791,6 +3794,9 @@
+@@ -3830,6 +3833,9 @@
  			Enable or disable the microcode minimal revision
  			enforcement for the runtime microcode loader.
  
@@ -62,7 +62,7 @@ index b20a6a9a13b8..53d2eae48eee 100644
  	mini2440=	[ARM,HW,KNL]
  			Format:[0..2][b][c][t]
  			Default: "0tb"
-@@ -3961,7 +3967,7 @@
+@@ -4000,7 +4006,7 @@
  	mousedev.yres=	[MOUSE] Vertical screen resolution, used for devices
  			reporting absolute coordinates, such as tablets
  
@@ -71,7 +71,7 @@ index b20a6a9a13b8..53d2eae48eee 100644
  			Format: nn[KMGTPE] | nn%
  			This parameter is the complement to kernelcore=, it
  			specifies the amount of memory used for migratable
-@@ -4234,6 +4240,8 @@
+@@ -4273,6 +4279,8 @@
  
  	no_entry_flush  [PPC,EARLY] Don't flush the L1-D cache when entering the kernel.
  
@@ -80,7 +80,7 @@ index b20a6a9a13b8..53d2eae48eee 100644
  	noexec32	[X86-64]
  			This affects only 32-bit executables.
  			noexec32=on: enable non-executable mappings (default)
-@@ -4255,6 +4263,13 @@
+@@ -4294,6 +4302,13 @@
  
  	nogbpages	[X86] Do not use GB pages for kernel direct mappings.
  
@@ -94,7 +94,7 @@ index b20a6a9a13b8..53d2eae48eee 100644
  	no_hash_pointers
  			[KNL,EARLY]
  			Alias for "hash_pointers=never".
-@@ -4300,6 +4315,8 @@
+@@ -4339,6 +4354,8 @@
  			remapping.
  			[Deprecated - use intremap=off]
  
@@ -103,7 +103,7 @@ index b20a6a9a13b8..53d2eae48eee 100644
  	noinvpcid	[X86,EARLY] Disable the INVPCID cpu feature.
  
  	noiotrap	[SH] Disables trapped I/O port accesses.
-@@ -4309,6 +4326,8 @@
+@@ -4348,6 +4365,8 @@
  
  	noisapnp	[ISAPNP] Disables ISA PnP code.
  
@@ -112,7 +112,7 @@ index b20a6a9a13b8..53d2eae48eee 100644
  	nokaslr		[KNL,EARLY]
  			When CONFIG_RANDOMIZE_BASE is set, this disables
  			kernel and module base offset ASLR (Address Space
-@@ -4323,6 +4342,8 @@
+@@ -4362,6 +4381,8 @@
  
  	nolapic_timer	[X86-32,APIC,EARLY] Do not use the local APIC timer.
  
@@ -121,7 +121,7 @@ index b20a6a9a13b8..53d2eae48eee 100644
  	nomce		[X86-32] Disable Machine Check Exception
  
  	nomfgpt		[X86-32] Disable Multi-Function General Purpose
-@@ -4374,6 +4395,8 @@
+@@ -4413,6 +4434,8 @@
  	noresume	[SWSUSP] Disables resume and restores original swap
  			space.
  
@@ -130,7 +130,7 @@ index b20a6a9a13b8..53d2eae48eee 100644
  	no-scroll	[VGA] Disables scrollback.
  			This is required for the Braillex ib80-piezo Braille
  			reader made by F.H. Papenmeier (Germany).
-@@ -4476,6 +4499,10 @@
+@@ -4515,6 +4538,10 @@
  			parameter, xsave area per process might occupy more
  			memory on xsaves enabled systems.
  
@@ -141,7 +141,7 @@ index b20a6a9a13b8..53d2eae48eee 100644
  	nr_cpus=	[SMP,EARLY] Maximum number of processors that an SMP kernel
  			could support.  nr_cpus=n : n >= 1 limits the kernel to
  			support 'n' processors. It could be larger than the
-@@ -6669,6 +6696,9 @@
+@@ -6708,6 +6735,9 @@
  			apic=verbose is specified.
  			Example: apic=debug show_lapic=all
  
@@ -151,7 +151,7 @@ index b20a6a9a13b8..53d2eae48eee 100644
  	slab_debug[=options[,slabs][;[options[,slabs]]...]	[MM]
  			Enabling slab_debug allows one to determine the
  			culprit if slab objects become corrupted. Enabling
-@@ -7214,7 +7244,7 @@
+@@ -7253,7 +7283,7 @@
  			This parameter controls use of the Protected
  			Execution Facility on pSeries.
  
@@ -160,7 +160,7 @@ index b20a6a9a13b8..53d2eae48eee 100644
  			Format: { <int> [,<int>] | force | noforce }
  			<int> -- Number of I/O TLB slabs
  			<int> -- Second integer after comma. Number of swiotlb
-@@ -7995,6 +8025,9 @@
+@@ -8034,6 +8064,9 @@
  			Try vdso32=0 if you encounter an error that says:
  			dl_main: Assertion `(void *) ph->p_vaddr == _rtld_local._dl_sysinfo_dso' failed!
  
