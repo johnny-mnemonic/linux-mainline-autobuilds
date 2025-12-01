@@ -1,7 +1,7 @@
-From 262eceadb7534710b84077e91fcd247d14d1bdc3 Mon Sep 17 00:00:00 2001
+From 24ce2d124a842ee225b000e0622e1194524bc697 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Thu, 4 Sep 2025 15:26:06 +0800
-Subject: [PATCH 78/93] iommu: mark INTEL_IOMMU as X86-specific
+Subject: [PATCH 77/94] iommu: mark INTEL_IOMMU as X86-specific
 
 Upon removal of Itanium (ia64) from the kernel, the Intel IOMMU module has
 introduced x86-specific code which does not build on for ia64.

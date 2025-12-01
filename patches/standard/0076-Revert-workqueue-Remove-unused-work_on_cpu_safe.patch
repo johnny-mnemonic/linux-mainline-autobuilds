@@ -1,7 +1,7 @@
-From d79b2dc900a561b444bfbed61f3b38aeeb619219 Mon Sep 17 00:00:00 2001
+From 91422f1c85d09fd3a6c14a6cfa289881b8b25e4a Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 1 Aug 2025 16:36:28 +0200
-Subject: [PATCH 76/93] Revert "workqueue: Remove unused work_on_cpu_safe"
+Subject: [PATCH 76/94] Revert "workqueue: Remove unused work_on_cpu_safe"
 
 ia64 is still using this in `arch/ia64/kernel/salinfo.c`, so we keep that.
 

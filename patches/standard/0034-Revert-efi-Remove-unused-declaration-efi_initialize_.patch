@@ -1,7 +1,7 @@
-From f4355710bda9e15c3d1603fa60a305cbc95bcc1b Mon Sep 17 00:00:00 2001
+From dff5f21ef62925f60ef55e996e91e55b5a47dbd7 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 27 Sep 2024 14:54:38 +0200
-Subject: [PATCH 34/93] Revert "efi: Remove unused declaration
+Subject: [PATCH 34/94] Revert "efi: Remove unused declaration
  efi_initialize_iomem_resources()"
 
 This reverts commit 21b91d40575fb64f3f280f6c3af586e32a704a92.

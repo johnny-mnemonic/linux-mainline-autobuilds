@@ -1,7 +1,7 @@
-From 0a42d90498b493a1d5ecd28c2f67103c312fccc7 Mon Sep 17 00:00:00 2001
+From 6f31a6d98e03a058270cb5e7a7b83b92cb00366d Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 10:58:27 +0100
-Subject: [PATCH 58/93] Revert "iommu/vt-d: Remove unused dmar_msi_read"
+Subject: [PATCH 58/94] Revert "iommu/vt-d: Remove unused dmar_msi_read"
 
 This reverts commit 95e2eaf5b91aae6c3a433cd7882733bd806fa3c8.
 ---

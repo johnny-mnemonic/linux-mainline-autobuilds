@@ -1,7 +1,7 @@
-From 504ea3a554297a3f509efa840a4794b246503df5 Mon Sep 17 00:00:00 2001
+From 1c75dd5972fd905d27503a622fb438486df4235b Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 12 Jan 2024 18:54:34 +0100
-Subject: [PATCH 18/93] Revert "arch: remove ARCH_THREAD_STACK_ALLOCATOR"
+Subject: [PATCH 18/94] Revert "arch: remove ARCH_THREAD_STACK_ALLOCATOR"
 
 This reverts commit f72709ab69430d986dfc5a08c9a86f625e3fed33.
 ---
@@ -10,7 +10,7 @@ This reverts commit f72709ab69430d986dfc5a08c9a86f625e3fed33.
  2 files changed, 25 insertions(+)
 
 diff --git a/arch/Kconfig b/arch/Kconfig
-index ebe08b9186ad..a495bae2b993 100644
+index 61130b88964b..1d9342423be1 100644
 --- a/arch/Kconfig
 +++ b/arch/Kconfig
 @@ -381,6 +381,10 @@ config HAVE_ARCH_THREAD_STRUCT_WHITELIST

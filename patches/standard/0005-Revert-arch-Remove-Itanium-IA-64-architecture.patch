@@ -1,7 +1,7 @@
-From e4487fa01a26a072f89a5ec85fe7e795738a9b6a Mon Sep 17 00:00:00 2001
+From 02f6f738ed022efd305e22f86f1cfff14d1ad0b1 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
-Subject: [PATCH 05/93] Revert "arch: Remove Itanium (IA-64) architecture"
+Subject: [PATCH 05/94] Revert "arch: Remove Itanium (IA-64) architecture"
 
 This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
 ---
@@ -3008,10 +3008,10 @@ index e1b0eeabbb5e..59fd6ed5e3f1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 46126ce2f968..14e2ecbc121f 100644
+index e8f06145fb54..3bfd6db1516f 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -11866,6 +11866,12 @@ F:	drivers/i3c/
+@@ -11874,6 +11874,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3024,7 +3024,7 @@ index 46126ce2f968..14e2ecbc121f 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -19575,6 +19581,11 @@ S:	Maintained
+@@ -19609,6 +19615,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -67789,10 +67789,10 @@ index 2f03a7080d96..fff522d347e3 100644
  }
  
 diff --git a/drivers/net/ethernet/broadcom/tg3.c b/drivers/net/ethernet/broadcom/tg3.c
-index 7f00ec7fd7b9..11ca4933a00c 100644
+index d78cafdb2094..751c497601da 100644
 --- a/drivers/net/ethernet/broadcom/tg3.c
 +++ b/drivers/net/ethernet/broadcom/tg3.c
-@@ -17144,7 +17144,7 @@ static u32 tg3_calc_dma_bndry(struct tg3 *tp, u32 val)
+@@ -17141,7 +17141,7 @@ static u32 tg3_calc_dma_bndry(struct tg3 *tp, u32 val)
  	    !tg3_flag(tp, PCI_EXPRESS))
  		goto out;
  
@@ -67967,7 +67967,7 @@ index a98cc39e7aaa..5f2f839ae596 100644
   * We play games with efi_enabled so that the compiler will, if
   * possible, remove EFI-related code altogether.
 diff --git a/include/linux/mm.h b/include/linux/mm.h
-index d16b33bacc32..0e5796517df9 100644
+index 7c79b3369b82..c05172a4ab88 100644
 --- a/include/linux/mm.h
 +++ b/include/linux/mm.h
 @@ -388,6 +388,8 @@ extern unsigned int kobjsize(const void *objp);
@@ -68033,10 +68033,10 @@ index 3da0f08615a9..e05c6cf87cf7 100644
  #endif
  	}
 diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index 198d2dd45f59..bfd5918efa51 100644
+index f754a60de848..5afa7af31528 100644
 --- a/kernel/sched/core.c
 +++ b/kernel/sched/core.c
-@@ -9027,9 +9027,9 @@ void normalize_rt_tasks(void)
+@@ -9029,9 +9029,9 @@ void normalize_rt_tasks(void)
  
  #endif /* CONFIG_MAGIC_SYSRQ */
  
@@ -68048,7 +68048,7 @@ index 198d2dd45f59..bfd5918efa51 100644
   *
   * They can only be called when the whole system has been
   * stopped - every CPU needs to be quiescent, and no scheduling
-@@ -9051,7 +9051,30 @@ struct task_struct *curr_task(int cpu)
+@@ -9053,7 +9053,30 @@ struct task_struct *curr_task(int cpu)
  	return cpu_curr(cpu);
  }
  
@@ -68101,10 +68101,10 @@ index cb6196e3fa99..9a7116c22902 100644
  
  int __init sysctl_init_bases(void)
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index 3034e294d50d..a34478f5781b 100644
+index 713cc94caa02..b2b68c72b4c9 100644
 --- a/lib/Kconfig.debug
 +++ b/lib/Kconfig.debug
-@@ -791,7 +791,7 @@ config SHRINKER_DEBUG
+@@ -790,7 +790,7 @@ config SHRINKER_DEBUG
  
  config DEBUG_STACK_USAGE
  	bool "Stack utilization instrumentation"

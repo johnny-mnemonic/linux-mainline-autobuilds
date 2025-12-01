@@ -1,7 +1,7 @@
-From f233a2c1617bc0558af7519d464af93d36545d8c Mon Sep 17 00:00:00 2001
+From 07463338d8f53a53b8dbb22402085cc19d3156c4 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 16:12:32 +0100
-Subject: [PATCH 62/93] Revert "scripts: clean up IA-64 code"
+Subject: [PATCH 62/94] Revert "scripts: clean up IA-64 code"
 
 This reverts commit 0df8e97085946dd79c06720678a845778b6d6bf8.
 ---
@@ -58,10 +58,10 @@ index 7274dfc65af6..a588c48d48c4 100644
  arch/m68k/68000/head.o
  arch/m68k/coldfire/head.o
 diff --git a/scripts/kconfig/mconf.c b/scripts/kconfig/mconf.c
-index 84ea9215c0a7..25ee330546b2 100644
+index b8b7bba84a65..689f41b67912 100644
 --- a/scripts/kconfig/mconf.c
 +++ b/scripts/kconfig/mconf.c
-@@ -250,7 +250,7 @@ search_help[] =
+@@ -251,7 +251,7 @@ search_help[] =
  	"      -> PCI support (PCI [=y])\n"
  	"(1)     -> PCI access mode (<choice> [=y])\n"
  	"  Defined at drivers/pci/Kconfig:47\n"
@@ -71,10 +71,10 @@ index 84ea9215c0a7..25ee330546b2 100644
  	"  Selected by: BAR [=n]\n"
  	"-----------------------------------------------------------------\n"
 diff --git a/scripts/kconfig/nconf.c b/scripts/kconfig/nconf.c
-index ae1fe5f60327..c87a6cddc615 100644
+index 521700ed7152..641e9a54ab3a 100644
 --- a/scripts/kconfig/nconf.c
 +++ b/scripts/kconfig/nconf.c
-@@ -219,7 +219,7 @@ search_help[] =
+@@ -220,7 +220,7 @@ search_help[] =
  "Symbol: FOO [ = m]\n"
  "Prompt: Foo bus is used to drive the bar HW\n"
  "Defined at drivers/pci/Kconfig:47\n"

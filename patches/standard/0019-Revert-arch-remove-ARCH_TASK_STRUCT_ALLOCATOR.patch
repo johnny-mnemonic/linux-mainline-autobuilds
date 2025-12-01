@@ -1,7 +1,7 @@
-From a8ea55740ca4e9f80b355d17afb8b66d70dad96d Mon Sep 17 00:00:00 2001
+From f71c257a55a45d9c4e1ce5cde5aac3b4203a6a85 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 16:45:16 +0100
-Subject: [PATCH 19/93] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
+Subject: [PATCH 19/94] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
 
 This reverts commit 3888750e21ccb909051c810cc79fcc0650a740f8.
 ---
@@ -10,7 +10,7 @@ This reverts commit 3888750e21ccb909051c810cc79fcc0650a740f8.
  2 files changed, 13 insertions(+)
 
 diff --git a/arch/Kconfig b/arch/Kconfig
-index a495bae2b993..59351a0b91bc 100644
+index 1d9342423be1..54473464a27f 100644
 --- a/arch/Kconfig
 +++ b/arch/Kconfig
 @@ -371,8 +371,17 @@ config ARCH_HAS_CPU_PASID
