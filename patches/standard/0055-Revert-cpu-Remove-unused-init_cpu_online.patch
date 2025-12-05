@@ -1,4 +1,4 @@
-From 5a44829dea1493c3435bd476ace866a69e9b90f4 Mon Sep 17 00:00:00 2001
+From 4161a7c39884af441cdf7a66a86a03c8c2bb9423 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 27 Jan 2025 15:44:13 +0100
 Subject: [PATCH 55/94] Revert "cpu: Remove unused init_cpu_online"
@@ -10,10 +10,10 @@ This reverts commit 7f15d4abf925f33015fb62973ce2ddb45ce04bb9.
  2 files changed, 6 insertions(+)
 
 diff --git a/include/linux/cpumask.h b/include/linux/cpumask.h
-index ff8f41ab7ce6..cb4c33ad82e1 100644
+index afedfd5bea07..6f59981746ae 100644
 --- a/include/linux/cpumask.h
 +++ b/include/linux/cpumask.h
-@@ -1129,6 +1129,7 @@ extern const DECLARE_BITMAP(cpu_all_bits, NR_CPUS);
+@@ -1148,6 +1148,7 @@ extern const DECLARE_BITMAP(cpu_all_bits, NR_CPUS);
  /* Wrappers for arch boot code to manipulate normally-constant masks */
  void init_cpu_present(const struct cpumask *src);
  void init_cpu_possible(const struct cpumask *src);
@@ -22,11 +22,11 @@ index ff8f41ab7ce6..cb4c33ad82e1 100644
  #define assign_cpu(cpu, mask, val)	\
  	assign_bit(cpumask_check(cpu), cpumask_bits(mask), (val))
 diff --git a/kernel/cpu.c b/kernel/cpu.c
-index 6cc7a543f576..4d1b6dc2b568 100644
+index a455190479e1..f82856258364 100644
 --- a/kernel/cpu.c
 +++ b/kernel/cpu.c
-@@ -3121,6 +3121,11 @@ void init_cpu_possible(const struct cpumask *src)
- 	cpumask_copy(&__cpu_possible_mask, src);
+@@ -3125,6 +3125,11 @@ void init_cpu_possible(const struct cpumask *src)
+ 	__num_possible_cpus = cpumask_weight(&__cpu_possible_mask);
  }
  
 +void init_cpu_online(const struct cpumask *src)

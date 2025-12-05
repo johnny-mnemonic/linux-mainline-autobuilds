@@ -1,4 +1,4 @@
-From 02f6872d91a09a9ffa35c8b43137e54d34a330e0 Mon Sep 17 00:00:00 2001
+From 3f61011a964bfd52bf4f8d543e797f214a11e5f1 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Mon, 22 Sep 2025 13:17:15 +0200
 Subject: [PATCH 44/94] ia64: Remove ia64-specific get_order

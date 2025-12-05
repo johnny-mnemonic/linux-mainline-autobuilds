@@ -1,4 +1,4 @@
-From c15da877e1f618f79a817d412ca2c2c2a3f329b2 Mon Sep 17 00:00:00 2001
+From 1e1c02fb763eaf8e4649ad73e7054436c7e00967 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sat, 5 Oct 2024 13:16:09 +0200
 Subject: [PATCH 36/94] ia64: For now silence warning due to redefinition of

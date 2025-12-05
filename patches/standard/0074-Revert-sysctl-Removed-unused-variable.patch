@@ -1,4 +1,4 @@
-From a8bc9c413482ada01bfa513797ac79c2ec8e3524 Mon Sep 17 00:00:00 2001
+From b6befa06aac53aa5a2b25c6ac73cea96e776a6b7 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 30 Jul 2025 16:30:26 +0200
 Subject: [PATCH 74/94] Revert "sysctl: Removed unused variable"

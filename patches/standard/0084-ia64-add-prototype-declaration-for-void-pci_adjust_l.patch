@@ -1,4 +1,4 @@
-From fdacefc6337762fb491cacbbdbec80899aee1754 Mon Sep 17 00:00:00 2001
+From 31d69b263c79e54258e8caf32f56f0b969178c8a Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Fri, 5 Sep 2025 23:36:54 +0800
 Subject: [PATCH 84/94] ia64: add prototype declaration for `void

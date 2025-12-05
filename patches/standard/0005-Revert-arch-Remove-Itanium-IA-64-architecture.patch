@@ -1,4 +1,4 @@
-From 02f6f738ed022efd305e22f86f1cfff14d1ad0b1 Mon Sep 17 00:00:00 2001
+From 2b2ef2f9ca57900786acc13c3248ac6cc0d5add3 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
 Subject: [PATCH 05/94] Revert "arch: Remove Itanium (IA-64) architecture"
@@ -3008,10 +3008,10 @@ index e1b0eeabbb5e..59fd6ed5e3f1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index e8f06145fb54..3bfd6db1516f 100644
+index 618e23f99dfa..493604b65a07 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -11874,6 +11874,12 @@ F:	drivers/i3c/
+@@ -11871,6 +11871,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3024,7 +3024,7 @@ index e8f06145fb54..3bfd6db1516f 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -19609,6 +19615,11 @@ S:	Maintained
+@@ -19619,6 +19625,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -64763,7 +64763,7 @@ index ca00a5dbcf75..001a733b8998 100644
  	default y
  	help
 diff --git a/drivers/acpi/osl.c b/drivers/acpi/osl.c
-index 5ff343096ece..9fbfbdc4fc31 100644
+index 05393a7315fe..dc334ecba4f4 100644
 --- a/drivers/acpi/osl.c
 +++ b/drivers/acpi/osl.c
 @@ -276,7 +276,7 @@ acpi_map_lookup_virt(void __iomem *virt, acpi_size size)
@@ -66949,10 +66949,10 @@ index 29e0729299f5..331b242f057f 100644
  	select ARCH_USE_MEMREMAP_PROT
  
 diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
-index 1ce428e2ac8a..389a0c9e1448 100644
+index a9070d00b833..83cd1239823e 100644
 --- a/drivers/firmware/efi/efi.c
 +++ b/drivers/firmware/efi/efi.c
-@@ -849,6 +849,7 @@ int __init efi_systab_check_header(const efi_table_hdr_t *systab_hdr)
+@@ -852,6 +852,7 @@ int __init efi_systab_check_header(const efi_table_hdr_t *systab_hdr)
  	return 0;
  }
  
@@ -66960,7 +66960,7 @@ index 1ce428e2ac8a..389a0c9e1448 100644
  static const efi_char16_t *__init map_fw_vendor(unsigned long fw_vendor,
  						size_t size)
  {
-@@ -864,6 +865,10 @@ static void __init unmap_fw_vendor(const void *fw_vendor, size_t size)
+@@ -867,6 +868,10 @@ static void __init unmap_fw_vendor(const void *fw_vendor, size_t size)
  {
  	early_memunmap((void *)fw_vendor, size);
  }
@@ -66971,7 +66971,7 @@ index 1ce428e2ac8a..389a0c9e1448 100644
  
  void __init efi_systab_report_header(const efi_table_hdr_t *systab_hdr,
  				     unsigned long fw_vendor)
-@@ -968,6 +973,11 @@ char * __init efi_md_typeattr_format(char *buf, size_t size,
+@@ -971,6 +976,11 @@ char * __init efi_md_typeattr_format(char *buf, size_t size,
  	return buf;
  }
  
@@ -66983,7 +66983,7 @@ index 1ce428e2ac8a..389a0c9e1448 100644
  /*
   * efi_mem_attributes - lookup memmap attributes for physical address
   * @phys_addr: the physical address to lookup
-@@ -1015,6 +1025,7 @@ int efi_mem_type(unsigned long phys_addr)
+@@ -1018,6 +1028,7 @@ int efi_mem_type(unsigned long phys_addr)
  	}
  	return -EINVAL;
  }
@@ -67906,10 +67906,10 @@ index 052d0e888c27..c14852362fce 100644
  #define __compat_packed __attribute__((packed))
  #else
 diff --git a/include/linux/acpi.h b/include/linux/acpi.h
-index 5ff5d99f6ead..833a4ea20b68 100644
+index fbf0c3a65f59..1cd704b334f6 100644
 --- a/include/linux/acpi.h
 +++ b/include/linux/acpi.h
-@@ -238,7 +238,10 @@ acpi_table_parse_cedt(enum acpi_cedt_type id,
+@@ -250,7 +250,10 @@ acpi_table_parse_cedt(enum acpi_cedt_type id,
  int acpi_parse_mcfg (struct acpi_table_header *header);
  void acpi_table_print_madt_entry (struct acpi_subtable_header *madt);
  
@@ -67921,7 +67921,7 @@ index 5ff5d99f6ead..833a4ea20b68 100644
  void acpi_numa_processor_affinity_init (struct acpi_srat_cpu_affinity *pa);
  #else
  static inline void
-@@ -1160,8 +1163,15 @@ static inline void acpi_unregister_lps0_dev(struct acpi_s2idle_dev_ops *arg)
+@@ -1166,8 +1169,15 @@ static inline void acpi_unregister_lps0_dev(struct acpi_s2idle_dev_ops *arg)
  {
  }
  #endif /* CONFIG_SUSPEND && CONFIG_X86 */
@@ -67938,7 +67938,7 @@ index 5ff5d99f6ead..833a4ea20b68 100644
  #endif
  
 diff --git a/include/linux/efi.h b/include/linux/efi.h
-index a98cc39e7aaa..5f2f839ae596 100644
+index b23ff8b83219..34f9769d2a7b 100644
 --- a/include/linux/efi.h
 +++ b/include/linux/efi.h
 @@ -360,10 +360,13 @@ void efi_native_runtime_setup(void);
@@ -67967,7 +67967,7 @@ index a98cc39e7aaa..5f2f839ae596 100644
   * We play games with efi_enabled so that the compiler will, if
   * possible, remove EFI-related code altogether.
 diff --git a/include/linux/mm.h b/include/linux/mm.h
-index 7c79b3369b82..c05172a4ab88 100644
+index 8dc0a07570cc..02b3ccc0786f 100644
 --- a/include/linux/mm.h
 +++ b/include/linux/mm.h
 @@ -388,6 +388,8 @@ extern unsigned int kobjsize(const void *objp);
@@ -68006,7 +68006,7 @@ index aa441f593e9a..9040a7017db7 100644
  #elif !defined(CONFIG_MMU)
  #define __VM_ARCH_SPECIFIC_1 {VM_MAPPED_COPY,"mappedcopy"	}
 diff --git a/kernel/cpu.c b/kernel/cpu.c
-index db9f6c539b28..6cc7a543f576 100644
+index b674fdf96208..a455190479e1 100644
 --- a/kernel/cpu.c
 +++ b/kernel/cpu.c
 @@ -1696,6 +1696,9 @@ static int cpu_up(unsigned int cpu, enum cpuhp_state target)
@@ -68020,7 +68020,7 @@ index db9f6c539b28..6cc7a543f576 100644
  	}
  
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 3da0f08615a9..e05c6cf87cf7 100644
+index 83e05d6f2307..bb1ca4d81b67 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
 @@ -2840,7 +2840,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
@@ -68033,10 +68033,10 @@ index 3da0f08615a9..e05c6cf87cf7 100644
  #endif
  	}
 diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index f754a60de848..5afa7af31528 100644
+index fc358c1b6ca9..c1ad33664c12 100644
 --- a/kernel/sched/core.c
 +++ b/kernel/sched/core.c
-@@ -9029,9 +9029,9 @@ void normalize_rt_tasks(void)
+@@ -8924,9 +8924,9 @@ void normalize_rt_tasks(void)
  
  #endif /* CONFIG_MAGIC_SYSRQ */
  
@@ -68048,7 +68048,7 @@ index f754a60de848..5afa7af31528 100644
   *
   * They can only be called when the whole system has been
   * stopped - every CPU needs to be quiescent, and no scheduling
-@@ -9053,7 +9053,30 @@ struct task_struct *curr_task(int cpu)
+@@ -8948,7 +8948,30 @@ struct task_struct *curr_task(int cpu)
  	return cpu_curr(cpu);
  }
  
@@ -68101,10 +68101,10 @@ index cb6196e3fa99..9a7116c22902 100644
  
  int __init sysctl_init_bases(void)
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index 713cc94caa02..b2b68c72b4c9 100644
+index 742b23ef0d8b..8c7c379047ad 100644
 --- a/lib/Kconfig.debug
 +++ b/lib/Kconfig.debug
-@@ -790,7 +790,7 @@ config SHRINKER_DEBUG
+@@ -800,7 +800,7 @@ config SHRINKER_DEBUG
  
  config DEBUG_STACK_USAGE
  	bool "Stack utilization instrumentation"

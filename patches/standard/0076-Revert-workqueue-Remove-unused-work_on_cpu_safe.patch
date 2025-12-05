@@ -1,4 +1,4 @@
-From 91422f1c85d09fd3a6c14a6cfa289881b8b25e4a Mon Sep 17 00:00:00 2001
+From 401bb2a71d5f7e6f83bdd797652eca916d6ff02b Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 1 Aug 2025 16:36:28 +0200
 Subject: [PATCH 76/94] Revert "workqueue: Remove unused work_on_cpu_safe"

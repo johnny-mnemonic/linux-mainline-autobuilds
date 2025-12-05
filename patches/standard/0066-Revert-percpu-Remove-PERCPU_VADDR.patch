@@ -1,4 +1,4 @@
-From f7660929a087685da35ad38efd3077bf8d16656a Mon Sep 17 00:00:00 2001
+From fc71942d1394d930ecefcd8c628aa01856deb57c Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Tue, 25 Mar 2025 17:15:11 +0100
 Subject: [PATCH 66/94] Revert "percpu: Remove PERCPU_VADDR()"
@@ -21,10 +21,10 @@ This reverts commit e23cff6861781ac4e15de6c7bf2d2a0b79cb52ef.
  1 file changed, 35 insertions(+), 1 deletion(-)
 
 diff --git a/include/asm-generic/vmlinux.lds.h b/include/asm-generic/vmlinux.lds.h
-index 60ea786a62f9..b63eb429b5d1 100644
+index 4889d5c3157b..9a37c5103a4a 100644
 --- a/include/asm-generic/vmlinux.lds.h
 +++ b/include/asm-generic/vmlinux.lds.h
-@@ -1084,13 +1084,47 @@ defined(CONFIG_AUTOFDO_CLANG) || defined(CONFIG_PROPELLER_CLANG)
+@@ -1101,13 +1101,47 @@
  	__per_cpu_end = .;
  
  /**

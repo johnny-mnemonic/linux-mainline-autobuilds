@@ -1,4 +1,4 @@
-From 498eeb4c883b0f50f168e6e45e4aacffd5d8e9b5 Mon Sep 17 00:00:00 2001
+From ad732913cc8707640c7ec250ece82a2a875ae81d Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Thu, 5 Jun 2025 16:07:17 +0200
 Subject: [PATCH 73/94] ia64: replay "syscall.h: add syscall_set_arguments()"
