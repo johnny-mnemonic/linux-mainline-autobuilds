@@ -1,7 +1,7 @@
 From 1177b8feb7b7f227d783bd4461d60d7288eb05a4 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 15:26:09 +0100
-Subject: [PATCH 61/94] Revert "scripts/checkstack.pl: remove ia64 support"
+Subject: [PATCH 61/95] Revert "scripts/checkstack.pl: remove ia64 support"
 
 This reverts commit dd8e05c5dd04210bb6073c594fa9be12c6473ae9.
 ---

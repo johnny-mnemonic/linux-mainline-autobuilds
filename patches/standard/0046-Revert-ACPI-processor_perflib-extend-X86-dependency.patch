@@ -1,7 +1,7 @@
 From 082bb3291c97e1af79afb308d4dc0b8542c2e4d0 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 23 Dec 2024 13:53:53 +0100
-Subject: [PATCH 46/94] Revert "ACPI: processor_perflib: extend X86 dependency"
+Subject: [PATCH 46/95] Revert "ACPI: processor_perflib: extend X86 dependency"
 
 This reverts commit bf41bb57b2c1d305d594c15bab8d387b1f5b75dc.
 ---

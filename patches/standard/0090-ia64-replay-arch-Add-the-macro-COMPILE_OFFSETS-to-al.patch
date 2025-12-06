@@ -1,7 +1,7 @@
 From 7b4f685129724c5ae128c5c09985546c17f1c571 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 1 Oct 2025 21:52:08 +0200
-Subject: [PATCH 90/94] ia64: replay "arch: Add the macro COMPILE_OFFSETS to
+Subject: [PATCH 90/95] ia64: replay "arch: Add the macro COMPILE_OFFSETS to
  all the asm-offsets.c"
 
 See 35561bab768977c9e05f1f1a9bc00134c85f3e28.

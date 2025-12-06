@@ -1,7 +1,7 @@
 From 052d845f1c1f68c37dc1c36e3a6c97fcb5ed8258 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Tue, 25 Mar 2025 10:21:52 +0100
-Subject: [PATCH 65/94] Revert "vmlinux.lds.h: Remove entry to place init_task
+Subject: [PATCH 65/95] Revert "vmlinux.lds.h: Remove entry to place init_task
  onto init_stack"
 
 ia64 still selects ARCH_TASK_STRUCT_ON_STACK, so we keep this.
