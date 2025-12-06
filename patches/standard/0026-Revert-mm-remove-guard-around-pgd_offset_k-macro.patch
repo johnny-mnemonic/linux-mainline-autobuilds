@@ -1,4 +1,4 @@
-From a9b95af77fae70a9e1c335cba4bf7cb5bc8cdc5c Mon Sep 17 00:00:00 2001
+From b2b4de5bdb3a9a4672a52f437282ae1a8a2e3b44 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sun, 2 Jun 2024 10:03:49 +0200
 Subject: [PATCH 26/94] Revert "mm: remove guard around pgd_offset_k() macro"
@@ -9,7 +9,7 @@ This reverts commit 5b0a67008b0d608bb7585fe4c3c0c09d5ceaf1c9.
  1 file changed, 2 insertions(+)
 
 diff --git a/include/linux/pgtable.h b/include/linux/pgtable.h
-index ee3148ef87f6..cd60e579ab3b 100644
+index 652f287c1ef6..e5da7e394dae 100644
 --- a/include/linux/pgtable.h
 +++ b/include/linux/pgtable.h
 @@ -172,7 +172,9 @@ static inline pgd_t *pgd_offset_pgd(pgd_t *pgd, unsigned long address)

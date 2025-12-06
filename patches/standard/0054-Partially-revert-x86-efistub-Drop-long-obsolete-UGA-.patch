@@ -1,4 +1,4 @@
-From d49d87f71b79c0ebca3386af8b1bb7bbde306522 Mon Sep 17 00:00:00 2001
+From dff7889ed0eddf55d37066849ab5712165caaca3 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 27 Jan 2025 15:43:18 +0100
 Subject: [PATCH 54/94] Partially revert "x86/efistub: Drop long obsolete UGA
@@ -29,10 +29,10 @@ index 83cd1239823e..62eb91e9c37f 100644
  }
  
 diff --git a/include/linux/efi.h b/include/linux/efi.h
-index 0b3b3a9d9893..a943a3024191 100644
+index 80ea14e611af..6f95ca63c094 100644
 --- a/include/linux/efi.h
 +++ b/include/linux/efi.h
-@@ -1298,6 +1298,8 @@ struct linux_efi_memreserve {
+@@ -1300,6 +1300,8 @@ struct linux_efi_memreserve {
  
  void __init efi_arch_mem_reserve(phys_addr_t addr, u64 size);
  

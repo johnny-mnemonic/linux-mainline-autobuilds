@@ -1,4 +1,4 @@
-From 719214ba5002365e42f8e4ed65148096b2747b10 Mon Sep 17 00:00:00 2001
+From 513d19c25681ba1a40b26afb1b755694e3230ae7 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 27 Sep 2024 14:54:38 +0200
 Subject: [PATCH 34/94] Revert "efi: Remove unused declaration
@@ -10,10 +10,10 @@ This reverts commit 21b91d40575fb64f3f280f6c3af586e32a704a92.
  1 file changed, 2 insertions(+)
 
 diff --git a/include/linux/efi.h b/include/linux/efi.h
-index 34f9769d2a7b..0b3b3a9d9893 100644
+index 4b5cc2a26077..80ea14e611af 100644
 --- a/include/linux/efi.h
 +++ b/include/linux/efi.h
-@@ -758,6 +758,8 @@ extern int efi_mem_desc_lookup(u64 phys_addr, efi_memory_desc_t *out_md);
+@@ -760,6 +760,8 @@ extern int efi_mem_desc_lookup(u64 phys_addr, efi_memory_desc_t *out_md);
  extern int __efi_mem_desc_lookup(u64 phys_addr, efi_memory_desc_t *out_md);
  extern void efi_mem_reserve(phys_addr_t addr, u64 size);
  extern int efi_mem_reserve_persistent(phys_addr_t addr, u64 size);

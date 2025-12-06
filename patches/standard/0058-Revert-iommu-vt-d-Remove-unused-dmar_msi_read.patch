@@ -1,4 +1,4 @@
-From 7382b7c69ffd27ac8b26431553af2ed0f97e5408 Mon Sep 17 00:00:00 2001
+From 724da30ef200b8284bdd3b4a48c42e156919c68e Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 10:58:27 +0100
 Subject: [PATCH 58/94] Revert "iommu/vt-d: Remove unused dmar_msi_read"

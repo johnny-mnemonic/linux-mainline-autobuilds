@@ -1,4 +1,4 @@
-From b6befa06aac53aa5a2b25c6ac73cea96e776a6b7 Mon Sep 17 00:00:00 2001
+From e5a96ac1c563d5512275c0618724580dd5cf4073 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 30 Jul 2025 16:30:26 +0200
 Subject: [PATCH 74/94] Revert "sysctl: Removed unused variable"
@@ -20,11 +20,11 @@ This reverts commit 39dac316f09ae5a0930878d2cae8aea113648b5a.
  1 file changed, 1 insertion(+)
 
 diff --git a/include/linux/sysctl.h b/include/linux/sysctl.h
-index 92e9146b1104..30bcbc59d12d 100644
+index 288fe0055cd5..efbdeef530fa 100644
 --- a/include/linux/sysctl.h
 +++ b/include/linux/sysctl.h
-@@ -243,6 +243,7 @@ int do_proc_douintvec(const struct ctl_table *table, int write,
- 		      void *data);
+@@ -354,6 +354,7 @@ void do_sysctl_args(void);
+ bool sysctl_is_alias(char *param);
  
  extern int unaligned_enabled;
 +extern int unaligned_dump_stack;

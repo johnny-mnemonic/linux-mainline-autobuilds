@@ -1,4 +1,4 @@
-From 559f5cc21664d3ae434ea27fa4e931bb5e8f708e Mon Sep 17 00:00:00 2001
+From 4d26d6a77ed745f0ccb696e37e3bc93bc25d49f4 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 14:21:54 +0100
 Subject: [PATCH 17/94] Revert "mm: remove unnecessary ia64 code and comment"
@@ -11,10 +11,10 @@ This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
  3 files changed, 34 insertions(+), 18 deletions(-)
 
 diff --git a/mm/Kconfig b/mm/Kconfig
-index ca3f146bc705..e97391f97aa1 100644
+index bd0ea5454af8..c99332dfea14 100644
 --- a/mm/Kconfig
 +++ b/mm/Kconfig
-@@ -732,7 +732,7 @@ config DEFAULT_MMAP_MIN_ADDR
+@@ -723,7 +723,7 @@ config DEFAULT_MMAP_MIN_ADDR
  	  from userspace allocation.  Keeping a user from writing to low pages
  	  can help reduce the impact of kernel NULL pointer bugs.
  
@@ -24,7 +24,7 @@ index ca3f146bc705..e97391f97aa1 100644
  	  On arm and other archs it should not be higher than 32768.
  	  Programs which use vm86 functionality or have some need to map
 diff --git a/mm/mm_init.c b/mm/mm_init.c
-index 7712d887b696..be210118fbd7 100644
+index c6812b4dbb2e..36e056ab79c2 100644
 --- a/mm/mm_init.c
 +++ b/mm/mm_init.c
 @@ -1524,7 +1524,8 @@ void __init set_pageblock_order(void)
@@ -91,10 +91,10 @@ index 7712d887b696..be210118fbd7 100644
  		 __func__, pgdat->node_id, (unsigned long)pgdat,
  		 (unsigned long)pgdat->node_mem_map);
 diff --git a/mm/page_owner.c b/mm/page_owner.c
-index 589ec37c94aa..2e6f4d9ddfe0 100644
+index a70245684206..4d9f02793b72 100644
 --- a/mm/page_owner.c
 +++ b/mm/page_owner.c
-@@ -149,6 +149,14 @@ static noinline depot_stack_handle_t save_stack(gfp_t flags)
+@@ -158,6 +158,14 @@ static noinline depot_stack_handle_t save_stack(gfp_t flags)
  	depot_stack_handle_t handle;
  	unsigned int nr_entries;
  

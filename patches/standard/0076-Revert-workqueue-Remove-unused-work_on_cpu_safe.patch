@@ -1,4 +1,4 @@
-From 401bb2a71d5f7e6f83bdd797652eca916d6ff02b Mon Sep 17 00:00:00 2001
+From d8a5d28459f04a1b282d76ee0e8ce3319a476c07 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 1 Aug 2025 16:36:28 +0200
 Subject: [PATCH 76/94] Revert "workqueue: Remove unused work_on_cpu_safe"
@@ -48,10 +48,10 @@ index dabc351cc127..191901dfb7f6 100644
  
  #ifdef CONFIG_FREEZER
 diff --git a/kernel/workqueue.c b/kernel/workqueue.c
-index 45320e27a16c..9c84747b3bca 100644
+index 253311af47c6..58b663188ea2 100644
 --- a/kernel/workqueue.c
 +++ b/kernel/workqueue.c
-@@ -6798,6 +6798,31 @@ long work_on_cpu_key(int cpu, long (*fn)(void *),
+@@ -6794,6 +6794,31 @@ long work_on_cpu_key(int cpu, long (*fn)(void *),
  	return wfc.ret;
  }
  EXPORT_SYMBOL_GPL(work_on_cpu_key);

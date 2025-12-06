@@ -1,4 +1,4 @@
-From c93142800f8a8ee9348ac12a91fa26f99874e182 Mon Sep 17 00:00:00 2001
+From f24730903a4037a999b0b7fbdc120a8eeab7da11 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Sat, 6 Sep 2025 01:59:50 +0800
 Subject: [PATCH 87/94] ia64: unwind: properly guard UNW_DPRINT calls with

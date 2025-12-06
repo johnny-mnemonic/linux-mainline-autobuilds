@@ -1,4 +1,4 @@
-From bb4679b38a48b17cfacff210edce31e2540dfb0d Mon Sep 17 00:00:00 2001
+From 8c8591223261c375908161931901a60980b14cc6 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Thu, 4 Sep 2025 15:37:32 +0800
 Subject: [PATCH 83/94] ACPI: processor_idle: Fix build with CONFIG_WERROR

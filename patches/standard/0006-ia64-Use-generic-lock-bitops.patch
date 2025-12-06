@@ -1,4 +1,4 @@
-From fb95ca0a02e103cb7be57ec4c1e96347046dd819 Mon Sep 17 00:00:00 2001
+From 042bc58deea86a8ce2fb5119f053fc40df6baaac Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Tue, 31 Oct 2023 19:49:13 +0100
 Subject: [PATCH 06/94] ia64: Use generic lock bitops

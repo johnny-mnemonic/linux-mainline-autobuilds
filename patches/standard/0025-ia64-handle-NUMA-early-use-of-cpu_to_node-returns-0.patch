@@ -1,4 +1,4 @@
-From 9388443f45e4cc21b2944a699729a87c78501719 Mon Sep 17 00:00:00 2001
+From 5cd36993dfd4b1edefd787c48c330a4238d642c2 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sun, 2 Jun 2024 13:28:12 +0200
 Subject: [PATCH 25/94] ia64: handle "NUMA: early use of cpu_to_node() returns

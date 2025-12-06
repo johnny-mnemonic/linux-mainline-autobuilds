@@ -1,7 +1,7 @@
-From d5ac5fd4bbaddd1e6b70c97aa7953fa247e16522 Mon Sep 17 00:00:00 2001
+From c140c536afafe603dc006192f63032114b1f046d Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Thu, 4 Sep 2025 15:26:06 +0800
-Subject: [PATCH 77/94] iommu: mark INTEL_IOMMU as X86-specific
+Subject: [PATCH 78/94] iommu: mark INTEL_IOMMU as X86-specific
 
 Upon removal of Itanium (ia64) from the kernel, the Intel IOMMU module has
 introduced x86-specific code which does not build on for ia64.
@@ -15,7 +15,7 @@ Signed-off-by: Mingcong Bai <jeffbai@aosc.io>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/iommu/intel/Kconfig b/drivers/iommu/intel/Kconfig
-index 5a88aa65637a..f2f538c70650 100644
+index 1c59778786d8..5471f814e073 100644
 --- a/drivers/iommu/intel/Kconfig
 +++ b/drivers/iommu/intel/Kconfig
 @@ -11,7 +11,7 @@ config DMAR_DEBUG
@@ -25,8 +25,8 @@ index 5a88aa65637a..f2f538c70650 100644
 -	depends on PCI_MSI && ACPI && (X86 || IA64)
 +	depends on PCI_MSI && ACPI && X86
  	select IOMMU_API
- 	select IOMMU_IOVA
- 	select IOMMU_IOPF
+ 	select GENERIC_PT
+ 	select IOMMU_PT
 -- 
 2.25.1
 

@@ -1,4 +1,4 @@
-From 1be2eb7cd44144edac368bcc07428e676636d767 Mon Sep 17 00:00:00 2001
+From b618e14b6f06c56797aa2a405b9e520eb3e7e4ab Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 27 Sep 2024 14:29:04 +0200
 Subject: [PATCH 32/94] Partially revert "x86: remove PG_uncached"
@@ -79,7 +79,7 @@ index 196778a087c4..7c587a711be1 100644
  #define KPF_ARCH_2		41
  #define KPF_ARCH_3		42
 diff --git a/include/linux/page-flags.h b/include/linux/page-flags.h
-index 0091ad1986bf..1ebe3ff885d0 100644
+index f7a0e4af0c73..611c852b2348 100644
 --- a/include/linux/page-flags.h
 +++ b/include/linux/page-flags.h
 @@ -114,6 +114,9 @@ enum pageflags {
@@ -106,7 +106,7 @@ index 0091ad1986bf..1ebe3ff885d0 100644
  PAGEFLAG(HWPoison, hwpoison, PF_ANY)
  TESTSCFLAG(HWPoison, hwpoison, PF_ANY)
 diff --git a/include/trace/events/mmflags.h b/include/trace/events/mmflags.h
-index 9040a7017db7..d57c2ba2474e 100644
+index 3eef55d2d43d..437edd1f1388 100644
 --- a/include/trace/events/mmflags.h
 +++ b/include/trace/events/mmflags.h
 @@ -113,6 +113,12 @@ TRACE_DEFINE_ENUM(___GFP_LAST_BIT);

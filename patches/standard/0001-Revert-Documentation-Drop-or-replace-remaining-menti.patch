@@ -1,4 +1,4 @@
-From 03cedb82827d8b48355022831348db163896d398 Mon Sep 17 00:00:00 2001
+From 9951402296cb55a26e2fe071d00c68e5667b0edf Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
 Subject: [PATCH 01/94] Revert "Documentation: Drop or replace remaining
@@ -425,7 +425,7 @@ index b2ac3c743a3a..ce3f39d9b3cb 100644
  sparc - 在这一点上，IRQ是开着的（？），把local_irq_save改为_disable。
        - 待办事项: 需要第二个CPU来禁用抢占 (参考 #1)
 diff --git a/Makefile b/Makefile
-index 03d9bb851eff..4ab92fe27860 100644
+index 2f545ec1690f..6f08c0838d45 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -388,7 +388,7 @@ include $(srctree)/scripts/subarch.include
