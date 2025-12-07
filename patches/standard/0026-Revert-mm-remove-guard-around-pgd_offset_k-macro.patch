@@ -1,7 +1,7 @@
-From b2b4de5bdb3a9a4672a52f437282ae1a8a2e3b44 Mon Sep 17 00:00:00 2001
+From 5210815587694f98fd1ca4cca315d06243a6e149 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sun, 2 Jun 2024 10:03:49 +0200
-Subject: [PATCH 26/95] Revert "mm: remove guard around pgd_offset_k() macro"
+Subject: [PATCH 26/96] Revert "mm: remove guard around pgd_offset_k() macro"
 
 This reverts commit 5b0a67008b0d608bb7585fe4c3c0c09d5ceaf1c9.
 ---

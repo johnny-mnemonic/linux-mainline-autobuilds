@@ -1,7 +1,7 @@
-From 9951402296cb55a26e2fe071d00c68e5667b0edf Mon Sep 17 00:00:00 2001
+From d78aac091bcc9c665c650c678663f78ebf75c297 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
-Subject: [PATCH 01/95] Revert "Documentation: Drop or replace remaining
+Subject: [PATCH 01/96] Revert "Documentation: Drop or replace remaining
  mentions of IA64"
 
 This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
@@ -27,7 +27,7 @@ This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
  18 files changed, 125 insertions(+), 19 deletions(-)
 
 diff --git a/Documentation/ABI/testing/sysfs-devices-system-cpu b/Documentation/ABI/testing/sysfs-devices-system-cpu
-index 8aed6d94c4cd..642cbb4bd382 100644
+index 3a05604c21bf..542a428000a1 100644
 --- a/Documentation/ABI/testing/sysfs-devices-system-cpu
 +++ b/Documentation/ABI/testing/sysfs-devices-system-cpu
 @@ -413,6 +413,9 @@ Description:	Parameters for the CPU cache attributes
@@ -181,10 +181,10 @@ index 404a15f6782c..455e674dab11 100644
  =====
  
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 1e89d122f084..974431b4413f 100644
+index b242519f57da..5908b13a0bc8 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
-@@ -1662,7 +1662,7 @@ Kernel parameters
+@@ -1658,7 +1658,7 @@ Kernel parameters
  			See comment before function elanfreq_setup() in
  			arch/x86/kernel/cpu/cpufreq/elanfreq.c.
  
@@ -193,7 +193,7 @@ index 1e89d122f084..974431b4413f 100644
  			Specifies physical address of start of kernel core
  			image elf header and optionally the size. Generally
  			kexec loader will pass this option to capture kernel.
-@@ -1726,6 +1726,12 @@ Kernel parameters
+@@ -1722,6 +1722,12 @@ Kernel parameters
  	floppy=		[HW]
  			See Documentation/admin-guide/blockdev/floppy.rst.
  

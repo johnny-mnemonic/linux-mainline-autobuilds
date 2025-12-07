@@ -1,7 +1,7 @@
-From b19b852f7cce1e9094eccfe90c5ff099f16b54ec Mon Sep 17 00:00:00 2001
+From 8bb5bb51fa1f56def19644d4c709926c3e64ecd5 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Thu, 4 Sep 2025 15:57:56 +0800
-Subject: [PATCH 81/95] ia64: ptrace: add missing <asm/syscall.h> in ptrace.c
+Subject: [PATCH 81/96] ia64: ptrace: add missing <asm/syscall.h> in ptrace.c
 
 Add a missing include to fix a missing prototype warning.
 

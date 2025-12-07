@@ -1,7 +1,7 @@
-From 76416824759f30268cc10c2d7dd61451813a5267 Mon Sep 17 00:00:00 2001
+From 834605babfdbebb73e34a1dce53ac0ddcf46493f Mon Sep 17 00:00:00 2001
 From: Rene Rebe <rene@exactcode.de>
 Date: Sun, 1 Dec 2024 19:13:37 +0100
-Subject: [PATCH 63/95] ia64: Use KERN_CONT when printing ITC drift
+Subject: [PATCH 63/96] ia64: Use KERN_CONT when printing ITC drift
 
 When printing ITC drift in ia64_init_itm, KERN_CONT was not used,
 leading to malformed output.

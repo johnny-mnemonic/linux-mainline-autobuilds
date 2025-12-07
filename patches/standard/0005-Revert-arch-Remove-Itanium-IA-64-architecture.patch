@@ -1,7 +1,7 @@
-From f23a5150058e798deac2351d6ba193eb5c535da3 Mon Sep 17 00:00:00 2001
+From 99ff2680cd0bf4bbd51e18888ea02bf37b5b9d07 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
-Subject: [PATCH 05/95] Revert "arch: Remove Itanium (IA-64) architecture"
+Subject: [PATCH 05/96] Revert "arch: Remove Itanium (IA-64) architecture"
 
 This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
 ---
@@ -3008,10 +3008,10 @@ index e1b0eeabbb5e..59fd6ed5e3f1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index e4663a0f91d1..2066fab9182e 100644
+index fdc7368de809..c713a4ea49a0 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -11941,6 +11941,12 @@ F:	drivers/i3c/
+@@ -11961,6 +11961,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3024,7 +3024,7 @@ index e4663a0f91d1..2066fab9182e 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -19751,6 +19757,11 @@ S:	Maintained
+@@ -19775,6 +19781,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -67326,7 +67326,7 @@ index e40413609f53..1a6acd27438d 100644
  	select CEC_CORE
  	select CEC_NOTIFIER
 diff --git a/drivers/misc/Kconfig b/drivers/misc/Kconfig
-index b9c11f67315f..ba92386f5953 100644
+index 9d1de68dee27..6331cb0d5cdd 100644
 --- a/drivers/misc/Kconfig
 +++ b/drivers/misc/Kconfig
 @@ -188,7 +188,7 @@ config ENCLOSURE_SERVICES
@@ -67989,10 +67989,10 @@ index 7a1819c20643..9b31bfa1ab1e 100644
  #define VM_SPARC_ADI	INIT_VM_FLAG(SPARC_ADI)
  #define VM_ARCH_CLEAR	INIT_VM_FLAG(ARCH_CLEAR)
 diff --git a/include/linux/moduleparam.h b/include/linux/moduleparam.h
-index 6907aedc4f74..b46f84a6a3ed 100644
+index 915f32f7d888..5e8736061fa2 100644
 --- a/include/linux/moduleparam.h
 +++ b/include/linux/moduleparam.h
-@@ -281,7 +281,7 @@ struct kparam_array
+@@ -284,7 +284,7 @@ struct kparam_array
     read-only sections (which is part of respective UNIX ABI on these
     platforms). So 'const' makes no sense and even causes compile failures
     with some compilers. */
@@ -68110,10 +68110,10 @@ index 2cd767b9680e..e4c15eb4f1cd 100644
  
  int __init sysctl_init_bases(void)
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index 742b23ef0d8b..8c7c379047ad 100644
+index c2654075377e..a15310fa638f 100644
 --- a/lib/Kconfig.debug
 +++ b/lib/Kconfig.debug
-@@ -800,7 +800,7 @@ config SHRINKER_DEBUG
+@@ -793,7 +793,7 @@ config SHRINKER_DEBUG
  
  config DEBUG_STACK_USAGE
  	bool "Stack utilization instrumentation"

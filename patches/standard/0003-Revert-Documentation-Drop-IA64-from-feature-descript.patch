@@ -1,7 +1,7 @@
-From d64a646995c63a2e8fccda8f2308cb511f743256 Mon Sep 17 00:00:00 2001
+From 938fc827234f2338b1604b7ac097b9f1a09bc4c4 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:48 +0200
-Subject: [PATCH 03/95] Revert "Documentation: Drop IA64 from feature
+Subject: [PATCH 03/96] Revert "Documentation: Drop IA64 from feature
  descriptions"
 
 This reverts commit af1f459233d4edeef634f559539e7f4b64cb1d25.
@@ -74,7 +74,7 @@ index 83f77f55fc87..33a8e9950bb2 100644
      |        m68k: | TODO |
      |  microblaze: | TODO |
 diff --git a/Documentation/features/core/generic-idle-thread/arch-support.txt b/Documentation/features/core/generic-idle-thread/arch-support.txt
-index 0735cb5367b4..0b94099cf6ac 100644
+index 425442e31fa2..fa5aacd3e838 100644
 --- a/Documentation/features/core/generic-idle-thread/arch-support.txt
 +++ b/Documentation/features/core/generic-idle-thread/arch-support.txt
 @@ -12,6 +12,7 @@

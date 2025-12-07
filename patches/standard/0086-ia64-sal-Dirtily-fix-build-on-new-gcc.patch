@@ -1,7 +1,7 @@
-From b4aec61afbd35dd2e479e05839db9c6155de6e88 Mon Sep 17 00:00:00 2001
+From 36241b9670da10fd6b0c7de0908711f57ca796c6 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Sat, 6 Sep 2025 00:16:05 +0800
-Subject: [PATCH 86/95] ia64: sal: Dirtily fix build on new gcc
+Subject: [PATCH 86/96] ia64: sal: Dirtily fix build on new gcc
 
 When -Werror is enabled, it does not allow arbitrary function pointer
 casts, so return a dummy struct instead.
