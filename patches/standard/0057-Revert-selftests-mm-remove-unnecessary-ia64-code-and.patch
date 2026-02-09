@@ -1,4 +1,4 @@
-From b4e32b66b660028e366ef9038af4b9a4805c505c Mon Sep 17 00:00:00 2001
+From d84b6af5370de6807f42df751a2eb4c27279543c Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 10:37:07 +0100
 Subject: [PATCH 57/96] Revert "selftests/mm: remove unnecessary ia64 code and
@@ -28,7 +28,7 @@ index eaf9312097f7..ca5ea16a30fa 100644
  ifneq ($(ARCH),riscv64)
  TEST_GEN_FILES += virtual_address_range
 diff --git a/tools/testing/selftests/mm/hugepage-mmap.c b/tools/testing/selftests/mm/hugepage-mmap.c
-index 3b1b532f1cbb..267eea2e0e0b 100644
+index d543419de040..baf305e8d4d2 100644
 --- a/tools/testing/selftests/mm/hugepage-mmap.c
 +++ b/tools/testing/selftests/mm/hugepage-mmap.c
 @@ -8,6 +8,13 @@
@@ -149,7 +149,7 @@ index df366a4d1b92..894d28c3dd47 100644
  		perror("mmap");
  		exit(1);
 diff --git a/tools/testing/selftests/mm/map_hugetlb.c b/tools/testing/selftests/mm/map_hugetlb.c
-index b47399feab53..a1f005a90a4f 100644
+index aa409107611b..cb83cdf95cf7 100644
 --- a/tools/testing/selftests/mm/map_hugetlb.c
 +++ b/tools/testing/selftests/mm/map_hugetlb.c
 @@ -4,6 +4,11 @@

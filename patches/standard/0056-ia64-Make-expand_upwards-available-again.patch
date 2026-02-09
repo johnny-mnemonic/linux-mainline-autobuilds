@@ -1,4 +1,4 @@
-From eafb14fa7f752260f7ea90ae8f388ff8bdf97234 Mon Sep 17 00:00:00 2001
+From 789e22260b121f9f5c20361b3410754cca1501bf Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 27 Jan 2025 18:30:30 +0100
 Subject: [PATCH 56/96] ia64: Make expand_upwards() available again
@@ -21,10 +21,10 @@ mm/mmap.c:1033:16: error: implicit declaration of function 'expand_upwards'; did
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/mm/vma.h b/mm/vma.h
-index abada6a64c4e..58273dd2ac17 100644
+index 9d5ee6ac913a..83353f64762e 100644
 --- a/mm/vma.h
 +++ b/mm/vma.h
-@@ -610,7 +610,7 @@ static inline bool vma_is_sealed(struct vm_area_struct *vma)
+@@ -613,7 +613,7 @@ static inline bool vma_is_sealed(struct vm_area_struct *vma)
  }
  #endif
  

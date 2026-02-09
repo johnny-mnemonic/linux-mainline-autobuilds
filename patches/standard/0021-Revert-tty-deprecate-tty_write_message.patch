@@ -1,4 +1,4 @@
-From a5db05a7dbc079c54285243c0aa96314fe73338c Mon Sep 17 00:00:00 2001
+From 230d4c50c6dcbe4f448263acc1484145b17e51aa Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 19 Jan 2024 20:18:07 +0100
 Subject: [PATCH 21/96] Revert "tty: deprecate tty_write_message()"

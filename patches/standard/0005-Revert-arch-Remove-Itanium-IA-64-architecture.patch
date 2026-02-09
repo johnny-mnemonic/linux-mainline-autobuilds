@@ -1,4 +1,4 @@
-From 99ff2680cd0bf4bbd51e18888ea02bf37b5b9d07 Mon Sep 17 00:00:00 2001
+From e376830ba7311e58015968b1dccceb566d814fe2 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
 Subject: [PATCH 05/96] Revert "arch: Remove Itanium (IA-64) architecture"
@@ -2991,7 +2991,7 @@ index 000000000000..1de70c305a79
 +    boot sequence to use this menu, and you will have to reset the
 +    box after changing console configuration.
 diff --git a/Documentation/core-api/cpu_hotplug.rst b/Documentation/core-api/cpu_hotplug.rst
-index e1b0eeabbb5e..59fd6ed5e3f1 100644
+index 9b4afca9fd09..1ee37b221646 100644
 --- a/Documentation/core-api/cpu_hotplug.rst
 +++ b/Documentation/core-api/cpu_hotplug.rst
 @@ -40,6 +40,12 @@ Command Line Switches
@@ -3008,10 +3008,10 @@ index e1b0eeabbb5e..59fd6ed5e3f1 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index fdc7368de809..c713a4ea49a0 100644
+index e08767323763..442beef6de13 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -11961,6 +11961,12 @@ F:	drivers/i3c/
+@@ -12025,6 +12025,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3024,7 +3024,7 @@ index fdc7368de809..c713a4ea49a0 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -19775,6 +19781,11 @@ S:	Maintained
+@@ -19894,6 +19900,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -66949,10 +66949,10 @@ index 29e0729299f5..331b242f057f 100644
  	select ARCH_USE_MEMREMAP_PROT
  
 diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
-index a9070d00b833..83cd1239823e 100644
+index 17b5f3415465..85e52c272ad4 100644
 --- a/drivers/firmware/efi/efi.c
 +++ b/drivers/firmware/efi/efi.c
-@@ -852,6 +852,7 @@ int __init efi_systab_check_header(const efi_table_hdr_t *systab_hdr)
+@@ -854,6 +854,7 @@ int __init efi_systab_check_header(const efi_table_hdr_t *systab_hdr)
  	return 0;
  }
  
@@ -66960,7 +66960,7 @@ index a9070d00b833..83cd1239823e 100644
  static const efi_char16_t *__init map_fw_vendor(unsigned long fw_vendor,
  						size_t size)
  {
-@@ -867,6 +868,10 @@ static void __init unmap_fw_vendor(const void *fw_vendor, size_t size)
+@@ -869,6 +870,10 @@ static void __init unmap_fw_vendor(const void *fw_vendor, size_t size)
  {
  	early_memunmap((void *)fw_vendor, size);
  }
@@ -66971,7 +66971,7 @@ index a9070d00b833..83cd1239823e 100644
  
  void __init efi_systab_report_header(const efi_table_hdr_t *systab_hdr,
  				     unsigned long fw_vendor)
-@@ -971,6 +976,11 @@ char * __init efi_md_typeattr_format(char *buf, size_t size,
+@@ -973,6 +978,11 @@ char * __init efi_md_typeattr_format(char *buf, size_t size,
  	return buf;
  }
  
@@ -66983,7 +66983,7 @@ index a9070d00b833..83cd1239823e 100644
  /*
   * efi_mem_attributes - lookup memmap attributes for physical address
   * @phys_addr: the physical address to lookup
-@@ -1018,6 +1028,7 @@ int efi_mem_type(unsigned long phys_addr)
+@@ -1020,6 +1030,7 @@ int efi_mem_type(unsigned long phys_addr)
  	}
  	return -EINVAL;
  }
@@ -67326,10 +67326,10 @@ index e40413609f53..1a6acd27438d 100644
  	select CEC_CORE
  	select CEC_NOTIFIER
 diff --git a/drivers/misc/Kconfig b/drivers/misc/Kconfig
-index 9d1de68dee27..6331cb0d5cdd 100644
+index d7d41b054b98..ff94b0ed0cd5 100644
 --- a/drivers/misc/Kconfig
 +++ b/drivers/misc/Kconfig
-@@ -188,7 +188,7 @@ config ENCLOSURE_SERVICES
+@@ -187,7 +187,7 @@ config ENCLOSURE_SERVICES
  config SGI_XP
  	tristate "Support communication between SGI SSIs"
  	depends on NET
@@ -67828,10 +67828,10 @@ index e8ff661fa4a5..5333479f1551 100644
  		mask = DMA_BIT_MASK(39);
  		cmask = mask;
 diff --git a/drivers/tty/serial/8250/Kconfig b/drivers/tty/serial/8250/Kconfig
-index f64ef0819cd4..3715985b1dc9 100644
+index c488ff6f2865..adb70713914d 100644
 --- a/drivers/tty/serial/8250/Kconfig
 +++ b/drivers/tty/serial/8250/Kconfig
-@@ -224,7 +224,7 @@ config SERIAL_8250_EXTENDED
+@@ -207,7 +207,7 @@ config SERIAL_8250_EXTENDED
  
  config SERIAL_8250_MANY_PORTS
  	bool "Support more than 4 legacy serial ports"
@@ -67841,10 +67841,10 @@ index f64ef0819cd4..3715985b1dc9 100644
  	  Say Y here if you have dumb serial boards other than the four
  	  standard COM 1/2/3/4 ports. This may happen if you have an AST
 diff --git a/drivers/tty/vt/keyboard.c b/drivers/tty/vt/keyboard.c
-index ee1d9c448c7e..83bf4689cc8f 100644
+index d65fc60dd7be..1f9f3012dec6 100644
 --- a/drivers/tty/vt/keyboard.c
 +++ b/drivers/tty/vt/keyboard.c
-@@ -1264,7 +1264,7 @@ static void kbd_bh(struct tasklet_struct *unused)
+@@ -1246,7 +1246,7 @@ static void kbd_bh(struct tasklet_struct *unused)
  	}
  }
  
@@ -67867,10 +67867,10 @@ index a733f90eca55..3ba7096acda2 100644
  	select DRM_PANEL_ORIENTATION_QUIRKS
  	select FB_IOMEM_HELPERS
 diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-index 05008d937e40..6b48833ed964 100644
+index d3b9df7d466b..c5999aed2500 100644
 --- a/drivers/watchdog/Kconfig
 +++ b/drivers/watchdog/Kconfig
-@@ -1396,7 +1396,7 @@ config INTEL_OC_WATCHDOG
+@@ -1404,7 +1404,7 @@ config INTEL_OC_WATCHDOG
  
  config ITCO_WDT
  	tristate "Intel TCO Timer/Watchdog"
@@ -67967,7 +67967,7 @@ index 2a43094e23f7..4b5cc2a26077 100644
   * We play games with efi_enabled so that the compiler will, if
   * possible, remove EFI-related code altogether.
 diff --git a/include/linux/mm.h b/include/linux/mm.h
-index 7a1819c20643..9b31bfa1ab1e 100644
+index f0d5be9dc736..a1a0cf754c81 100644
 --- a/include/linux/mm.h
 +++ b/include/linux/mm.h
 @@ -378,7 +378,7 @@ enum {
@@ -68015,7 +68015,7 @@ index a6e5a44c9b42..3eef55d2d43d 100644
  #elif !defined(CONFIG_MMU)
  #define __VM_ARCH_SPECIFIC_1 {VM_MAPPED_COPY,"mappedcopy"	}
 diff --git a/kernel/cpu.c b/kernel/cpu.c
-index b674fdf96208..a455190479e1 100644
+index 8df2d773fe3b..be8f9878e68b 100644
 --- a/kernel/cpu.c
 +++ b/kernel/cpu.c
 @@ -1696,6 +1696,9 @@ static int cpu_up(unsigned int cpu, enum cpuhp_state target)
@@ -68029,10 +68029,10 @@ index b674fdf96208..a455190479e1 100644
  	}
  
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 198e02e21e6e..69047038cf0e 100644
+index b1f3915d5f8e..5a10df1a46dd 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -2839,7 +2839,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
+@@ -2882,7 +2882,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
  		if (!access_ok((void __user *)kargs->stack, kargs->stack_size))
  			return false;
  
@@ -68042,10 +68042,10 @@ index 198e02e21e6e..69047038cf0e 100644
  #endif
  	}
 diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index b7801cd05d5a..2f82a40c6d58 100644
+index 854984967fe2..d4e33824d5b8 100644
 --- a/kernel/sched/core.c
 +++ b/kernel/sched/core.c
-@@ -8932,9 +8932,9 @@ void normalize_rt_tasks(void)
+@@ -8931,9 +8931,9 @@ void normalize_rt_tasks(void)
  
  #endif /* CONFIG_MAGIC_SYSRQ */
  
@@ -68057,7 +68057,7 @@ index b7801cd05d5a..2f82a40c6d58 100644
   *
   * They can only be called when the whole system has been
   * stopped - every CPU needs to be quiescent, and no scheduling
-@@ -8956,7 +8956,30 @@ struct task_struct *curr_task(int cpu)
+@@ -8955,7 +8955,30 @@ struct task_struct *curr_task(int cpu)
  	return cpu_curr(cpu);
  }
  
@@ -68110,10 +68110,10 @@ index 2cd767b9680e..e4c15eb4f1cd 100644
  
  int __init sysctl_init_bases(void)
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index c2654075377e..a15310fa638f 100644
+index ba36939fda79..ca8871aeff2b 100644
 --- a/lib/Kconfig.debug
 +++ b/lib/Kconfig.debug
-@@ -793,7 +793,7 @@ config SHRINKER_DEBUG
+@@ -792,7 +792,7 @@ config SHRINKER_DEBUG
  
  config DEBUG_STACK_USAGE
  	bool "Stack utilization instrumentation"
@@ -68153,10 +68153,10 @@ index 20aa459bfb3e..8968e2b8a12e 100644
  	bool "ARM BCJ filter decoder" if EXPERT
  	default y
 diff --git a/mm/vma.c b/mm/vma.c
-index fc90befd162f..634c889b44d5 100644
+index 7a908a964d18..9a58b4e2faf8 100644
 --- a/mm/vma.c
 +++ b/mm/vma.c
-@@ -3024,9 +3024,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
+@@ -3068,9 +3068,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
  	return 0;
  }
  

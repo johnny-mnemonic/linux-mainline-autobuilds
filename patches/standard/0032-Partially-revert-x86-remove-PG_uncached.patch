@@ -1,4 +1,4 @@
-From 623283e972e02f3d8e62242e79ccfabb4dea32c1 Mon Sep 17 00:00:00 2001
+From e81e66411259a582bbe3a41f9f232053ae0c3e6f Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 27 Sep 2024 14:29:04 +0200
 Subject: [PATCH 32/96] Partially revert "x86: remove PG_uncached"
@@ -52,10 +52,10 @@ index 000000000000..e66c91f95d83
 +    -----------------------
 \ No newline at end of file
 diff --git a/fs/proc/page.c b/fs/proc/page.c
-index fc64f23e05e5..f53425b36d47 100644
+index f9b2c2c906cd..a8e4c482c885 100644
 --- a/fs/proc/page.c
 +++ b/fs/proc/page.c
-@@ -241,6 +241,10 @@ u64 stable_page_flags(const struct page *page)
+@@ -240,6 +240,10 @@ u64 stable_page_flags(const struct page *page)
  		u |= kpf_copy_bit(ps.page_snapshot.flags.f, KPF_HWPOISON, PG_hwpoison);
  #endif
  

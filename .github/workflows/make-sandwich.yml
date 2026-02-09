@@ -5,7 +5,7 @@ on:
       - main
   schedule:
     # Run everyday at 2 AM(/PM during merge window) UTC
-    - cron: '0 2 * * *'
+    - cron: '0 2,14 * * *'
   workflow_dispatch:
 
 jobs:

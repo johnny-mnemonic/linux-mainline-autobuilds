@@ -1,4 +1,4 @@
-From edeb18a52d54b791ff5e3ab30f0df28ad8520b71 Mon Sep 17 00:00:00 2001
+From b454b34853714b03edd37e589580cdb8b7d9a159 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 27 Jan 2025 15:43:18 +0100
 Subject: [PATCH 54/96] Partially revert "x86/efistub: Drop long obsolete UGA
@@ -15,10 +15,10 @@ This partially reverts commit 144d52dd8fc83a082a275e1b663e7454d2b616a4.
  2 files changed, 5 insertions(+)
 
 diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
-index 83cd1239823e..62eb91e9c37f 100644
+index 85e52c272ad4..cfab6c1ec7a8 100644
 --- a/drivers/firmware/efi/efi.c
 +++ b/drivers/firmware/efi/efi.c
-@@ -152,6 +152,9 @@ static ssize_t systab_show(struct kobject *kobj,
+@@ -153,6 +153,9 @@ static ssize_t systab_show(struct kobject *kobj,
  	if (efi.smbios != EFI_INVALID_TABLE_ADDR)
  		str += sprintf(str, "SMBIOS=0x%lx\n", efi.smbios);
  

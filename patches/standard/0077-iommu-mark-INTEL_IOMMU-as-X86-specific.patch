@@ -1,4 +1,4 @@
-From 773e2056c396fa85525911212c034167d5ec150a Mon Sep 17 00:00:00 2001
+From 888e7ecba49086f96fadb415ae9582ad1ff8e678 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Thu, 4 Sep 2025 15:26:06 +0800
 Subject: [PATCH 77/96] iommu: mark INTEL_IOMMU as X86-specific
