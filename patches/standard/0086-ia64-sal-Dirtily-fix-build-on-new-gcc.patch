@@ -1,4 +1,4 @@
-From 6565a713d360acc291e47f834e85f81c2630c281 Mon Sep 17 00:00:00 2001
+From 4a52b2e5184576f2f3ae834c626e9f9de27d4dbe Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Sat, 6 Sep 2025 00:16:05 +0800
 Subject: [PATCH 86/96] ia64: sal: Dirtily fix build on new gcc

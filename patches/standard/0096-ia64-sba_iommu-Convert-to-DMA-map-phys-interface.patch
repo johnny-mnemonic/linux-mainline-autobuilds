@@ -1,4 +1,4 @@
-From e29baa9083ed10ab214693927849fbaedbdb35d8 Mon Sep 17 00:00:00 2001
+From b3c55459f1bab2483c399e9f24ad55fd1aa788a9 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Sat, 20 Dec 2025 21:59:33 +0100
 Subject: [PATCH 96/96] ia64/sba_iommu: Convert to DMA map phys interface

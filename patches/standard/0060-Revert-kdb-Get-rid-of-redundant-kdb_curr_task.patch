@@ -1,4 +1,4 @@
-From f6f07f152e593d85b741db384d06c9ddaf002a06 Mon Sep 17 00:00:00 2001
+From 3953d2f3e105b1844591318b794ad349d434817b Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 15:23:46 +0100
 Subject: [PATCH 60/96] Revert "kdb: Get rid of redundant kdb_curr_task()"

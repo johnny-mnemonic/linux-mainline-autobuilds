@@ -1,4 +1,4 @@
-From 652c8f01b77dab44741965e924248a4b6adfe69a Mon Sep 17 00:00:00 2001
+From 4d5a64dafeffd3dc3d2475d2b170e179271f845e Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 16:45:16 +0100
 Subject: [PATCH 19/96] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
@@ -10,7 +10,7 @@ This reverts commit 3888750e21ccb909051c810cc79fcc0650a740f8.
  2 files changed, 13 insertions(+)
 
 diff --git a/arch/Kconfig b/arch/Kconfig
-index 0c16c6aa4ceb..5b55f1509a89 100644
+index 2efd92a0d9fe..6298f84381c4 100644
 --- a/arch/Kconfig
 +++ b/arch/Kconfig
 @@ -368,8 +368,17 @@ config ARCH_HAS_CPU_PASID
@@ -32,10 +32,10 @@ index 0c16c6aa4ceb..5b55f1509a89 100644
  	  An architecture should select this to provide hardened usercopy
  	  knowledge about what region of the thread_struct should be
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 9c0c2f06ae75..8a5df525f489 100644
+index 78989c98940e..1001960d03d2 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -851,6 +851,7 @@ static void __init set_max_threads(unsigned int max_threads_suggested)
+@@ -852,6 +852,7 @@ static void __init set_max_threads(unsigned int max_threads_suggested)
  int arch_task_struct_size __read_mostly;
  #endif
  
@@ -43,7 +43,7 @@ index 9c0c2f06ae75..8a5df525f489 100644
  static void __init task_struct_whitelist(unsigned long *offset, unsigned long *size)
  {
  	/* Fetch thread_struct whitelist for the architecture. */
-@@ -865,10 +866,12 @@ static void __init task_struct_whitelist(unsigned long *offset, unsigned long *s
+@@ -866,10 +867,12 @@ static void __init task_struct_whitelist(unsigned long *offset, unsigned long *s
  	else
  		*offset += offsetof(struct task_struct, thread);
  }
@@ -56,7 +56,7 @@ index 9c0c2f06ae75..8a5df525f489 100644
  #ifndef ARCH_MIN_TASKALIGN
  #define ARCH_MIN_TASKALIGN	0
  #endif
-@@ -881,6 +884,7 @@ void __init fork_init(void)
+@@ -882,6 +885,7 @@ void __init fork_init(void)
  			arch_task_struct_size, align,
  			SLAB_PANIC|SLAB_ACCOUNT,
  			useroffset, usersize, NULL);

@@ -1,4 +1,4 @@
-From f0b63e75fc297b939c89c2f1ffe86239ebb2b047 Mon Sep 17 00:00:00 2001
+From a9a49f55edfa99cea254aae718f9951477bcda15 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 14:21:54 +0100
 Subject: [PATCH 17/96] Revert "mm: remove unnecessary ia64 code and comment"
@@ -11,10 +11,10 @@ This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
  3 files changed, 34 insertions(+), 18 deletions(-)
 
 diff --git a/mm/Kconfig b/mm/Kconfig
-index a992f2203eb9..7ff819675763 100644
+index fbac1dfc9943..98f610a04383 100644
 --- a/mm/Kconfig
 +++ b/mm/Kconfig
-@@ -723,7 +723,7 @@ config DEFAULT_MMAP_MIN_ADDR
+@@ -712,7 +712,7 @@ config DEFAULT_MMAP_MIN_ADDR
  	  from userspace allocation.  Keeping a user from writing to low pages
  	  can help reduce the impact of kernel NULL pointer bugs.
  
@@ -91,7 +91,7 @@ index 2a809cd8e7fa..6591d738a2c9 100644
  		 __func__, pgdat->node_id, (unsigned long)pgdat,
  		 (unsigned long)pgdat->node_mem_map);
 diff --git a/mm/page_owner.c b/mm/page_owner.c
-index b3260f0c17ba..89c4b2f42745 100644
+index b6a394a130ec..14eb0fc9086f 100644
 --- a/mm/page_owner.c
 +++ b/mm/page_owner.c
 @@ -158,6 +158,14 @@ static noinline depot_stack_handle_t save_stack(gfp_t flags)

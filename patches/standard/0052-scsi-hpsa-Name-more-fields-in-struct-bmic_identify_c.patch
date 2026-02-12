@@ -1,4 +1,4 @@
-From c465ec4dbbda8d936fdbbdc8b769f905f5d71a96 Mon Sep 17 00:00:00 2001
+From 1fe0d650ef4dca5d8398f7289a108db4d6baafae Mon Sep 17 00:00:00 2001
 From: Ivan Mironov <mironov.ivan@gmail.com>
 Date: Mon, 10 Dec 2018 18:26:32 +0500
 Subject: [PATCH 52/96] scsi: hpsa: Name more fields in "struct

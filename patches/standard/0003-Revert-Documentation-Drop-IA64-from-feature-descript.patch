@@ -1,4 +1,4 @@
-From ac7f5a0afccb01b3f4352e1144298f834b8e98a7 Mon Sep 17 00:00:00 2001
+From b1a2f3d42e838db09d8679225f8aa9de3dcbb0dd Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:48 +0200
 Subject: [PATCH 03/96] Revert "Documentation: Drop IA64 from feature
@@ -242,7 +242,7 @@ index 92f5d0f444fa..83a4639a5c0a 100644
      |        m68k: | TODO |
      |  microblaze: | TODO |
 diff --git a/Documentation/features/debug/stackprotector/arch-support.txt b/Documentation/features/debug/stackprotector/arch-support.txt
-index de8f43f2e5d6..4c64c5d596f7 100644
+index 43e49c71612e..f95566db7c86 100644
 --- a/Documentation/features/debug/stackprotector/arch-support.txt
 +++ b/Documentation/features/debug/stackprotector/arch-support.txt
 @@ -12,6 +12,7 @@

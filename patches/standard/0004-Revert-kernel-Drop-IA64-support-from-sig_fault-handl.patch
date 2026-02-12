@@ -1,4 +1,4 @@
-From bf22eaa57954ff028f162cbaaa5a6a2e04f3eaf2 Mon Sep 17 00:00:00 2001
+From 1c592be52734980259221ddfb399bc00fb29479c Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:55 +0200
 Subject: [PATCH 04/96] Revert "kernel: Drop IA64 support from sig_fault
@@ -12,7 +12,7 @@ This reverts commit f5e836884d8e55b416dfad55c29481ec1b65c1f0.
  3 files changed, 38 insertions(+), 9 deletions(-)
 
 diff --git a/include/linux/sched/signal.h b/include/linux/sched/signal.h
-index 7d6449982822..c472fd0d3b91 100644
+index a22248aebcf9..63e564ba82a4 100644
 --- a/include/linux/sched/signal.h
 +++ b/include/linux/sched/signal.h
 @@ -309,11 +309,20 @@ static inline void kernel_signal_stop(void)
@@ -57,7 +57,7 @@ index 5a1ca43b5fc6..013f2c5ccae6 100644
  #define __ADDR_BND_PKEY_PAD  (__alignof__(void *) < sizeof(short) ? \
  			      sizeof(short) : __alignof__(void *))
 diff --git a/kernel/signal.c b/kernel/signal.c
-index e42b8bd6922f..83c95d90a523 100644
+index d65d0fe24bfb..38fe4900f629 100644
 --- a/kernel/signal.c
 +++ b/kernel/signal.c
 @@ -1686,8 +1686,9 @@ void force_sigsegv(int sig)
