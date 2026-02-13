@@ -1,7 +1,7 @@
-From 6b7331d652467b6fb0ec109d53b6147ecbc5ae57 Mon Sep 17 00:00:00 2001
+From 9bb05c9a7fa8ca9a69a66765b8112be9efd66c70 Mon Sep 17 00:00:00 2001
 From: Ivan Mironov <mironov.ivan@gmail.com>
 Date: Mon, 10 Dec 2018 17:44:37 +0500
-Subject: [PATCH 51/96] scsi: hpsa: Ignore HBA flag from NVRAM if logical
+Subject: [PATCH 51/99] scsi: hpsa: Ignore HBA flag from NVRAM if logical
  devices exist
 
 Simultaneous use of physical devices and logical RAID devices may be

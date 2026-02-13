@@ -1,7 +1,7 @@
-From 8d6604da8cd396e1482269a8599dc8a0b43fa74f Mon Sep 17 00:00:00 2001
+From 7e540884108972e3b5a03b8edc37e3ce254682ae Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
-Subject: [PATCH 05/96] Revert "arch: Remove Itanium (IA-64) architecture"
+Subject: [PATCH 05/99] Revert "arch: Remove Itanium (IA-64) architecture"
 
 This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
 ---
@@ -3008,7 +3008,7 @@ index 9b4afca9fd09..1ee37b221646 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 04e5fb80c32c..bacfbacdf195 100644
+index 3f3e868b7d74..4bd06baf9b1e 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
 @@ -12114,6 +12114,12 @@ F:	drivers/i3c/
@@ -3024,7 +3024,7 @@ index 04e5fb80c32c..bacfbacdf195 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -20043,6 +20049,11 @@ S:	Maintained
+@@ -20053,6 +20059,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -67326,7 +67326,7 @@ index e40413609f53..1a6acd27438d 100644
  	select CEC_CORE
  	select CEC_NOTIFIER
 diff --git a/drivers/misc/Kconfig b/drivers/misc/Kconfig
-index d7d41b054b98..ff94b0ed0cd5 100644
+index 5cc79d1517af..9869e279089f 100644
 --- a/drivers/misc/Kconfig
 +++ b/drivers/misc/Kconfig
 @@ -187,7 +187,7 @@ config ENCLOSURE_SERVICES
@@ -67967,10 +67967,10 @@ index 664898d09ff5..429c1ebb8313 100644
   * We play games with efi_enabled so that the compiler will, if
   * possible, remove EFI-related code altogether.
 diff --git a/include/linux/mm.h b/include/linux/mm.h
-index 6c5d06e27230..d34263159107 100644
+index 2dbe1c2219ee..724b45c30d31 100644
 --- a/include/linux/mm.h
 +++ b/include/linux/mm.h
-@@ -379,7 +379,7 @@ enum {
+@@ -380,7 +380,7 @@ enum {
  	DECLARE_VMA_BIT_ALIAS(SHADOW_STACK, HIGH_ARCH_6),
  #endif
  	DECLARE_VMA_BIT_ALIAS(SAO, ARCH_1),		/* Strong Access Ordering (powerpc) */
@@ -67979,7 +67979,7 @@ index 6c5d06e27230..d34263159107 100644
  	DECLARE_VMA_BIT_ALIAS(SPARC_ADI, ARCH_1),	/* sparc64 */
  	DECLARE_VMA_BIT_ALIAS(ARM64_BTI, ARCH_1),	/* arm64 */
  	DECLARE_VMA_BIT_ALIAS(ARCH_CLEAR, ARCH_1),	/* sparc64, arm64 */
-@@ -470,6 +470,8 @@ enum {
+@@ -471,6 +471,8 @@ enum {
  #define VM_SAO		INIT_VM_FLAG(SAO)
  #elif defined(CONFIG_PARISC)
  #define VM_GROWSUP	INIT_VM_FLAG(GROWSUP)
@@ -68153,7 +68153,7 @@ index 20aa459bfb3e..8968e2b8a12e 100644
  	bool "ARM BCJ filter decoder" if EXPERT
  	default y
 diff --git a/mm/vma.c b/mm/vma.c
-index 7a908a964d18..9a58b4e2faf8 100644
+index 3dbe414eff89..7d67c8bd2d2b 100644
 --- a/mm/vma.c
 +++ b/mm/vma.c
 @@ -3068,9 +3068,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,

@@ -1,7 +1,7 @@
-From a9a49f55edfa99cea254aae718f9951477bcda15 Mon Sep 17 00:00:00 2001
+From fc91d6d76e067e13b3572459c2aaae9222d763a4 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 14:21:54 +0100
-Subject: [PATCH 17/96] Revert "mm: remove unnecessary ia64 code and comment"
+Subject: [PATCH 17/99] Revert "mm: remove unnecessary ia64 code and comment"
 
 This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
 ---
@@ -11,10 +11,10 @@ This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
  3 files changed, 34 insertions(+), 18 deletions(-)
 
 diff --git a/mm/Kconfig b/mm/Kconfig
-index fbac1dfc9943..98f610a04383 100644
+index ebd8ea353687..bd3ab567832c 100644
 --- a/mm/Kconfig
 +++ b/mm/Kconfig
-@@ -712,7 +712,7 @@ config DEFAULT_MMAP_MIN_ADDR
+@@ -709,7 +709,7 @@ config DEFAULT_MMAP_MIN_ADDR
  	  from userspace allocation.  Keeping a user from writing to low pages
  	  can help reduce the impact of kernel NULL pointer bugs.
  
@@ -24,10 +24,10 @@ index fbac1dfc9943..98f610a04383 100644
  	  On arm and other archs it should not be higher than 32768.
  	  Programs which use vm86 functionality or have some need to map
 diff --git a/mm/mm_init.c b/mm/mm_init.c
-index 2a809cd8e7fa..6591d738a2c9 100644
+index 1a29a719af58..1c7af1537bd0 100644
 --- a/mm/mm_init.c
 +++ b/mm/mm_init.c
-@@ -1524,7 +1524,8 @@ void __init set_pageblock_order(void)
+@@ -1521,7 +1521,8 @@ void __init set_pageblock_order(void)
  
  	/*
  	 * Assume the largest contiguous order of interest is a huge page.
@@ -37,7 +37,7 @@ index 2a809cd8e7fa..6591d738a2c9 100644
  	 */
  	pageblock_order = order;
  }
-@@ -1646,8 +1647,9 @@ void __init *memmap_alloc(phys_addr_t size, phys_addr_t align,
+@@ -1643,8 +1644,9 @@ void __init *memmap_alloc(phys_addr_t size, phys_addr_t align,
  #ifdef CONFIG_FLATMEM
  static void __init alloc_node_mem_map(struct pglist_data *pgdat)
  {
@@ -49,7 +49,7 @@ index 2a809cd8e7fa..6591d738a2c9 100644
  
  	/* Skip empty nodes */
  	if (!pgdat->node_spanned_pages)
-@@ -1655,20 +1657,26 @@ static void __init alloc_node_mem_map(struct pglist_data *pgdat)
+@@ -1652,20 +1654,26 @@ static void __init alloc_node_mem_map(struct pglist_data *pgdat)
  
  	start = pgdat->node_start_pfn & ~(MAX_ORDER_NR_PAGES - 1);
  	offset = pgdat->node_start_pfn - start;

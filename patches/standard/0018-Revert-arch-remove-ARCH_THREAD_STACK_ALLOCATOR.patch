@@ -1,7 +1,7 @@
-From bb804d6259d59a465f7b01229348d83b638039b3 Mon Sep 17 00:00:00 2001
+From 25d53907db95183dd0be3223a64ddf91032e7525 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 12 Jan 2024 18:54:34 +0100
-Subject: [PATCH 18/96] Revert "arch: remove ARCH_THREAD_STACK_ALLOCATOR"
+Subject: [PATCH 18/99] Revert "arch: remove ARCH_THREAD_STACK_ALLOCATOR"
 
 This reverts commit f72709ab69430d986dfc5a08c9a86f625e3fed33.
 ---

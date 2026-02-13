@@ -1,7 +1,7 @@
-From b9d8d705dd57bc2f7b5b24e6c35f10a1438bec48 Mon Sep 17 00:00:00 2001
+From 0ac88834ec0528dddcec78b8a383c6eddc2fa66b Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Mon, 22 Sep 2025 13:17:15 +0200
-Subject: [PATCH 44/96] ia64: Remove ia64-specific get_order
+Subject: [PATCH 44/99] ia64: Remove ia64-specific get_order
 
 ia64 implements its own get_order. But get_order now has a generic
 implementation as well.

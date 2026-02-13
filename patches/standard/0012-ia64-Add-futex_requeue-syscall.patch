@@ -1,7 +1,7 @@
-From e12e5246659e9183030db907a4fb69a13aac2a87 Mon Sep 17 00:00:00 2001
+From 11c92b699dfccb084829ae12c2e146d7dd7c3524 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 9 Nov 2023 17:32:42 +0100
-Subject: [PATCH 12/96] ia64: Add futex_requeue() syscall
+Subject: [PATCH 12/99] ia64: Add futex_requeue() syscall
 
 futex_requeue() was added after ia64 was removed from the kernel.
 

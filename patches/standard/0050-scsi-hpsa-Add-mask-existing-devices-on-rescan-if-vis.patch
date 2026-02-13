@@ -1,7 +1,7 @@
-From b5f54e98d36817327f0cc7c57b192b65726de446 Mon Sep 17 00:00:00 2001
+From fc7a7fc57a1635a6120b1886ed3bf13095b98c6b Mon Sep 17 00:00:00 2001
 From: Ivan Mironov <mironov.ivan@gmail.com>
 Date: Wed, 5 Dec 2018 20:32:44 +0500
-Subject: [PATCH 50/96] scsi: hpsa: Add/mask existing devices on rescan if
+Subject: [PATCH 50/99] scsi: hpsa: Add/mask existing devices on rescan if
  visibility changes
 
 Controller may be switched between RAID and HBA modes even without a

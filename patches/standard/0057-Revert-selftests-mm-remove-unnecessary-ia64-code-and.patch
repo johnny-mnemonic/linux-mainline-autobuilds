@@ -1,7 +1,7 @@
-From d912eaa56394b5698be8239c4775bd4fd6719306 Mon Sep 17 00:00:00 2001
+From b3e5e3273d21bb81479f94ce0261ee8c598937ed Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 10:37:07 +0100
-Subject: [PATCH 57/96] Revert "selftests/mm: remove unnecessary ia64 code and
+Subject: [PATCH 57/99] Revert "selftests/mm: remove unnecessary ia64 code and
  comment"
 
 This reverts commit 2f4db2861013fcfb4be11d0dc176271ae566241c.
@@ -15,7 +15,7 @@ This reverts commit 2f4db2861013fcfb4be11d0dc176271ae566241c.
  6 files changed, 67 insertions(+), 8 deletions(-)
 
 diff --git a/tools/testing/selftests/mm/Makefile b/tools/testing/selftests/mm/Makefile
-index eaf9312097f7..ca5ea16a30fa 100644
+index 905f1e034963..c0a7c09a0779 100644
 --- a/tools/testing/selftests/mm/Makefile
 +++ b/tools/testing/selftests/mm/Makefile
 @@ -138,7 +138,7 @@ else ifeq ($(ARCH),powerpc)
@@ -25,8 +25,8 @@ index eaf9312097f7..ca5ea16a30fa 100644
 -ifneq (,$(filter $(ARCH),arm64 mips64 parisc64 powerpc riscv64 s390x sparc64 x86_64 s390))
 +ifneq (,$(filter $(ARCH),arm64 ia64 mips64 parisc64 powerpc riscv64 s390x sparc64 x86_64 s390))
  TEST_GEN_FILES += va_high_addr_switch
- ifneq ($(ARCH),riscv64)
- TEST_GEN_FILES += virtual_address_range
+ TEST_GEN_FILES += write_to_hugetlbfs
+ endif
 diff --git a/tools/testing/selftests/mm/hugepage-mmap.c b/tools/testing/selftests/mm/hugepage-mmap.c
 index d543419de040..baf305e8d4d2 100644
 --- a/tools/testing/selftests/mm/hugepage-mmap.c
@@ -199,10 +199,10 @@ index aa409107611b..cb83cdf95cf7 100644
  		ksft_exit_fail_msg("mmap: %s\n", strerror(errno));
  
 diff --git a/tools/testing/selftests/mm/run_vmtests.sh b/tools/testing/selftests/mm/run_vmtests.sh
-index d9173f2312b7..b7a03d43386d 100755
+index 29be9038bfb0..c470d1d5f18d 100755
 --- a/tools/testing/selftests/mm/run_vmtests.sh
 +++ b/tools/testing/selftests/mm/run_vmtests.sh
-@@ -203,7 +203,7 @@ else
+@@ -207,7 +207,7 @@ else
  fi
  
  # filter 64bit architectures
