@@ -1,7 +1,7 @@
-From 405ce82cd1b2127ece61de501d8863877886b503 Mon Sep 17 00:00:00 2001
+From bbf49660e1173c43544d9836802a74e9794216cd Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Fri, 5 Sep 2025 23:36:54 +0800
-Subject: [PATCH 84/99] ia64: add prototype declaration for `void
+Subject: [PATCH 084/101] ia64: add prototype declaration for `void
  pci_adjust_legacy_attr()'
 
 Suppress a build error with `-Werror=missing-prototypes'.

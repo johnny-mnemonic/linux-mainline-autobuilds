@@ -1,7 +1,7 @@
-From 62679f0825aef936d1d623eb8da0a9a47358cbdd Mon Sep 17 00:00:00 2001
+From 47f48141e70e17d9edfeed7d666408b3d68d5636 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Thu, 19 Sep 2024 22:50:12 +0200
-Subject: [PATCH 31/99] ia64: replay "dma-mapping: clearly mark DMA ops as
+Subject: [PATCH 031/101] ia64: replay "dma-mapping: clearly mark DMA ops as
  [...]"
 
 See de6c85bf918ea52d5c680f0d130b37ee2ff152d6.

@@ -1,7 +1,7 @@
-From 7d8e850446de86a0b8b346c3ba6e3dcef7336686 Mon Sep 17 00:00:00 2001
+From 78217aef2dd1fda10d00207e2e97ef9255cc72c4 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 16:45:16 +0100
-Subject: [PATCH 19/99] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
+Subject: [PATCH 019/101] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
 
 This reverts commit 3888750e21ccb909051c810cc79fcc0650a740f8.
 ---
@@ -32,7 +32,7 @@ index 2efd92a0d9fe..6298f84381c4 100644
  	  An architecture should select this to provide hardened usercopy
  	  knowledge about what region of the thread_struct should be
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 78989c98940e..1001960d03d2 100644
+index 742d67255556..a72d3c57cd2c 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
 @@ -852,6 +852,7 @@ static void __init set_max_threads(unsigned int max_threads_suggested)

@@ -1,7 +1,7 @@
-From b7cebc85e8b4576e2e6a9736f9ea3f812ac6fadb Mon Sep 17 00:00:00 2001
+From ef03a3c924bf0c75df70d5a05d0a885120bed88f Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Tue, 31 Oct 2023 19:49:39 +0100
-Subject: [PATCH 08/99] ia64: Correct parse_crashkernel argument count
+Subject: [PATCH 008/101] ia64: Correct parse_crashkernel argument count
 
 New function has two more parameters crash_size and crash_base;
 fix build by passing NULL to them.

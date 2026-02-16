@@ -1,7 +1,7 @@
-From 0a290c2ac97dbd01da3d6ade826b064958e61d5d Mon Sep 17 00:00:00 2001
+From 06440f23964861147cbcc500b4c9a7799594509e Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 15:17:38 +0100
-Subject: [PATCH 59/99] Partially revert "Documentation: Remove IA-64 from
+Subject: [PATCH 059/101] Partially revert "Documentation: Remove IA-64 from
  kernel-parameters"
 
 Keep the following removals of:
@@ -17,7 +17,7 @@ This partially reverts commit 661404644db468f0f56c1dd8c4085358c1c35ba0.
  1 file changed, 37 insertions(+), 3 deletions(-)
 
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index f2fe2c211398..26f76d2757cb 100644
+index d2596ab0956c..6205f98cb590 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
 @@ -21,6 +21,7 @@
@@ -37,7 +37,7 @@ index f2fe2c211398..26f76d2757cb 100644
  			Format: nn[KMGTPE] | nn% | "mirror"
  			This parameter specifies the amount of memory usable by
  			the kernel for non-movable allocations.  The requested
-@@ -3694,6 +3695,9 @@ Kernel parameters
+@@ -3748,6 +3749,9 @@ Kernel parameters
  			different yeeloong laptops.
  			Example: machtype=lemote-yeeloong-2f-7inch
  
@@ -47,7 +47,7 @@ index f2fe2c211398..26f76d2757cb 100644
  	maxcpus=	[SMP,EARLY] Maximum number of processors that an SMP kernel
  			will bring up during bootup.  maxcpus=n : n >= 0 limits
  			the kernel to bring up 'n' processors. Surely after
-@@ -4007,6 +4011,9 @@ Kernel parameters
+@@ -4061,6 +4065,9 @@ Kernel parameters
  			Enable or disable the microcode minimal revision
  			enforcement for the runtime microcode loader.
  
@@ -57,7 +57,7 @@ index f2fe2c211398..26f76d2757cb 100644
  	mini2440=	[ARM,HW,KNL]
  			Format:[0..2][b][c][t]
  			Default: "0tb"
-@@ -4178,7 +4185,7 @@ Kernel parameters
+@@ -4232,7 +4239,7 @@ Kernel parameters
  	mousedev.yres=	[MOUSE] Vertical screen resolution, used for devices
  			reporting absolute coordinates, such as tablets
  
@@ -66,7 +66,7 @@ index f2fe2c211398..26f76d2757cb 100644
  			Format: nn[KMGTPE] | nn%
  			This parameter is the complement to kernelcore=, it
  			specifies the amount of memory used for migratable
-@@ -4451,6 +4458,8 @@ Kernel parameters
+@@ -4505,6 +4512,8 @@ Kernel parameters
  
  	no_entry_flush  [PPC,EARLY] Don't flush the L1-D cache when entering the kernel.
  
@@ -75,7 +75,7 @@ index f2fe2c211398..26f76d2757cb 100644
  	noexec32	[X86-64]
  			This affects only 32-bit executables.
  			noexec32=on: enable non-executable mappings (default)
-@@ -4472,6 +4481,13 @@ Kernel parameters
+@@ -4526,6 +4535,13 @@ Kernel parameters
  
  	nogbpages	[X86] Do not use GB pages for kernel direct mappings.
  
@@ -89,7 +89,7 @@ index f2fe2c211398..26f76d2757cb 100644
  	no_hash_pointers
  			[KNL,EARLY]
  			Alias for "hash_pointers=never".
-@@ -4519,6 +4535,8 @@ Kernel parameters
+@@ -4573,6 +4589,8 @@ Kernel parameters
  			remapping.
  			[Deprecated - use intremap=off]
  
@@ -98,7 +98,7 @@ index f2fe2c211398..26f76d2757cb 100644
  	noinvpcid	[X86,EARLY] Disable the INVPCID cpu feature.
  
  	noiotrap	[SH] Disables trapped I/O port accesses.
-@@ -4528,6 +4546,8 @@ Kernel parameters
+@@ -4582,6 +4600,8 @@ Kernel parameters
  
  	noisapnp	[ISAPNP] Disables ISA PnP code.
  
@@ -107,7 +107,7 @@ index f2fe2c211398..26f76d2757cb 100644
  	nokaslr		[KNL,EARLY]
  			When CONFIG_RANDOMIZE_BASE is set, this disables
  			kernel and module base offset ASLR (Address Space
-@@ -4542,6 +4562,8 @@ Kernel parameters
+@@ -4596,6 +4616,8 @@ Kernel parameters
  
  	nolapic_timer	[X86-32,APIC,EARLY] Do not use the local APIC timer.
  
@@ -116,7 +116,7 @@ index f2fe2c211398..26f76d2757cb 100644
  	nomce		[X86-32] Disable Machine Check Exception
  
  	nomfgpt		[X86-32] Disable Multi-Function General Purpose
-@@ -4593,6 +4615,8 @@ Kernel parameters
+@@ -4647,6 +4669,8 @@ Kernel parameters
  	noresume	[SWSUSP] Disables resume and restores original swap
  			space.
  
@@ -125,7 +125,7 @@ index f2fe2c211398..26f76d2757cb 100644
  	no-scroll	[VGA] Disables scrollback.
  			This is required for the Braillex ib80-piezo Braille
  			reader made by F.H. Papenmeier (Germany).
-@@ -4695,6 +4719,10 @@ Kernel parameters
+@@ -4749,6 +4773,10 @@ Kernel parameters
  			parameter, xsave area per process might occupy more
  			memory on xsaves enabled systems.
  
@@ -136,7 +136,7 @@ index f2fe2c211398..26f76d2757cb 100644
  	nr_cpus=	[SMP,EARLY] Maximum number of processors that an SMP kernel
  			could support.  nr_cpus=n : n >= 1 limits the kernel to
  			support 'n' processors. It could be larger than the
-@@ -6885,6 +6913,9 @@ Kernel parameters
+@@ -6962,6 +6990,9 @@ Kernel parameters
  			apic=verbose is specified.
  			Example: apic=debug show_lapic=all
  
@@ -146,7 +146,7 @@ index f2fe2c211398..26f76d2757cb 100644
  	slab_debug[=options[,slabs][;[options[,slabs]]...]	[MM]
  			Enabling slab_debug allows one to determine the
  			culprit if slab objects become corrupted. Enabling
-@@ -7433,7 +7464,7 @@ Kernel parameters
+@@ -7510,7 +7541,7 @@ Kernel parameters
  			This parameter controls use of the Protected
  			Execution Facility on pSeries.
  
@@ -155,7 +155,7 @@ index f2fe2c211398..26f76d2757cb 100644
  			Format: { <int> [,<int>] | force | noforce }
  			<int> -- Number of I/O TLB slabs
  			<int> -- Second integer after comma. Number of swiotlb
-@@ -8215,6 +8246,9 @@ Kernel parameters
+@@ -8292,6 +8323,9 @@ Kernel parameters
  			Try vdso32=0 if you encounter an error that says:
  			dl_main: Assertion `(void *) ph->p_vaddr == _rtld_local._dl_sysinfo_dso' failed!
  

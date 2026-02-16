@@ -1,7 +1,7 @@
-From 7f34ad18214b7bc7e9cba101bf2abc84842275b3 Mon Sep 17 00:00:00 2001
+From 0b3e3525b6a3e026ca029c533c89157d8eddbdef Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Tue, 18 Nov 2025 19:16:11 +0100
-Subject: [PATCH 93/99] ia64: Guard crashk_{start_end} with CRASH_RESERVE
+Subject: [PATCH 093/101] ia64: Guard crashk_{start_end} with CRASH_RESERVE
 
 crashk_start and crashk_end depend on CONFIG_CRASH_RESERVE being set.
 

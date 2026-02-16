@@ -1,7 +1,7 @@
-From 84a86244b7532949250361aafbac67ba4b4da628 Mon Sep 17 00:00:00 2001
+From 7452ca777baa6495b3d1b2b9cd4017f051a99c91 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sun, 2 Jun 2024 10:10:34 +0200
-Subject: [PATCH 28/99] Revert "ACPI/NUMA: Remove architecture dependent
+Subject: [PATCH 028/101] Revert "ACPI/NUMA: Remove architecture dependent
  remainings"
 
 This reverts commit 3a785e19f432672b9ef53f07c506d5e698439033.

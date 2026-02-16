@@ -1,7 +1,7 @@
-From a782b8f5dc67c58e4f645a1e921991c30c03a1d6 Mon Sep 17 00:00:00 2001
+From e3b713a2d9a98b5749b61cb276f3a2647a49e730 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Sat, 6 Sep 2025 18:23:32 +0200
-Subject: [PATCH 69/99] ia64: drop memblock_free_all() in mem_init()
+Subject: [PATCH 069/101] ia64: drop memblock_free_all() in mem_init()
 
 Since commit 8afa901c147a ("arch, mm: make releasing of memory to page
 allocator more explicit"), memblock_free_all() has been moved to

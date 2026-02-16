@@ -1,8 +1,8 @@
-From b3e5e3273d21bb81479f94ce0261ee8c598937ed Mon Sep 17 00:00:00 2001
+From 0fe69309b0faf73a1d115815027db02d6a01e1aa Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 10:37:07 +0100
-Subject: [PATCH 57/99] Revert "selftests/mm: remove unnecessary ia64 code and
- comment"
+Subject: [PATCH 057/101] Revert "selftests/mm: remove unnecessary ia64 code
+ and comment"
 
 This reverts commit 2f4db2861013fcfb4be11d0dc176271ae566241c.
 ---
@@ -15,7 +15,7 @@ This reverts commit 2f4db2861013fcfb4be11d0dc176271ae566241c.
  6 files changed, 67 insertions(+), 8 deletions(-)
 
 diff --git a/tools/testing/selftests/mm/Makefile b/tools/testing/selftests/mm/Makefile
-index 905f1e034963..c0a7c09a0779 100644
+index dca8f590c1e6..9f41aba93159 100644
 --- a/tools/testing/selftests/mm/Makefile
 +++ b/tools/testing/selftests/mm/Makefile
 @@ -138,7 +138,7 @@ else ifeq ($(ARCH),powerpc)

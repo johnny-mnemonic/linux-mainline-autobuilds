@@ -1,7 +1,7 @@
-From 0e2d5398980d6b8b7d37c05ced96a2a182064fa0 Mon Sep 17 00:00:00 2001
+From 30d7afcf9cae301c7d16b6f5b6a3deae962bdb90 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 27 Jan 2025 18:30:30 +0100
-Subject: [PATCH 56/99] ia64: Make expand_upwards() available again
+Subject: [PATCH 056/101] ia64: Make expand_upwards() available again
 
 "mm/vma: move stack expansion logic to mm/vma.c" (commit a9d1f3f2d7fecbc465bd4b16343a2ff8499cc558)
 didn't anticipate that ia64 also needs this when putting a guard around
