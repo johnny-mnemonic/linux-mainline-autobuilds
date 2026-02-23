@@ -1,4 +1,4 @@
-From b1c35a1b2b1c96d2d3ae6347d139d48d44978880 Mon Sep 17 00:00:00 2001
+From ae8d2e198ca3e50575194788ce0107f2c47f351d Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 23 Dec 2024 13:53:53 +0100
 Subject: [PATCH 046/101] Revert "ACPI: processor_perflib: extend X86
@@ -10,7 +10,7 @@ This reverts commit bf41bb57b2c1d305d594c15bab8d387b1f5b75dc.
  1 file changed, 8 insertions(+), 5 deletions(-)
 
 diff --git a/drivers/acpi/processor_perflib.c b/drivers/acpi/processor_perflib.c
-index 8972446b7162..16e2cf15aeb5 100644
+index fdf55c285c9a..33b88107c75a 100644
 --- a/drivers/acpi/processor_perflib.c
 +++ b/drivers/acpi/processor_perflib.c
 @@ -25,6 +25,8 @@
@@ -51,7 +51,7 @@ index 8972446b7162..16e2cf15aeb5 100644
  
  static int acpi_processor_get_performance_states(struct acpi_processor *pr)
  {
-@@ -450,11 +452,13 @@ int acpi_processor_get_performance_info(struct acpi_processor *pr)
+@@ -448,11 +450,13 @@ int acpi_processor_get_performance_info(struct acpi_processor *pr)
  	 * the BIOS is older than the CPU and does not know its frequencies
  	 */
   update_bios:
@@ -65,7 +65,7 @@ index 8972446b7162..16e2cf15aeb5 100644
  	return result;
  }
  EXPORT_SYMBOL_GPL(acpi_processor_get_performance_info);
-@@ -796,4 +800,3 @@ void acpi_processor_unregister_performance(unsigned int cpu)
+@@ -794,4 +798,3 @@ void acpi_processor_unregister_performance(unsigned int cpu)
  	mutex_unlock(&performance_mutex);
  }
  EXPORT_SYMBOL(acpi_processor_unregister_performance);

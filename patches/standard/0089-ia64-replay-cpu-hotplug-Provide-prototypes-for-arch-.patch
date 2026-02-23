@@ -1,4 +1,4 @@
-From 541503907142b10b6df60040e739c3f116af1ff6 Mon Sep 17 00:00:00 2001
+From 9929eb6f110473ab7686c42d9e94c4ebeac3142c Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 29 Sep 2025 16:31:54 +0200
 Subject: [PATCH 089/101] ia64: replay "cpu-hotplug: Provide prototypes for

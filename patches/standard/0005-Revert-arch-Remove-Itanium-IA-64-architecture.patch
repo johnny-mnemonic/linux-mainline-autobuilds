@@ -1,4 +1,4 @@
-From 898871b7cdc19ac04b1663da8baeac06fa85f2d3 Mon Sep 17 00:00:00 2001
+From b5fc635a605ca855d89fd3bcc499d8be188e2691 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
 Subject: [PATCH 005/101] Revert "arch: Remove Itanium (IA-64) architecture"
@@ -3008,10 +3008,10 @@ index 9b4afca9fd09..1ee37b221646 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 9c439b6703dc..d948f61fc742 100644
+index 55af015174a5..28d58bcbf2db 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -12107,6 +12107,12 @@ F:	drivers/i3c/
+@@ -12163,6 +12163,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3024,7 +3024,7 @@ index 9c439b6703dc..d948f61fc742 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -20047,6 +20053,11 @@ S:	Maintained
+@@ -20112,6 +20118,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -64763,7 +64763,7 @@ index df0ff0764d0d..953208f1ac11 100644
  	default y
  	help
 diff --git a/drivers/acpi/osl.c b/drivers/acpi/osl.c
-index 05393a7315fe..dc334ecba4f4 100644
+index 5b777316b9ac..c4f38492f744 100644
 --- a/drivers/acpi/osl.c
 +++ b/drivers/acpi/osl.c
 @@ -276,7 +276,7 @@ acpi_map_lookup_virt(void __iomem *virt, acpi_size size)
@@ -64776,10 +64776,10 @@ index 05393a7315fe..dc334ecba4f4 100644
  #define should_use_kmap(pfn)   0
  #else
 diff --git a/drivers/char/Kconfig b/drivers/char/Kconfig
-index d2cfc584e202..5eb2c4a6bfa2 100644
+index 2a3a37b2cf3c..5f27ce556dbb 100644
 --- a/drivers/char/Kconfig
 +++ b/drivers/char/Kconfig
-@@ -349,7 +349,7 @@ config DEVPORT
+@@ -323,7 +323,7 @@ config DEVPORT
  	  device is similar to /dev/mem, but for I/O ports.
  
  config HPET
@@ -64788,7 +64788,7 @@ index d2cfc584e202..5eb2c4a6bfa2 100644
  	default n
  	depends on ACPI
  	help
-@@ -378,7 +378,7 @@ config HPET_MMAP_DEFAULT
+@@ -352,7 +352,7 @@ config HPET_MMAP_DEFAULT
  
  config HANGCHECK_TIMER
  	tristate "Hangcheck timer"
@@ -64798,7 +64798,7 @@ index d2cfc584e202..5eb2c4a6bfa2 100644
  	  The hangcheck-timer module detects when the system has gone
  	  out to lunch past a certain margin.  It can reboot the system
 diff --git a/drivers/char/Makefile b/drivers/char/Makefile
-index 1291369b9126..3e7be6f117c3 100644
+index 47bdc882797a..13be5f7f4c7b 100644
 --- a/drivers/char/Makefile
 +++ b/drivers/char/Makefile
 @@ -9,6 +9,7 @@ obj-y				+= misc.o
@@ -66079,7 +66079,7 @@ index 000000000000..15b240ea4848
 +MODULE_AUTHOR("Chris Ahna <Christopher.J.Ahna@intel.com>");
 +MODULE_LICENSE("GPL and additional rights");
 diff --git a/drivers/char/hpet.c b/drivers/char/hpet.c
-index 4f5ccd3a1f56..7534f02624f6 100644
+index 60dd09a56f50..8283a67742aa 100644
 --- a/drivers/char/hpet.c
 +++ b/drivers/char/hpet.c
 @@ -64,6 +64,25 @@
@@ -66108,7 +66108,7 @@ index 4f5ccd3a1f56..7534f02624f6 100644
  /* A lock for concurrent access by app and isr hpet activity. */
  static DEFINE_SPINLOCK(hpet_lock);
  
-@@ -910,6 +929,17 @@ int hpet_alloc(struct hpet_data *hdp)
+@@ -909,6 +928,17 @@ int hpet_alloc(struct hpet_data *hdp)
  
  	hpetp->hp_delta = hpet_calibrate(hpetp);
  
@@ -66140,7 +66140,7 @@ index 492a2a61a65b..c10f28cd0bb2 100644
  	help
  	  This driver provides kernel-side support for the Random Number
 diff --git a/drivers/char/mem.c b/drivers/char/mem.c
-index 52039fae1594..176832d33e05 100644
+index cca4529431f8..ad19697ad0da 100644
 --- a/drivers/char/mem.c
 +++ b/drivers/char/mem.c
 @@ -31,6 +31,10 @@
@@ -66949,7 +66949,7 @@ index 29e0729299f5..331b242f057f 100644
  	select ARCH_USE_MEMREMAP_PROT
  
 diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
-index 111e87a618e5..69c193845c40 100644
+index b2fb92a4bbd1..a1ef03be1316 100644
 --- a/drivers/firmware/efi/efi.c
 +++ b/drivers/firmware/efi/efi.c
 @@ -854,6 +854,7 @@ int __init efi_systab_check_header(const efi_table_hdr_t *systab_hdr)
@@ -67497,7 +67497,7 @@ index 695316a83b01..1d75d5e540bc 100644
  /* Extract the status field from a kernel handle */
  #define GET_MSEG_HANDLE_STATUS(h)	(((*(unsigned long *)(h)) >> 16) & 3)
 diff --git a/drivers/misc/sgi-gru/grumain.c b/drivers/misc/sgi-gru/grumain.c
-index 3036c15f3689..d2b2e39783d0 100644
+index 8d749f345246..a92d7a84a6ac 100644
 --- a/drivers/misc/sgi-gru/grumain.c
 +++ b/drivers/misc/sgi-gru/grumain.c
 @@ -41,12 +41,16 @@ struct device *grudev = &gru_device;
@@ -67580,10 +67580,10 @@ index 3faa7eadf679..19fc7076af27 100644
  	#error not a supported configuration
  #endif
 diff --git a/drivers/misc/sgi-xp/xpc_main.c b/drivers/misc/sgi-xp/xpc_main.c
-index 9fe816bf3957..cf753b54eb3d 100644
+index 15b6a8e35681..436fed3b60ad 100644
 --- a/drivers/misc/sgi-xp/xpc_main.c
 +++ b/drivers/misc/sgi-xp/xpc_main.c
-@@ -1154,6 +1154,36 @@ xpc_die_deactivate(void)
+@@ -1150,6 +1150,36 @@ xpc_die_deactivate(void)
  static int
  xpc_system_die(struct notifier_block *nb, unsigned long event, void *_die_args)
  {
@@ -67620,7 +67620,7 @@ index 9fe816bf3957..cf753b54eb3d 100644
  	struct die_args *die_args = _die_args;
  
  	switch (event) {
-@@ -1175,6 +1205,7 @@ xpc_system_die(struct notifier_block *nb, unsigned long event, void *_die_args)
+@@ -1171,6 +1201,7 @@ xpc_system_die(struct notifier_block *nb, unsigned long event, void *_die_args)
  	default:
  		xpc_die_deactivate();
  	}
@@ -67629,7 +67629,7 @@ index 9fe816bf3957..cf753b54eb3d 100644
  	return NOTIFY_DONE;
  }
 diff --git a/drivers/misc/sgi-xp/xpc_uv.c b/drivers/misc/sgi-xp/xpc_uv.c
-index 2f03a7080d96..fff522d347e3 100644
+index 772c78726893..258b0aa2b2c3 100644
 --- a/drivers/misc/sgi-xp/xpc_uv.c
 +++ b/drivers/misc/sgi-xp/xpc_uv.c
 @@ -24,12 +24,34 @@
@@ -67760,7 +67760,7 @@ index 2f03a7080d96..fff522d347e3 100644
  }
  
  static struct xpc_gru_mq_uv *
-@@ -715,6 +786,7 @@ xpc_get_partition_rsvd_page_pa_uv(void *buf, u64 *cookie, unsigned long *rp_pa,
+@@ -713,6 +784,7 @@ xpc_get_partition_rsvd_page_pa_uv(void *buf, u64 *cookie, unsigned long *rp_pa,
  	s64 status;
  	enum xp_retval ret;
  
@@ -67768,7 +67768,7 @@ index 2f03a7080d96..fff522d347e3 100644
  	status = uv_bios_reserved_page_pa((u64)buf, cookie, (u64 *)rp_pa,
  					  (u64 *)len);
  	if (status == BIOS_STATUS_SUCCESS)
-@@ -724,6 +796,19 @@ xpc_get_partition_rsvd_page_pa_uv(void *buf, u64 *cookie, unsigned long *rp_pa,
+@@ -722,6 +794,19 @@ xpc_get_partition_rsvd_page_pa_uv(void *buf, u64 *cookie, unsigned long *rp_pa,
  	else
  		ret = xpBiosError;
  
@@ -67789,10 +67789,10 @@ index 2f03a7080d96..fff522d347e3 100644
  }
  
 diff --git a/drivers/net/ethernet/broadcom/tg3.c b/drivers/net/ethernet/broadcom/tg3.c
-index 75f66587983d..2e59d306a635 100644
+index 2328fce33644..1fccadede679 100644
 --- a/drivers/net/ethernet/broadcom/tg3.c
 +++ b/drivers/net/ethernet/broadcom/tg3.c
-@@ -17129,7 +17129,7 @@ static u32 tg3_calc_dma_bndry(struct tg3 *tp, u32 val)
+@@ -17128,7 +17128,7 @@ static u32 tg3_calc_dma_bndry(struct tg3 *tp, u32 val)
  	    !tg3_flag(tp, PCI_EXPRESS))
  		goto out;
  
@@ -67814,7 +67814,7 @@ index 4396997c59d0..cde76a4b5ffe 100644
  #include <net/ip6_checksum.h>
  
 diff --git a/drivers/net/ethernet/qlogic/netxen/netxen_nic_main.c b/drivers/net/ethernet/qlogic/netxen/netxen_nic_main.c
-index e8ff661fa4a5..5333479f1551 100644
+index 5ee2bd9d6886..fb161bde403c 100644
 --- a/drivers/net/ethernet/qlogic/netxen/netxen_nic_main.c
 +++ b/drivers/net/ethernet/qlogic/netxen/netxen_nic_main.c
 @@ -233,7 +233,9 @@ static int nx_set_dma_mask(struct netxen_adapter *adapter)
@@ -67828,10 +67828,10 @@ index e8ff661fa4a5..5333479f1551 100644
  		mask = DMA_BIT_MASK(39);
  		cmask = mask;
 diff --git a/drivers/tty/serial/8250/Kconfig b/drivers/tty/serial/8250/Kconfig
-index c488ff6f2865..adb70713914d 100644
+index fd4e8b6ab60d..572b16fa623e 100644
 --- a/drivers/tty/serial/8250/Kconfig
 +++ b/drivers/tty/serial/8250/Kconfig
-@@ -207,7 +207,7 @@ config SERIAL_8250_EXTENDED
+@@ -239,7 +239,7 @@ config SERIAL_8250_RSA
  
  config SERIAL_8250_MANY_PORTS
  	bool "Support more than 4 legacy serial ports"
@@ -67841,7 +67841,7 @@ index c488ff6f2865..adb70713914d 100644
  	  Say Y here if you have dumb serial boards other than the four
  	  standard COM 1/2/3/4 ports. This may happen if you have an AST
 diff --git a/drivers/tty/vt/keyboard.c b/drivers/tty/vt/keyboard.c
-index d65fc60dd7be..1f9f3012dec6 100644
+index 13bc048f45e8..d6a05d7e959a 100644
 --- a/drivers/tty/vt/keyboard.c
 +++ b/drivers/tty/vt/keyboard.c
 @@ -1246,7 +1246,7 @@ static void kbd_bh(struct tasklet_struct *unused)
@@ -67854,7 +67854,7 @@ index d65fc60dd7be..1f9f3012dec6 100644
      defined(CONFIG_PARISC) || defined(CONFIG_SUPERH) ||\
      (defined(CONFIG_ARM) && defined(CONFIG_KEYBOARD_ATKBD) && !defined(CONFIG_ARCH_RPC))
 diff --git a/drivers/video/fbdev/Kconfig b/drivers/video/fbdev/Kconfig
-index 45733522ff48..faf0fdae40a3 100644
+index ac9ac4287c6a..df95b7e8fa5a 100644
 --- a/drivers/video/fbdev/Kconfig
 +++ b/drivers/video/fbdev/Kconfig
 @@ -435,7 +435,7 @@ config FB_VESA
@@ -67867,7 +67867,7 @@ index 45733522ff48..faf0fdae40a3 100644
  	select DRM_PANEL_ORIENTATION_QUIRKS
  	select FB_IOMEM_HELPERS
 diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-index d3b9df7d466b..c5999aed2500 100644
+index dc78729ba2a5..3992cc2e0926 100644
 --- a/drivers/watchdog/Kconfig
 +++ b/drivers/watchdog/Kconfig
 @@ -1404,7 +1404,7 @@ config INTEL_OC_WATCHDOG
@@ -67880,7 +67880,7 @@ index d3b9df7d466b..c5999aed2500 100644
  	depends on I2C || I2C=n
  	depends on MFD_INTEL_PMC_BXT || !MFD_INTEL_PMC_BXT
 diff --git a/fs/afs/main.c b/fs/afs/main.c
-index e6bb8237db98..23e5188fefa7 100644
+index 7a883c59976f..307784c79f94 100644
 --- a/fs/afs/main.c
 +++ b/fs/afs/main.c
 @@ -41,6 +41,8 @@ const char afs_init_sysname[] = "arm_linux26";
@@ -67906,7 +67906,7 @@ index 052d0e888c27..c14852362fce 100644
  #define __compat_packed __attribute__((packed))
  #else
 diff --git a/include/linux/acpi.h b/include/linux/acpi.h
-index 3a412dcebc29..95e335006003 100644
+index 4d2f0bed7a06..09155c98f928 100644
 --- a/include/linux/acpi.h
 +++ b/include/linux/acpi.h
 @@ -251,7 +251,10 @@ acpi_table_parse_cedt(enum acpi_cedt_type id,
@@ -67967,10 +67967,10 @@ index 664898d09ff5..429c1ebb8313 100644
   * We play games with efi_enabled so that the compiler will, if
   * possible, remove EFI-related code altogether.
 diff --git a/include/linux/mm.h b/include/linux/mm.h
-index dc1ad71a2a70..bae581f3fd60 100644
+index 5be3d8a8f806..0047b35b463a 100644
 --- a/include/linux/mm.h
 +++ b/include/linux/mm.h
-@@ -380,7 +380,7 @@ enum {
+@@ -381,7 +381,7 @@ enum {
  	DECLARE_VMA_BIT_ALIAS(SHADOW_STACK, HIGH_ARCH_6),
  #endif
  	DECLARE_VMA_BIT_ALIAS(SAO, ARCH_1),		/* Strong Access Ordering (powerpc) */
@@ -67979,7 +67979,7 @@ index dc1ad71a2a70..bae581f3fd60 100644
  	DECLARE_VMA_BIT_ALIAS(SPARC_ADI, ARCH_1),	/* sparc64 */
  	DECLARE_VMA_BIT_ALIAS(ARM64_BTI, ARCH_1),	/* arm64 */
  	DECLARE_VMA_BIT_ALIAS(ARCH_CLEAR, ARCH_1),	/* sparc64, arm64 */
-@@ -472,6 +472,8 @@ enum {
+@@ -473,6 +473,8 @@ enum {
  #define VM_SAO		INIT_VM_FLAG(SAO)
  #elif defined(CONFIG_PARISC)
  #define VM_GROWSUP	INIT_VM_FLAG(GROWSUP)
@@ -68015,10 +68015,10 @@ index a6e5a44c9b42..3eef55d2d43d 100644
  #elif !defined(CONFIG_MMU)
  #define __VM_ARCH_SPECIFIC_1 {VM_MAPPED_COPY,"mappedcopy"	}
 diff --git a/kernel/cpu.c b/kernel/cpu.c
-index 01968a5c4a16..f6412ff85bac 100644
+index bc4f7a9ba64e..81a0c2ba27d2 100644
 --- a/kernel/cpu.c
 +++ b/kernel/cpu.c
-@@ -1686,6 +1686,9 @@ static int cpu_up(unsigned int cpu, enum cpuhp_state target)
+@@ -1685,6 +1685,9 @@ static int cpu_up(unsigned int cpu, enum cpuhp_state target)
  	if (!cpu_possible(cpu)) {
  		pr_err("can't online cpu %d because it is not configured as may-hotadd at boot time\n",
  		       cpu);
@@ -68090,10 +68090,10 @@ index 759777694c78..5c3141ae8ce1 100644
  #ifdef CONFIG_CGROUP_SCHED
  /* task_group_lock serializes the addition/removal of task groups */
 diff --git a/kernel/sysctl.c b/kernel/sysctl.c
-index 2cd767b9680e..e4c15eb4f1cd 100644
+index 9d3a666ffde1..ceefc8ee459a 100644
 --- a/kernel/sysctl.c
 +++ b/kernel/sysctl.c
-@@ -1165,6 +1165,15 @@ static const struct ctl_table sysctl_subsys_table[] = {
+@@ -1415,6 +1415,15 @@ static const struct ctl_table sysctl_subsys_table[] = {
  		.proc_handler	= proc_dointvec,
  	},
  #endif
@@ -68123,7 +68123,7 @@ index 4e2dfbbd3d78..108ce3a9f9f4 100644
  	  Enables the display of the minimum amount of free stack which each
  	  task has ever had available in the sysrq-T and sysrq-P debug output.
 diff --git a/lib/decompress_unxz.c b/lib/decompress_unxz.c
-index 32138bb8ef77..4f4f82f7f434 100644
+index 05d5cb490a44..1638a1ee280c 100644
 --- a/lib/decompress_unxz.c
 +++ b/lib/decompress_unxz.c
 @@ -141,6 +141,9 @@
@@ -68153,10 +68153,10 @@ index 20aa459bfb3e..8968e2b8a12e 100644
  	bool "ARM BCJ filter decoder" if EXPERT
  	default y
 diff --git a/mm/vma.c b/mm/vma.c
-index 3dbe414eff89..7d67c8bd2d2b 100644
+index be64f781a3aa..0ddb404db153 100644
 --- a/mm/vma.c
 +++ b/mm/vma.c
-@@ -3068,9 +3068,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
+@@ -3075,9 +3075,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
  	return 0;
  }
  

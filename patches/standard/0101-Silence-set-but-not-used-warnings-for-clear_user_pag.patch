@@ -1,13 +1,15 @@
-From d50cdcdd5a2d57ae19001ef7d85cbcd88fd63b30 Mon Sep 17 00:00:00 2001
+From a6bc6f6914a27b8367ad40f38617219203b67ed1 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sat, 14 Feb 2026 21:17:35 +0100
 Subject: [PATCH 101/101] Silence set-but-not-used warnings for
  clear_user_pages()
 
-clear_user_pages() is defined so that in the fallback case it doesn't make
-use of the vaddr parameter, though it is still set when calling
-clear_user_pages(), leading to a barrage of warnings during build like
-the following when using a C23 enabled compiler:
+clear_user_pages() is defined so that in the first case it uses a
+defined clear_user_page(). But the ia64 version as defined in
+include/asm/page.h does not use the vaddr parameter, although
+having an interface which includes it. This leads to a barrage of
+warnings during build like the following when
+-Wunused-but-set-parameter= is non-zero during compilation:
 ```
 ./include/linux/highmem.h: In function 'clear_user_pages':
 ./include/linux/highmem.h:234:63: warning: parameter 'vaddr' set but not used [-Wunused-but-set-parameter=]

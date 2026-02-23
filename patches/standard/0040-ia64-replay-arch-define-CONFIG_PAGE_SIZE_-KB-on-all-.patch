@@ -1,4 +1,4 @@
-From 8c0c6362c14a8fd60be6047207fed70520859c6e Mon Sep 17 00:00:00 2001
+From 7567af0e79463c41469a71ad89b0228564bbbc99 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 22 Nov 2024 14:31:50 +0100
 Subject: [PATCH 040/101] ia64: replay "arch: define CONFIG_PAGE_SIZE_*KB on

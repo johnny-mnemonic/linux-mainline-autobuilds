@@ -1,4 +1,4 @@
-From 6d5e4f16f7d358600a06f1f568d8ab9bb0d9363d Mon Sep 17 00:00:00 2001
+From e3bf56abf69dc2af010b6472d818b433b08cd242 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 12 Jan 2024 18:54:34 +0100
 Subject: [PATCH 018/101] Revert "arch: remove ARCH_THREAD_STACK_ALLOCATOR"

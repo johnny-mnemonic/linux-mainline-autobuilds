@@ -1,4 +1,4 @@
-From 733f1a0554ef5b44527df93115157e83f835b7de Mon Sep 17 00:00:00 2001
+From 21401fd4f1f945333c196650e58b832b9ce8323f Mon Sep 17 00:00:00 2001
 From: Ivan Mironov <mironov.ivan@gmail.com>
 Date: Mon, 10 Dec 2018 18:51:35 +0500
 Subject: [PATCH 053/101] scsi: hpsa: Do not use HBA flag from NVRAM if HBA is
@@ -17,10 +17,10 @@ Signed-off-by: Ivan Mironov <mironov.ivan@gmail.com>
  2 files changed, 18 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/scsi/hpsa.c b/drivers/scsi/hpsa.c
-index 19f2f3c870d9..ea486488a9e7 100644
+index d51bfbaa78fa..aab83dda5cdc 100644
 --- a/drivers/scsi/hpsa.c
 +++ b/drivers/scsi/hpsa.c
-@@ -4366,6 +4366,12 @@ static bool hpsa_skip_device(struct ctlr_info *h, u8 *lunaddrbytes,
+@@ -4362,6 +4362,12 @@ static bool hpsa_skip_device(struct ctlr_info *h, u8 *lunaddrbytes,
  	return false;
  }
  
@@ -33,7 +33,7 @@ index 19f2f3c870d9..ea486488a9e7 100644
  static int hpsa_nvram_hba_flag_enabled(struct ctlr_info *h, bool *flag_enabled)
  {
  	int rc;
-@@ -4388,7 +4394,8 @@ static int hpsa_nvram_hba_flag_enabled(struct ctlr_info *h, bool *flag_enabled)
+@@ -4384,7 +4390,8 @@ static int hpsa_nvram_hba_flag_enabled(struct ctlr_info *h, bool *flag_enabled)
  	return rc;
  }
  
@@ -43,7 +43,7 @@ index 19f2f3c870d9..ea486488a9e7 100644
  {
  	int rc;
  	bool flag_enabled;
-@@ -4397,6 +4404,11 @@ static int hpsa_update_nvram_hba_mode(struct ctlr_info *h, u32 nlogicals)
+@@ -4393,6 +4400,11 @@ static int hpsa_update_nvram_hba_mode(struct ctlr_info *h, u32 nlogicals)
  	if (!hpsa_use_nvram_hba_flag)
  		return 0;
  
@@ -55,7 +55,7 @@ index 19f2f3c870d9..ea486488a9e7 100644
  	rc = hpsa_nvram_hba_flag_enabled(h, &flag_enabled);
  	if (rc == -ENOMEM)
  		dev_warn(&h->pdev->dev, "Out of memory.\n");
-@@ -4468,7 +4480,7 @@ static void hpsa_update_scsi_devices(struct ctlr_info *h)
+@@ -4464,7 +4476,7 @@ static void hpsa_update_scsi_devices(struct ctlr_info *h)
  			__func__);
  	}
  

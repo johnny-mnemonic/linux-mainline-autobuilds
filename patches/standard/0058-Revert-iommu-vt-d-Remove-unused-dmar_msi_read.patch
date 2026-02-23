@@ -1,4 +1,4 @@
-From 23916ad20b0bca3245756e3a2554e2d3c0d71e83 Mon Sep 17 00:00:00 2001
+From 779006023d1dcf90bdf6384295397ca4ab7f2673 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 10:58:27 +0100
 Subject: [PATCH 058/101] Revert "iommu/vt-d: Remove unused dmar_msi_read"
@@ -10,7 +10,7 @@ This reverts commit 95e2eaf5b91aae6c3a433cd7882733bd806fa3c8.
  2 files changed, 14 insertions(+)
 
 diff --git a/drivers/iommu/intel/dmar.c b/drivers/iommu/intel/dmar.c
-index ec975c73cfe6..0b1ea991b8c0 100644
+index d68c06025cac..9dddc14e7c99 100644
 --- a/drivers/iommu/intel/dmar.c
 +++ b/drivers/iommu/intel/dmar.c
 @@ -1896,6 +1896,19 @@ void dmar_msi_write(int irq, struct msi_msg *msg)

@@ -1,7 +1,7 @@
-From 23d68b99137fd3419b546f59842eb4b73d9a1bcc Mon Sep 17 00:00:00 2001
+From b7f8a8b4f0d199c766eb5494a537c8d2d0bb385b Mon Sep 17 00:00:00 2001
 From: Ivan Mironov <mironov.ivan@gmail.com>
 Date: Wed, 5 Dec 2018 20:20:57 +0500
-Subject: [PATCH 048/101] scsi: hpsa: Add function to check if device is a disk
+Subject: [PATCH 047/101] scsi: hpsa: Add function to check if device is a disk
  or a zoned device
 
 This check is used multiple times within the driver. New function makes
@@ -13,7 +13,7 @@ Signed-off-by: Ivan Mironov <mironov.ivan@gmail.com>
  1 file changed, 11 insertions(+), 10 deletions(-)
 
 diff --git a/drivers/scsi/hpsa.c b/drivers/scsi/hpsa.c
-index 3e235dbfb67a..a80097742fe9 100644
+index a1b116cd4723..429a2a066a76 100644
 --- a/drivers/scsi/hpsa.c
 +++ b/drivers/scsi/hpsa.c
 @@ -769,6 +769,11 @@ static ssize_t sas_address_show(struct device *dev,
@@ -67,7 +67,7 @@ index 3e235dbfb67a..a80097742fe9 100644
  			continue;
  		if (!is_logical_device(dev[i]))
  			continue;
-@@ -3982,9 +3984,8 @@ static int hpsa_update_device_info(struct ctlr_info *h,
+@@ -3978,9 +3980,8 @@ static int hpsa_update_device_info(struct ctlr_info *h,
  		goto bail_out;
  	}
  

@@ -1,4 +1,4 @@
-From 64ed4b43615381f57553e6b1dce76062347279d6 Mon Sep 17 00:00:00 2001
+From 46c5b126efced11ae9f7e6fecb4de175a43a9605 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Tue, 18 Nov 2025 21:19:34 +0100
 Subject: [PATCH 094/101] ia64: Guard code requiring CONFIG_CRASH_DUMP

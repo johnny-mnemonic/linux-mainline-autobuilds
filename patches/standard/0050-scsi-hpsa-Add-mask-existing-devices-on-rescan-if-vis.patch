@@ -1,4 +1,4 @@
-From 66497d7ad9be27185d2d3489bf2c342fc14392bc Mon Sep 17 00:00:00 2001
+From f2bece7fd3e41a65f5729180ebabc29957f9a586 Mon Sep 17 00:00:00 2001
 From: Ivan Mironov <mironov.ivan@gmail.com>
 Date: Wed, 5 Dec 2018 20:32:44 +0500
 Subject: [PATCH 050/101] scsi: hpsa: Add/mask existing devices on rescan if
@@ -18,7 +18,7 @@ Signed-off-by: Ivan Mironov <mironov.ivan@gmail.com>
  1 file changed, 10 insertions(+)
 
 diff --git a/drivers/scsi/hpsa.c b/drivers/scsi/hpsa.c
-index 9251d394b345..0c263d1d4e42 100644
+index 2b6d37f6b51a..73176735eb0b 100644
 --- a/drivers/scsi/hpsa.c
 +++ b/drivers/scsi/hpsa.c
 @@ -1547,6 +1547,14 @@ static inline int device_updated(struct hpsa_scsi_dev_t *dev1,

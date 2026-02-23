@@ -1,4 +1,4 @@
-From c3b95926c66793ba34d8ef2c1caaa2db4ce4d2f9 Mon Sep 17 00:00:00 2001
+From 4c065351e15fa42348e929235ec23ce02634b059 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 27 Jan 2025 15:43:18 +0100
 Subject: [PATCH 054/101] Partially revert "x86/efistub: Drop long obsolete UGA
@@ -15,7 +15,7 @@ This partially reverts commit 144d52dd8fc83a082a275e1b663e7454d2b616a4.
  2 files changed, 5 insertions(+)
 
 diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
-index 69c193845c40..2548a5b3434f 100644
+index a1ef03be1316..08cff90273f3 100644
 --- a/drivers/firmware/efi/efi.c
 +++ b/drivers/firmware/efi/efi.c
 @@ -153,6 +153,9 @@ static ssize_t systab_show(struct kobject *kobj,

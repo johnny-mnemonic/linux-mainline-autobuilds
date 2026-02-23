@@ -1,7 +1,7 @@
-From 497ea0ae0c1dfa89251e5049215d2fce35df68d9 Mon Sep 17 00:00:00 2001
+From e1aba872cd2e3a208aafe6a2186b7f3e37221ffe Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 4 Aug 2025 11:21:09 +0200
-Subject: [PATCH 078/101] ia64: replay "Add a new optional ",cma" suffix to the
+Subject: [PATCH 077/101] ia64: replay "Add a new optional ",cma" suffix to the
  crashkernel= [...]"
 
 See 35c18f2933c596b4fd6a98baee36f3137d133a5f.
