@@ -1,7 +1,7 @@
-From 9e910750b2befbd8fbb1ebff7d0d0d566fd55236 Mon Sep 17 00:00:00 2001
+From aeaba31e6e2d38a38321654cd4a9443b533b9b15 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 1 Aug 2025 16:36:28 +0200
-Subject: [PATCH 076/101] Revert "workqueue: Remove unused work_on_cpu_safe"
+Subject: [PATCH 076/118] Revert "workqueue: Remove unused work_on_cpu_safe"
 
 ia64 is still using this in `arch/ia64/kernel/salinfo.c`, so we keep that.
 
@@ -48,10 +48,10 @@ index a4749f56398f..38d718c1dae5 100644
  
  #ifdef CONFIG_FREEZER
 diff --git a/kernel/workqueue.c b/kernel/workqueue.c
-index aeaec79bc09c..8573e7e33a01 100644
+index c6ea96d5b716..e0133d6db402 100644
 --- a/kernel/workqueue.c
 +++ b/kernel/workqueue.c
-@@ -6857,6 +6857,31 @@ long work_on_cpu_key(int cpu, long (*fn)(void *),
+@@ -6872,6 +6872,31 @@ long work_on_cpu_key(int cpu, long (*fn)(void *),
  	return wfc.ret;
  }
  EXPORT_SYMBOL_GPL(work_on_cpu_key);

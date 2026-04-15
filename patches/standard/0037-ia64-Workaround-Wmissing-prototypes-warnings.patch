@@ -1,7 +1,7 @@
-From 6c925b433426f8bf5595fd9c5372ffc4f1c41078 Mon Sep 17 00:00:00 2001
+From 79465ac3c59489833cb5a4c3462e2aa13a527910 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 21 Oct 2024 11:51:37 +0200
-Subject: [PATCH 037/101] ia64: Workaround -Wmissing-prototypes warnings
+Subject: [PATCH 037/118] ia64: Workaround -Wmissing-prototypes warnings
 
 Workaround the -Wmissing-prototypes warnings by declaring them locally
 similar to what was done in:

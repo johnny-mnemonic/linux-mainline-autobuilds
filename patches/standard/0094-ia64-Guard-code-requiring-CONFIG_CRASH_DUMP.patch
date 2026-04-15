@@ -1,7 +1,7 @@
-From 46c5b126efced11ae9f7e6fecb4de175a43a9605 Mon Sep 17 00:00:00 2001
+From 80532ab8173bd33b6d489b30e94a27e6942a0471 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Tue, 18 Nov 2025 21:19:34 +0100
-Subject: [PATCH 094/101] ia64: Guard code requiring CONFIG_CRASH_DUMP
+Subject: [PATCH 094/118] ia64: Guard code requiring CONFIG_CRASH_DUMP
 
 Both crash_notes and parse_crashconfig() depend on CONFIG_CRASH_DUMP.
 

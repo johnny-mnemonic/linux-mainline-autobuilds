@@ -1,7 +1,7 @@
-From e3bf56abf69dc2af010b6472d818b433b08cd242 Mon Sep 17 00:00:00 2001
+From a77169679e6ec10d25c8c309b0efd81ee97e5d5c Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 12 Jan 2024 18:54:34 +0100
-Subject: [PATCH 018/101] Revert "arch: remove ARCH_THREAD_STACK_ALLOCATOR"
+Subject: [PATCH 018/118] Revert "arch: remove ARCH_THREAD_STACK_ALLOCATOR"
 
 This reverts commit f72709ab69430d986dfc5a08c9a86f625e3fed33.
 ---
@@ -10,7 +10,7 @@ This reverts commit f72709ab69430d986dfc5a08c9a86f625e3fed33.
  2 files changed, 25 insertions(+)
 
 diff --git a/arch/Kconfig b/arch/Kconfig
-index 102ddbd4298e..2efd92a0d9fe 100644
+index 334b69505381..4f075f8a9630 100644
 --- a/arch/Kconfig
 +++ b/arch/Kconfig
 @@ -378,6 +378,10 @@ config HAVE_ARCH_THREAD_STRUCT_WHITELIST
@@ -25,10 +25,10 @@ index 102ddbd4298e..2efd92a0d9fe 100644
  config ARCH_WANTS_DYNAMIC_TASK_STRUCT
  	bool
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 08edb8f424a1..742d67255556 100644
+index e5a7a81eccc0..07d4633b01e9 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -178,6 +178,7 @@ void __weak arch_release_task_struct(struct task_struct *tsk)
+@@ -180,6 +180,7 @@ void __weak arch_release_task_struct(struct task_struct *tsk)
  {
  }
  
@@ -36,7 +36,7 @@ index 08edb8f424a1..742d67255556 100644
  static struct kmem_cache *task_struct_cachep;
  
  static inline struct task_struct *alloc_task_struct_node(int node)
-@@ -189,7 +190,9 @@ static inline void free_task_struct(struct task_struct *tsk)
+@@ -191,7 +192,9 @@ static inline void free_task_struct(struct task_struct *tsk)
  {
  	kmem_cache_free(task_struct_cachep, tsk);
  }
@@ -46,7 +46,7 @@ index 08edb8f424a1..742d67255556 100644
  #ifdef CONFIG_VMAP_STACK
  /*
   * vmalloc() is a bit slow, and calling vfree() enough times will force a TLB
-@@ -462,6 +465,24 @@ void thread_stack_cache_init(void)
+@@ -464,6 +467,24 @@ void thread_stack_cache_init(void)
  
  #endif /* THREAD_SIZE >= PAGE_SIZE */
  #endif /* CONFIG_VMAP_STACK */

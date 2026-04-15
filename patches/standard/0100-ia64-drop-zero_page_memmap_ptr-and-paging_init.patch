@@ -1,7 +1,7 @@
-From 36060204568f756ac459914356ae060739958960 Mon Sep 17 00:00:00 2001
+From 98582ef14a9e224e1597791912cf289cb505a896 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sat, 14 Feb 2026 16:13:45 +0100
-Subject: [PATCH 100/101] ia64: drop zero_page_memmap_ptr and paging_init()
+Subject: [PATCH 100/118] ia64: drop zero_page_memmap_ptr and paging_init()
 
 d49004c5f0c140bb83c87fab46dcf449cf00eb24 and/or the then required ia64
 adaptation for it created an issue for HP-Sim/Ski kernels running in Ski

@@ -1,7 +1,7 @@
-From e2dd1fd927a7759b60efc6b8c96d8d5d54f29cf9 Mon Sep 17 00:00:00 2001
+From 117423db8e1f0ce8f3b5d44040f34a9272b2787d Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Wed, 17 Dec 2025 22:08:25 +0100
-Subject: [PATCH 095/101] ia64/mm: Remove redundant VM_*_BIT declarations
+Subject: [PATCH 095/118] ia64/mm: Remove redundant VM_*_BIT declarations
 
 Commit 2b6a3f061f11 ("mm: declare VMA flags by bit") declares VMA
 flags by bit.

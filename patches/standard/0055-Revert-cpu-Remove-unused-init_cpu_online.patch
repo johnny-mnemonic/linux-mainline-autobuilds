@@ -1,7 +1,7 @@
-From f5ea3d6057f8fed2c4a18a8ca5710f3f9514e1e5 Mon Sep 17 00:00:00 2001
+From bff7695aa1e551c1012825866f71847d9aa63637 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 27 Jan 2025 15:44:13 +0100
-Subject: [PATCH 055/101] Revert "cpu: Remove unused init_cpu_online"
+Subject: [PATCH 055/118] Revert "cpu: Remove unused init_cpu_online"
 
 This reverts commit 7f15d4abf925f33015fb62973ce2ddb45ce04bb9.
 ---

@@ -1,7 +1,7 @@
-From 82fb846341f9177c4f1df64df327d3fbc38dd8d5 Mon Sep 17 00:00:00 2001
+From 8f039c23b55985df06f713c2f5d072445ba5d9cc Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 2 Apr 2025 16:05:29 +0200
-Subject: [PATCH 068/101] ia64: replay "arch, mm: set max_mapnr when allocating
+Subject: [PATCH 068/118] ia64: replay "arch, mm: set max_mapnr when allocating
  memory map [...]"
 
 See 8268af309d07d1c6279080b4e6fd16ec75cc977c.

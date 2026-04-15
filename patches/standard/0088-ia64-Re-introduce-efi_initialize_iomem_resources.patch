@@ -1,7 +1,7 @@
-From 3aeacb556dddb34b9570c4b795a5db5daebb2d59 Mon Sep 17 00:00:00 2001
+From 8aa36a6401d062a988bb2394ebf1718d7d04cc78 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Sat, 7 Dec 2024 18:26:31 +0100
-Subject: [PATCH 088/101] ia64: Re-introduce efi_initialize_iomem_resources
+Subject: [PATCH 088/118] ia64: Re-introduce efi_initialize_iomem_resources
 
 Commit 21b91d40575f ("efi: Remove unused declaration
 efi_initialize_iomem_resources()") removed

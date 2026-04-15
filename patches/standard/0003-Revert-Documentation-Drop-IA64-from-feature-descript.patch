@@ -1,7 +1,7 @@
-From 06dd56c006a8e5920cd74a3bb3762605d59e94a0 Mon Sep 17 00:00:00 2001
+From ec8dbbd0adb3925ce51e75866b0ce9397a1d2448 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:48 +0200
-Subject: [PATCH 003/101] Revert "Documentation: Drop IA64 from feature
+Subject: [PATCH 003/118] Revert "Documentation: Drop IA64 from feature
  descriptions"
 
 This reverts commit af1f459233d4edeef634f559539e7f4b64cb1d25.
@@ -350,7 +350,7 @@ index 75c05d348c01..1560c2af3023 100644
      |        m68k: | TODO |
      |  microblaze: | TODO |
 diff --git a/Documentation/features/perf/perf-regs/arch-support.txt b/Documentation/features/perf/perf-regs/arch-support.txt
-index 09431518b0e8..33866eb242c1 100644
+index 4c9a5a012075..9c6f0f3d703a 100644
 --- a/Documentation/features/perf/perf-regs/arch-support.txt
 +++ b/Documentation/features/perf/perf-regs/arch-support.txt
 @@ -12,6 +12,7 @@
@@ -362,7 +362,7 @@ index 09431518b0e8..33866eb242c1 100644
      |        m68k: | TODO |
      |  microblaze: | TODO |
 diff --git a/Documentation/features/perf/perf-stackdump/arch-support.txt b/Documentation/features/perf/perf-stackdump/arch-support.txt
-index f9db4dd8ef79..c8e4c7c65012 100644
+index dd362b5cb638..8454531f5ef4 100644
 --- a/Documentation/features/perf/perf-stackdump/arch-support.txt
 +++ b/Documentation/features/perf/perf-stackdump/arch-support.txt
 @@ -12,6 +12,7 @@
