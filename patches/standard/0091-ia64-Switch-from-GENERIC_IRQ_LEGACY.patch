@@ -1,7 +1,7 @@
 From f0fc5f55b29223ea9a2f77c74dca10a20a68109e Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 14 Nov 2025 19:37:51 +0100
-Subject: [PATCH 091/119] ia64: Switch from GENERIC_IRQ_LEGACY
+Subject: [PATCH 091/121] ia64: Switch from GENERIC_IRQ_LEGACY
 
 GENERIC_IRQ_LEGACY was removed in commit 3c716487936a ("genirq: Remove
 GENERIC_IRQ_LEGACY").

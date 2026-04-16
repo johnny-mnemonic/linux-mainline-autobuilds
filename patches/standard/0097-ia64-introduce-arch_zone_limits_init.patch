@@ -1,7 +1,7 @@
 From 3a1ec8481356bd2e15ebe3523d926be9c5f2ebeb Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 13 Feb 2026 13:55:34 +0100
-Subject: [PATCH 097/119] ia64: introduce arch_zone_limits_init()
+Subject: [PATCH 097/121] ia64: introduce arch_zone_limits_init()
 
 Move calculations of zone limits to a dedicated arch_zone_limits_init()
 function.

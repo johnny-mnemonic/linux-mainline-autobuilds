@@ -1,7 +1,7 @@
 From fc0a702162035796532b880114b96938b2a63ed0 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 20 Mar 2026 20:33:37 +0100
-Subject: [PATCH 116/119] ia64: Add rseq_slice_yield() syscall
+Subject: [PATCH 116/121] ia64: Add rseq_slice_yield() syscall
 
 rseq_slice_yield() was added after ia64 was removed from the kernel.
 

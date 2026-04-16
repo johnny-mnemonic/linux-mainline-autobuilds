@@ -1,7 +1,7 @@
 From 1867c44d994502ef754632f2587824f487786880 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Sat, 14 Mar 2026 22:36:07 +0100
-Subject: [PATCH 108/119] ia64: Use initializer for struct
+Subject: [PATCH 108/121] ia64: Use initializer for struct
  vm_unmapped_area_info
 
 Make ia64 arch compatible with 44bd7ace9fd6 ("mm: take placement

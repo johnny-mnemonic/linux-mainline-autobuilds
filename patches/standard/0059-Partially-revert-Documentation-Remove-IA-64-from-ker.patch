@@ -1,7 +1,7 @@
 From 50af29e3f6e7bfde5db5d00e309553b003670789 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 15:17:38 +0100
-Subject: [PATCH 059/119] Partially revert "Documentation: Remove IA-64 from
+Subject: [PATCH 059/121] Partially revert "Documentation: Remove IA-64 from
  kernel-parameters"
 
 Keep the following removals of:

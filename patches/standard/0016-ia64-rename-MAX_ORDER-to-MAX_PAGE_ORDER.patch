@@ -1,7 +1,7 @@
 From 2f2f2a78f55cf3bff09b2df073ca1d762c9dcf8c Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 13:37:09 +0100
-Subject: [PATCH 016/119] ia64: rename MAX_ORDER to MAX_PAGE_ORDER
+Subject: [PATCH 016/121] ia64: rename MAX_ORDER to MAX_PAGE_ORDER
 
 MAX_ORDER was renamed to MAX_PAGE_ORDER in commit 5e0a760b44417
 ("mm, treewide: rename MAX_ORDER to MAX_PAGE_ORDER"). Rename it also

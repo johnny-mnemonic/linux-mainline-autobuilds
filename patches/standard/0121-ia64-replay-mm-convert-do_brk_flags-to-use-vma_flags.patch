@@ -1,7 +1,7 @@
-From 60dba787390b96c997bcf4f6971ddd8c4431c67d Mon Sep 17 00:00:00 2001
+From 857e818711b40ffcdd10c2a3b60cfc3d659bdef0 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Thu, 16 Apr 2026 13:02:08 +0200
-Subject: [PATCH 2/2] ia64: replay "mm: convert do_brk_flags() to use
+Subject: [PATCH 121/121] ia64: replay "mm: convert do_brk_flags() to use
  vma_flags_t"
 
 See 3a6455d56bd7c4cfb1ea35ddae052943065e338e.
@@ -24,10 +24,10 @@ index 2d37234f7f5b..abd342789ce5 100644
  #define GATE_ADDR		RGN_BASE(RGN_GATE)
  
 diff --git a/arch/ia64/mm/init.c b/arch/ia64/mm/init.c
-index 57e5182c4761..a0f28f2ce81a 100644
+index 9a6e389ab73f..d45d34555af8 100644
 --- a/arch/ia64/mm/init.c
 +++ b/arch/ia64/mm/init.c
-@@ -125,7 +125,7 @@ ia64_init_addr_space (void)
+@@ -120,7 +120,7 @@ ia64_init_addr_space (void)
  		vma_set_anonymous(vma);
  		vma->vm_start = current->thread.rbs_bot & PAGE_MASK;
  		vma->vm_end = vma->vm_start + PAGE_SIZE;

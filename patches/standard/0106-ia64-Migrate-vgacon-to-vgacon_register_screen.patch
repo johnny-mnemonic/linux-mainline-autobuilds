@@ -1,7 +1,7 @@
 From 6bbf931265a6c99e979e77260cddc4bf880270d5 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Tue, 24 Feb 2026 16:02:09 +0100
-Subject: [PATCH 106/119] ia64: Migrate vgacon to vgacon_register_screen()
+Subject: [PATCH 106/121] ia64: Migrate vgacon to vgacon_register_screen()
 
 vgacon uses the legacy conswitchp way of registering a console which
 appears to no longer work as of 7.0-rc1.
