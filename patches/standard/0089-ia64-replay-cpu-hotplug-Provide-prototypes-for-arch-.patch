@@ -1,7 +1,7 @@
-From 99a9cc0064578ad1fb12c3c6757cc69ab679ec46 Mon Sep 17 00:00:00 2001
+From 01b989c019605857d5d0b6066ac7011ba8cf203d Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 29 Sep 2025 16:31:54 +0200
-Subject: [PATCH 089/118] ia64: replay "cpu-hotplug: Provide prototypes for
+Subject: [PATCH 089/119] ia64: replay "cpu-hotplug: Provide prototypes for
  arch CPU registration"
 
 The changes done in the original commit regarding ia64 somehow got lost.

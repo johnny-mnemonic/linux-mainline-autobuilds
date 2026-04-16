@@ -1,7 +1,7 @@
-From e067a80681eb6b427886344c9a7d31e1e42a8f6d Mon Sep 17 00:00:00 2001
+From 8026ba7c91e8430becbe919a60a69b6596bb0979 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Sun, 24 Mar 2024 20:20:36 +0100
-Subject: [PATCH 023/118] Revert "hpet: remove hpets::hp_clocksource"
+Subject: [PATCH 023/119] Revert "hpet: remove hpets::hp_clocksource"
 
 This reverts commit b44abdd29423a77074a9edb462de37f1a09daaab.
 ---
@@ -9,7 +9,7 @@ This reverts commit b44abdd29423a77074a9edb462de37f1a09daaab.
  1 file changed, 1 insertion(+)
 
 diff --git a/drivers/char/hpet.c b/drivers/char/hpet.c
-index 8283a67742aa..f3d75da5eff4 100644
+index eba89319e6a1..e51ffa7ea3cc 100644
 --- a/drivers/char/hpet.c
 +++ b/drivers/char/hpet.c
 @@ -106,6 +106,7 @@ struct hpets {

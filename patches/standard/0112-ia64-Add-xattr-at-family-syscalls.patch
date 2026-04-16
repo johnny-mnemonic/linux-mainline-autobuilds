@@ -1,7 +1,7 @@
-From 046bb2929261c952921ccb4dcbbc3e030e4620df Mon Sep 17 00:00:00 2001
+From 7731d27ddd7a6a0f1933dfb692aa595987f036b0 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 20 Mar 2026 20:10:33 +0100
-Subject: [PATCH 112/118] ia64: Add xattr *at family syscalls
+Subject: [PATCH 112/119] ia64: Add xattr *at family syscalls
 
 setxattrat(), getxattrat(), listxattrat(), and removexattrat() were
 added after ia64 was removed from the kernel.

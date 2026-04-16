@@ -1,7 +1,7 @@
-From 7f63074696639a4563f7a5a5a2c76c02ea075c8d Mon Sep 17 00:00:00 2001
+From 281f625f079b3165d8b0a93889fd6e0113a21731 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Mon, 23 Feb 2026 17:30:08 +0100
-Subject: [PATCH 103/118] ia64: Migrate to using sysfb_primary_display
+Subject: [PATCH 103/119] ia64: Migrate to using sysfb_primary_display
 
 Commit a41e0ab394e4 ("sysfb: Replace screen_info with
 sysfb_primary_display") replaced the global variable for EFI screen

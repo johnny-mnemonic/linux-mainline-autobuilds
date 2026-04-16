@@ -1,7 +1,7 @@
-From 3e83c3c5b01f297bdc2534251ba32161628b3ddb Mon Sep 17 00:00:00 2001
+From 961bf4b3d0d0d3563ba4e2f3f2c605a67d80a39a Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sun, 2 Jun 2024 10:05:31 +0200
-Subject: [PATCH 027/118] Revert "ACPI/NUMA: Squash
+Subject: [PATCH 027/119] Revert "ACPI/NUMA: Squash
  acpi_numa_memory_affinity_init() into acpi_parse_memory_affinity()"
 
 This reverts commit 57ba79e865e5b50a6ad15a98ea4b2cf808f19c0c.

@@ -1,7 +1,7 @@
-From ab52485b8f3af8f4da911982b0a7778d2b90e231 Mon Sep 17 00:00:00 2001
+From c19d538faf6008c83e73792dd877c9f26e8c1e8f Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
-Subject: [PATCH 001/118] Revert "Documentation: Drop or replace remaining
+Subject: [PATCH 001/119] Revert "Documentation: Drop or replace remaining
  mentions of IA64"
 
 This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
@@ -139,7 +139,7 @@ index 7587caadbae1..f374c34cb87c 100644
  	"1 irqpoll nr_cpus=1 reset_devices"
  
 diff --git a/Documentation/admin-guide/kdump/vmcoreinfo.rst b/Documentation/admin-guide/kdump/vmcoreinfo.rst
-index 404a15f6782c..455e674dab11 100644
+index 7663c610fe90..332ca4b5f9b9 100644
 --- a/Documentation/admin-guide/kdump/vmcoreinfo.rst
 +++ b/Documentation/admin-guide/kdump/vmcoreinfo.rst
 @@ -413,6 +413,36 @@ of a higher page table lookup overhead, and also consumes more page
@@ -180,7 +180,7 @@ index 404a15f6782c..455e674dab11 100644
  =====
  
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index f2ce1f4975c1..6f6bae9fbba1 100644
+index 4510b4b3c416..7fcdf4dcdf08 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
 @@ -1691,7 +1691,7 @@ Kernel parameters

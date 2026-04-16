@@ -1,7 +1,7 @@
-From 64e0b1ea13c18ad644a91e4c1dd07e1faacab687 Mon Sep 17 00:00:00 2001
+From d5ef5500cbdcd85db4cd18de60a14b9ea3f975d9 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 10:37:07 +0100
-Subject: [PATCH 057/118] Revert "selftests/mm: remove unnecessary ia64 code
+Subject: [PATCH 057/119] Revert "selftests/mm: remove unnecessary ia64 code
  and comment"
 
 This reverts commit 2f4db2861013fcfb4be11d0dc176271ae566241c.
@@ -15,10 +15,10 @@ This reverts commit 2f4db2861013fcfb4be11d0dc176271ae566241c.
  6 files changed, 67 insertions(+), 8 deletions(-)
 
 diff --git a/tools/testing/selftests/mm/Makefile b/tools/testing/selftests/mm/Makefile
-index 7a5de4e9bf52..e42e9b047a9f 100644
+index cd24596cdd27..f993bc7cf7e1 100644
 --- a/tools/testing/selftests/mm/Makefile
 +++ b/tools/testing/selftests/mm/Makefile
-@@ -139,7 +139,7 @@ else ifeq ($(ARCH),powerpc)
+@@ -140,7 +140,7 @@ else ifeq ($(ARCH),powerpc)
  TEST_GEN_FILES += protection_keys
  endif
  
@@ -199,7 +199,7 @@ index aa409107611b..cb83cdf95cf7 100644
  		ksft_exit_fail_msg("mmap: %s\n", strerror(errno));
  
 diff --git a/tools/testing/selftests/mm/run_vmtests.sh b/tools/testing/selftests/mm/run_vmtests.sh
-index afdcfd0d7cef..3dc0fd825e25 100755
+index d8468451b3a3..a5806027118a 100755
 --- a/tools/testing/selftests/mm/run_vmtests.sh
 +++ b/tools/testing/selftests/mm/run_vmtests.sh
 @@ -209,7 +209,7 @@ else

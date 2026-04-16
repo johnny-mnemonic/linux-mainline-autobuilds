@@ -1,7 +1,7 @@
-From c67cb21718f80c2e9c55593673a707a38e3af0a6 Mon Sep 17 00:00:00 2001
+From a6ff50e313d705f314c011f2d352c431a6ad8589 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Thu, 4 Sep 2025 15:50:51 +0800
-Subject: [PATCH 080/118] ia64: declare non-prototyped functions as static
+Subject: [PATCH 080/119] ia64: declare non-prototyped functions as static
 
 Since kernel >= 6.7, non-static function declarations without prototypes
 are no longer allowed.

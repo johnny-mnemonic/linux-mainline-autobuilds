@@ -1,7 +1,7 @@
-From a6822342dc9746505549f92f3b2ff3305bdceca7 Mon Sep 17 00:00:00 2001
+From 8d4b4f2d2c392a98d4b8da857ed82b840c85f7a7 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 27 Jan 2025 18:30:30 +0100
-Subject: [PATCH 056/118] ia64: Make expand_upwards() available again
+Subject: [PATCH 056/119] ia64: Make expand_upwards() available again
 
 "mm/vma: move stack expansion logic to mm/vma.c" (commit a9d1f3f2d7fecbc465bd4b16343a2ff8499cc558)
 didn't anticipate that ia64 also needs this when putting a guard around
@@ -21,10 +21,10 @@ mm/mmap.c:1033:16: error: implicit declaration of function 'expand_upwards'; did
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/mm/vma.h b/mm/vma.h
-index eba388c61ef4..805cde5ce6af 100644
+index 8e4b61a7304c..8fadff9955e1 100644
 --- a/mm/vma.h
 +++ b/mm/vma.h
-@@ -670,7 +670,7 @@ static inline bool vma_is_sealed(struct vm_area_struct *vma)
+@@ -679,7 +679,7 @@ static inline bool vma_is_sealed(struct vm_area_struct *vma)
  }
  #endif
  

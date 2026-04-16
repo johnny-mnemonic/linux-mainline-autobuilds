@@ -1,7 +1,7 @@
-From 6a0dd134b84e6f1f206da6e5ec7e7ea918db7000 Mon Sep 17 00:00:00 2001
+From a88dae00dde4e37f667d7e543ca4305e3ffa5825 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 10:58:27 +0100
-Subject: [PATCH 058/118] Revert "iommu/vt-d: Remove unused dmar_msi_read"
+Subject: [PATCH 058/119] Revert "iommu/vt-d: Remove unused dmar_msi_read"
 
 This reverts commit 95e2eaf5b91aae6c3a433cd7882733bd806fa3c8.
 ---
@@ -10,10 +10,10 @@ This reverts commit 95e2eaf5b91aae6c3a433cd7882733bd806fa3c8.
  2 files changed, 14 insertions(+)
 
 diff --git a/drivers/iommu/intel/dmar.c b/drivers/iommu/intel/dmar.c
-index 69222dbd2af0..c9445b0dd91c 100644
+index d33c119a935e..fa9a1201433e 100644
 --- a/drivers/iommu/intel/dmar.c
 +++ b/drivers/iommu/intel/dmar.c
-@@ -1895,6 +1895,19 @@ void dmar_msi_write(int irq, struct msi_msg *msg)
+@@ -1884,6 +1884,19 @@ void dmar_msi_write(int irq, struct msi_msg *msg)
  	raw_spin_unlock_irqrestore(&iommu->register_lock, flag);
  }
  
