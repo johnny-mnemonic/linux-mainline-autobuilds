@@ -1,7 +1,7 @@
-From 13b46a588d4b70cf7835be1d14aad114ba90f19b Mon Sep 17 00:00:00 2001
+From 21c91a57b97531a8a87e90c7ad431808ee797f16 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Mon, 23 Feb 2026 14:12:14 +0100
-Subject: [PATCH 102/121] Revert "dma-mapping: Remove dma_mark_clean (again)"
+Subject: [PATCH 102/122] Revert "dma-mapping: Remove dma_mark_clean (again)"
 
 This reverts commit 8a840ab0567ff2b7d382694ba24a58a893d2c7af.
 
@@ -14,10 +14,10 @@ Signed-off-by: Tomas Glozar <tglozar@gmail.com>
  4 files changed, 20 insertions(+)
 
 diff --git a/include/linux/dma-map-ops.h b/include/linux/dma-map-ops.h
-index 60b63756df82..8eff2f53fd86 100644
+index 6a1832a73cad..9a8f7c1aa6c8 100644
 --- a/include/linux/dma-map-ops.h
 +++ b/include/linux/dma-map-ops.h
-@@ -377,6 +377,14 @@ static inline void arch_dma_prep_coherent(struct page *page, size_t size)
+@@ -378,6 +378,14 @@ static inline void arch_dma_prep_coherent(struct page *page, size_t size)
  }
  #endif /* CONFIG_ARCH_HAS_DMA_PREP_COHERENT */
  
@@ -33,7 +33,7 @@ index 60b63756df82..8eff2f53fd86 100644
  void arch_dma_clear_uncached(void *addr, size_t size);
  
 diff --git a/kernel/dma/Kconfig b/kernel/dma/Kconfig
-index 159900736f25..31cfdb6b4bc3 100644
+index bfef21b4a9ae..a6ccb3dda369 100644
 --- a/kernel/dma/Kconfig
 +++ b/kernel/dma/Kconfig
 @@ -47,6 +47,12 @@ config ARCH_HAS_DMA_SET_MASK
@@ -50,10 +50,10 @@ index 159900736f25..31cfdb6b4bc3 100644
  	bool
  
 diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
-index 8f43a930716d..fa5aa496e46e 100644
+index ec887f443741..1323547a3d96 100644
 --- a/kernel/dma/direct.c
 +++ b/kernel/dma/direct.c
-@@ -425,6 +425,9 @@ void dma_direct_sync_sg_for_cpu(struct device *dev,
+@@ -427,6 +427,9 @@ void dma_direct_sync_sg_for_cpu(struct device *dev,
  			arch_sync_dma_for_cpu(paddr, sg->length, dir);
  
  		swiotlb_sync_single_for_cpu(dev, paddr, sg->length, dir);
@@ -62,12 +62,12 @@ index 8f43a930716d..fa5aa496e46e 100644
 +			arch_dma_mark_clean(paddr, sg->length);
  	}
  
- 	if (!dev_is_dma_coherent(dev))
+ 	if (!dev_is_dma_coherent(dev)) {
 diff --git a/kernel/dma/direct.h b/kernel/dma/direct.h
-index 6184ff303f08..5c1f4625e889 100644
+index 7140c208c123..b1452fe757e3 100644
 --- a/kernel/dma/direct.h
 +++ b/kernel/dma/direct.h
-@@ -75,6 +75,9 @@ static inline void dma_direct_sync_single_for_cpu(struct device *dev,
+@@ -80,6 +80,9 @@ static inline void dma_direct_sync_single_for_cpu(struct device *dev,
  	}
  
  	swiotlb_sync_single_for_cpu(dev, paddr, size, dir);

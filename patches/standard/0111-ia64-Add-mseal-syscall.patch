@@ -1,7 +1,7 @@
-From ceb3be764e00e2db6a19340474becffdcc8c9145 Mon Sep 17 00:00:00 2001
+From 654ed23dae33f7a05547fec9964764d4dfabdda2 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 20 Mar 2026 20:06:39 +0100
-Subject: [PATCH 111/121] ia64: Add mseal() syscall
+Subject: [PATCH 111/122] ia64: Add mseal() syscall
 
 mseal() was added after ia64 was removed from the kernel.
 

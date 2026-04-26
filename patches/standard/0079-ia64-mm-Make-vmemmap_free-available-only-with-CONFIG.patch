@@ -1,7 +1,7 @@
-From d9c58349b60f5d67f205d48cdd9db110038e02cc Mon Sep 17 00:00:00 2001
+From cad8053416cde82db78974e589c3761f638a9c20 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Thu, 4 Sep 2025 15:33:15 +0800
-Subject: [PATCH 079/121] ia64/mm: Make vmemmap_free() available only with
+Subject: [PATCH 079/122] ia64/mm: Make vmemmap_free() available only with
  CONFIG_MEMORY_HOTPLUG
 
 vmemmap_free() callsites (mm/sparse.c) and declaration (include/linux/mm.h)

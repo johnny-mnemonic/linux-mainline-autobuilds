@@ -1,7 +1,7 @@
-From c19d538faf6008c83e73792dd877c9f26e8c1e8f Mon Sep 17 00:00:00 2001
+From 6ba59fcd396380d151cb55b548fc453b926a0ec6 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
-Subject: [PATCH 001/121] Revert "Documentation: Drop or replace remaining
+Subject: [PATCH 001/122] Revert "Documentation: Drop or replace remaining
  mentions of IA64"
 
 This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
@@ -180,7 +180,7 @@ index 7663c610fe90..332ca4b5f9b9 100644
  =====
  
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 4510b4b3c416..7fcdf4dcdf08 100644
+index cf3807641d89..cf0e2ec187fb 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
 @@ -1691,7 +1691,7 @@ Kernel parameters
@@ -219,10 +219,10 @@ index 0207f8725142..31304cb8f4e9 100644
  Memory Hot(Un)Plug Granularity
  ------------------------------
 diff --git a/Documentation/admin-guide/sysctl/kernel.rst b/Documentation/admin-guide/sysctl/kernel.rst
-index 9aed74e65cf4..cbca91bf9145 100644
+index c6994e55d141..60694e9888ee 100644
 --- a/Documentation/admin-guide/sysctl/kernel.rst
 +++ b/Documentation/admin-guide/sysctl/kernel.rst
-@@ -481,8 +481,8 @@ ignore-unaligned-usertrap
+@@ -482,8 +482,8 @@ ignore-unaligned-usertrap
  
  On architectures where unaligned accesses cause traps, and where this
  feature is supported (``CONFIG_SYSCTL_ARCH_UNALIGN_NO_WARN``;
@@ -233,7 +233,7 @@ index 9aed74e65cf4..cbca91bf9145 100644
  
  = =============================================================
  0 Log all unaligned accesses.
-@@ -490,7 +490,10 @@ unaligned traps are logged.
+@@ -491,7 +491,10 @@ unaligned traps are logged.
    setting.
  = =============================================================
  
@@ -245,7 +245,7 @@ index 9aed74e65cf4..cbca91bf9145 100644
  
  io_uring_disabled
  =================
-@@ -1623,6 +1626,22 @@ See Documentation/admin-guide/kernel-parameters.rst and
+@@ -1624,6 +1627,22 @@ See Documentation/admin-guide/kernel-parameters.rst and
  Documentation/trace/boottime-trace.rst.
  
  

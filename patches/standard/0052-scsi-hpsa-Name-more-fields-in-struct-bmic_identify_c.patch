@@ -1,7 +1,7 @@
-From 354fdb5fa864bf042dee6ea98246a66211abc48f Mon Sep 17 00:00:00 2001
+From c057d70de025016bd5668805a578d04d992e9c7e Mon Sep 17 00:00:00 2001
 From: Ivan Mironov <mironov.ivan@gmail.com>
 Date: Mon, 10 Dec 2018 18:26:32 +0500
-Subject: [PATCH 052/121] scsi: hpsa: Name more fields in "struct
+Subject: [PATCH 052/122] scsi: hpsa: Name more fields in "struct
  bmic_identify_controller"
 
 Based on information from "struct identify_controller" from

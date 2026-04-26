@@ -1,7 +1,7 @@
-From 8ad7a1ccc8e6653bbbb09fe635b891d29b28888e Mon Sep 17 00:00:00 2001
+From 06613f5a2c1a2c6fbf282da53ec4f0928e9f1076 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Mon, 23 Feb 2026 20:07:20 +0100
-Subject: [PATCH 105/121] ia64: Use __PAGE_ALIGNED_BSS in head.S
+Subject: [PATCH 105/122] ia64: Use __PAGE_ALIGNED_BSS in head.S
 
 Move empty_zero_page and swapper_pg_dir into bss segment from data
 segment to save some space in the vmlinux ELF file.

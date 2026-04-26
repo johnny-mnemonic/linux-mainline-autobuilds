@@ -1,7 +1,7 @@
-From 4cda1dbef0546a3c7309dba4c86a83918f92f2f9 Mon Sep 17 00:00:00 2001
+From a6d28d020c4f76447b0bdfe79b7cb3fb2e0b3151 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sat, 14 Feb 2026 21:17:35 +0100
-Subject: [PATCH 101/121] Silence set-but-not-used warnings for
+Subject: [PATCH 101/122] Silence set-but-not-used warnings for
  clear_user_pages()
 
 clear_user_pages() is defined so that in the first case it uses a

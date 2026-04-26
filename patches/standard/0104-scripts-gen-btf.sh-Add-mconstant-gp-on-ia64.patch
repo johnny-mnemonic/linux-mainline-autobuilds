@@ -1,7 +1,7 @@
-From 8743e2718c816f7ce231fd677be3be82b0752ab0 Mon Sep 17 00:00:00 2001
+From 63e735abc3f309b7fe3a63834ceac3ae572106bc Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Mon, 23 Feb 2026 18:58:09 +0100
-Subject: [PATCH 104/121] scripts/gen-btf.sh: Add -mconstant-gp on ia64
+Subject: [PATCH 104/122] scripts/gen-btf.sh: Add -mconstant-gp on ia64
 
 On ia64, the BTF object file has to be compiled with -mconstant-gp
 in order to avoid linker failure.

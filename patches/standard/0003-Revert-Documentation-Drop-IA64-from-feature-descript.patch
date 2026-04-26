@@ -1,7 +1,7 @@
-From f85f3325550d4121752152d1f0482263bc587449 Mon Sep 17 00:00:00 2001
+From 4eacf6241b8bea3ae9957bccc7a23707972c0cc5 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:48 +0200
-Subject: [PATCH 003/121] Revert "Documentation: Drop IA64 from feature
+Subject: [PATCH 003/122] Revert "Documentation: Drop IA64 from feature
  descriptions"
 
 This reverts commit af1f459233d4edeef634f559539e7f4b64cb1d25.
@@ -398,7 +398,7 @@ index 984601c7c479..532cc67cdf92 100644
      |        m68k: |  ..  |
      |  microblaze: |  ..  |
 diff --git a/Documentation/features/seccomp/seccomp-filter/arch-support.txt b/Documentation/features/seccomp/seccomp-filter/arch-support.txt
-index 13feb679649e..3a7237b989cd 100644
+index 9336bdfc125c..699ef358461d 100644
 --- a/Documentation/features/seccomp/seccomp-filter/arch-support.txt
 +++ b/Documentation/features/seccomp/seccomp-filter/arch-support.txt
 @@ -12,6 +12,7 @@

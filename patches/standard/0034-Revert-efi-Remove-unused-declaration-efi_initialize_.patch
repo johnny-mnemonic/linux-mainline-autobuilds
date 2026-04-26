@@ -1,7 +1,7 @@
-From f31c9f02dc16bcdeed95d4834923fdba96d5fe66 Mon Sep 17 00:00:00 2001
+From 8c63d6ca1314a8fbec536aad99cbcf8434f154be Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 27 Sep 2024 14:54:38 +0200
-Subject: [PATCH 034/121] Revert "efi: Remove unused declaration
+Subject: [PATCH 034/122] Revert "efi: Remove unused declaration
  efi_initialize_iomem_resources()"
 
 This reverts commit 21b91d40575fb64f3f280f6c3af586e32a704a92.
@@ -10,7 +10,7 @@ This reverts commit 21b91d40575fb64f3f280f6c3af586e32a704a92.
  1 file changed, 2 insertions(+)
 
 diff --git a/include/linux/efi.h b/include/linux/efi.h
-index 429c1ebb8313..642d738142e8 100644
+index b56309f2c6b6..539df141e57d 100644
 --- a/include/linux/efi.h
 +++ b/include/linux/efi.h
 @@ -761,6 +761,8 @@ extern int efi_mem_desc_lookup(u64 phys_addr, efi_memory_desc_t *out_md);

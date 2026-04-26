@@ -1,7 +1,7 @@
-From 961bf4b3d0d0d3563ba4e2f3f2c605a67d80a39a Mon Sep 17 00:00:00 2001
+From 5152b35a225ff98b9c5000657ee89e8d3a00ae75 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sun, 2 Jun 2024 10:05:31 +0200
-Subject: [PATCH 027/121] Revert "ACPI/NUMA: Squash
+Subject: [PATCH 027/122] Revert "ACPI/NUMA: Squash
  acpi_numa_memory_affinity_init() into acpi_parse_memory_affinity()"
 
 This reverts commit 57ba79e865e5b50a6ad15a98ea4b2cf808f19c0c.
@@ -10,7 +10,7 @@ This reverts commit 57ba79e865e5b50a6ad15a98ea4b2cf808f19c0c.
  1 file changed, 50 insertions(+), 27 deletions(-)
 
 diff --git a/drivers/acpi/numa/srat.c b/drivers/acpi/numa/srat.c
-index aa87ee1583a4..354e50db07ea 100644
+index 62d4a8df0b8c..54782f9b0e74 100644
 --- a/drivers/acpi/numa/srat.c
 +++ b/drivers/acpi/numa/srat.c
 @@ -318,21 +318,16 @@ __weak int __init numa_fill_memblks(u64 start, u64 end)

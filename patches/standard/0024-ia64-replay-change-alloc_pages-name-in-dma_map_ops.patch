@@ -1,7 +1,7 @@
-From bb64f68935b6022ff5632eb3bdf9b4adcfb9a88a Mon Sep 17 00:00:00 2001
+From 2f6829fd56678a6e61eb4930f980421d8f443817 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sun, 2 Jun 2024 10:02:39 +0200
-Subject: [PATCH 024/121] ia64: replay "change alloc_pages name in dma_map_ops
+Subject: [PATCH 024/122] ia64: replay "change alloc_pages name in dma_map_ops
  [...]"
 
 See 8a2f11878771da65b8ac135c73b47dae13afbd62.
