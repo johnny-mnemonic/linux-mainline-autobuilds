@@ -1,7 +1,7 @@
-From 21c91a57b97531a8a87e90c7ad431808ee797f16 Mon Sep 17 00:00:00 2001
+From d85b08fddb7f3a9357daa011954eb0be987a8752 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Mon, 23 Feb 2026 14:12:14 +0100
-Subject: [PATCH 102/122] Revert "dma-mapping: Remove dma_mark_clean (again)"
+Subject: [PATCH 102/126] Revert "dma-mapping: Remove dma_mark_clean (again)"
 
 This reverts commit 8a840ab0567ff2b7d382694ba24a58a893d2c7af.
 
@@ -50,7 +50,7 @@ index bfef21b4a9ae..a6ccb3dda369 100644
  	bool
  
 diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
-index ec887f443741..1323547a3d96 100644
+index 4391b797d4db..c9807c0173a5 100644
 --- a/kernel/dma/direct.c
 +++ b/kernel/dma/direct.c
 @@ -427,6 +427,9 @@ void dma_direct_sync_sg_for_cpu(struct device *dev,

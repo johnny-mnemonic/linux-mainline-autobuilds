@@ -1,7 +1,7 @@
-From 6c405bb5537a00165ed81704ac209a40593a62c0 Mon Sep 17 00:00:00 2001
+From 58d90cd93df562aef8b613e1e6c2954de228c4e7 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Thu, 4 Sep 2025 15:37:32 +0800
-Subject: [PATCH 083/122] ACPI: processor_idle: Fix build with CONFIG_WERROR
+Subject: [PATCH 083/126] ACPI: processor_idle: Fix build with CONFIG_WERROR
 
 When WERROR is enabled, build fails with the following error:
 

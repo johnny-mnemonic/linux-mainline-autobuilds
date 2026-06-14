@@ -1,7 +1,7 @@
-From a6d28d020c4f76447b0bdfe79b7cb3fb2e0b3151 Mon Sep 17 00:00:00 2001
+From 919a9e8877d232b719435ce53664ef013e8c9aaf Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sat, 14 Feb 2026 21:17:35 +0100
-Subject: [PATCH 101/122] Silence set-but-not-used warnings for
+Subject: [PATCH 101/126] Silence set-but-not-used warnings for
  clear_user_pages()
 
 clear_user_pages() is defined so that in the first case it uses a
@@ -24,7 +24,7 @@ https://en.cppreference.com/w/c/language/attributes/maybe_unused.html
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/include/linux/highmem.h b/include/linux/highmem.h
-index af03db851a1d..0ffc719446a8 100644
+index d7aac9de1c8a..46448ac998ae 100644
 --- a/include/linux/highmem.h
 +++ b/include/linux/highmem.h
 @@ -231,7 +231,7 @@ static inline void clear_user_page(void *addr, unsigned long vaddr, struct page

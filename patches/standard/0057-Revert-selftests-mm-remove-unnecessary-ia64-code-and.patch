@@ -1,7 +1,7 @@
-From 9edff13563570f9073df18a57672efc17dfcb550 Mon Sep 17 00:00:00 2001
+From 42766577b258b3a286c6a292143324ef954502c5 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 10:37:07 +0100
-Subject: [PATCH 057/122] Revert "selftests/mm: remove unnecessary ia64 code
+Subject: [PATCH 057/126] Revert "selftests/mm: remove unnecessary ia64 code
  and comment"
 
 This reverts commit 2f4db2861013fcfb4be11d0dc176271ae566241c.
@@ -199,7 +199,7 @@ index aa409107611b..cb83cdf95cf7 100644
  		ksft_exit_fail_msg("mmap: %s\n", strerror(errno));
  
 diff --git a/tools/testing/selftests/mm/run_vmtests.sh b/tools/testing/selftests/mm/run_vmtests.sh
-index d8468451b3a3..a5806027118a 100755
+index c17b133a81d2..eee88343a62a 100755
 --- a/tools/testing/selftests/mm/run_vmtests.sh
 +++ b/tools/testing/selftests/mm/run_vmtests.sh
 @@ -209,7 +209,7 @@ else

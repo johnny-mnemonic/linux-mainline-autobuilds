@@ -1,7 +1,7 @@
-From f1f461cde14a2b50fdf6262b0e3ccb70ec72d45f Mon Sep 17 00:00:00 2001
+From 4d6a9c43d6d01c5b2e7523e3b4ef8edffc7060e0 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 14:21:54 +0100
-Subject: [PATCH 017/122] Revert "mm: remove unnecessary ia64 code and comment"
+Subject: [PATCH 017/126] Revert "mm: remove unnecessary ia64 code and comment"
 
 This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
 ---
@@ -11,10 +11,10 @@ This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
  3 files changed, 34 insertions(+), 18 deletions(-)
 
 diff --git a/mm/Kconfig b/mm/Kconfig
-index 0a43bb80df4f..cfe289c88f44 100644
+index e8bf1e9e6ad9..d42e6cabde25 100644
 --- a/mm/Kconfig
 +++ b/mm/Kconfig
-@@ -707,7 +707,7 @@ config DEFAULT_MMAP_MIN_ADDR
+@@ -708,7 +708,7 @@ config DEFAULT_MMAP_MIN_ADDR
  	  from userspace allocation.  Keeping a user from writing to low pages
  	  can help reduce the impact of kernel NULL pointer bugs.
  

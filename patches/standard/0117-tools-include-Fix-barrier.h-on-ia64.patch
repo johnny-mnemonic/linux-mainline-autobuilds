@@ -1,7 +1,7 @@
-From a0a8d69efb6874ffe56878d547dc9bd807c5ab7a Mon Sep 17 00:00:00 2001
+From adc8262288db0d514b590fb09eb8a8d23909f547 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Mar 2026 19:42:31 +0100
-Subject: [PATCH 117/122] tools include: Fix barrier.h on ia64
+Subject: [PATCH 117/126] tools include: Fix barrier.h on ia64
 
 tools/arch/ia64/include/asm/barrier.h defines barrier() as ia64_mb().
 

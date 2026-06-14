@@ -1,7 +1,7 @@
-From 2d186053737894f6d514f0ee88acf4a2aa91eb11 Mon Sep 17 00:00:00 2001
+From 9eec8663f7f0b1e32d9732a8fbeb1c805c3d685e Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 20 Apr 2026 00:44:35 +0200
-Subject: [PATCH 122/122] Revert "efi: Drop unused efi_range_is_wc() function"
+Subject: [PATCH 124/126] Revert "efi: Drop unused efi_range_is_wc() function"
 
 ia64 is still using this in `arch/ia64/include/asm/fb.h`, so keeping that.
 
@@ -11,7 +11,7 @@ This reverts commit 77dd8adabbc8ff845177b460de48b9d2cd579966.
  1 file changed, 21 insertions(+)
 
 diff --git a/include/linux/efi.h b/include/linux/efi.h
-index 4e3ee7b3dda7..6ba0d268fbb8 100644
+index 70a6efda6f12..80e87d442dd7 100644
 --- a/include/linux/efi.h
 +++ b/include/linux/efi.h
 @@ -837,6 +837,27 @@ extern int __init parse_efi_signature_list(

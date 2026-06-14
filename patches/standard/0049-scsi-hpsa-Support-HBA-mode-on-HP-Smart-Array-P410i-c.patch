@@ -1,7 +1,7 @@
-From b6e7f8591e777c9da50a7465415735c712cec883 Mon Sep 17 00:00:00 2001
+From 9144465704800b06a5623dbf27102d971d8faf14 Mon Sep 17 00:00:00 2001
 From: Ivan Mironov <mironov.ivan@gmail.com>
 Date: Wed, 5 Dec 2018 15:24:57 +0500
-Subject: [PATCH 049/122] scsi: hpsa: Support HBA mode on HP Smart Array P410i
+Subject: [PATCH 049/126] scsi: hpsa: Support HBA mode on HP Smart Array P410i
  controllers
 
 This patch is based on code from 316b221a37802b6abe26067f2c6f2d7bb79069e5,
@@ -173,7 +173,7 @@ index 429a2a066a76..2b6d37f6b51a 100644
  		/*
  		 * Get the SAS address for physical devices that are exposed.
 diff --git a/drivers/scsi/hpsa.h b/drivers/scsi/hpsa.h
-index 99b0750850b2..4cb0d55ac2f9 100644
+index f6bfe75dd696..537dfc322f26 100644
 --- a/drivers/scsi/hpsa.h
 +++ b/drivers/scsi/hpsa.h
 @@ -161,6 +161,8 @@ struct bmic_controller_parameters {

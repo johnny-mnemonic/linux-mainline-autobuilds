@@ -1,7 +1,7 @@
-From 6a8e2bff3810709c9ae876db92ea4aae0e94ca51 Mon Sep 17 00:00:00 2001
+From 44d216982cd5d615bc9f035cf43b52216511c963 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 20 Mar 2026 20:32:21 +0100
-Subject: [PATCH 115/122] ia64: Add listns() syscall
+Subject: [PATCH 115/126] ia64: Add listns() syscall
 
 listns() was added after ia64 was removed from the kernel.
 
