@@ -1,22 +1,33 @@
-From 33d59f9e85db29a3526bd572ec0ed0f5bd8bf3db Mon Sep 17 00:00:00 2001
+From 32e96f2150c17e281b5815c244146e818848a059 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 15 Jun 2026 23:46:43 +0200
-Subject: [PATCH] ia64: replay "vdso/treewide: Drop GENERIC_TIME_VSYSCALL"
+Subject: [PATCH 3/3] ia64: replay "vdso/treewide: Drop GENERIC_TIME_VSYSCALL"
+
+...but select GENERIC_GETTIMEOFDAY instead, although it is misleading as
+ia64 is still using its own implementations of:
+
+* update_vsyscall(()
+* update_vsyscall_tz()
+
+...but the new guard introduced with "vdso/vsyscall: Gate update_vsyscall()
+behind CONFIG_GENERIC_GETTIMEOFDAY" (bf8f968a63159661acc20254ccdf0dc3c9f1bac2)
+requires it.
 
 See 96942092d5e67c71af246fa3bc1422cdf80a5dc9.
 ---
- arch/ia64/Kconfig | 1 -
- 1 file changed, 1 deletion(-)
+ arch/ia64/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/ia64/Kconfig b/arch/ia64/Kconfig
-index e840f5038626..53b6b327d3fe 100644
+index e840f5038626..b6f9f185d0a5 100644
 --- a/arch/ia64/Kconfig
 +++ b/arch/ia64/Kconfig
-@@ -55,7 +55,6 @@ config IA64
+@@ -55,7 +55,7 @@ config IA64
  	select ARCH_TASK_STRUCT_ALLOCATOR
  	select ARCH_THREAD_STACK_ALLOCATOR
  	select ARCH_CLOCKSOURCE_DATA
 -	select GENERIC_TIME_VSYSCALL
++	select GENERIC_GETTIMEOFDAY
  	select LEGACY_TIMER_TICK
  	select SWIOTLB
  	select SYSCTL_ARCH_UNALIGN_NO_WARN
