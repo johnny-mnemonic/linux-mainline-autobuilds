@@ -1,0 +1,27 @@
+From 6eea70e0f2e1aaf62157b3b4fd6f316031445a3d Mon Sep 17 00:00:00 2001
+From: Johnny Mnemonic <jm@machine-hall.org>
+Date: Mon, 15 Jun 2026 14:42:00 +0200
+Subject: [PATCH 1/2] ia64: replay "sched/coredump: introduce enum
+ task_dumpable"
+
+See 4f365e7a5d448dab7e0bb56ed32ff2bfddd134bd.
+---
+ arch/ia64/include/asm/processor.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/ia64/include/asm/processor.h b/arch/ia64/include/asm/processor.h
+index 47e3801b526a..6fd63573bfcd 100644
+--- a/arch/ia64/include/asm/processor.h
++++ b/arch/ia64/include/asm/processor.h
+@@ -304,7 +304,7 @@ struct thread_struct {
+ 	regs->loadrs = 0;									\
+ 	regs->r8 = get_dumpable(current->mm);	/* set "don't zap registers" flag */		\
+ 	regs->r12 = new_sp - 16;	/* allocate 16 byte scratch area */			\
+-	if (unlikely(get_dumpable(current->mm) != SUID_DUMP_USER)) {	\
++	if (unlikely(get_dumpable(current->mm) != TASK_DUMPABLE_OWNER)) {	\
+ 		/*										\
+ 		 * Zap scratch regs to avoid leaking bits between processes with different	\
+ 		 * uid/privileges.								\
+-- 
+2.25.1
+
