@@ -1,7 +1,7 @@
-From 85bc6ebabfd28cf22a14a1566fee2e8296433dc9 Mon Sep 17 00:00:00 2001
+From df4a7639e7a8f66bf5e62339f91483c6cbbfbc4e Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
-Subject: [PATCH 005/126] Revert "arch: Remove Itanium (IA-64) architecture"
+Subject: [PATCH 005/129] Revert "arch: Remove Itanium (IA-64) architecture"
 
 This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
 ---
@@ -2991,7 +2991,7 @@ index 000000000000..1de70c305a79
 +    boot sequence to use this menu, and you will have to reset the
 +    box after changing console configuration.
 diff --git a/Documentation/core-api/cpu_hotplug.rst b/Documentation/core-api/cpu_hotplug.rst
-index 9b4afca9fd09..1ee37b221646 100644
+index 6de26d1c6a9a..f7b422302993 100644
 --- a/Documentation/core-api/cpu_hotplug.rst
 +++ b/Documentation/core-api/cpu_hotplug.rst
 @@ -40,6 +40,12 @@ Command Line Switches
@@ -3008,10 +3008,10 @@ index 9b4afca9fd09..1ee37b221646 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index c8d4b913f26c..e827dc68a8e7 100644
+index dbd4552236e6..ec2c4125db30 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -12248,6 +12248,12 @@ F:	drivers/i3c/
+@@ -12244,6 +12244,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3024,7 +3024,7 @@ index c8d4b913f26c..e827dc68a8e7 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -20319,6 +20325,11 @@ S:	Maintained
+@@ -20315,6 +20321,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -66500,10 +66500,10 @@ index db83f3365698..b0646d7ead18 100644
  config BMIPS_CPUFREQ
  	tristate "BMIPS CPUfreq Driver"
 diff --git a/drivers/cpufreq/Makefile b/drivers/cpufreq/Makefile
-index 385c9fcc65c6..6e7c8f781dd5 100644
+index 6c7a39b7f8d2..ed396578a3a0 100644
 --- a/drivers/cpufreq/Makefile
 +++ b/drivers/cpufreq/Makefile
-@@ -101,6 +101,7 @@ obj-$(CONFIG_POWERNV_CPUFREQ)		+= powernv-cpufreq.o
+@@ -99,6 +99,7 @@ obj-$(CONFIG_POWERNV_CPUFREQ)		+= powernv-cpufreq.o
  ##################################################################################
  # Other platform drivers
  obj-$(CONFIG_BMIPS_CPUFREQ)		+= bmips-cpufreq.o
@@ -66949,10 +66949,10 @@ index 29e0729299f5..331b242f057f 100644
  	select ARCH_USE_MEMREMAP_PROT
  
 diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
-index 318d1cc9a066..1c29db2a7114 100644
+index 0327a39d31fa..a9f5dbf770e3 100644
 --- a/drivers/firmware/efi/efi.c
 +++ b/drivers/firmware/efi/efi.c
-@@ -860,6 +860,7 @@ int __init efi_systab_check_header(const efi_table_hdr_t *systab_hdr)
+@@ -859,6 +859,7 @@ int __init efi_systab_check_header(const efi_table_hdr_t *systab_hdr)
  	return 0;
  }
  
@@ -66960,7 +66960,7 @@ index 318d1cc9a066..1c29db2a7114 100644
  static const efi_char16_t *__init map_fw_vendor(unsigned long fw_vendor,
  						size_t size)
  {
-@@ -875,6 +876,10 @@ static void __init unmap_fw_vendor(const void *fw_vendor, size_t size)
+@@ -874,6 +875,10 @@ static void __init unmap_fw_vendor(const void *fw_vendor, size_t size)
  {
  	early_memunmap((void *)fw_vendor, size);
  }
@@ -66971,7 +66971,7 @@ index 318d1cc9a066..1c29db2a7114 100644
  
  void __init efi_systab_report_header(const efi_table_hdr_t *systab_hdr,
  				     unsigned long fw_vendor)
-@@ -979,6 +984,11 @@ char * __init efi_md_typeattr_format(char *buf, size_t size,
+@@ -978,6 +983,11 @@ char * __init efi_md_typeattr_format(char *buf, size_t size,
  	return buf;
  }
  
@@ -66983,7 +66983,7 @@ index 318d1cc9a066..1c29db2a7114 100644
  /*
   * efi_mem_attributes - lookup memmap attributes for physical address
   * @phys_addr: the physical address to lookup
-@@ -1017,6 +1027,7 @@ int efi_mem_type(unsigned long phys_addr)
+@@ -1016,6 +1026,7 @@ int efi_mem_type(unsigned long phys_addr)
  
  	return md.type;
  }
@@ -67867,7 +67867,7 @@ index 1c73d560f196..9a7fbf2002cb 100644
  	select DRM_PANEL_ORIENTATION_QUIRKS
  	select FB_IOMEM_HELPERS
 diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-index dc78729ba2a5..3992cc2e0926 100644
+index 6a9695a16d5e..debad7f5ebdd 100644
 --- a/drivers/watchdog/Kconfig
 +++ b/drivers/watchdog/Kconfig
 @@ -1404,7 +1404,7 @@ config INTEL_OC_WATCHDOG
@@ -68015,7 +68015,7 @@ index a6e5a44c9b42..3eef55d2d43d 100644
  #elif !defined(CONFIG_MMU)
  #define __VM_ARCH_SPECIFIC_1 {VM_MAPPED_COPY,"mappedcopy"	}
 diff --git a/kernel/cpu.c b/kernel/cpu.c
-index bc4f7a9ba64e..81a0c2ba27d2 100644
+index f975bb34915b..fdb0cc198ec5 100644
 --- a/kernel/cpu.c
 +++ b/kernel/cpu.c
 @@ -1685,6 +1685,9 @@ static int cpu_up(unsigned int cpu, enum cpuhp_state target)
@@ -68029,10 +68029,10 @@ index bc4f7a9ba64e..81a0c2ba27d2 100644
  	}
  
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 8ac38beae360..b60713d68096 100644
+index addc555a1077..1d0a9ef462ba 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -2951,7 +2951,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
+@@ -2974,7 +2974,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
  		if (!access_ok((void __user *)kargs->stack, kargs->stack_size))
  			return false;
  
@@ -68042,10 +68042,10 @@ index 8ac38beae360..b60713d68096 100644
  #endif
  	}
 diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index b8871449d3c6..c33d1d0de158 100644
+index 8b791e9e9f67..77fa1141ecee 100644
 --- a/kernel/sched/core.c
 +++ b/kernel/sched/core.c
-@@ -9265,9 +9265,9 @@ void normalize_rt_tasks(void)
+@@ -9295,9 +9295,9 @@ void normalize_rt_tasks(void)
  
  #endif /* CONFIG_MAGIC_SYSRQ */
  
@@ -68057,7 +68057,7 @@ index b8871449d3c6..c33d1d0de158 100644
   *
   * They can only be called when the whole system has been
   * stopped - every CPU needs to be quiescent, and no scheduling
-@@ -9289,7 +9289,30 @@ struct task_struct *curr_task(int cpu)
+@@ -9319,7 +9319,30 @@ struct task_struct *curr_task(int cpu)
  	return cpu_curr(cpu);
  }
  
@@ -68110,7 +68110,7 @@ index c9efb17cc255..5ce2baf175ed 100644
  
  int __init sysctl_init_bases(void)
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index 8ff5adcfe1e0..c5f61a01d7f1 100644
+index d9d7556bd7b9..fb4d46f54d48 100644
 --- a/lib/Kconfig.debug
 +++ b/lib/Kconfig.debug
 @@ -830,7 +830,7 @@ config SHRINKER_DEBUG

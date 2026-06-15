@@ -1,7 +1,7 @@
-From a3868afb5e48557cce3ff0ddd10e81372c5595f9 Mon Sep 17 00:00:00 2001
+From 959d3a9046c13ebbc64684509fe67b5317c4a4b1 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 20 Mar 2026 20:24:54 +0100
-Subject: [PATCH 113/126] ia64: Add open_tree_attr() syscall
+Subject: [PATCH 113/129] ia64: Add open_tree_attr() syscall
 
 open_tree_attr() was added after ia64 was removed from the kernel.
 

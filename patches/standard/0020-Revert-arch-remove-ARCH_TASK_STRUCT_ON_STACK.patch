@@ -1,7 +1,7 @@
-From 57c39771eea6e5bae606c81b7722768cc1195b8e Mon Sep 17 00:00:00 2001
+From 7ed30180db9e4273c85a2aee248b27702f0dbc8e Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 12 Jan 2024 19:11:18 +0100
-Subject: [PATCH 020/126] Revert "arch: remove ARCH_TASK_STRUCT_ON_STACK"
+Subject: [PATCH 020/129] Revert "arch: remove ARCH_TASK_STRUCT_ON_STACK"
 
 This reverts commit 0eb5085c38749f2a91e5bd8cbebb1ebf3398343c.
 ---
@@ -44,10 +44,10 @@ index a6cb241ea00c..37db94da521d 100644
  #define __init_thread_info __section(".data..init_thread_info")
  
 diff --git a/include/linux/sched.h b/include/linux/sched.h
-index ee06cba5c6f5..f293b39d14e1 100644
+index b3204a15d512..90919fd3aeb0 100644
 --- a/include/linux/sched.h
 +++ b/include/linux/sched.h
-@@ -1953,7 +1953,9 @@ extern void ia64_set_curr_task(int cpu, struct task_struct *p);
+@@ -1968,7 +1968,9 @@ extern void ia64_set_curr_task(int cpu, struct task_struct *p);
  void yield(void);
  
  union thread_union {
@@ -58,10 +58,10 @@ index ee06cba5c6f5..f293b39d14e1 100644
  	struct thread_info thread_info;
  #endif
 diff --git a/init/init_task.c b/init/init_task.c
-index b5f48ebdc2b6..8e481fdf348d 100644
+index b67ef6040a65..09e13a24372c 100644
 --- a/init/init_task.c
 +++ b/init/init_task.c
-@@ -57,7 +57,8 @@ static struct sighand_struct init_sighand = {
+@@ -66,7 +66,8 @@ struct task_exec_state init_task_exec_state = {
  };
  
  #ifdef CONFIG_SHADOW_CALL_STACK
@@ -71,7 +71,7 @@ index b5f48ebdc2b6..8e481fdf348d 100644
  	[(SCS_SIZE / sizeof(long)) - 1] = SCS_END_MAGIC
  };
  #endif
-@@ -93,7 +94,12 @@ static struct cred init_cred = {
+@@ -102,7 +103,12 @@ static struct cred init_cred = {
   * Set up the first task table, touch at your own risk!. Base=0,
   * limit=0x1fffff (=2MB)
   */

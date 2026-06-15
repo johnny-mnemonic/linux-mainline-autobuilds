@@ -1,7 +1,7 @@
-From 1d01386bd17eed05b3687ec82ccead6b7b779388 Mon Sep 17 00:00:00 2001
+From 69418325c9bb98256dba454b1739b91b3bf11044 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Mon, 13 Apr 2026 18:55:48 +0200
-Subject: [PATCH 120/126] ia64: Fix EFAULT in strnlen_user()
+Subject: [PATCH 120/129] ia64: Fix EFAULT in strnlen_user()
 
 Commit 1b84d0eb72a1 ("ia64: Replace "braindead" strnlen_user() with
 pipelined loop") added a pipelined implementation of strnlen_user()

@@ -1,7 +1,7 @@
-From 8a59a242227448a13d7ba256b8f763c0f9a76717 Mon Sep 17 00:00:00 2001
+From 5e51910bf5218449cd7ad592d89d86edd83ceaa0 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Sun, 12 Apr 2026 20:40:40 +0200
-Subject: [PATCH 119/126] ia64: Handle topology correctly w/o
+Subject: [PATCH 119/129] ia64: Handle topology correctly w/o
  SAL_PHYSICAL_ID_INFO
 
 On systems without SAL_PHYSICAL_ID_INFO, identify_siblings() would

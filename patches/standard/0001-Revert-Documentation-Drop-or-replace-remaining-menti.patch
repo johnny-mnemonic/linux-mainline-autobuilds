@@ -1,7 +1,7 @@
-From 9abad4adf26d591770d71c95d1fbfb6be7e0ea34 Mon Sep 17 00:00:00 2001
+From 4cb6b4ff7bebdcdaf42af57e2415e6e83623f35c Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
-Subject: [PATCH 001/126] Revert "Documentation: Drop or replace remaining
+Subject: [PATCH 001/129] Revert "Documentation: Drop or replace remaining
  mentions of IA64"
 
 This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
@@ -10,7 +10,7 @@ This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
  .../ABI/testing/sysfs-firmware-dmi-entries    |  2 +-
  Documentation/admin-guide/kdump/kdump.rst     | 37 +++++++++++++++++--
  .../admin-guide/kdump/vmcoreinfo.rst          | 30 +++++++++++++++
- .../admin-guide/kernel-parameters.txt         |  8 +++-
+ .../admin-guide/kernel-parameters.txt         |  9 ++++-
  .../admin-guide/mm/memory-hotplug.rst         |  2 +-
  Documentation/admin-guide/sysctl/kernel.rst   | 25 +++++++++++--
  Documentation/arch/index.rst                  |  1 +
@@ -23,7 +23,7 @@ This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
  .../zh_CN/core-api/cpu_hotplug.rst            |  6 +++
  .../zh_CN/scheduler/sched-arch.rst            |  5 ++-
  Makefile                                      |  4 +-
- 17 files changed, 123 insertions(+), 17 deletions(-)
+ 17 files changed, 124 insertions(+), 17 deletions(-)
 
 diff --git a/Documentation/ABI/testing/sysfs-devices-system-cpu b/Documentation/ABI/testing/sysfs-devices-system-cpu
 index 82d10d556cc8..ed36b9ec6dfb 100644
@@ -180,19 +180,20 @@ index 7663c610fe90..332ca4b5f9b9 100644
  =====
  
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 97007f4f69d4..66e6d2c4fccf 100644
+index 672665ea6265..713c2139041d 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
-@@ -1655,7 +1655,7 @@ Kernel parameters
- 			See comment before function elanfreq_setup() in
- 			arch/x86/kernel/cpu/cpufreq/elanfreq.c.
+@@ -1652,7 +1652,8 @@ Kernel parameters
+ 			very early in the boot process. For early debugging
+ 			via a serial port see kgdboc_earlycon instead.
  
 -	elfcorehdr=[size[KMG]@]offset[KMG] [PPC,SH,X86,S390,EARLY]
 +	elfcorehdr=[size[KMG]@]offset[KMG] [IA64,PPC,SH,X86,S390,EARLY]
++
  			Specifies physical address of start of kernel core
  			image elf header and optionally the size. Generally
  			kexec loader will pass this option to capture kernel.
-@@ -1719,6 +1719,12 @@ Kernel parameters
+@@ -1716,6 +1717,12 @@ Kernel parameters
  	floppy=		[HW]
  			See Documentation/admin-guide/blockdev/floppy.rst.
  
@@ -312,7 +313,7 @@ index cb3d3228dfc8..981ad4f89fd3 100644
  At least LSI FW643e and FW643e2 controllers are known to support access to
  physical addresses above 4 GB, but this feature is currently not enabled by
 diff --git a/Documentation/kbuild/makefiles.rst b/Documentation/kbuild/makefiles.rst
-index 24a4708d26e8..64f4aaebff70 100644
+index 7521cae7d56f..07089ca83521 100644
 --- a/Documentation/kbuild/makefiles.rst
 +++ b/Documentation/kbuild/makefiles.rst
 @@ -53,7 +53,7 @@ knowledge about the kernel Makefiles, plus detailed knowledge about the
@@ -409,10 +410,10 @@ index b2ac3c743a3a..ce3f39d9b3cb 100644
  sparc - 在这一点上，IRQ是开着的（？），把local_irq_save改为_disable。
        - 待办事项: 需要第二个CPU来禁用抢占 (参考 #1)
 diff --git a/Makefile b/Makefile
-index 408f070d49b8..4f247b152dfe 100644
+index 5e73bba74da3..19ff84782b94 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -389,7 +389,7 @@ include $(srctree)/scripts/subarch.include
+@@ -390,7 +390,7 @@ include $(srctree)/scripts/subarch.include
  # When performing cross compilation for other architectures ARCH shall be set
  # to the target architecture. (See arch/* for the possibilities).
  # ARCH can be set during invocation of make:
@@ -421,7 +422,7 @@ index 408f070d49b8..4f247b152dfe 100644
  # Another way is to have ARCH set in the environment.
  # The default ARCH is the host where make is executed.
  
-@@ -397,7 +397,7 @@ include $(srctree)/scripts/subarch.include
+@@ -398,7 +398,7 @@ include $(srctree)/scripts/subarch.include
  # during compilation. Only gcc and related bin-utils executables
  # are prefixed with $(CROSS_COMPILE).
  # CROSS_COMPILE can be set on the command line

@@ -1,7 +1,7 @@
-From a2db23212b4632e81e60b9ef8f4a72ab8fc672b9 Mon Sep 17 00:00:00 2001
+From 844d8dd018e41d2c5fbb3d9fe1da26debcc0baac Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 10 Feb 2025 16:12:32 +0100
-Subject: [PATCH 062/126] Revert "scripts: clean up IA-64 code"
+Subject: [PATCH 062/129] Revert "scripts: clean up IA-64 code"
 
 This reverts commit 0df8e97085946dd79c06720678a845778b6d6bf8.
 ---
@@ -84,7 +84,7 @@ index 521700ed7152..641e9a54ab3a 100644
  "  -> Bus options (PCI, PCMCIA, EISA, ISA)\n"
  "    -> PCI support (PCI [ = y])\n"
 diff --git a/scripts/package/kernel.spec b/scripts/package/kernel.spec
-index b3c956205af0..7354e1bd6ced 100644
+index c732415662ef..9737e40cd4e9 100644
 --- a/scripts/package/kernel.spec
 +++ b/scripts/package/kernel.spec
 @@ -99,6 +99,10 @@ patch -p1 < %{SOURCE2}

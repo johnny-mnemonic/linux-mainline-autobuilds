@@ -1,7 +1,7 @@
-From 6993dc51617a94289d34a8cd55d009bd8c6f73af Mon Sep 17 00:00:00 2001
+From c558dc692ada4fa74ffe55e911e268e59cd42898 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Sat, 20 Dec 2025 21:59:33 +0100
-Subject: [PATCH 096/126] ia64/sba_iommu: Convert to DMA map phys interface
+Subject: [PATCH 096/129] ia64/sba_iommu: Convert to DMA map phys interface
 
 Commit 131971f67e25 ("dma-mapping: remove unused map_page callback")
 removes .map_phys/.unmap_phys DMA interface.

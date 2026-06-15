@@ -1,7 +1,7 @@
-From d85b08fddb7f3a9357daa011954eb0be987a8752 Mon Sep 17 00:00:00 2001
+From 2b9cbb3e97b00e043d24f673511b74cd1d354811 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Mon, 23 Feb 2026 14:12:14 +0100
-Subject: [PATCH 102/126] Revert "dma-mapping: Remove dma_mark_clean (again)"
+Subject: [PATCH 102/129] Revert "dma-mapping: Remove dma_mark_clean (again)"
 
 This reverts commit 8a840ab0567ff2b7d382694ba24a58a893d2c7af.
 
@@ -14,7 +14,7 @@ Signed-off-by: Tomas Glozar <tglozar@gmail.com>
  4 files changed, 20 insertions(+)
 
 diff --git a/include/linux/dma-map-ops.h b/include/linux/dma-map-ops.h
-index 6a1832a73cad..9a8f7c1aa6c8 100644
+index bcb5b5428aea..5dafd7793ed4 100644
 --- a/include/linux/dma-map-ops.h
 +++ b/include/linux/dma-map-ops.h
 @@ -378,6 +378,14 @@ static inline void arch_dma_prep_coherent(struct page *page, size_t size)

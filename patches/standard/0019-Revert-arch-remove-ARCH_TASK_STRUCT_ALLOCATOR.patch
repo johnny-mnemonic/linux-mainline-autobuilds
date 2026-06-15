@@ -1,7 +1,7 @@
-From 4036e6f8befbd6c13325c0d041964c5f82edcddd Mon Sep 17 00:00:00 2001
+From 495f5aee10841af55a4ff91da25c9167c24a3968 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 16:45:16 +0100
-Subject: [PATCH 019/126] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
+Subject: [PATCH 019/129] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
 
 This reverts commit 3888750e21ccb909051c810cc79fcc0650a740f8.
 ---
@@ -10,7 +10,7 @@ This reverts commit 3888750e21ccb909051c810cc79fcc0650a740f8.
  2 files changed, 13 insertions(+)
 
 diff --git a/arch/Kconfig b/arch/Kconfig
-index 57b470124756..2a95675baf7c 100644
+index 956b78d33a49..d0427da035f3 100644
 --- a/arch/Kconfig
 +++ b/arch/Kconfig
 @@ -368,8 +368,17 @@ config ARCH_HAS_CPU_PASID
@@ -32,10 +32,10 @@ index 57b470124756..2a95675baf7c 100644
  	  An architecture should select this to provide hardened usercopy
  	  knowledge about what region of the thread_struct should be
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 21db099cc720..e4a7c2560d9f 100644
+index 7fa9c5238686..baff58d50ffd 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -854,6 +854,7 @@ static void __init set_max_threads(unsigned int max_threads_suggested)
+@@ -856,6 +856,7 @@ static void __init set_max_threads(unsigned int max_threads_suggested)
  int arch_task_struct_size __read_mostly;
  #endif
  
@@ -43,7 +43,7 @@ index 21db099cc720..e4a7c2560d9f 100644
  static void __init task_struct_whitelist(unsigned long *offset, unsigned long *size)
  {
  	/* Fetch thread_struct whitelist for the architecture. */
-@@ -868,10 +869,12 @@ static void __init task_struct_whitelist(unsigned long *offset, unsigned long *s
+@@ -870,10 +871,12 @@ static void __init task_struct_whitelist(unsigned long *offset, unsigned long *s
  	else
  		*offset += offsetof(struct task_struct, thread);
  }
@@ -56,7 +56,7 @@ index 21db099cc720..e4a7c2560d9f 100644
  #ifndef ARCH_MIN_TASKALIGN
  #define ARCH_MIN_TASKALIGN	0
  #endif
-@@ -884,6 +887,7 @@ void __init fork_init(void)
+@@ -886,6 +889,7 @@ void __init fork_init(void)
  			arch_task_struct_size, align,
  			SLAB_PANIC|SLAB_ACCOUNT,
  			useroffset, usersize, NULL);

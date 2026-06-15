@@ -1,7 +1,7 @@
-From e28f0bb8468e615d2fe320a41f7542b79faf6fad Mon Sep 17 00:00:00 2001
+From 60dd92318cd1435ca6e0e9b72db6cf9915a06c55 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Tue, 9 Jun 2026 14:10:17 +0200
-Subject: [PATCH 126/126] ixgb: replay two commits to fix build with ixgb
+Subject: [PATCH 126/129] ixgb: replay two commits to fix build with ixgb
  module
 
 See:

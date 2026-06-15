@@ -1,7 +1,7 @@
-From b8a20c8fefd78aa1e92959a95b1817b4939d60fc Mon Sep 17 00:00:00 2001
+From 4de8ce7d347396a299c231d1f33b9f666c2a1ed4 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Sun, 12 Apr 2026 16:56:54 +0200
-Subject: [PATCH 118/126] ia64: Replace "braindead" strnlen_user() with
+Subject: [PATCH 118/129] ia64: Replace "braindead" strnlen_user() with
  pipelined loop
 
 Implement pipelined loop for strnlen_user() in place of trivial

@@ -1,7 +1,7 @@
-From 85f3b2454fa0c008a2871c34e6d50b9e2c2fbe47 Mon Sep 17 00:00:00 2001
+From c5fbceb183d0475ff588db0dd16863946128b81c Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Tue, 25 Mar 2025 10:21:52 +0100
-Subject: [PATCH 065/126] Revert "vmlinux.lds.h: Remove entry to place
+Subject: [PATCH 065/129] Revert "vmlinux.lds.h: Remove entry to place
  init_task onto init_stack"
 
 ia64 still selects ARCH_TASK_STRUCT_ON_STACK, so we keep this.
@@ -16,7 +16,7 @@ This reverts commit 2ec01bd7152f80795eab7b48706aa5db8d4a286a.
  1 file changed, 1 insertion(+)
 
 diff --git a/include/asm-generic/vmlinux.lds.h b/include/asm-generic/vmlinux.lds.h
-index 60c8c22fd3e4..c86f3ffdb21d 100644
+index 5659f4b5a125..774f489c9ed3 100644
 --- a/include/asm-generic/vmlinux.lds.h
 +++ b/include/asm-generic/vmlinux.lds.h
 @@ -427,6 +427,7 @@

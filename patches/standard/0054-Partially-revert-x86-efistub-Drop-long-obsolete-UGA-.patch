@@ -1,7 +1,7 @@
-From 3a9074da94bb6a56596f9f5799b4b53b0213eb0d Mon Sep 17 00:00:00 2001
+From 346d241a26de98d3ef88543d781fc1260eb45e03 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 27 Jan 2025 15:43:18 +0100
-Subject: [PATCH 054/126] Partially revert "x86/efistub: Drop long obsolete UGA
+Subject: [PATCH 054/129] Partially revert "x86/efistub: Drop long obsolete UGA
  support"
 
 ia64 still has an implementation for efi_systab_show_arch(), so although
@@ -15,10 +15,10 @@ This partially reverts commit 144d52dd8fc83a082a275e1b663e7454d2b616a4.
  2 files changed, 5 insertions(+)
 
 diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
-index 1c29db2a7114..9a5c405c1a59 100644
+index a9f5dbf770e3..8af49346750a 100644
 --- a/drivers/firmware/efi/efi.c
 +++ b/drivers/firmware/efi/efi.c
-@@ -153,6 +153,9 @@ static ssize_t systab_show(struct kobject *kobj,
+@@ -152,6 +152,9 @@ static ssize_t systab_show(struct kobject *kobj,
  	if (efi.smbios != EFI_INVALID_TABLE_ADDR)
  		str += sprintf(str, "SMBIOS=0x%lx\n", efi.smbios);
  

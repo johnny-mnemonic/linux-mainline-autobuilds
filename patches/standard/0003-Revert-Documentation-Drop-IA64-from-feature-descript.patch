@@ -1,7 +1,7 @@
-From 9399d2f4d09d44ed310c07adc4ee6e48c9af26f5 Mon Sep 17 00:00:00 2001
+From 2545aeb097db9475d1ad7139943167a72e7d1a2a Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:48 +0200
-Subject: [PATCH 003/126] Revert "Documentation: Drop IA64 from feature
+Subject: [PATCH 003/129] Revert "Documentation: Drop IA64 from feature
  descriptions"
 
 This reverts commit af1f459233d4edeef634f559539e7f4b64cb1d25.
