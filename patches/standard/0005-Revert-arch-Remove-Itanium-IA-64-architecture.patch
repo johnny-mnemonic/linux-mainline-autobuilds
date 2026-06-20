@@ -1,7 +1,7 @@
-From df4a7639e7a8f66bf5e62339f91483c6cbbfbc4e Mon Sep 17 00:00:00 2001
+From cb649a7861ce2ba33e5c885ec0e198e2be89a279 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
-Subject: [PATCH 005/129] Revert "arch: Remove Itanium (IA-64) architecture"
+Subject: [PATCH 005/130] Revert "arch: Remove Itanium (IA-64) architecture"
 
 This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
 ---
@@ -3008,10 +3008,10 @@ index 6de26d1c6a9a..f7b422302993 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index dbd4552236e6..ec2c4125db30 100644
+index d95d3ef77773..8cc66ff1126c 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -12244,6 +12244,12 @@ F:	drivers/i3c/
+@@ -12324,6 +12324,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3024,7 +3024,7 @@ index dbd4552236e6..ec2c4125db30 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -20315,6 +20321,11 @@ S:	Maintained
+@@ -20508,6 +20514,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -66127,7 +66127,7 @@ index 46c84e5df00f..81be28833a37 100644
  }
  
 diff --git a/drivers/char/hw_random/Kconfig b/drivers/char/hw_random/Kconfig
-index 492a2a61a65b..c10f28cd0bb2 100644
+index a5bcef4a54ee..3e8a4b3c4861 100644
 --- a/drivers/char/hw_random/Kconfig
 +++ b/drivers/char/hw_random/Kconfig
 @@ -37,7 +37,7 @@ config HW_RANDOM_TIMERIOMEM
@@ -66140,7 +66140,7 @@ index 492a2a61a65b..c10f28cd0bb2 100644
  	help
  	  This driver provides kernel-side support for the Random Number
 diff --git a/drivers/char/mem.c b/drivers/char/mem.c
-index 5fd421e48c04..783006f9e02f 100644
+index 63253d1de5d7..e38ff42486cf 100644
 --- a/drivers/char/mem.c
 +++ b/drivers/char/mem.c
 @@ -31,6 +31,10 @@
@@ -66871,7 +66871,7 @@ index 000000000000..c6bdc455517f
 +late_initcall(acpi_cpufreq_init);
 +module_exit(acpi_cpufreq_exit);
 diff --git a/drivers/firmware/Kconfig b/drivers/firmware/Kconfig
-index bbd2155d8483..1503a787b323 100644
+index 12dc70254842..06485dd44a7a 100644
 --- a/drivers/firmware/Kconfig
 +++ b/drivers/firmware/Kconfig
 @@ -67,6 +67,30 @@ config FIRMWARE_MEMMAP
@@ -67278,7 +67278,7 @@ index 5f61672d55b7..adb5173372d3 100644
  #else
  #include "i8042-io.h"
 diff --git a/drivers/iommu/Kconfig b/drivers/iommu/Kconfig
-index f86262b11416..664dd16257b3 100644
+index 18d3d68af7cd..f58d3afc1d07 100644
 --- a/drivers/iommu/Kconfig
 +++ b/drivers/iommu/Kconfig
 @@ -96,7 +96,7 @@ config IOMMU_DEBUGFS
@@ -67854,7 +67854,7 @@ index dfdea0842149..4341294c22f9 100644
      defined(CONFIG_PARISC) || defined(CONFIG_SUPERH) ||\
      (defined(CONFIG_ARM) && defined(CONFIG_KEYBOARD_ATKBD) && !defined(CONFIG_ARCH_RPC))
 diff --git a/drivers/video/fbdev/Kconfig b/drivers/video/fbdev/Kconfig
-index 1c73d560f196..9a7fbf2002cb 100644
+index 085d3a202148..9573e0a3da30 100644
 --- a/drivers/video/fbdev/Kconfig
 +++ b/drivers/video/fbdev/Kconfig
 @@ -435,7 +435,7 @@ config FB_VESA
@@ -67867,10 +67867,10 @@ index 1c73d560f196..9a7fbf2002cb 100644
  	select DRM_PANEL_ORIENTATION_QUIRKS
  	select FB_IOMEM_HELPERS
 diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-index 6a9695a16d5e..debad7f5ebdd 100644
+index 08cb8612d41f..fb77b59fa80c 100644
 --- a/drivers/watchdog/Kconfig
 +++ b/drivers/watchdog/Kconfig
-@@ -1404,7 +1404,7 @@ config INTEL_OC_WATCHDOG
+@@ -1391,7 +1391,7 @@ config INTEL_OC_WATCHDOG
  
  config ITCO_WDT
  	tristate "Intel TCO Timer/Watchdog"
@@ -67967,7 +67967,7 @@ index ccbc35479684..c6349f5c2c3d 100644
   * We play games with efi_enabled so that the compiler will, if
   * possible, remove EFI-related code altogether.
 diff --git a/include/linux/mm.h b/include/linux/mm.h
-index fc2acedf0b76..1d0d48c156b2 100644
+index 485df9c2dbdd..b140d4793da7 100644
 --- a/include/linux/mm.h
 +++ b/include/linux/mm.h
 @@ -378,7 +378,7 @@ enum {
@@ -68029,10 +68029,10 @@ index f975bb34915b..fdb0cc198ec5 100644
  	}
  
 diff --git a/kernel/fork.c b/kernel/fork.c
-index addc555a1077..1d0a9ef462ba 100644
+index 892a95214c54..8be7f54497f7 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -2974,7 +2974,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
+@@ -2975,7 +2975,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
  		if (!access_ok((void __user *)kargs->stack, kargs->stack_size))
  			return false;
  
@@ -68110,7 +68110,7 @@ index c9efb17cc255..5ce2baf175ed 100644
  
  int __init sysctl_init_bases(void)
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index d9d7556bd7b9..fb4d46f54d48 100644
+index 3ca343f1a8d0..5a8362484092 100644
 --- a/lib/Kconfig.debug
 +++ b/lib/Kconfig.debug
 @@ -830,7 +830,7 @@ config SHRINKER_DEBUG
@@ -68153,10 +68153,10 @@ index 20aa459bfb3e..8968e2b8a12e 100644
  	bool "ARM BCJ filter decoder" if EXPERT
  	default y
 diff --git a/mm/vma.c b/mm/vma.c
-index d90791b00a7b..c7a27506f3cc 100644
+index 9eea2850818a..2d538f0239ca 100644
 --- a/mm/vma.c
 +++ b/mm/vma.c
-@@ -3106,9 +3106,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
+@@ -3109,9 +3109,9 @@ static int acct_stack_growth(struct vm_area_struct *vma,
  	return 0;
  }
  

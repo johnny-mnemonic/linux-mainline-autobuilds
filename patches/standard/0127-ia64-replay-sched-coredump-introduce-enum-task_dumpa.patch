@@ -1,7 +1,7 @@
-From 6eea70e0f2e1aaf62157b3b4fd6f316031445a3d Mon Sep 17 00:00:00 2001
+From e6576bfbabaefc7a0dffe95a1608a0376f8f65ea Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 15 Jun 2026 14:42:00 +0200
-Subject: [PATCH 1/3] ia64: replay "sched/coredump: introduce enum
+Subject: [PATCH 127/130] ia64: replay "sched/coredump: introduce enum
  task_dumpable"
 
 See 4f365e7a5d448dab7e0bb56ed32ff2bfddd134bd.

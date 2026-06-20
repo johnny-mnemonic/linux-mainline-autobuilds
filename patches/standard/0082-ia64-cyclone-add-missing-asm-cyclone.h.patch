@@ -1,7 +1,7 @@
-From e87fe65904b339ecffeaf5077b47758e4b541bbb Mon Sep 17 00:00:00 2001
+From 60165839d05bef4685e66795a4ed972f3227bfe9 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Thu, 4 Sep 2025 16:15:58 +0800
-Subject: [PATCH 082/129] ia64: cyclone: add missing asm/cyclone.h
+Subject: [PATCH 082/130] ia64: cyclone: add missing asm/cyclone.h
 
 Add a missing include to fix a missing prototype warning.
 

@@ -1,7 +1,7 @@
-From fd06a052665d0ac38f69718c37252284e4930ec6 Mon Sep 17 00:00:00 2001
+From 214e2c25f96c1896f85c4a589266e21222dd239a Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 13 Feb 2026 14:37:30 +0100
-Subject: [PATCH 099/129] ia64: replay "arch, mm: consolidate initialization of
+Subject: [PATCH 099/130] ia64: replay "arch, mm: consolidate initialization of
  SPARSE memory model"
 
 See 4267739cabb82da75780c4699fe8208821929944.

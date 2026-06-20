@@ -1,7 +1,7 @@
-From 3151e89fe10f434c56f63452d4f2f180b10d2174 Mon Sep 17 00:00:00 2001
+From 78192be428b325db50ec409c4ac5ba8a31960ff9 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:55 +0200
-Subject: [PATCH 004/129] Revert "kernel: Drop IA64 support from sig_fault
+Subject: [PATCH 004/130] Revert "kernel: Drop IA64 support from sig_fault
  handlers"
 
 This reverts commit f5e836884d8e55b416dfad55c29481ec1b65c1f0.

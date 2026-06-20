@@ -1,0 +1,39 @@
+From 41f34e18977a67742ab7ac99c29a83d427c514ac Mon Sep 17 00:00:00 2001
+From: Johnny Mnemonic <jm@machine-hall.org>
+Date: Sat, 20 Jun 2026 09:40:53 +0200
+Subject: [PATCH 129/130] timekeeper: anticipate ia64 implementations of
+ update_vsyscall[_tz]()
+
+This replaces the prior used two (partial) reverts of:
+
+* bf8f968a63159661acc20254ccdf0dc3c9f1bac2
+
+* 96942092d5e67c71af246fa3bc1422cdf80a5dc9
+
+...with a single change that relates to the actual reason, being that ia64
+hasn't been switched to the generic vDSO library yet, but upstream every
+arch has, see 7c5fc16c7a5699e7706d7847e58a75560251946e.
+---
+ include/linux/timekeeper_internal.h | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/include/linux/timekeeper_internal.h b/include/linux/timekeeper_internal.h
+index 4486dfd5d0de..f1171b67e79c 100644
+--- a/include/linux/timekeeper_internal.h
++++ b/include/linux/timekeeper_internal.h
+@@ -190,7 +190,11 @@ struct timekeeper {
+ 	s32			tai_offset;
+ };
+ 
+-#ifdef CONFIG_GENERIC_GETTIMEOFDAY
++/*
++ * ia64 hasn't been switched to the generic vDSO library yet and still
++ * has its own implementation for the following two function prototypes.
++ */
++#if defined(CONFIG_GENERIC_GETTIMEOFDAY) || defined(CONFIG_IA64)
+ 
+ extern void update_vsyscall(struct timekeeper *tk);
+ extern void update_vsyscall_tz(void);
+-- 
+2.25.1
+

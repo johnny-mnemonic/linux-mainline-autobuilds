@@ -1,7 +1,7 @@
-From 9a084233b97b46c1431e763852484573646ef82c Mon Sep 17 00:00:00 2001
+From b516515b8ed487426453deac6d4a1c91a7850986 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 20 Mar 2026 19:57:12 +0100
-Subject: [PATCH 109/129] ia64: Add statmount() and listmount() syscalls
+Subject: [PATCH 109/130] ia64: Add statmount() and listmount() syscalls
 
 statmount() and listmount() were added after ia64 was removed from
 the kernel.

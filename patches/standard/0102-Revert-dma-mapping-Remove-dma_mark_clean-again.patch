@@ -1,7 +1,7 @@
-From 2b9cbb3e97b00e043d24f673511b74cd1d354811 Mon Sep 17 00:00:00 2001
+From 8e0df54ce5594d9f89dbb5aadc0e5f5dea4f953f Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Mon, 23 Feb 2026 14:12:14 +0100
-Subject: [PATCH 102/129] Revert "dma-mapping: Remove dma_mark_clean (again)"
+Subject: [PATCH 102/130] Revert "dma-mapping: Remove dma_mark_clean (again)"
 
 This reverts commit 8a840ab0567ff2b7d382694ba24a58a893d2c7af.
 
@@ -33,7 +33,7 @@ index bcb5b5428aea..5dafd7793ed4 100644
  void arch_dma_clear_uncached(void *addr, size_t size);
  
 diff --git a/kernel/dma/Kconfig b/kernel/dma/Kconfig
-index bfef21b4a9ae..a6ccb3dda369 100644
+index 0a4ba21a57a7..80edd5181ba6 100644
 --- a/kernel/dma/Kconfig
 +++ b/kernel/dma/Kconfig
 @@ -47,6 +47,12 @@ config ARCH_HAS_DMA_SET_MASK

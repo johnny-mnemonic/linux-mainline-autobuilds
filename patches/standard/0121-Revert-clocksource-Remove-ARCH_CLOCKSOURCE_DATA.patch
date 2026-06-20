@@ -1,7 +1,7 @@
-From 104282b3a8c816be27644ac976911216aabfb194 Mon Sep 17 00:00:00 2001
+From 88f7d8cb1fd3c338b53eefeb262aa8ad513ec14b Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 15 Apr 2026 14:39:11 +0200
-Subject: [PATCH 121/129] Revert "clocksource: Remove ARCH_CLOCKSOURCE_DATA"
+Subject: [PATCH 121/130] Revert "clocksource: Remove ARCH_CLOCKSOURCE_DATA"
 
 arch/ia64/Kconfig selects ARCH_CLOCKSOURCE_DATA so let's keep it for now.
 At least until it's clear if we can do the same for ia64 as was done for

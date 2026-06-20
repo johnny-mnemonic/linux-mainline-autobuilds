@@ -1,7 +1,7 @@
-From 4cb6b4ff7bebdcdaf42af57e2415e6e83623f35c Mon Sep 17 00:00:00 2001
+From 7562c35c3d2ccf61ef54230047556aac3bca9868 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
-Subject: [PATCH 001/129] Revert "Documentation: Drop or replace remaining
+Subject: [PATCH 001/130] Revert "Documentation: Drop or replace remaining
  mentions of IA64"
 
 This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
@@ -180,10 +180,10 @@ index 7663c610fe90..332ca4b5f9b9 100644
  =====
  
 diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 672665ea6265..713c2139041d 100644
+index a68003c3599c..0d0c5750590c 100644
 --- a/Documentation/admin-guide/kernel-parameters.txt
 +++ b/Documentation/admin-guide/kernel-parameters.txt
-@@ -1652,7 +1652,8 @@ Kernel parameters
+@@ -1640,7 +1640,8 @@ Kernel parameters
  			very early in the boot process. For early debugging
  			via a serial port see kgdboc_earlycon instead.
  
@@ -193,7 +193,7 @@ index 672665ea6265..713c2139041d 100644
  			Specifies physical address of start of kernel core
  			image elf header and optionally the size. Generally
  			kexec loader will pass this option to capture kernel.
-@@ -1716,6 +1717,12 @@ Kernel parameters
+@@ -1704,6 +1705,12 @@ Kernel parameters
  	floppy=		[HW]
  			See Documentation/admin-guide/blockdev/floppy.rst.
  
@@ -410,10 +410,10 @@ index b2ac3c743a3a..ce3f39d9b3cb 100644
  sparc - 在这一点上，IRQ是开着的（？），把local_irq_save改为_disable。
        - 待办事项: 需要第二个CPU来禁用抢占 (参考 #1)
 diff --git a/Makefile b/Makefile
-index 5e73bba74da3..19ff84782b94 100644
+index d1c595db55c9..6f5ded1925b4 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -390,7 +390,7 @@ include $(srctree)/scripts/subarch.include
+@@ -391,7 +391,7 @@ include $(srctree)/scripts/subarch.include
  # When performing cross compilation for other architectures ARCH shall be set
  # to the target architecture. (See arch/* for the possibilities).
  # ARCH can be set during invocation of make:
@@ -422,7 +422,7 @@ index 5e73bba74da3..19ff84782b94 100644
  # Another way is to have ARCH set in the environment.
  # The default ARCH is the host where make is executed.
  
-@@ -398,7 +398,7 @@ include $(srctree)/scripts/subarch.include
+@@ -399,7 +399,7 @@ include $(srctree)/scripts/subarch.include
  # during compilation. Only gcc and related bin-utils executables
  # are prefixed with $(CROSS_COMPILE).
  # CROSS_COMPILE can be set on the command line

@@ -1,7 +1,7 @@
-From 183b4f3ebaf723c8ac7b4657273004ab99287117 Mon Sep 17 00:00:00 2001
+From 405e232e6a077b247efcb27661404c3756cdc27d Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 1 Aug 2025 16:36:28 +0200
-Subject: [PATCH 076/129] Revert "workqueue: Remove unused work_on_cpu_safe"
+Subject: [PATCH 076/130] Revert "workqueue: Remove unused work_on_cpu_safe"
 
 ia64 is still using this in `arch/ia64/kernel/salinfo.c`, so we keep that.
 
@@ -24,10 +24,10 @@ This reverts commit fc2898ea793a48bc4b74b61cde2d8656f20efdf4.
  2 files changed, 38 insertions(+)
 
 diff --git a/include/linux/workqueue.h b/include/linux/workqueue.h
-index 6177624539b3..a278a2296bda 100644
+index a283766a192a..3d1eeeec85cc 100644
 --- a/include/linux/workqueue.h
 +++ b/include/linux/workqueue.h
-@@ -878,6 +878,19 @@ long work_on_cpu_key(int cpu, long (*fn)(void *),
+@@ -879,6 +879,19 @@ long work_on_cpu_key(int cpu, long (*fn)(void *),
  	work_on_cpu_key(_cpu, _fn, _arg, &__key);	\
  })
  
@@ -48,10 +48,10 @@ index 6177624539b3..a278a2296bda 100644
  
  #ifdef CONFIG_FREEZER
 diff --git a/kernel/workqueue.c b/kernel/workqueue.c
-index 0c265eac903a..e05ba1d88ea2 100644
+index 78068ae8f28a..bc9bf4b4397e 100644
 --- a/kernel/workqueue.c
 +++ b/kernel/workqueue.c
-@@ -6946,6 +6946,31 @@ long work_on_cpu_key(int cpu, long (*fn)(void *),
+@@ -6961,6 +6961,31 @@ long work_on_cpu_key(int cpu, long (*fn)(void *),
  	return wfc.ret;
  }
  EXPORT_SYMBOL_GPL(work_on_cpu_key);

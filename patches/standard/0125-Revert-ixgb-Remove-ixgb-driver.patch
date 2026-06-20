@@ -1,7 +1,7 @@
-From c842fe12fbdc0cf450a96408b2b42393232c4364 Mon Sep 17 00:00:00 2001
+From 71b2a24e2681388a0c8c6de0014432f9b51923ad Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 1 Jun 2026 11:31:50 +0200
-Subject: [PATCH 124/129] Revert "ixgb: Remove ixgb driver"
+Subject: [PATCH 125/130] Revert "ixgb: Remove ixgb driver"
 
 ...but leave out defconfigs.
 
@@ -50,10 +50,10 @@ index 43838723fde9..cb22e30be61e 100644
     - drivers/net/cxgb3
  
 diff --git a/Documentation/networking/device_drivers/ethernet/index.rst b/Documentation/networking/device_drivers/ethernet/index.rst
-index 1d25be493ae9..625de4d64a4e 100644
+index 786a23c84b90..cb7aa1861914 100644
 --- a/Documentation/networking/device_drivers/ethernet/index.rst
 +++ b/Documentation/networking/device_drivers/ethernet/index.rst
-@@ -36,6 +36,7 @@ Contents:
+@@ -35,6 +35,7 @@ Contents:
     intel/idpf
     intel/igb
     intel/igbvf

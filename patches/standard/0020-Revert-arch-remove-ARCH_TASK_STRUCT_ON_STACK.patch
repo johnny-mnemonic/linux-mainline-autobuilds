@@ -1,7 +1,7 @@
-From 7ed30180db9e4273c85a2aee248b27702f0dbc8e Mon Sep 17 00:00:00 2001
+From 3d0ba3d02213340bf00bb7745f32f9295a6d338e Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 12 Jan 2024 19:11:18 +0100
-Subject: [PATCH 020/129] Revert "arch: remove ARCH_TASK_STRUCT_ON_STACK"
+Subject: [PATCH 020/130] Revert "arch: remove ARCH_TASK_STRUCT_ON_STACK"
 
 This reverts commit 0eb5085c38749f2a91e5bd8cbebb1ebf3398343c.
 ---
@@ -12,10 +12,10 @@ This reverts commit 0eb5085c38749f2a91e5bd8cbebb1ebf3398343c.
  4 files changed, 19 insertions(+), 3 deletions(-)
 
 diff --git a/arch/powerpc/kexec/core_64.c b/arch/powerpc/kexec/core_64.c
-index 825ab8a88f18..566a34c6de63 100644
+index 58c13a59b93b..354995c78fcb 100644
 --- a/arch/powerpc/kexec/core_64.c
 +++ b/arch/powerpc/kexec/core_64.c
-@@ -305,7 +305,8 @@ static void kexec_prepare_cpus(void)
+@@ -303,7 +303,8 @@ static void kexec_prepare_cpus(void)
   * We could use a smaller stack if we don't care about anything using
   * current, but that audit has not been performed.
   */
