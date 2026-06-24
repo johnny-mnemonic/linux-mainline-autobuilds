@@ -1,4 +1,4 @@
-From 13519fcf53611a5d004c2fd24a891cf91350e188 Mon Sep 17 00:00:00 2001
+From 268f1082f22aaeaa94733cfcef1e2572d71fae59 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 14:21:54 +0100
 Subject: [PATCH 017/133] Revert "mm: remove unnecessary ia64 code and comment"
@@ -11,7 +11,7 @@ This reverts commit e99fb98d478a0480d50e334df21bef12fb74e17f.
  3 files changed, 34 insertions(+), 18 deletions(-)
 
 diff --git a/mm/Kconfig b/mm/Kconfig
-index fe734d9bbe99..363700ce5661 100644
+index 210770ba2b26..d6f542d08356 100644
 --- a/mm/Kconfig
 +++ b/mm/Kconfig
 @@ -761,7 +761,7 @@ config DEFAULT_MMAP_MIN_ADDR
@@ -24,10 +24,10 @@ index fe734d9bbe99..363700ce5661 100644
  	  On arm and other archs it should not be higher than 32768.
  	  Programs which use vm86 functionality or have some need to map
 diff --git a/mm/mm_init.c b/mm/mm_init.c
-index 65623f95bec3..10836ada70bd 100644
+index 0f64909e8d20..a73f502cea48 100644
 --- a/mm/mm_init.c
 +++ b/mm/mm_init.c
-@@ -1506,7 +1506,8 @@ void __init set_pageblock_order(void)
+@@ -1510,7 +1510,8 @@ void __init set_pageblock_order(void)
  
  	/*
  	 * Assume the largest contiguous order of interest is a huge page.
@@ -37,7 +37,7 @@ index 65623f95bec3..10836ada70bd 100644
  	 */
  	pageblock_order = order;
  }
-@@ -1628,8 +1629,9 @@ void __init *memmap_alloc(phys_addr_t size, phys_addr_t align,
+@@ -1632,8 +1633,9 @@ void __init *memmap_alloc(phys_addr_t size, phys_addr_t align,
  #ifdef CONFIG_FLATMEM
  static void __init alloc_node_mem_map(struct pglist_data *pgdat)
  {
@@ -49,7 +49,7 @@ index 65623f95bec3..10836ada70bd 100644
  
  	/* Skip empty nodes */
  	if (!pgdat->node_spanned_pages)
-@@ -1637,20 +1639,26 @@ static void __init alloc_node_mem_map(struct pglist_data *pgdat)
+@@ -1641,20 +1643,26 @@ static void __init alloc_node_mem_map(struct pglist_data *pgdat)
  
  	start = pgdat->node_start_pfn & ~(MAX_ORDER_NR_PAGES - 1);
  	offset = pgdat->node_start_pfn - start;

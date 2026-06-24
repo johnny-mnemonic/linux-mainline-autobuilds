@@ -1,4 +1,4 @@
-From f42d6951d69d92751d0fea56aa868b5b172d0fb8 Mon Sep 17 00:00:00 2001
+From 6c678cb7d54152a7527f68cdf044869d2536cea8 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Mar 2026 19:42:31 +0100
 Subject: [PATCH 117/133] tools include: Fix barrier.h on ia64

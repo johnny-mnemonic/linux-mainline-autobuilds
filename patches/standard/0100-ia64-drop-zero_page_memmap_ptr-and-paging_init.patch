@@ -1,4 +1,4 @@
-From 12ff7a1f3675f5f132e57c8f4c9ad6d21cdd5bf7 Mon Sep 17 00:00:00 2001
+From f3d2ba32b2e72dd769e3fa6b668844630f145782 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sat, 14 Feb 2026 16:13:45 +0100
 Subject: [PATCH 100/133] ia64: drop zero_page_memmap_ptr and paging_init()

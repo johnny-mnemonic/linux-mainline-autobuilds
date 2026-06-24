@@ -1,4 +1,4 @@
-From 65362a324fe0702ea0b0689b2817098135ecfb71 Mon Sep 17 00:00:00 2001
+From 66eab8a2b5fd3327e03a767cb5d50fd38c649fca Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Wed, 17 Dec 2025 22:08:25 +0100
 Subject: [PATCH 095/133] ia64/mm: Remove redundant VM_*_BIT declarations

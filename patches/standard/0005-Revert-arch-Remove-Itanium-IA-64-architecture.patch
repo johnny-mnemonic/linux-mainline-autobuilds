@@ -1,4 +1,4 @@
-From cb649a7861ce2ba33e5c885ec0e198e2be89a279 Mon Sep 17 00:00:00 2001
+From 22872de632da61471dc4016b09f4904f25e548dd Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
 Subject: [PATCH 005/133] Revert "arch: Remove Itanium (IA-64) architecture"
@@ -3008,10 +3008,10 @@ index 6de26d1c6a9a..f7b422302993 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index d95d3ef77773..8cc66ff1126c 100644
+index ba45953bb805..b28a4ef8aa31 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -12324,6 +12324,12 @@ F:	drivers/i3c/
+@@ -12322,6 +12322,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -68110,7 +68110,7 @@ index c9efb17cc255..5ce2baf175ed 100644
  
  int __init sysctl_init_bases(void)
 diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index 3ca343f1a8d0..5a8362484092 100644
+index 1244dcac2294..af6d9e862700 100644
 --- a/lib/Kconfig.debug
 +++ b/lib/Kconfig.debug
 @@ -830,7 +830,7 @@ config SHRINKER_DEBUG

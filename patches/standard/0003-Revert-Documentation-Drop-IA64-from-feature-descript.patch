@@ -1,4 +1,4 @@
-From 71a8f960cf2c83215ff6c7499a902b1f072aa98a Mon Sep 17 00:00:00 2001
+From f89203b2a94712bd89e372d13bf0e7e59c6aec74 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:48 +0200
 Subject: [PATCH 003/133] Revert "Documentation: Drop IA64 from feature

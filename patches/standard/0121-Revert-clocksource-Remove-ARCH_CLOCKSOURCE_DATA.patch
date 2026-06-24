@@ -1,4 +1,4 @@
-From 88f7d8cb1fd3c338b53eefeb262aa8ad513ec14b Mon Sep 17 00:00:00 2001
+From a8d1b5bfe5297ea9c79a15d8cf5644828460108f Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 15 Apr 2026 14:39:11 +0200
 Subject: [PATCH 121/133] Revert "clocksource: Remove ARCH_CLOCKSOURCE_DATA"
