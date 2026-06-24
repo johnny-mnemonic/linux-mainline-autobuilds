@@ -1,4 +1,4 @@
-From c1d2cf32a3381039161f838739e4fd09dd61dfca Mon Sep 17 00:00:00 2001
+From c66dc2eeb7af0607af48ddef043ee7674839ce15 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Tue, 24 Feb 2026 16:02:09 +0100
 Subject: [PATCH 106/133] ia64: Migrate vgacon to vgacon_register_screen()

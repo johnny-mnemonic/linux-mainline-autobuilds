@@ -1,4 +1,4 @@
-From 0de9ac9b50efcef63c975019a109f425a6b7faec Mon Sep 17 00:00:00 2001
+From 2993b962092c233da672cf5842e6478c019ac019 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sun, 2 Jun 2024 10:10:34 +0200
 Subject: [PATCH 028/133] Revert "ACPI/NUMA: Remove architecture dependent
@@ -10,7 +10,7 @@ This reverts commit 3a785e19f432672b9ef53f07c506d5e698439033.
  1 file changed, 2 insertions(+)
 
 diff --git a/include/linux/acpi.h b/include/linux/acpi.h
-index d0ea638a9480..1035c395e763 100644
+index 37f3103d2bf0..1784146d1c17 100644
 --- a/include/linux/acpi.h
 +++ b/include/linux/acpi.h
 @@ -282,6 +282,8 @@ void acpi_numa_rintc_affinity_init(struct acpi_srat_rintc_affinity *pa);

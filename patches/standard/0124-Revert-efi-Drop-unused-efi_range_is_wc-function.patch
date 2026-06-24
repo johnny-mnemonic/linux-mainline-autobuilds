@@ -1,7 +1,7 @@
-From aa4314f55f3a3aa2ce602d672f8152d4afd6bb11 Mon Sep 17 00:00:00 2001
+From 3ba281588aad2eb167581755a332b19831069464 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 20 Apr 2026 00:44:35 +0200
-Subject: [PATCH 125/133] Revert "efi: Drop unused efi_range_is_wc() function"
+Subject: [PATCH 124/133] Revert "efi: Drop unused efi_range_is_wc() function"
 
 ia64 is still using this in `arch/ia64/include/asm/fb.h`, so keeping that.
 

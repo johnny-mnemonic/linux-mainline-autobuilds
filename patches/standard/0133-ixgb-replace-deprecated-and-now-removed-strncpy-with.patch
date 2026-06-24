@@ -1,4 +1,4 @@
-From 645d64e0f307d8988e0992106d092f6a096bbe7c Mon Sep 17 00:00:00 2001
+From bc874bb4580034117f315a1cd38081b506d33abc Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sun, 21 Jun 2026 00:27:22 +0200
 Subject: [PATCH 133/133] ixgb: replace deprecated and now removed strncpy with

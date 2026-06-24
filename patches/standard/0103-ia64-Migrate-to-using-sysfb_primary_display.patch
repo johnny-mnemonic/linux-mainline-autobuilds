@@ -1,4 +1,4 @@
-From dc630f77ee2b3bbafa3087924ab9251ef986276d Mon Sep 17 00:00:00 2001
+From 173e2d9c62437a7667458d47d750a90239225ef7 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Mon, 23 Feb 2026 17:30:08 +0100
 Subject: [PATCH 103/133] ia64: Migrate to using sysfb_primary_display

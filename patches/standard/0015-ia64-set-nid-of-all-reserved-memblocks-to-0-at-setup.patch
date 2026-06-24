@@ -1,4 +1,4 @@
-From 86b81ebec91aa9ba2e5d1339b6d551938f6172d5 Mon Sep 17 00:00:00 2001
+From 5829c8531a6e571657c673742002d58f56c6333b Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Tue, 21 Nov 2023 16:40:42 +0100
 Subject: [PATCH 015/133] ia64: set nid of all reserved memblocks to 0 at setup

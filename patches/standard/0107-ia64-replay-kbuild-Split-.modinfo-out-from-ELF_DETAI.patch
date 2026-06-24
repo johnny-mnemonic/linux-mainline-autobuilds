@@ -1,4 +1,4 @@
-From 990ca2ebf767b7e14303b907a523d56e3e00469d Mon Sep 17 00:00:00 2001
+From 8ee8d4287dec7db28e1adc15506d2fdc6e644fc8 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Mon, 9 Mar 2026 21:46:25 +0100
 Subject: [PATCH 107/133] ia64: replay "kbuild: Split .modinfo out from

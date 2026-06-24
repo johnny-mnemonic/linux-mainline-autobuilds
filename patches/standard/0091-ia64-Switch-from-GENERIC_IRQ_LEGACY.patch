@@ -1,4 +1,4 @@
-From 48d4f740bc534aef2debfd513655a006521ee000 Mon Sep 17 00:00:00 2001
+From 742469f60f0c1d43c766b6206a6282038a12e9b5 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 14 Nov 2025 19:37:51 +0100
 Subject: [PATCH 091/133] ia64: Switch from GENERIC_IRQ_LEGACY

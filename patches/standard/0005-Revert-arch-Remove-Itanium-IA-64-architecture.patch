@@ -1,4 +1,4 @@
-From 22872de632da61471dc4016b09f4904f25e548dd Mon Sep 17 00:00:00 2001
+From 75b16b712d7cb31a3de8265f6775d1af0a3f3c3c Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
 Subject: [PATCH 005/133] Revert "arch: Remove Itanium (IA-64) architecture"
@@ -3008,10 +3008,10 @@ index 6de26d1c6a9a..f7b422302993 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index ba45953bb805..b28a4ef8aa31 100644
+index 4b32a2a7443b..b88bef8beff6 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -12322,6 +12322,12 @@ F:	drivers/i3c/
+@@ -12339,6 +12339,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3024,7 +3024,7 @@ index ba45953bb805..b28a4ef8aa31 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -20508,6 +20514,11 @@ S:	Maintained
+@@ -20534,6 +20540,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -64776,10 +64776,10 @@ index ed2162a97bd2..557702a7687b 100644
  #define should_use_kmap(pfn)   0
  #else
 diff --git a/drivers/char/Kconfig b/drivers/char/Kconfig
-index 2a3a37b2cf3c..5f27ce556dbb 100644
+index 9865227af167..5c5a81cb086c 100644
 --- a/drivers/char/Kconfig
 +++ b/drivers/char/Kconfig
-@@ -323,7 +323,7 @@ config DEVPORT
+@@ -297,7 +297,7 @@ config DEVPORT
  	  device is similar to /dev/mem, but for I/O ports.
  
  config HPET
@@ -64788,7 +64788,7 @@ index 2a3a37b2cf3c..5f27ce556dbb 100644
  	default n
  	depends on ACPI
  	help
-@@ -352,7 +352,7 @@ config HPET_MMAP_DEFAULT
+@@ -326,7 +326,7 @@ config HPET_MMAP_DEFAULT
  
  config HANGCHECK_TIMER
  	tristate "Hangcheck timer"
@@ -64798,7 +64798,7 @@ index 2a3a37b2cf3c..5f27ce556dbb 100644
  	  The hangcheck-timer module detects when the system has gone
  	  out to lunch past a certain margin.  It can reboot the system
 diff --git a/drivers/char/Makefile b/drivers/char/Makefile
-index 47bdc882797a..13be5f7f4c7b 100644
+index a46d7bf7c4c8..80908c45a8c0 100644
 --- a/drivers/char/Makefile
 +++ b/drivers/char/Makefile
 @@ -9,6 +9,7 @@ obj-y				+= misc.o
@@ -66079,7 +66079,7 @@ index 000000000000..15b240ea4848
 +MODULE_AUTHOR("Chris Ahna <Christopher.J.Ahna@intel.com>");
 +MODULE_LICENSE("GPL and additional rights");
 diff --git a/drivers/char/hpet.c b/drivers/char/hpet.c
-index 46c84e5df00f..81be28833a37 100644
+index 285c6037417a..4c8212c655a7 100644
 --- a/drivers/char/hpet.c
 +++ b/drivers/char/hpet.c
 @@ -65,6 +65,25 @@
@@ -67278,7 +67278,7 @@ index 5f61672d55b7..adb5173372d3 100644
  #else
  #include "i8042-io.h"
 diff --git a/drivers/iommu/Kconfig b/drivers/iommu/Kconfig
-index 18d3d68af7cd..f58d3afc1d07 100644
+index 6e07bd69467a..0a01fe661dc5 100644
 --- a/drivers/iommu/Kconfig
 +++ b/drivers/iommu/Kconfig
 @@ -96,7 +96,7 @@ config IOMMU_DEBUGFS
@@ -67326,7 +67326,7 @@ index e40413609f53..1a6acd27438d 100644
  	select CEC_CORE
  	select CEC_NOTIFIER
 diff --git a/drivers/misc/Kconfig b/drivers/misc/Kconfig
-index 00683bf06258..15e83f8204f4 100644
+index 390256ed91f4..8f7c925e9c57 100644
 --- a/drivers/misc/Kconfig
 +++ b/drivers/misc/Kconfig
 @@ -188,7 +188,7 @@ config ENCLOSURE_SERVICES
@@ -67906,7 +67906,7 @@ index 052d0e888c27..c14852362fce 100644
  #define __compat_packed __attribute__((packed))
  #else
 diff --git a/include/linux/acpi.h b/include/linux/acpi.h
-index 67effb91fa98..d0ea638a9480 100644
+index 10d6c6c11bdf..37f3103d2bf0 100644
 --- a/include/linux/acpi.h
 +++ b/include/linux/acpi.h
 @@ -251,7 +251,10 @@ acpi_table_parse_cedt(enum acpi_cedt_type id,
@@ -67921,7 +67921,7 @@ index 67effb91fa98..d0ea638a9480 100644
  void acpi_numa_processor_affinity_init (struct acpi_srat_cpu_affinity *pa);
  #else
  static inline void
-@@ -1194,8 +1197,15 @@ static inline void acpi_unregister_lps0_dev(struct acpi_s2idle_dev_ops *arg)
+@@ -1201,8 +1204,15 @@ static inline void acpi_unregister_lps0_dev(struct acpi_s2idle_dev_ops *arg)
  {
  }
  #endif /* CONFIG_SUSPEND && CONFIG_X86 */

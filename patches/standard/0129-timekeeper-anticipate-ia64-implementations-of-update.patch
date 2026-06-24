@@ -1,4 +1,4 @@
-From 0cad2ec6844e2259096a9658b3352a715414d108 Mon Sep 17 00:00:00 2001
+From ff6bc1204773405cd97379650090c50af91cb28d Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sat, 20 Jun 2026 09:40:53 +0200
 Subject: [PATCH 129/133] timekeeper: anticipate ia64 implementations of

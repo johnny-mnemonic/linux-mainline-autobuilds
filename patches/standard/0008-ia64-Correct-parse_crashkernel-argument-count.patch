@@ -1,4 +1,4 @@
-From 69dcd2e411fc7190b72a820e67b8517a7ff8a5d9 Mon Sep 17 00:00:00 2001
+From a1d44910ef2f14bbfea50e90dc4d2429e9d79aaa Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Tue, 31 Oct 2023 19:49:39 +0100
 Subject: [PATCH 008/133] ia64: Correct parse_crashkernel argument count
