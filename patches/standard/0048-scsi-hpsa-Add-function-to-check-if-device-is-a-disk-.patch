@@ -1,4 +1,4 @@
-From 118c6597db723e4b851fe39d89cbc24839b3f337 Mon Sep 17 00:00:00 2001
+From 1f8e5c8e0fe76fe4aa675abf000d3fb75c7ba664 Mon Sep 17 00:00:00 2001
 From: Ivan Mironov <mironov.ivan@gmail.com>
 Date: Wed, 5 Dec 2018 20:20:57 +0500
 Subject: [PATCH 048/133] scsi: hpsa: Add function to check if device is a disk

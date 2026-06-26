@@ -1,4 +1,4 @@
-From 75b16b712d7cb31a3de8265f6775d1af0a3f3c3c Mon Sep 17 00:00:00 2001
+From ab45262af3c209ab39b691fed1ad14bb3791e9f5 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
 Subject: [PATCH 005/133] Revert "arch: Remove Itanium (IA-64) architecture"
@@ -3008,10 +3008,10 @@ index 6de26d1c6a9a..f7b422302993 100644
    This option sets ``possible_cpus`` bits in ``cpu_possible_mask``.
  
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 4b32a2a7443b..b88bef8beff6 100644
+index 15011f5752a9..9dfddf26ac22 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -12339,6 +12339,12 @@ F:	drivers/i3c/
+@@ -12357,6 +12357,12 @@ F:	drivers/i3c/
  F:	include/dt-bindings/i3c/
  F:	include/linux/i3c/
  
@@ -3024,7 +3024,7 @@ index 4b32a2a7443b..b88bef8beff6 100644
  IBM Operation Panel Input Driver
  M:	Eddie James <eajames@linux.ibm.com>
  L:	linux-input@vger.kernel.org
-@@ -20534,6 +20540,11 @@ S:	Maintained
+@@ -20559,6 +20565,11 @@ S:	Maintained
  F:	drivers/leds/leds-pca9532.c
  F:	include/linux/leds-pca9532.h
  
@@ -68015,7 +68015,7 @@ index a6e5a44c9b42..3eef55d2d43d 100644
  #elif !defined(CONFIG_MMU)
  #define __VM_ARCH_SPECIFIC_1 {VM_MAPPED_COPY,"mappedcopy"	}
 diff --git a/kernel/cpu.c b/kernel/cpu.c
-index f975bb34915b..fdb0cc198ec5 100644
+index b3c8553d7bd6..d3d1cad78f3e 100644
 --- a/kernel/cpu.c
 +++ b/kernel/cpu.c
 @@ -1685,6 +1685,9 @@ static int cpu_up(unsigned int cpu, enum cpuhp_state target)
@@ -68029,10 +68029,10 @@ index f975bb34915b..fdb0cc198ec5 100644
  	}
  
 diff --git a/kernel/fork.c b/kernel/fork.c
-index 892a95214c54..8be7f54497f7 100644
+index 13e38e89a1f3..594c24cb6adf 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
-@@ -2975,7 +2975,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
+@@ -2976,7 +2976,7 @@ static inline bool clone3_stack_valid(struct kernel_clone_args *kargs)
  		if (!access_ok((void __user *)kargs->stack, kargs->stack_size))
  			return false;
  
@@ -68042,10 +68042,10 @@ index 892a95214c54..8be7f54497f7 100644
  #endif
  	}
 diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index 8b791e9e9f67..77fa1141ecee 100644
+index 96226707c2f6..d32a3d49fb73 100644
 --- a/kernel/sched/core.c
 +++ b/kernel/sched/core.c
-@@ -9295,9 +9295,9 @@ void normalize_rt_tasks(void)
+@@ -9299,9 +9299,9 @@ void normalize_rt_tasks(void)
  
  #endif /* CONFIG_MAGIC_SYSRQ */
  
@@ -68057,7 +68057,7 @@ index 8b791e9e9f67..77fa1141ecee 100644
   *
   * They can only be called when the whole system has been
   * stopped - every CPU needs to be quiescent, and no scheduling
-@@ -9319,7 +9319,30 @@ struct task_struct *curr_task(int cpu)
+@@ -9323,7 +9323,30 @@ struct task_struct *curr_task(int cpu)
  	return cpu_curr(cpu);
  }
  

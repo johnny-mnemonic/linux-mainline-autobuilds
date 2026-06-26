@@ -1,4 +1,4 @@
-From 3ba281588aad2eb167581755a332b19831069464 Mon Sep 17 00:00:00 2001
+From d12bd870d7fa9567a81bada4bc0ff7de43f9559d Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 20 Apr 2026 00:44:35 +0200
 Subject: [PATCH 124/133] Revert "efi: Drop unused efi_range_is_wc() function"

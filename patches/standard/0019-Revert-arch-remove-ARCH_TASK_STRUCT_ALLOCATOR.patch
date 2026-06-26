@@ -1,4 +1,4 @@
-From cd722682c2c9cfa1895a31adb8deb0aef04edfee Mon Sep 17 00:00:00 2001
+From 68052bd7964f8da795fdf22d4c99f97f8b22e10e Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Thu, 11 Jan 2024 16:45:16 +0100
 Subject: [PATCH 019/133] Revert "arch: remove ARCH_TASK_STRUCT_ALLOCATOR"
@@ -32,7 +32,7 @@ index 956b78d33a49..d0427da035f3 100644
  	  An architecture should select this to provide hardened usercopy
  	  knowledge about what region of the thread_struct should be
 diff --git a/kernel/fork.c b/kernel/fork.c
-index c2c294ebc639..4f29932ec028 100644
+index 4c34d7a308c9..9b60b091d19d 100644
 --- a/kernel/fork.c
 +++ b/kernel/fork.c
 @@ -857,6 +857,7 @@ static void __init set_max_threads(unsigned int max_threads_suggested)

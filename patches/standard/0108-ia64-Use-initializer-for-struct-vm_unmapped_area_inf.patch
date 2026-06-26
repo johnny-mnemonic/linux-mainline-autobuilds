@@ -1,4 +1,4 @@
-From de1ca07bdb6e4cb5dbcad7df1ba6730e0ff89731 Mon Sep 17 00:00:00 2001
+From 745d44f0dc210f2e38fff02a5224cd15c4c2c111 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Sat, 14 Mar 2026 22:36:07 +0100
 Subject: [PATCH 108/133] ia64: Use initializer for struct

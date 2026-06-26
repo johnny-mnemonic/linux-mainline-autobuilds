@@ -1,4 +1,4 @@
-From fc036f129d27da4f63c2d234d80d96e7fa1d5d1d Mon Sep 17 00:00:00 2001
+From 76fc449c25d19d655ad480fa9aff3cef33377160 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Tue, 25 Mar 2025 10:21:52 +0100
 Subject: [PATCH 065/133] Revert "vmlinux.lds.h: Remove entry to place

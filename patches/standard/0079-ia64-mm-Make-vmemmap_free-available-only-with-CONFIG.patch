@@ -1,4 +1,4 @@
-From 4a075a21f09edea03a2f718f1e0968b613f8a087 Mon Sep 17 00:00:00 2001
+From 59af97e84b8c72ba75174ce60c9fbabb271fa1c4 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Thu, 4 Sep 2025 15:33:15 +0800
 Subject: [PATCH 079/133] ia64/mm: Make vmemmap_free() available only with

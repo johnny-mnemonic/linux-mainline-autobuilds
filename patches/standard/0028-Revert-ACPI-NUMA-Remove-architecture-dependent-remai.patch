@@ -1,4 +1,4 @@
-From 2993b962092c233da672cf5842e6478c019ac019 Mon Sep 17 00:00:00 2001
+From d045c441cae1ce07d985dea5cd906db2519a75a9 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sun, 2 Jun 2024 10:10:34 +0200
 Subject: [PATCH 028/133] Revert "ACPI/NUMA: Remove architecture dependent

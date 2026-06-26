@@ -1,4 +1,4 @@
-From 39b9a640b1ce6d0f3b47b13f0b692c87fa837381 Mon Sep 17 00:00:00 2001
+From 6ef4e80b014e12951705d0663eddb8fd744977f6 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Sat, 7 Dec 2024 18:26:31 +0100
 Subject: [PATCH 088/133] ia64: Re-introduce efi_initialize_iomem_resources

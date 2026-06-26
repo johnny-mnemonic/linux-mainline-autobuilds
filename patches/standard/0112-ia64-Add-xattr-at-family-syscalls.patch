@@ -1,4 +1,4 @@
-From d395d2737753d1202cc1fb7b51938afee67a7c02 Mon Sep 17 00:00:00 2001
+From ec60868447c53d14e16f11c9c505385d03fcbb28 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 20 Mar 2026 20:10:33 +0100
 Subject: [PATCH 112/133] ia64: Add xattr *at family syscalls

@@ -1,4 +1,4 @@
-From 9c5df0f792772370dc07e95dc004f3037bfe06e5 Mon Sep 17 00:00:00 2001
+From 86df6b023a7d221d8d4ff537e6ef3e785774643d Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:48 +0200
 Subject: [PATCH 003/133] Revert "Documentation: Drop IA64 from feature
@@ -98,7 +98,7 @@ index 683de7c15058..8aa6139aff48 100644
      |        m68k: | TODO |
      |  microblaze: | TODO |
 diff --git a/Documentation/features/core/thread-info-in-task/arch-support.txt b/Documentation/features/core/thread-info-in-task/arch-support.txt
-index f3d744c76061..da75b1ef6366 100644
+index e26efdfbb6b4..a549511519c7 100644
 --- a/Documentation/features/core/thread-info-in-task/arch-support.txt
 +++ b/Documentation/features/core/thread-info-in-task/arch-support.txt
 @@ -12,6 +12,7 @@
@@ -106,7 +106,7 @@ index f3d744c76061..da75b1ef6366 100644
      |        csky: | TODO |
      |     hexagon: | TODO |
 +    |        ia64: | TODO |
-     |   loongarch: | TODO |
+     |   loongarch: |  ok  |
      |        m68k: | TODO |
      |  microblaze: | TODO |
 diff --git a/Documentation/features/core/tracehook/arch-support.txt b/Documentation/features/core/tracehook/arch-support.txt

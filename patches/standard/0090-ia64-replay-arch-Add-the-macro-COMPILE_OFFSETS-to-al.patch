@@ -1,4 +1,4 @@
-From 17d1425c6e5e48d41cfb55a488a789c8d8edb1ee Mon Sep 17 00:00:00 2001
+From 138de9aa439c2aaf7c0df2b21d398ae8a823939d Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 1 Oct 2025 21:52:08 +0200
 Subject: [PATCH 090/133] ia64: replay "arch: Add the macro COMPILE_OFFSETS to

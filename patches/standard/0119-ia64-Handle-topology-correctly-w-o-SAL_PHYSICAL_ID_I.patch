@@ -1,4 +1,4 @@
-From bf7d40bbeaef2391233c08343e93df9524ad518b Mon Sep 17 00:00:00 2001
+From be7629a09b10dcd8a1536df088e9c184e2ff5730 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Sun, 12 Apr 2026 20:40:40 +0200
 Subject: [PATCH 119/133] ia64: Handle topology correctly w/o

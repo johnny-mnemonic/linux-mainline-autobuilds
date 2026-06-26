@@ -1,4 +1,4 @@
-From 20d934d40b35e960de0fd95e6f6e621f6e168bef Mon Sep 17 00:00:00 2001
+From d08c0c4bd2668f0223f2650e2e2e4870fc2bc8b5 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Mon, 23 Feb 2026 18:58:09 +0100
 Subject: [PATCH 104/133] scripts/gen-btf.sh: Add -mconstant-gp on ia64

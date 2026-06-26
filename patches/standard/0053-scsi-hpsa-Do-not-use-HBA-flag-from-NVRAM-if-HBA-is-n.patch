@@ -1,4 +1,4 @@
-From 4358c2c9e207b599bc4d0f799e223180b019ea60 Mon Sep 17 00:00:00 2001
+From 5b76ac0f627b310d8a2a000f2ec635ce3b74ab94 Mon Sep 17 00:00:00 2001
 From: Ivan Mironov <mironov.ivan@gmail.com>
 Date: Mon, 10 Dec 2018 18:51:35 +0500
 Subject: [PATCH 053/133] scsi: hpsa: Do not use HBA flag from NVRAM if HBA is
