@@ -1,7 +1,7 @@
-From 32947f999099d986c10b9a99cac8f327336415e0 Mon Sep 17 00:00:00 2001
+From b065d1a5ff6df48c436c3fcd40ec5641bdc87317 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sat, 20 Jun 2026 18:34:47 +0200
-Subject: [PATCH 131/133] ia64: replay "vdso: Introduce vdso/page.h"
+Subject: [PATCH 131/136] ia64: replay "vdso: Introduce vdso/page.h"
 
 This tree-wide change was missed until now and its replay should avoid the
 numerous warnings like:

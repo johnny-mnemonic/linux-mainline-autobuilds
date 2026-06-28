@@ -1,7 +1,7 @@
-From ab45262af3c209ab39b691fed1ad14bb3791e9f5 Mon Sep 17 00:00:00 2001
+From 06382fd478685bc3c83866a1a8ff7ff3f1db2a5e Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:13:25 +0200
-Subject: [PATCH 005/133] Revert "arch: Remove Itanium (IA-64) architecture"
+Subject: [PATCH 005/136] Revert "arch: Remove Itanium (IA-64) architecture"
 
 This reverts commit cf8e8658100d4eae80ce9b21f7a81cb024dd5057.
 ---

@@ -1,7 +1,7 @@
-From 078f68aee0e754f4cff9fa31f109c1bc89d0676f Mon Sep 17 00:00:00 2001
+From d0e37199aaa4f2a1d9537722646fb94372f03538 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sat, 20 Jun 2026 09:48:57 +0200
-Subject: [PATCH 130/133] ia64: replay "mm/sparse-vmemmap: pass @pgmap argument
+Subject: [PATCH 130/136] ia64: replay "mm/sparse-vmemmap: pass @pgmap argument
  to memory [...]"
 
 See 3bbc54dd1b62f1a4b218c70aafbeceeba7c90c5d.

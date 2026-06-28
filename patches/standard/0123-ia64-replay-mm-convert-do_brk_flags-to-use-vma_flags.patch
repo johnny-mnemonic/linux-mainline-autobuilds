@@ -1,7 +1,7 @@
-From 24c52d39cca9cb59d64e1c61c3924f03022804d5 Mon Sep 17 00:00:00 2001
+From 9021c4e9eccc361d91f9dd07b8e59838f9f3df5e Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Thu, 16 Apr 2026 13:02:08 +0200
-Subject: [PATCH 123/133] ia64: replay "mm: convert do_brk_flags() to use
+Subject: [PATCH 123/136] ia64: replay "mm: convert do_brk_flags() to use
  vma_flags_t"
 
 See 3a6455d56bd7c4cfb1ea35ddae052943065e338e.

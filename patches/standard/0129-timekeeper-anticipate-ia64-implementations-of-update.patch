@@ -1,7 +1,7 @@
-From 0117490e88fa07a9cb4a6a871849e44c01b76381 Mon Sep 17 00:00:00 2001
+From ddc6061d28a33fa4ad59316181cbdb3935a89d32 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sat, 20 Jun 2026 09:40:53 +0200
-Subject: [PATCH 129/133] timekeeper: anticipate ia64 implementations of
+Subject: [PATCH 129/136] timekeeper: anticipate ia64 implementations of
  update_vsyscall[_tz]()
 
 This replaces the prior used two (partial) reverts of:

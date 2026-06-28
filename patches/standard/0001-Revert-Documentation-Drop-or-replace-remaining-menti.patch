@@ -1,7 +1,7 @@
-From 492430493041b8d19097df95759d4a0e19ac691d Mon Sep 17 00:00:00 2001
+From 71ff0947e749ace040030dc29904e30b4b5ffbab Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 27 Oct 2023 13:11:28 +0200
-Subject: [PATCH 001/133] Revert "Documentation: Drop or replace remaining
+Subject: [PATCH 001/136] Revert "Documentation: Drop or replace remaining
  mentions of IA64"
 
 This reverts commit 944834901adc94b3a44d1dd153eb739a937e52d2.
@@ -410,7 +410,7 @@ index b2ac3c743a3a..ce3f39d9b3cb 100644
  sparc - 在这一点上，IRQ是开着的（？），把local_irq_save改为_disable。
        - 待办事项: 需要第二个CPU来禁用抢占 (参考 #1)
 diff --git a/Makefile b/Makefile
-index 12fd3d2d47b5..0eb56ed0ff10 100644
+index b9c5792c79e0..c9377298be1a 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -391,7 +391,7 @@ include $(srctree)/scripts/subarch.include

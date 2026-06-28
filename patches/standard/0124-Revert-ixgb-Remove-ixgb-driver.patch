@@ -1,7 +1,7 @@
-From 0f8b5f9385866064c0c541bc9eaf70df9e48aa39 Mon Sep 17 00:00:00 2001
+From 848819a557ae37da5f544057e23b325a1b1564db Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Mon, 1 Jun 2026 11:31:50 +0200
-Subject: [PATCH 125/133] Revert "ixgb: Remove ixgb driver"
+Subject: [PATCH 124/136] Revert "ixgb: Remove ixgb driver"
 
 ...but leave out defconfigs.
 

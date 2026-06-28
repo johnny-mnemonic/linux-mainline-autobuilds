@@ -1,7 +1,7 @@
-From 9566f9b2bacba6e9e0d9bfdf3984cda63b24b788 Mon Sep 17 00:00:00 2001
+From 3323a27d5800d8d764dbb83d76a7a2f46a444b2a Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 13 Feb 2026 14:04:28 +0100
-Subject: [PATCH 098/133] ia64: replay "arch, mm: consolidate initialization of
+Subject: [PATCH 098/136] ia64: replay "arch, mm: consolidate initialization of
  nodes, zones [...]"
 
 See d49004c5f0c140bb83c87fab46dcf449cf00eb24.

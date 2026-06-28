@@ -1,7 +1,7 @@
-From 2cbfcb707c21564975b24310d177c88e24794a22 Mon Sep 17 00:00:00 2001
+From 516f5a492c9614a5a478bf6a845d1097c67b7736 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Fri, 1 Aug 2025 15:59:03 +0200
-Subject: [PATCH 075/133] ia64: replay "fs/Kconfig: enable HUGETLBFS only if
+Subject: [PATCH 075/136] ia64: replay "fs/Kconfig: enable HUGETLBFS only if
  ARCH_SUPPORTS_HUGETLBFS"
 
 See 6470fb2bb1812cac0a80a290bb193a9d866dd39d.

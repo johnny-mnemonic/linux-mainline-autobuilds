@@ -1,7 +1,7 @@
-From 25e61de18e5e94ed08349941877a86a9fbdb06cb Mon Sep 17 00:00:00 2001
+From 05be5af69d11cbef4f7cf69f59e74181d71320e5 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 20 Mar 2026 20:00:52 +0100
-Subject: [PATCH 110/133] ia64: Add Linux Security Module syscalls
+Subject: [PATCH 110/136] ia64: Add Linux Security Module syscalls
 
 lsm_get_self_attr(), lsm_set_self_attr(), and lsm_list_modules() were
 added after ia64 was removed from the kernel.

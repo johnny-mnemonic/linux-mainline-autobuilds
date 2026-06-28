@@ -1,7 +1,7 @@
-From 268e2c7aaf63e66a4ad2adb3b4f9fb4b2ed1b521 Mon Sep 17 00:00:00 2001
+From 1b8e668637d8f88d55f77c59f4ec2df9c3373338 Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Fri, 19 Jan 2024 20:18:07 +0100
-Subject: [PATCH 021/133] Revert "tty: deprecate tty_write_message()"
+Subject: [PATCH 021/136] Revert "tty: deprecate tty_write_message()"
 
 This reverts commit 4c74253b831e5a8eb87d4d8d4a0eae40c331e682.
 

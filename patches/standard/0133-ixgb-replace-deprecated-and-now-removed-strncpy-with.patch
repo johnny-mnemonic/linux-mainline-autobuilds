@@ -1,7 +1,7 @@
-From 1a7ecd30cf930fd4e1e883a9674ed648dbe76ece Mon Sep 17 00:00:00 2001
+From b6470b1f6a353fdbaca44a27311969d1919afc05 Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Sun, 21 Jun 2026 00:27:22 +0200
-Subject: [PATCH 133/133] ixgb: replace deprecated and now removed strncpy with
+Subject: [PATCH 133/136] ixgb: replace deprecated and now removed strncpy with
  strscpy
 
 See 7677f635bf800dc0dd684713c4578ad81f7ad0c3 for why the count argument is

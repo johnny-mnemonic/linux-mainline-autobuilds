@@ -1,7 +1,7 @@
-From ab95e1922440019eab2e47c5afbc39e6ac47b41e Mon Sep 17 00:00:00 2001
+From f49ac3a9027e31224d2d6ceeb1c5d444c878398b Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Wed, 20 Nov 2024 11:15:14 +0100
-Subject: [PATCH 038/133] Revert "sched: remove unused __HAVE_THREAD_FUNCTIONS
+Subject: [PATCH 038/136] Revert "sched: remove unused __HAVE_THREAD_FUNCTIONS
  hook support"
 
 This reverts commit 5e9f0c4819deb9459f32f12c4fd2b47993b8c395.

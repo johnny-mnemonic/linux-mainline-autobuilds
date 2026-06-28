@@ -1,7 +1,7 @@
-From b6f07546b28c342deea97cb467352b9e3f8d7317 Mon Sep 17 00:00:00 2001
+From 68d7ec9671288a26b18f449a3814af4f8313d72c Mon Sep 17 00:00:00 2001
 From: Tomas Glozar <tglozar@gmail.com>
 Date: Mon, 9 Mar 2026 21:46:25 +0100
-Subject: [PATCH 107/133] ia64: replay "kbuild: Split .modinfo out from
+Subject: [PATCH 107/136] ia64: replay "kbuild: Split .modinfo out from
  ELF_DETAILS"
 
 See 8678591b47469fe16357234efef9b260317b8be4.

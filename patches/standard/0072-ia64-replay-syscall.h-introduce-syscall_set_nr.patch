@@ -1,7 +1,7 @@
-From 1dfc78e31809718546c5f105c61abd27964f6bdb Mon Sep 17 00:00:00 2001
+From 03da4430c00ebb652dbaed0b3a76b7fdeb6315cb Mon Sep 17 00:00:00 2001
 From: Johnny Mnemonic <jm@machine-hall.org>
 Date: Thu, 5 Jun 2025 15:58:01 +0200
-Subject: [PATCH 072/133] ia64: replay "syscall.h: introduce syscall_set_nr()"
+Subject: [PATCH 072/136] ia64: replay "syscall.h: introduce syscall_set_nr()"
 
 See cc6622730be77fa88acc4fb0942cd39e6fa5ca27.
 ---
